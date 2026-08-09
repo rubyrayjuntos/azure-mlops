@@ -82,7 +82,7 @@ resource "azurerm_machine_learning_workspace" "mlw" {
   container_registry_id   = var.container_registry_id
 
   sku_name                          = "Basic"
-  public_network_access_enabled     = true
+  public_network_access_enabled     = var.enable_private_endpoints ? false : true
   image_build_compute_name          = "cpu-cluster"
   v1_legacy_mode_enabled            = false
 
