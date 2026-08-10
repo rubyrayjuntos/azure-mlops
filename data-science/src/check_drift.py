@@ -137,7 +137,14 @@ def check_categorical_drift(baseline_categorical: dict, recent: pd.DataFrame) ->
 
         stat, p_value = chisquare(observed, f_exp=expected)
         # Cramer's V: effect size for chi-square goodness-of-fit against k categories.
-        cramers_v = float(np.sqrt(stat / (n * max(k - 1, 1)))) if n > 0 else 0.0
+        # Clipped to the conventional [0, 1] bound - the goodness-of-fit variant can
+        # exceed 1 when a brand-new (baseline-unseen) category captures a nontrivial
+        # share of production traffic, which would otherwise break the Cohen's-convention
+        # interpretation (0.1=small, 0.3=medium) surfaced in --cramers_v_threshold's help
+        # text. Clipping never changes the drift-detection gate: for any threshold <= 1.0,
+        # a value that already cleared the threshold still clears it after clipping to 1.0,
+        # and a value already < 1.0 is unaffected.
+        cramers_v = min(float(np.sqrt(stat / (n * max(k - 1, 1)))), 1.0) if n > 0 else 0.0
 
         results[col] = {
             "statistic": float(stat),
