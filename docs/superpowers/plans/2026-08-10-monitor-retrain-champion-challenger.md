@@ -12,7 +12,11 @@
 
 - **No ADX/Kusto.** Confirmed by reading `infrastructure/modules/data-explorer/main.tf`: the accelerator's built-in `enable_monitoring` Terraform flag provisions a real, billed `Standard_D11_v2` Kusto cluster. Explicitly rejected — this plan uses the existing storage account instead, for both inference logs and the baseline snapshot.
 - **No new secrets or PATs.** All new cross-workflow triggering uses `workflow_call` (reusable-workflow) references to workflow files already in this repo, matching the existing OIDC-only posture. The default `GITHUB_TOKEN` cannot trigger a separate workflow's `workflow_dispatch` via the API by design (to prevent infinite loops) — `workflow_call` sidesteps this entirely and needs no token.
-- **No new RBAC grants needed.** Verified live: the compute clusters (`cpu-cluster`, `batch-cluster`) run under `uai-azmlops-0001dev`, which already has `Storage Blob Data Contributor` on `stazmlops0001<env>` (granted by Terraform's `aml-workspace` module for a different reason, but the grant is broad enough to cover this use case too).
+- **No new RBAC grants needed for training/batch compute** — verified live: `cpu-cluster`/`batch-cluster` run under `uai-azmlops-0001dev`, which already has `Storage Blob Data Contributor` on `stazmlops0001<env>`. **This does NOT carry over to the online endpoint** — a managed online endpoint gets its own identity (system-assigned by default unless explicitly configured), a different principal than the compute UAI. Task 5 verifies this explicitly and grants if needed, rather than assuming the batch-path finding applies.
+- **Promotion detection must reference the specific AML job this GitHub Actions run launched, not "whatever job is newest in the workspace."** Two overlapping training runs (a manual dispatch overlapping a monitor-triggered retrain, for example) would otherwise let one run's `check-promotion` inspect the other's job. `run-pipeline.yml` currently captures `run_id` as a local shell variable and never surfaces it — Task 7 adds it as an output, Task 8 consumes that specific value.
+- **`snapshot_baseline`'s AML pipeline job must have a data dependency on `register_model`'s output, not just textual ordering in the YAML.** AML pipeline job scheduling follows the `${{parent.jobs.X.outputs.Y}}` dependency graph, not file order — a job that only consumes `prep_data`/`evaluate_model` outputs can run concurrently with, or even after a failed, `register_model`, producing a baseline for a model that was never actually promoted. Task 2/3 fix this by having the snapshot script consume `register_model`'s `model_info_output_path` output directly (which also gives it the registered model's version for free, addressed in Task 2).
+- **Drift detection needs an effect-size gate and a multiple-testing correction, not a bare p-value threshold.** With ~20 monitored features tested independently at α=0.05, the family-wise false-positive rate is `1 - 0.95^20 ≈ 64%` — healthy, undrifted production data would trigger "drift detected" on close to two out of three scheduled runs from pure noise. Task 6 requires both statistical significance (after Benjamini-Hochberg correction) and a practical-significance effect-size threshold before counting a feature as drifted.
+- **Scaling boundary, documented not solved:** one Parquet blob per online request is the right reference-implementation choice for this factory's actual traffic (near zero), but becomes a small-file problem at real online-serving volume. Not addressed in this plan — batching/buffering inference logs would be the fix if/when online traffic actually warrants it.
 - **`mlops/azureml/deploy/batch/conda.yml` is the environment `batch-deployment.yml` actually uses** — confirmed by reading `batch-deployment.yml`'s inline `environment:` block. `batch-conda.yml`, `batch-env.yml`, and `batch-environment.yml` in the same directory are unused leftover files from an earlier template iteration; do not confuse them with the real one, and do not modify them as part of this plan.
 - **`online-deployment.yml` currently has no `code_configuration` or `environment` block at all** — it relies on Azure ML's automatic no-code MLflow deployment. That's why `score.py` was empty and unused, not a bug in isolation. This plan adds both blocks so the custom scoring script (with logging) actually runs.
 - **`prep.py`'s train/val/test split is unseeded** (`np.random.rand(len(data))` with no seed) — every pipeline run produces a different split, so the champion/challenger comparison in `evaluate.py` is currently noisy: two runs on identical code can produce different scores purely from split randomness. Fixed in Task 1 (`np.random.seed(42)`) because the drift baseline and the promotion gate both depend on comparisons being meaningful, not incidental scope creep.
@@ -63,7 +67,7 @@ git push origin dev
 **Files:**
 - Create: `data-science/src/snapshot_baseline.py`
 
-Writes per-feature reference statistics from the test set to blob storage, but only when the model was actually promoted (mirrors `register.py`'s own `deploy_flag` check — same input, same gate, no new signal needed).
+Writes per-feature reference statistics from the test set to blob storage. Reads `register_model`'s `model_info_output_path` output directly (not just the `deploy_flag` file evaluate_model already produced) — this is deliberate, not redundant: it's what gives this job an actual AML pipeline *data dependency* on `register_model` succeeding, so the baseline can only be written for a model version that genuinely entered the registry (see Global Constraints). Reading `model_info.json` also gives the snapshot real lineage instead of just a flag: the exact `model_name:version` that this baseline corresponds to, plus the training run ID.
 
 - [ ] **Step 1: Write the script**
 
@@ -73,10 +77,17 @@ Writes per-feature reference statistics from the test set to blob storage, but o
 """
 Snapshots per-feature reference statistics from the test set to blob
 storage, for later drift comparison against production inference data.
-Only runs when the model was promoted (same deploy_flag gate as register.py).
+
+Takes register_model's model_info_output_path as an input specifically to
+create an AML pipeline data dependency on register_model succeeding - AML
+schedules jobs by data dependency, not YAML file order, so without this the
+snapshot could run (or succeed after a register_model failure) for a model
+that was never actually promoted. If model_info.json doesn't exist at that
+path, register.py's own deploy_flag gate declined to register - skip.
 """
 import argparse
 import json
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -111,7 +122,8 @@ CAT_NOM_COLS = ["store_forward", "vendor"]
 def parse_args():
     parser = argparse.ArgumentParser("snapshot_baseline")
     parser.add_argument("--test_data", type=str, required=True, help="Path to test dataset (parquet dir)")
-    parser.add_argument("--evaluation_output", type=str, required=True, help="Path containing the deploy_flag file")
+    parser.add_argument("--model_info_path", type=str, required=True,
+                         help="register_model's model_info_output_path - existence of model_info.json here IS the promotion signal")
     parser.add_argument("--model_name", type=str, required=True)
     parser.add_argument("--storage_account", type=str, required=True, help="Storage account name, e.g. stazmlops0001dev")
     parser.add_argument("--container", type=str, default="azureml-blobstore", help="Blob container to write to")
@@ -135,18 +147,24 @@ def compute_reference_stats(df: pd.DataFrame) -> dict:
 
 
 def main(args):
-    deploy_flag_path = Path(args.evaluation_output) / "deploy_flag"
-    with open(deploy_flag_path, "rb") as f:
-        deploy_flag = int(f.read())
-
-    if deploy_flag != 1:
-        print("Model was not promoted - skipping baseline snapshot.")
+    model_info_file = Path(args.model_info_path) / "model_info.json"
+    if not model_info_file.exists():
+        print("model_info.json not found - register_model declined to promote this run. Skipping baseline snapshot.")
         return
+
+    with open(model_info_file) as f:
+        model_info = json.load(f)  # {"id": "taxi-model:<version>"}
+    model_id = model_info["id"]
+    model_version = model_id.split(":")[-1]
 
     test_data = pd.read_parquet(Path(args.test_data))
     stats = compute_reference_stats(test_data)
     payload = {
         "model_name": args.model_name,
+        "model_version": model_version,
+        "training_run_id": os.environ.get("AZUREML_RUN_ID", "unknown"),
+        # Dataset version/hash lineage is a documented future addition - would need the resolved
+        # input dataset URI threaded through as an extra pipeline input, not done in this pass.
         "captured_at": datetime.now(timezone.utc).isoformat(),
         "row_count": len(test_data),
         "stats": stats,
@@ -201,12 +219,12 @@ git push origin dev
 - Modify: `mlops/azureml/train/pipeline.yml`
 
 **Interfaces:**
-- Consumes: `snapshot_baseline.py`'s CLI args from Task 2.
+- Consumes: `snapshot_baseline.py`'s CLI args from Task 2, critically `register_model`'s `model_info_output_path` output (not just `evaluate_model`'s) — this is what makes the AML scheduler enforce "snapshot only after register_model completes," per the Global Constraints note on job DAG dependencies.
 - Produces: nothing new for later tasks to consume (this job's effect is the side-effect blob write).
 
 - [ ] **Step 1: Add the `snapshot_baseline` job**
 
-Add this job to `pipeline.yml`, after `register_model`:
+Add this job to `pipeline.yml`, after `register_model`. Note `model_info_output_path` is consumed from `register_model`'s outputs specifically — this is a deliberate data-dependency edge, not incidental:
 
 ```yaml
   snapshot_baseline:
@@ -216,13 +234,13 @@ Add this job to `pipeline.yml`, after `register_model`:
     command: >-
       python snapshot_baseline.py
       --test_data ${{inputs.test_data}}
-      --evaluation_output ${{inputs.evaluation_output}}
+      --model_info_path ${{inputs.model_info_path}}
       --model_name ${{inputs.model_name}}
       --storage_account ${{inputs.storage_account}}
     environment: azureml:taxi-train-env@latest
     inputs:
       test_data: ${{parent.jobs.prep_data.outputs.test_data}}
-      evaluation_output: ${{parent.jobs.evaluate_model.outputs.evaluation_output}}
+      model_info_path: ${{parent.jobs.register_model.outputs.model_info_output_path}}
       model_name: "taxi-model"
       storage_account: ${{parent.inputs.storage_account}}
     outputs: {}
@@ -469,7 +487,27 @@ egress_public_network_access: enabled
 
 - [ ] **Step 4: Wire the storage account name at deploy time**, same investigation as Task 4 Step 3 — this affects `.github/workflows/deploy-online-endpoint-pipeline-classical.yml`'s `create-deployment` job. Reuse whatever mechanism (`extra_args` or similar) gets added to `mlops-templates`'s `create-deployment.yml` in Task 4; don't design a second, different mechanism for online.
 
-- [ ] **Step 5: Validate**
+- [ ] **Step 5: Verify (don't assume) the online endpoint's identity can write blobs**
+
+The compute-UAI RBAC finding from Task 4 does NOT carry over here — a managed online endpoint gets its own identity, separate from `uai-azmlops-0001dev`. Check what it actually is after the endpoint is created (Task 12 in this plan deploys it):
+
+```bash
+az ml online-endpoint show --name taxi-gha-oep-azmlops-0001dev --resource-group rg-azmlops-0001dev --workspace-name mlw-azmlops-0001dev --query identity -o json
+```
+
+If `type` is `SystemAssigned`, grab the `principal_id` and check/grant blob write access:
+
+```bash
+PRINCIPAL_ID=$(az ml online-endpoint show --name taxi-gha-oep-azmlops-0001dev --resource-group rg-azmlops-0001dev --workspace-name mlw-azmlops-0001dev --query identity.principal_id -o tsv)
+az role assignment list --assignee "$PRINCIPAL_ID" --all -o json | python3 -c "import json,sys; d=json.load(sys.stdin); print([r['roleDefinitionName'] for r in d])"
+# If Storage Blob Data Contributor isn't already present on stazmlops0001dev:
+az role assignment create --assignee "$PRINCIPAL_ID" --role "Storage Blob Data Contributor" \
+  --scope /subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.Storage/storageAccounts/stazmlops0001dev
+```
+
+This step is a real "go verify," not a formality — do not skip it or assume the batch-path finding applies, per the Global Constraints note. Repeat for prod's endpoint identity when this plan reaches Prod.
+
+- [ ] **Step 6: Validate**
 
 ```bash
 cd /home/rswan/azure-mlops
@@ -478,7 +516,7 @@ python3 -c "import yaml; yaml.safe_load(open('mlops/azureml/deploy/online/online
 python3 -c "import yaml; yaml.safe_load(open('mlops/azureml/deploy/online/online-deployment.yml'))" && echo "online-deployment.yml valid"
 ```
 
-- [ ] **Step 6: Commit**
+- [ ] **Step 7: Commit**
 
 ```bash
 git add mlops/azureml/deploy/online/score.py mlops/azureml/deploy/online/online-conda.yml mlops/azureml/deploy/online/online-deployment.yml .github/workflows/deploy-online-endpoint-pipeline-classical.yml
@@ -502,8 +540,14 @@ git push origin dev
 - Create: `data-science/src/check_drift.py`
 
 **Interfaces:**
-- Consumes: `monitoring/baseline/reference.json` (Task 2's output shape) and `monitoring/inference-log/**/*.parquet` (Tasks 4-5's output shape).
-- Produces: exit code 0 always; prints `DRIFT_DETECTED=true` or `DRIFT_DETECTED=false` as the last line of stdout, for the calling workflow to parse.
+- Consumes: `monitoring/baseline/reference.json` (Task 2's output shape — now including `model_version`/`training_run_id`) and `monitoring/inference-log/**/*.parquet` (Tasks 4-5's output shape).
+- Produces: exit code 0 always; prints `MONITORING_STATUS=<NOT_READY|INSUFFICIENT_DATA|HEALTHY|DRIFT_DETECTED>` as the last line of stdout, for the calling workflow to parse. Only `DRIFT_DETECTED` should trigger a retrain — `NOT_READY` and `INSUFFICIENT_DATA` are distinct, informational states, not silently folded into "no drift" (a broken inference logger must not look identical to a healthy one).
+
+A feature counts as drifted only when BOTH hold:
+- statistically significant after Benjamini-Hochberg FDR correction across all tested features (not a bare per-feature p-value threshold — with ~20 features tested independently at the naive threshold, the family-wise false-positive rate is close to two-thirds; see Global Constraints)
+- practically significant: KS D-statistic ≥ `--ks_effect_threshold` (numeric) or Cramér's V ≥ `--cramers_v_threshold` (categorical)
+
+Categorical comparison uses the union of baseline and production categories with additive smoothing, so a genuinely new category shows up as a large contributor to the chi-square statistic instead of breaking the test with a zero-expected-frequency cell — and every category key is cast to `str` on both sides before comparison, since baseline categories survive a JSON round-trip as strings while a pandas column read from parquet may not.
 
 - [ ] **Step 1: Write the script**
 
@@ -512,15 +556,20 @@ git push origin dev
 # Licensed under the MIT License.
 """
 Compares recent production inference data against the stored training
-baseline. Prints DRIFT_DETECTED=true/false as the last stdout line.
+baseline. Prints MONITORING_STATUS=<NOT_READY|INSUFFICIENT_DATA|HEALTHY|
+DRIFT_DETECTED> as the last stdout line - only DRIFT_DETECTED should trigger
+a retrain; the other two are informational states that must stay visibly
+distinct from "checked and found healthy."
 
-Numeric features: two-sample Kolmogorov-Smirnov test (scipy.stats.ks_2samp).
+Numeric features: two-sample Kolmogorov-Smirnov test (scipy.stats.ks_2samp),
+gated by both statistical significance (after Benjamini-Hochberg correction
+across all tested features) and practical significance (D-statistic).
+
 Categorical features: chi-square goodness-of-fit against the baseline's
-frequency distribution (scipy.stats.chisquare).
-
-A feature is flagged as drifted if its test's p-value is below --p-threshold
-(default 0.05). Overall DRIFT_DETECTED=true if at least --min-drifted-features
-(default 1) features are flagged.
+frequency distribution (scipy.stats.chisquare), computed over the union of
+baseline and production categories with additive smoothing so an unseen
+category doesn't produce a zero-expected-frequency cell. Gated by the same
+BH-corrected significance plus a Cramer's V practical-effect threshold.
 """
 import argparse
 import json
@@ -528,6 +577,7 @@ import sys
 from datetime import datetime, timedelta, timezone
 from io import BytesIO
 
+import numpy as np
 import pandas as pd
 from scipy.stats import ks_2samp, chisquare
 
@@ -542,6 +592,7 @@ NUMERIC_COLS = [
     "dropoff_hour", "dropoff_minute", "dropoff_second",
 ]
 CAT_NOM_COLS = ["store_forward", "vendor"]
+SMOOTHING_EPSILON = 1e-4  # additive smoothing so unseen categories get nonzero expected probability
 
 
 def parse_args():
@@ -549,8 +600,14 @@ def parse_args():
     p.add_argument("--storage_account", type=str, required=True)
     p.add_argument("--container", type=str, default="azureml-blobstore")
     p.add_argument("--lookback_days", type=int, default=7)
-    p.add_argument("--p_threshold", type=float, default=0.05)
-    p.add_argument("--min_drifted_features", type=int, default=1)
+    p.add_argument("--min_rows", type=int, default=30, help="Minimum recent inference rows before running tests at all")
+    p.add_argument("--fdr_alpha", type=float, default=0.05, help="Benjamini-Hochberg FDR level")
+    p.add_argument("--ks_effect_threshold", type=float, default=0.1,
+                    help="Minimum KS D-statistic to count as practically significant (starting heuristic, tune with real data)")
+    p.add_argument("--cramers_v_threshold", type=float, default=0.1,
+                    help="Minimum Cramer's V to count as practically significant (0.1=small, 0.3=medium per Cohen's convention)")
+    p.add_argument("--min_drifted_features", type=int, default=2,
+                    help="How many features must clear both gates before DRIFT_DETECTED fires")
     p.add_argument("--report_output", type=str, default=None, help="Optional path to write a JSON report")
     return p.parse_args()
 
@@ -577,6 +634,74 @@ def load_recent_inference_data(blob_service, container, lookback_days):
     return pd.concat(frames, ignore_index=True)
 
 
+def benjamini_hochberg(p_values: dict, alpha: float) -> set:
+    """Standard BH-FDR step-up procedure. Returns the set of feature names
+    that remain significant after correcting for testing len(p_values) features."""
+    items = sorted(p_values.items(), key=lambda kv: kv[1])
+    m = len(items)
+    if m == 0:
+        return set()
+    largest_k = 0
+    for i, (_, p) in enumerate(items, start=1):
+        if p <= (i / m) * alpha:
+            largest_k = i
+    return {name for name, _ in items[:largest_k]}
+
+
+def check_numeric_drift(baseline_numeric: dict, recent: pd.DataFrame) -> dict:
+    """Returns {col: {statistic, p_value}} for every numeric col present in both."""
+    results = {}
+    for col, ref in baseline_numeric.items():
+        if col not in recent.columns:
+            continue
+        sample = recent[col].dropna()
+        if len(sample) == 0:
+            continue
+        stat, p_value = ks_2samp(ref["values_sample"], sample)
+        results[col] = {"statistic": float(stat), "p_value": float(p_value)}
+    return results
+
+
+def check_categorical_drift(baseline_categorical: dict, recent: pd.DataFrame) -> dict:
+    """Returns {col: {statistic, p_value, cramers_v, new_categories}} for every
+    categorical col present in both, using the union of categories with additive
+    smoothing so unseen production categories don't break chisquare."""
+    results = {}
+    for col, ref_dist_raw in baseline_categorical.items():
+        if col not in recent.columns:
+            continue
+        # Normalize types on both sides - JSON round-trips baseline keys to str;
+        # a pandas column read from parquet may be int/str/other.
+        ref_dist = {str(k): v for k, v in ref_dist_raw.items()}
+        observed_counts = recent[col].astype(str).value_counts()
+
+        baseline_categories = set(ref_dist.keys())
+        production_categories = set(observed_counts.index)
+        all_categories = sorted(baseline_categories | production_categories)
+        new_categories = sorted(production_categories - baseline_categories)
+
+        n = len(recent)
+        k = len(all_categories)
+        # Additive smoothing over the union so a brand-new category gets a small
+        # nonzero expected probability instead of an undefined/zero-expected cell.
+        smoothed = {c: ref_dist.get(c, 0.0) + SMOOTHING_EPSILON for c in all_categories}
+        total = sum(smoothed.values())
+        expected = np.array([smoothed[c] / total * n for c in all_categories])
+        observed = np.array([observed_counts.get(c, 0) for c in all_categories])
+
+        stat, p_value = chisquare(observed, f_exp=expected)
+        # Cramer's V: effect size for chi-square goodness-of-fit against k categories.
+        cramers_v = float(np.sqrt(stat / (n * max(k - 1, 1)))) if n > 0 else 0.0
+
+        results[col] = {
+            "statistic": float(stat),
+            "p_value": float(p_value),
+            "cramers_v": cramers_v,
+            "new_categories": new_categories,  # surfaced regardless of test outcome - worth knowing about
+        }
+    return results
+
+
 def main(args):
     credential = DefaultAzureCredential()
     blob_service = BlobServiceClient(
@@ -586,52 +711,50 @@ def main(args):
 
     baseline = load_baseline(blob_service, args.container)
     if baseline is None:
-        print("No baseline found yet - nothing to compare against. Treating as no drift.")
-        print("DRIFT_DETECTED=false")
+        print("No baseline found yet - a model has not been promoted through the pipeline since monitoring was added.")
+        print("MONITORING_STATUS=NOT_READY")
         return
 
     recent = load_recent_inference_data(blob_service, args.container, args.lookback_days)
-    if recent is None or len(recent) == 0:
-        print(f"No inference data logged in the last {args.lookback_days} days. Treating as no drift.")
-        print("DRIFT_DETECTED=false")
+    row_count = 0 if recent is None else len(recent)
+    if row_count < args.min_rows:
+        print(f"Only {row_count} inference rows in the last {args.lookback_days} days "
+              f"(minimum {args.min_rows}) - too few for a statistically meaningful comparison.")
+        print("MONITORING_STATUS=INSUFFICIENT_DATA")
         return
 
+    numeric_results = check_numeric_drift(baseline["stats"]["numeric"], recent)
+    categorical_results = check_categorical_drift(baseline["stats"]["categorical"], recent)
+
+    all_p_values = {f"numeric:{k}": v["p_value"] for k, v in numeric_results.items()}
+    all_p_values.update({f"categorical:{k}": v["p_value"] for k, v in categorical_results.items()})
+    significant_after_correction = benjamini_hochberg(all_p_values, args.fdr_alpha)
+
     drifted_features = []
-    report = {"numeric": {}, "categorical": {}}
-
-    for col, ref in baseline["stats"]["numeric"].items():
-        if col not in recent.columns:
-            continue
-        stat, p_value = ks_2samp(ref["values_sample"], recent[col].dropna())
-        report["numeric"][col] = {"statistic": float(stat), "p_value": float(p_value)}
-        if p_value < args.p_threshold:
+    for col, r in numeric_results.items():
+        if f"numeric:{col}" in significant_after_correction and r["statistic"] >= args.ks_effect_threshold:
+            drifted_features.append(col)
+    for col, r in categorical_results.items():
+        if f"categorical:{col}" in significant_after_correction and r["cramers_v"] >= args.cramers_v_threshold:
             drifted_features.append(col)
 
-    for col, ref_dist in baseline["stats"]["categorical"].items():
-        if col not in recent.columns:
-            continue
-        observed_counts = recent[col].value_counts()
-        categories = list(ref_dist.keys())
-        expected = [ref_dist[c] * len(recent) for c in categories]
-        observed = [observed_counts.get(c, 0) for c in categories]
-        if sum(expected) == 0:
-            continue
-        stat, p_value = chisquare(observed, f_exp=expected)
-        report["categorical"][col] = {"statistic": float(stat), "p_value": float(p_value)}
-        if p_value < args.p_threshold:
-            drifted_features.append(col)
-
-    report["drifted_features"] = drifted_features
-    report["inference_rows_compared"] = len(recent)
-    report["baseline_captured_at"] = baseline["captured_at"]
+    report = {
+        "baseline_model_version": baseline.get("model_version"),
+        "baseline_captured_at": baseline["captured_at"],
+        "inference_rows_compared": row_count,
+        "numeric": numeric_results,
+        "categorical": categorical_results,
+        "significant_after_fdr_correction": sorted(significant_after_correction),
+        "drifted_features": drifted_features,
+    }
 
     if args.report_output:
         with open(args.report_output, "w") as f:
             json.dump(report, f, indent=2)
 
     print(json.dumps(report, indent=2))
-    drift_detected = len(drifted_features) >= args.min_drifted_features
-    print(f"DRIFT_DETECTED={'true' if drift_detected else 'false'}")
+    status = "DRIFT_DETECTED" if len(drifted_features) >= args.min_drifted_features else "HEALTHY"
+    print(f"MONITORING_STATUS={status}")
 
 
 if __name__ == "__main__":
@@ -684,6 +807,22 @@ For `run-pipeline.yml`: add an optional `job-inputs` string input (default `""`)
 
 For `create-deployment.yml`: add an optional `extra_args` string input (default `""`) the same way, appended to whichever `az ml *-deployment create` command the file runs.
 
+- [ ] **Step 2a: Surface `run-pipeline.yml`'s `run_id` as an output**
+
+Confirmed by reading the file directly: `run_id=$(az ml job create ... --query name -o tsv)` (line 46) is captured as a local shell variable only and never surfaced anywhere — every later step in that file re-derives status by re-reading `$run_id` within the same step, but nothing outside the file can see it. This is what Task 8's promotion check needs to reference the exact job this run launched, instead of querying "whatever job is newest in the workspace" (unsafe under any overlapping runs — two training runs launched close together would let one inspect the other's result).
+
+Add a step id and a `$GITHUB_OUTPUT` write right after the `run_id=$(...)` line:
+```yaml
+          echo "run_name=$run_id" >> "$GITHUB_OUTPUT"
+```
+(give that step an `id:` if it doesn't have one), then add a matching job-level `outputs:` entry, and a `workflow_call` level `outputs:` entry:
+```yaml
+    outputs:
+      run_name:
+        description: "The AML job name this run launched"
+        value: ${{ jobs.<job-id>.outputs.run_name }}
+```
+
 - [ ] **Step 3: Lint**
 
 ```bash
@@ -711,7 +850,9 @@ git push origin main
 - Modify: `classical/aml-cli-v2/mlops/github-actions/deploy-model-training-pipeline-classical.yml` (in `~/mlops-root/mlops-project-template`)
 - Modify: `.github/workflows/deploy-model-training-pipeline-classical.yml` (in `azure-mlops`)
 
-- [ ] **Step 1: Add `workflow_call` alongside `workflow_dispatch`**
+- [ ] **Step 1: Add `workflow_call` alongside `workflow_dispatch`, and surface `run-model-training-pipeline`'s `run_name`**
+
+`run-model-training-pipeline` calls `run-pipeline.yml` as a reusable workflow — Task 7 Step 2a added a `run_name` output there. Propagate it up through this job's own `uses:` outputs are automatically available as `needs.run-model-training-pipeline.outputs.run_name` once `run-pipeline.yml` exposes it — no extra plumbing needed at this layer beyond Task 7. Add the `workflow_call` trigger:
 
 ```yaml
 on:
@@ -741,9 +882,9 @@ on:
 
 (`workflow_call` doesn't need its own `inputs:` here since this workflow doesn't take any beyond the optional skip flags, which only make sense from a human `workflow_dispatch` — leave `skip_*` unset/default when called via `workflow_call`.)
 
-- [ ] **Step 2: Add the `check-promotion` job**
+- [ ] **Step 2: Add the `check-promotion` job — references the specific run, not "whatever's newest"**
 
-Add after `run-model-training-pipeline`:
+Add after `run-model-training-pipeline`. This deliberately does NOT query `az ml job list --query "sort_by(...)[-1]"` — that pattern is unsafe under any overlapping runs (two training runs launched close together would let one inspect the other's job). It uses `needs.run-model-training-pipeline.outputs.run_name` instead, which Task 7 made available:
 ```yaml
   check-promotion:
     needs: [get-config, run-model-training-pipeline]
@@ -763,7 +904,12 @@ Add after `run-model-training-pipeline`:
       - id: check
         run: |
           az extension add -n ml -y
-          RUN_NAME=$(az ml job list --resource-group ${{ needs.get-config.outputs.resource_group }} --workspace-name ${{ needs.get-config.outputs.aml_workspace }} --query "sort_by(@, &creation_context.created_at)[-1].name" -o tsv)
+          RUN_NAME="${{ needs.run-model-training-pipeline.outputs.run_name }}"
+          if [ -z "$RUN_NAME" ]; then
+            echo "::error::run-model-training-pipeline did not report a run_name - cannot safely check promotion"
+            echo "promoted=false" >> "$GITHUB_OUTPUT"
+            exit 1
+          fi
           CHILD_NAME=$(az ml job list --parent-job-name "$RUN_NAME" --resource-group ${{ needs.get-config.outputs.resource_group }} --workspace-name ${{ needs.get-config.outputs.aml_workspace }} --query "[?display_name=='register-model'].name" -o tsv)
           rm -rf /tmp/promotion-check && mkdir -p /tmp/promotion-check
           az ml job download -n "$CHILD_NAME" --resource-group ${{ needs.get-config.outputs.resource_group }} --workspace-name ${{ needs.get-config.outputs.aml_workspace }} --download-path /tmp/promotion-check --output-name model_info_output_path || true
@@ -898,7 +1044,7 @@ jobs:
       id-token: write
       contents: read
     outputs:
-      drift_detected: ${{ steps.drift.outputs.drift_detected }}
+      monitoring_status: ${{ steps.drift.outputs.monitoring_status }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - uses: azure/login@7184910d9eb2b1c5e48f7073824a90609bb9b6d6 # v2
@@ -914,11 +1060,14 @@ jobs:
           # STORAGE_ACCOUNT: confirm the exact get-config output name from Task 7's investigation
           OUTPUT=$(python3 data-science/src/check_drift.py --storage_account ${{ needs.get-config.outputs.storage_account }})
           echo "$OUTPUT"
-          echo "drift_detected=$(echo "$OUTPUT" | tail -1 | cut -d= -f2)" >> "$GITHUB_OUTPUT"
+          echo "monitoring_status=$(echo "$OUTPUT" | tail -1 | cut -d= -f2)" >> "$GITHUB_OUTPUT"
 
   retrain:
     needs: check-drift
-    if: needs.check-drift.outputs.drift_detected == 'true'
+    # Only DRIFT_DETECTED triggers a retrain. NOT_READY and INSUFFICIENT_DATA are
+    # informational states (see check_drift.py's docstring) and must not be treated
+    # as "no drift" - they mean the check didn't run a real comparison at all.
+    if: needs.check-drift.outputs.monitoring_status == 'DRIFT_DETECTED'
     uses: ./.github/workflows/deploy-model-training-pipeline-classical.yml
     secrets: inherit
 ```
@@ -1011,7 +1160,9 @@ gh workflow run monitor-and-retrain-classical.yml --ref dev
 
 - [ ] **Step 2: Watch to completion, read the `check-drift` job's log output**
 
-Expected on this first real run (baseline exists from Task 11, some inference data exists from Task 12): a JSON report with `numeric`/`categorical` p-values and a `DRIFT_DETECTED=` line. With so little inference data logged so far, drift is not expected to trigger — that's fine, this task verifies the mechanism runs end-to-end and produces a sane report, not that it correctly detects real drift (there's no real drift yet to detect).
+Expected on this first real run: with only Task 12's handful of test invocations logged, row count will very likely be below `--min_rows` (default 30), so the realistic expected outcome is `MONITORING_STATUS=INSUFFICIENT_DATA`, not `HEALTHY` or `DRIFT_DETECTED` — that's the correct, honest result given how little inference data exists yet, not a failure of this task. If it does report `HEALTHY` (30+ rows already logged), read the JSON report and confirm it contains `numeric`/`categorical` sections with p-values, `cramers_v` for categorical columns, and `significant_after_fdr_correction`. Either outcome verifies the mechanism runs end-to-end and produces a sane, correctly-labeled report — this task is not expected to produce `DRIFT_DETECTED`, since there's no real drift to detect yet.
+
+- [ ] **Step 3 (optional, exercises the full loop): manufacture enough inference volume and an actual distribution shift to confirm a real `DRIFT_DETECTED` → retrain → promotion-check → redeploy cycle fires correctly end to end** — invoke the batch or online endpoint repeatedly with inputs deliberately shifted well outside the training distribution (e.g., `distance` values an order of magnitude larger than anything in `data/taxi-data.csv`) until `--min_rows` is cleared, then re-run this workflow and confirm `DRIFT_DETECTED` fires, the `retrain` job runs, and — depending on whether the retrained model actually wins its own champion/challenger comparison — either a redeploy fires (winning challenger) or it doesn't (losing challenger, model not registered). Both outcomes are correct depending on what the retrained model actually scores; the point of this step is confirming the plumbing reacts correctly either way, not forcing a specific outcome.
 
 ---
 
@@ -1019,5 +1170,11 @@ Expected on this first real run (baseline exists from Task 11, some inference da
 
 - **Spec coverage:** monitoring (inference logging both paths + drift comparison), automated retraining (scheduled trigger, reusable-workflow call, no new secrets), and champion/challenger (confirmed already existing, not rebuilt) are all addressed. The `online/score.py` empty-file bug and the unseeded train/test split are both fixed as prerequisites the rest of the plan depends on, not scope creep.
 - **Placeholder scan:** two steps (Task 3 Step 3, Task 4/5's storage-account passthrough) are deliberately marked "investigate then implement" rather than given a guessed mechanism, because the exact `run-pipeline.yml`/`create-deployment.yml` invocation syntax wasn't read during planning — Task 7 resolves both before they're needed. This is flagged explicitly rather than silently guessed, per the plan's own standard for verified-not-assumed facts.
-- **Type/interface consistency:** `check_drift.py`'s baseline JSON schema (`stats.numeric.<col>.values_sample`, `stats.categorical.<col>`) matches exactly what `snapshot_baseline.py` writes. The `DRIFT_DETECTED=` stdout contract is used identically by `monitor-and-retrain`'s `check-drift` job.
+- **Type/interface consistency:** `check_drift.py`'s baseline JSON schema (`stats.numeric.<col>.values_sample`, `stats.categorical.<col>`, `model_version`, `training_run_id`) matches exactly what `snapshot_baseline.py` writes. The `MONITORING_STATUS=` stdout contract is used identically by `monitor-and-retrain`'s `check-drift` job, and the `retrain` job's `if:` condition checks for the specific value `DRIFT_DETECTED` rather than treating any non-empty status as "go."
 - **Cost/scope discipline:** no new Azure resources anywhere in this plan — confirmed by grepping for the absence of any new Terraform files or `az ... create` calls against anything other than blobs (which live in the already-provisioned storage account).
+- **Revision pass (post-review):** four architecture-hardening corrections folded directly into the tasks they affect, rather than bolted on as a separate phase, so the plan document itself stays internally consistent for an implementer reading any single task in isolation:
+  1. Online endpoint identity RBAC is explicitly unverified until Task 5 checks it live — the batch-path compute-UAI finding does not carry over, since a managed online endpoint gets its own identity.
+  2. `snapshot_baseline` now has a real AML pipeline data dependency on `register_model` (via consuming its `model_info_output_path` output), not just textual YAML ordering, closing a race where a baseline could be written for a model that failed to register.
+  3. Drift detection now requires both BH-FDR-corrected statistical significance and a practical effect-size threshold (KS D-statistic / Cramer's V) before counting a feature as drifted, replacing a bare per-feature p-value check that would have produced a false-positive "drift" on the majority of runs against genuinely healthy data.
+  4. Promotion detection now references the exact AML job name the current GitHub Actions run launched (threaded through as a `workflow_call` output from `run-pipeline.yml`), instead of querying the workspace for whatever job is newest — closing a race condition under any overlapping training runs.
+  Also added: categorical drift comparison over the union of baseline/production categories with additive smoothing (an unseen category no longer breaks the chi-square test, and is separately surfaced in the report); a `--min_rows` floor before attempting any comparison; a three-state `MONITORING_STATUS` output so "not enough data yet" is never visually indistinguishable from "checked and healthy"; and lineage fields (`model_version`, `training_run_id`) in the baseline snapshot.
