@@ -96,7 +96,9 @@ def main(args):
         "stats": stats,
     }
 
-    credential = DefaultAzureCredential()
+    credential = DefaultAzureCredential(
+        managed_identity_client_id=os.environ.get("DEFAULT_IDENTITY_CLIENT_ID")
+    )
     account_url = f"https://{args.storage_account}.blob.core.windows.net"
     blob_service = BlobServiceClient(account_url=account_url, credential=credential)
     blob_client = blob_service.get_blob_client(container=args.container, blob="monitoring/baseline/reference.json")

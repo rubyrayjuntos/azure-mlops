@@ -46,7 +46,9 @@ def init():
     storage_account = os.environ.get("MONITORING_STORAGE_ACCOUNT")
     container = os.environ.get("MONITORING_CONTAINER", "azureml-blobstore")
     if storage_account:
-        credential = DefaultAzureCredential()
+        credential = DefaultAzureCredential(
+            managed_identity_client_id=os.environ.get("DEFAULT_IDENTITY_CLIENT_ID")
+        )
         blob_service = BlobServiceClient(
             account_url=f"https://{storage_account}.blob.core.windows.net",
             credential=credential,

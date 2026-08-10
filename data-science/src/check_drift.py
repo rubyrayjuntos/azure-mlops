@@ -19,6 +19,7 @@ BH-corrected significance plus a Cramer's V practical-effect threshold.
 """
 import argparse
 import json
+import os
 import sys
 from datetime import datetime, timedelta, timezone
 from io import BytesIO
@@ -156,7 +157,9 @@ def check_categorical_drift(baseline_categorical: dict, recent: pd.DataFrame) ->
 
 
 def main(args):
-    credential = DefaultAzureCredential()
+    credential = DefaultAzureCredential(
+        managed_identity_client_id=os.environ.get("DEFAULT_IDENTITY_CLIENT_ID")
+    )
     blob_service = BlobServiceClient(
         account_url=f"https://{args.storage_account}.blob.core.windows.net",
         credential=credential,
