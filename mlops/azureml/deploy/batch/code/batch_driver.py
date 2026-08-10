@@ -87,15 +87,18 @@ def run(mini_batch):
                 results.append([pred])
 
             if blob_service is not None:
-                log_df = data.copy()
-                log_df["prediction"] = predictions
-                log_df["logged_at"] = datetime.now(timezone.utc).isoformat()
-                now = datetime.now(timezone.utc)
-                blob_path = (
-                    f"monitoring/inference-log/batch/{now:%Y}/{now:%m}/{now:%d}/{uuid.uuid4()}.parquet"
-                )
-                blob_client = blob_service.get_blob_client(container=container, blob=blob_path)
-                blob_client.upload_blob(log_df.to_parquet(index=False), overwrite=True)
+                try:
+                    log_df = data.copy()
+                    log_df["prediction"] = predictions
+                    log_df["logged_at"] = datetime.now(timezone.utc).isoformat()
+                    now = datetime.now(timezone.utc)
+                    blob_path = (
+                        f"monitoring/inference-log/batch/{now:%Y}/{now:%m}/{now:%d}/{uuid.uuid4()}.parquet"
+                    )
+                    blob_client = blob_service.get_blob_client(container=container, blob=blob_path)
+                    blob_client.upload_blob(log_df.to_parquet(index=False), overwrite=True)
+                except Exception as e:
+                    logger.error(f"Inference logging failed (non-fatal): {str(e)}")
 
         except Exception as e:
             logger.error(f"Error processing {file_path}: {str(e)}")
