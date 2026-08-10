@@ -2,6 +2,7 @@ name: deploy-batch-endpoint-pipeline
 
 on:
   workflow_dispatch:
+  workflow_call:
 jobs:
   set-env-branch:
     runs-on: ubuntu-latest
