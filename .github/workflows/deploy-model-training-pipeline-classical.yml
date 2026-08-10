@@ -156,6 +156,14 @@ jobs:
           else
             echo "promoted=false" >> "$GITHUB_OUTPUT"
           fi
+          echo "DEBUG: raw GITHUB_OUTPUT content:"
+          cat -A "$GITHUB_OUTPUT"
+  debug-promoted-value:
+    needs: check-promotion
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "DEBUG: needs.check-promotion.outputs.promoted as seen downstream = '${{ needs.check-promotion.outputs.promoted }}'"
   redeploy-batch:
     needs: check-promotion
     if: needs.check-promotion.outputs.promoted == 'true'
