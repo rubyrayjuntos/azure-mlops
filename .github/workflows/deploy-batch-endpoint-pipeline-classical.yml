@@ -74,6 +74,7 @@ jobs:
       endpoint_name: ${{ format('taxi-gha-{0}', needs.get-config.outputs.bep) }}
       endpoint_type: batch
       deployment_name: eptestdeploy
+      extra_args: ${{ format('--set environment_variables.MONITORING_STORAGE_ACCOUNT={0}', needs.get-config.outputs.storage_account) }}
     secrets:
       AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
       AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
