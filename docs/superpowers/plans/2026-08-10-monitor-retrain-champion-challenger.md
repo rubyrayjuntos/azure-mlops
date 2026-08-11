@@ -1154,17 +1154,19 @@ Live evidence: online endpoint `taxi-gha-oep-azmlops-0001dev` is healthy and wro
 
 ### Task 13: Manually trigger the monitor-and-retrain workflow once and verify the drift report
 
-Current blocker: GitHub returns 404 for manual dispatch because this newly added workflow exists on remote `dev` but not on the default branch (`main`), so GitHub has not registered it as a dispatchable workflow. Do not merge the development branch into `main` implicitly. The exact `check-drift` command was independently executed against live storage in an isolated environment: it compared 1,467 rows with baseline model v4, produced numeric/categorical results with p-values and `cramers_v`, found no features significant after FDR correction, and returned `MONITORING_STATUS=HEALTHY`. This validates the application behavior but does not replace the pending GitHub workflow execution.
+PR #1 merged `dev` into default branch `main` as commit `5458e80149ad90b8a289387cf142765a9282cec5`, which registered the workflow with GitHub Actions.
 
-- [ ] **Step 1: Trigger**
+- [x] **Step 1: Trigger**
 
 ```bash
 gh workflow run monitor-and-retrain-classical.yml --ref dev
 ```
 
-- [ ] **Step 2: Watch to completion, read the `check-drift` job's log output**
+- [x] **Step 2: Watch to completion, read the `check-drift` job's log output**
 
 Expected on this first real run: with only Task 12's handful of test invocations logged, row count will very likely be below `--min_rows` (default 30), so the realistic expected outcome is `MONITORING_STATUS=INSUFFICIENT_DATA`, not `HEALTHY` or `DRIFT_DETECTED` — that's the correct, honest result given how little inference data exists yet, not a failure of this task. If it does report `HEALTHY` (30+ rows already logged), read the JSON report and confirm it contains `numeric`/`categorical` sections with p-values, `cramers_v` for categorical columns, and `significant_after_fdr_correction`. Either outcome verifies the mechanism runs end-to-end and produces a sane, correctly-labeled report — this task is not expected to produce `DRIFT_DETECTED`, since there's no real drift to detect yet.
+
+Live evidence: GitHub Actions run `31456987578` completed successfully. `set-env-branch`, `get-config / read-yaml`, and `check-drift` succeeded; `retrain` was correctly skipped. The report compared 1,467 rows, contained numeric/categorical statistics, returned an empty `significant_after_fdr_correction` list, and emitted `MONITORING_STATUS=HEALTHY`.
 
 - [ ] **Step 3 (optional, exercises the full loop): manufacture enough inference volume and an actual distribution shift to confirm a real `DRIFT_DETECTED` → retrain → promotion-check → redeploy cycle fires correctly end to end** — invoke the batch or online endpoint repeatedly with inputs deliberately shifted well outside the training distribution (e.g., `distance` values an order of magnitude larger than anything in `data/taxi-data.csv`) until `--min_rows` is cleared, then re-run this workflow and confirm `DRIFT_DETECTED` fires, the `retrain` job runs, and — depending on whether the retrained model actually wins its own champion/challenger comparison — either a redeploy fires (winning challenger) or it doesn't (losing challenger, model not registered). Both outcomes are correct depending on what the retrained model actually scores; the point of this step is confirming the plumbing reacts correctly either way, not forcing a specific outcome.
 
