@@ -2,23 +2,23 @@
 
 > **For agentic workers:** Implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Make monitoring storage and online-inference logging work in a newly generated environment without manual Azure changes, while reducing the online endpoint identity from storage-account-wide access to write access on the `monitoring` container only.
+**Goal:** Make monitoring storage and online-inference logging work in a newly generated environment without manual Azure changes, while restricting the online endpoint identity's write access to the `monitoring` container.
 
-**Architecture:** Terraform owns the lifecycle of the existing workspace storage account's private `monitoring` blob container. The online endpoint remains system-assigned because Azure ML creates that identity with the endpoint, after the infrastructure deployment has completed. The shared `create-endpoint` workflow queries the principal immediately after endpoint creation or update and idempotently creates a container-scoped `Storage Blob Data Contributor` assignment before the scoring deployment starts. This avoids a Terraform dependency on an endpoint that Terraform does not own and makes endpoint identity replacement self-healing on the next deployment. Training and batch compute retain their existing user-assigned identity and storage permissions.
+**Architecture:** Terraform owns the lifecycle of the existing workspace storage account's private `monitoring` blob container. The online endpoint remains system-assigned because Azure ML creates that identity with the endpoint, after the infrastructure deployment has completed. Azure ML automatically owns the endpoint's account-scoped `Storage Blob Data Reader`, which is required to load model artifacts from the workspace default datastore. The shared `create-endpoint` workflow separately owns a container-scoped `Storage Blob Data Contributor` assignment for inference logging. This avoids a Terraform dependency on an endpoint that Terraform does not own and makes endpoint identity replacement self-healing on the next deployment. Training and batch compute retain their existing user-assigned identity and storage permissions.
 
 **Tech Stack:** Terraform `azurerm` 4.52, Azure ML CLI v2, Azure CLI RBAC commands, GitHub Actions reusable workflows, OIDC.
 
 ## Global Constraints
 
 - **Do not move Azure ML endpoint ownership into Terraform.** Endpoint and deployment lifecycle currently belongs to the project workflow and AML YAML. Importing only the endpoint identity into infrastructure state would create split ownership of one resource.
-- **Do not grant the endpoint at storage-account scope.** Use the container resource scope `${storage_account_id}/blobServices/default/containers/monitoring` and `Storage Blob Data Contributor` only. The scorer needs blob data-plane writes, not Reader plus Contributor and not management-plane Contributor.
+- **Do not grant write access at storage-account scope.** Azure ML automatically assigns the system identity `Storage Blob Data Reader` on the workspace default storage so deployments can load model artifacts. Preserve that platform-managed Reader. Grant `Storage Blob Data Contributor` only at `${storage_account_id}/blobServices/default/containers/monitoring`; do not grant account-scoped Contributor or management-plane Contributor.
 - **Keep the endpoint system-assigned.** A dedicated user-assigned identity would solve creation ordering but would add another identity to every generated project and require dynamic identity injection into endpoint YAML. The endpoint workflow already has the exact post-creation boundary needed to authorize the system identity.
 - **Make role creation idempotent and fail closed.** Do not hide arbitrary `az role assignment create` failures behind `|| true`. Query the exact principal, role, and scope first; create only when absent; fail if the principal or container cannot be resolved.
 - **Handle propagation before deployment.** Role creation success does not mean the data-plane permission is usable. Use a bounded retry that performs an authenticated container access check as the endpoint identity where Azure supports it; if that is not possible from GitHub-hosted runners, poll the exact role assignment through ARM and retain the scorer's existing retry behavior as defense in depth. Never use an unbounded sleep.
 - **Preserve existing batch/training permissions.** `uai-<prefix>-<postfix><env>` still needs Blob, Table, and Queue data-plane roles for AML jobs and ParallelRunStep. This plan changes only the online endpoint's grant.
-- **Migrate before removing broad live grants.** First prove online logging through the narrow assignment. Remove the old storage-account-scoped endpoint grants only after that proof, and verify they are absent afterward.
+- **Migrate before removing broad write grants.** First prove online logging through the narrow assignment. Remove the old storage-account-scoped endpoint Contributor only after that proof. Preserve or allow Azure ML to recreate the required account-scoped Reader.
 - **Propagate factory changes.** Project infrastructure changes map to `/home/rswan/mlops-root/mlops-project-template/infrastructure/terraform/`. Project workflow changes map to `/home/rswan/mlops-root/mlops-project-template/classical/aml-cli-v2/mlops/github-actions/`. Shared workflow changes belong to `/home/rswan/mlops-root/mlops-templates/.github/workflows/` and must be consumed through the existing `@main` own-fork convention.
-- **Dev first, then Prod.** Do not migrate Prod RBAC until Dev has written and retrieved a real online inference log with only the narrow grant.
+- **Dev first, then Prod.** Do not migrate Prod RBAC until Dev has written and retrieved a real online inference log with narrow write access and the platform-required account Reader.
 - **No destructive infrastructure apply without plan review.** Container adoption must not replace the storage account, workspace, endpoint, or existing monitoring data.
 
 ---
@@ -223,21 +223,21 @@ Invoke with `data/taxi-request.json`. Record the prediction, locate the newly wr
 
 The second run must succeed without adding another equivalent role assignment. Invoke again and verify a second log is written.
 
-### Task 6: Remove obsolete broad Dev assignments
+### Task 6: Remove obsolete broad Dev write assignment
 
 **Files:** None. This is a controlled Azure RBAC migration.
 
 - [ ] **Step 1: Capture the exact old assignments**
 
-Export assignment IDs for the endpoint principal's storage-account-scoped `Storage Blob Data Reader` and `Storage Blob Data Contributor` roles. Confirm they are manual/unmanaged and that no other principal is selected.
+Export assignment IDs for the endpoint principal's storage-account-scoped `Storage Blob Data Reader` and `Storage Blob Data Contributor` roles. Confirm no other principal is selected. Treat Reader as Azure ML platform-managed and Contributor as the obsolete broad write assignment.
 
 - [ ] **Step 2: Remove only those assignment IDs**
 
-Delete by role-assignment ID, not by broad assignee/role filters. This preserves unrelated grants.
+Delete only the account-scoped Contributor by role-assignment ID, not by broad assignee/role filters. Preserve the account-scoped Reader required for model loading and all unrelated grants.
 
 - [ ] **Step 3: Re-prove scoring after removal**
 
-Invoke the endpoint and verify a new online Parquet log. Confirm the narrow container assignment remains and no storage-account-scoped data role remains for this endpoint principal.
+Invoke the endpoint and verify a new online Parquet log. Confirm the narrow container Contributor and account-scoped Reader remain, with no account-scoped Contributor for this endpoint principal.
 
 - [ ] **Step 4: Re-run the monitor workflow**
 
@@ -261,7 +261,7 @@ Verify Terraform creates the private `monitoring` container. No manual `az stora
 
 - [ ] **Step 3: Train and deploy batch plus online paths**
 
-Verify baseline, batch inference, and online inference blobs are written. Assert the online endpoint has only the container-scoped contributor assignment introduced by this plan.
+Verify baseline, batch inference, and online inference blobs are written. Assert the online endpoint has the platform-managed account Reader and only the container-scoped Contributor for write access.
 
 - [ ] **Step 4: Tear-down decision remains explicit**
 
@@ -281,7 +281,7 @@ Verify the container-scoped assignment, invoke the endpoint, and inspect the res
 
 - [ ] **Step 3: Remove obsolete broad Prod grants only after proof**
 
-Delete exact assignment IDs and re-run the smoke test.
+Delete the exact account-scoped Contributor assignment ID, preserve the platform-managed Reader, and re-run the smoke test.
 
 ---
 
@@ -296,7 +296,7 @@ Delete exact assignment IDs and re-run the smoke test.
 
 - [ ] **Step 1: Document the ownership boundary**
 
-State that Terraform owns the container, endpoint deployment owns the endpoint system identity, and the shared endpoint workflow owns the identity's container-scoped RBAC assignment.
+State that Terraform owns the container, Azure ML owns the endpoint system identity and required account-scoped Reader, and the shared endpoint workflow owns the identity's container-scoped Contributor assignment.
 
 - [ ] **Step 2: Record live evidence**
 
@@ -318,5 +318,5 @@ Required evidence:
 - online and batch logs are written successfully;
 - monitor workflow reads them successfully;
 - repeat deployment is idempotent;
-- no manual account-scoped endpoint storage assignments remain;
+- no account-scoped endpoint Contributor remains, and the required Azure ML-managed account Reader is present;
 - project, project-template, and shared-template changes are committed and pushed.
