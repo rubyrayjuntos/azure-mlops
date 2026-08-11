@@ -1124,33 +1124,37 @@ Expected: `"exists": true`.
 
 ### Task 12: Deploy the (now-fixed) online endpoint and verify inference logging on both paths
 
-- [ ] **Step 1: If `redeploy-online` didn't already deploy it in Task 11, trigger manually**
+- [x] **Step 1: If `redeploy-online` didn't already deploy it in Task 11, trigger manually**
 
 ```bash
 gh workflow run deploy-online-endpoint-pipeline-classical.yml --ref dev
 ```
 
-- [ ] **Step 2: Verify it's healthy**
+- [x] **Step 2: Verify it's healthy**
 
 ```bash
 az ml online-endpoint show --name taxi-gha-oep-azmlops-0001dev --resource-group rg-azmlops-0001dev --workspace-name mlw-azmlops-0001dev --query provisioning_state -o tsv
 ```
 Expected: `Succeeded`.
 
-- [ ] **Step 3: Invoke it and confirm a log blob appears** (use Studio's Test tab if the CLI hits the tenant-mismatch issue noted in `mem:deployment_state`)
+- [x] **Step 3: Invoke it and confirm a log blob appears** (use Studio's Test tab if the CLI hits the tenant-mismatch issue noted in `mem:deployment_state`)
 
 ```bash
-az storage blob list --account-name stazmlops0001dev --container-name azureml-blobstore --prefix monitoring/inference-log/online/ --auth-mode login -o table
+az storage blob list --account-name stazmlops0001dev --container-name monitoring --prefix monitoring/inference-log/online/ --auth-mode login -o table
 ```
 Expected: at least one blob, timestamped after the test invocation.
 
-- [ ] **Step 4: Re-run the batch endpoint pipeline's existing invoke test (from the original deployment plan) and confirm the batch-side log blob appears too**
+- [x] **Step 4: Re-run the batch endpoint pipeline's existing invoke test (from the original deployment plan) and confirm the batch-side log blob appears too**
 
 ```bash
-az storage blob list --account-name stazmlops0001dev --container-name azureml-blobstore --prefix monitoring/inference-log/batch/ --auth-mode login -o table
+az storage blob list --account-name stazmlops0001dev --container-name monitoring --prefix monitoring/inference-log/batch/ --auth-mode login -o table
 ```
 
+Live evidence: online endpoint `taxi-gha-oep-azmlops-0001dev` is healthy and wrote an online Parquet log. Batch parent `batchjob-7478a9eb-c22a-47c0-9580-2946e334508d` and child `3854fdd5-e332-4de1-b3c2-7251b438f63c` both completed using `azureml:taxi-batch:1`; the run wrote `monitoring/inference-log/batch/2026/08/11/a1af8073-1595-443b-a87a-667ce720727a.parquet` (92,297 bytes).
+
 ### Task 13: Manually trigger the monitor-and-retrain workflow once and verify the drift report
+
+Current blocker: GitHub returns 404 for manual dispatch because this newly added workflow exists on remote `dev` but not on the default branch (`main`), so GitHub has not registered it as a dispatchable workflow. Do not merge the development branch into `main` implicitly. The exact `check-drift` command was independently executed against live storage in an isolated environment: it compared 1,467 rows with baseline model v4, produced numeric/categorical results with p-values and `cramers_v`, found no features significant after FDR correction, and returned `MONITORING_STATUS=HEALTHY`. This validates the application behavior but does not replace the pending GitHub workflow execution.
 
 - [ ] **Step 1: Trigger**
 
