@@ -1,11 +1,32 @@
 import os
+import json
+import uuid
+from datetime import datetime, timezone
 import mlflow
 import pandas as pd
 import logging
+from azure.identity import DefaultAzureCredential
+from azure.storage.blob import BlobServiceClient
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+
+def _resolve_model_path(model_dir):
+    if os.path.isfile(os.path.join(model_dir, "MLmodel")):
+        return model_dir
+
+    candidates = [
+        os.path.join(model_dir, entry)
+        for entry in os.listdir(model_dir)
+        if os.path.isfile(os.path.join(model_dir, entry, "MLmodel"))
+    ]
+    if len(candidates) != 1:
+        raise RuntimeError(
+            f"Expected exactly one MLflow model under {model_dir}, found {len(candidates)}"
+        )
+    return candidates[0]
 
 
 def init():
@@ -19,15 +40,7 @@ def init():
     # For batch deployments, the model is in AZUREML_MODEL_DIR
     model_dir = os.environ.get("AZUREML_MODEL_DIR")
     logger.info(f"AZUREML_MODEL_DIR: {model_dir}")
-    
-    if model_dir:
-        # List contents to debug
-        logger.info(f"Contents of model directory: {os.listdir(model_dir)}")
-        
-        # The MLflow model should be directly in the model directory
-        model_path = model_dir
-    else:
-        model_path = "./model"
+    model_path = _resolve_model_path(model_dir if model_dir else "./model")
     
     # Load the MLflow model
     try:
@@ -36,6 +49,21 @@ def init():
     except Exception as e:
         logger.error(f"Failed to load model from {model_path}: {str(e)}")
         raise
+
+    global blob_service, storage_account, container
+    storage_account = os.environ.get("MONITORING_STORAGE_ACCOUNT")
+    container = os.environ.get("MONITORING_CONTAINER", "monitoring")
+    if storage_account:
+        credential = DefaultAzureCredential(
+            managed_identity_client_id=os.environ.get("DEFAULT_IDENTITY_CLIENT_ID")
+        )
+        blob_service = BlobServiceClient(
+            account_url=f"https://{storage_account}.blob.core.windows.net",
+            credential=credential,
+        )
+    else:
+        blob_service = None
+        logger.warning("MONITORING_STORAGE_ACCOUNT not set - inference logging disabled.")
 
 
 def run(mini_batch):
@@ -67,7 +95,21 @@ def run(mini_batch):
             # Append predictions as rows (for append_row output action)
             for pred in predictions:
                 results.append([pred])
-                
+
+            if blob_service is not None:
+                try:
+                    log_df = data.copy()
+                    log_df["prediction"] = predictions
+                    log_df["logged_at"] = datetime.now(timezone.utc).isoformat()
+                    now = datetime.now(timezone.utc)
+                    blob_path = (
+                        f"monitoring/inference-log/batch/{now:%Y}/{now:%m}/{now:%d}/{uuid.uuid4()}.parquet"
+                    )
+                    blob_client = blob_service.get_blob_client(container=container, blob=blob_path)
+                    blob_client.upload_blob(log_df.to_parquet(index=False), overwrite=True)
+                except Exception as e:
+                    logger.error(f"Inference logging failed (non-fatal): {str(e)}")
+
         except Exception as e:
             logger.error(f"Error processing {file_path}: {str(e)}")
             raise
