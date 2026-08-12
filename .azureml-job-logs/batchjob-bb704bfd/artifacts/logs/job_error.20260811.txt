@@ -1,0 +1,1522 @@
+2026-08-11T02:33:47.766527 This file shows errors in loading, calling init() and calling run() of the entry script. An error here may not impact the job result. Please check "job_result.txt" for the job result.
+2026-08-11T02:33:58.433442 This file shows errors in loading, calling init() and calling run() of the entry script. An error here may not impact the job result. Please check "job_result.txt" for the job result.
+2026-08-11T02:33:58.828187 The process000 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:33:58.828296 The process001 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:33:58.828344 The process002 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:33:58.828375 The process003 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:33:58.828400 The process004 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:33:58.828426 The process005 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:08.657459 This file shows errors in loading, calling init() and calling run() of the entry script. An error here may not impact the job result. Please check "job_result.txt" for the job result.
+2026-08-11T02:34:09.075946 The process000 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:09.076068 The process001 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:09.076117 The process002 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:09.076145 The process003 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:09.076196 The process004 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:09.076226 The process005 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:19.483306 This file shows errors in loading, calling init() and calling run() of the entry script. An error here may not impact the job result. Please check "job_result.txt" for the job result.
+2026-08-11T02:34:19.944574 The process000 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:19.944755 The process001 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:19.944830 The process002 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:19.944879 The process003 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:19.944925 The process004 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:19.944970 The process005 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:30.255989 This file shows errors in loading, calling init() and calling run() of the entry script. An error here may not impact the job result. Please check "job_result.txt" for the job result.
+2026-08-11T02:34:30.673067 The process000 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:30.673222 The process001 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:30.673352 The process002 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:30.673411 The process003 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:30.673496 The process004 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:30.673562 The process005 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:41.517767 This file shows errors in loading, calling init() and calling run() of the entry script. An error here may not impact the job result. Please check "job_result.txt" for the job result.
+2026-08-11T02:34:41.945191 The process000 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:41.945386 The process001 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:41.945453 The process002 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:41.945501 The process003 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:41.945551 The process004 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:41.945593 The process005 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:51.839052 This file shows errors in loading, calling init() and calling run() of the entry script. An error here may not impact the job result. Please check "job_result.txt" for the job result.
+2026-08-11T02:34:52.261407 The process000 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:52.261735 The process001 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:52.261786 The process002 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:52.261826 The process003 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:52.261861 The process004 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:34:52.261890 The process005 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:35:02.766511 This file shows errors in loading, calling init() and calling run() of the entry script. An error here may not impact the job result. Please check "job_result.txt" for the job result.
+2026-08-11T02:35:03.269473 The process000 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:35:03.269607 The process001 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:35:03.269643 The process002 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:35:03.269675 The process003 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:35:03.269703 The process004 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:35:03.269728 The process005 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:35:13.592981 This file shows errors in loading, calling init() and calling run() of the entry script. An error here may not impact the job result. Please check "job_result.txt" for the job result.
+2026-08-11T02:35:14.004302 The process000 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:35:14.004479 The process001 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:35:14.004527 The process002 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:35:14.004562 The process003 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:35:14.004593 The process004 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:35:14.004619 The process005 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:35:24.459686 This file shows errors in loading, calling init() and calling run() of the entry script. An error here may not impact the job result. Please check "job_result.txt" for the job result.
+2026-08-11T02:35:24.859790 The process000 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:35:24.860141 The process001 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:35:24.860306 The process002 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:35:24.860408 The process003 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:35:24.860460 The process004 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+
+2026-08-11T02:35:24.865705 The process005 on node 0 (https://ml.azure.com/runs/ad1e694e-9638-4b48-b580-c7e1fa74ca00?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 444, in call_init
+    self.scoring_module.call_init()
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 322, in call_init
+    result = self.init()
+             ^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/batch_driver.py", line 39, in init
+    model = mlflow.pyfunc.load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 658, in load_model
+    model_meta = Model.load(os.path.join(local_path, MLMODEL_FILE_NAME))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/models/model.py", line 521, in load
+    path = download_artifacts(artifact_uri=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 60, in download_artifacts
+    return _download_artifact_from_uri(artifact_uri, output_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/tracking/artifact_utils.py", line 100, in _download_artifact_from_uri
+    return get_artifact_repository(artifact_uri=root_uri).download_artifacts(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/store/artifact/local_artifact_repo.py", line 81, in download_artifacts
+    raise OSError(f"No such file or directory: '{local_artifact_path}'")
+OSError: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+

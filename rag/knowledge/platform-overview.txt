@@ -1,0 +1,5 @@
+This platform combines Azure ML for deterministic model lifecycle governance with Azure AI Search and Foundry grounding for retrieval and answer generation.
+
+The operational model keeps training, evaluation, promotion, and deployment under repeatable Azure ML workflows. The AI runtime then consumes trusted search results and grounded context before generating a final answer.
+
+The key principle is separation of concerns: model lifecycle operations remain in Azure ML, while retrieval and prompt orchestration live in the AI runtime layer.

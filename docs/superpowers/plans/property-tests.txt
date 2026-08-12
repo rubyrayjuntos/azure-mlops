@@ -1,0 +1,216 @@
+In software engineering, **property-based testing** (such as with Hypothesis or QuickCheck) refers to generating arbitrary inputs to verify that logical invariants hold across code functions.
+
+For infrastructure automation, Terraform declarations, and CI/CD workflows, the equivalent rigorous approach uses **deterministic post-condition assertions** and **state invariant checks**. These are automated verification steps that fail fast if a task leaves the environment or repository in an invalid state.
+
+Below are post-condition invariant assertions for each task in your implementation plan.
+
+---
+
+## Phase 0 — Identity & Permissions
+
+### Task 1: Grant Subscription `Owner` Role
+
+* **Invariant:** The service principal holds `Owner` at subscription scope.
+* **Assertion:**
+
+```bash
+az role assignment list \
+  --assignee 1f783207-33c9-40c5-ab2d-01a1f1510c8e \
+  --scope /subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad \
+  --query "[?roleDefinitionName=='Owner']" -o json | python3 -c "import json,sys; assert len(json.load(sys.stdin)) >= 1, 'Invariant Failed: Owner assignment missing'"
+
+```
+
+### Task 2: Main-Branch Federated Credentials
+
+* **Invariant:** The AD Application registration contains exactly 4 active federated credentials (`main` and `dev`, plain and transitional).
+* **Assertion:**
+
+```bash
+az ad app federated-credential list --id 4a03064f-784b-4f7b-a429-46fad02549b5 -o json | python3 -c "
+import json, sys
+creds = {x['name'] for x in json.load(sys.stdin)}
+expected = {
+    'github-azure-mlops-dev-branch',
+    'github-azure-mlops-dev-branch-transitional',
+    'github-azure-mlops-main-branch',
+    'github-azure-mlops-main-branch-transitional'
+}
+assert expected.issubset(creds), f'Invariant Failed: Missing credentials: {expected - creds}'
+"
+
+```
+
+---
+
+## Phase 1 — `mlops-templates` Repository Verification
+
+### Task 3: Unpin Self-References
+
+* **Invariant:** `.github/workflows/read-yaml.yml` references the action via `@main` without any commit SHAs.
+* **Assertion:**
+
+```bash
+grep -q "uses: rubyrayjuntos/mlops-templates/read_yaml_action@main" .github/workflows/read-yaml.yml || (echo "Invariant Failed: Self-reference not updated to @main" && exit 1)
+
+```
+
+### Task 4: Pin Marketplace Actions to Commit SHAs
+
+* **Invariant:** Zero bare or floating major version tags (`@v2`, `@v4`) exist for third-party actions in the target workflows. Every reference uses a 40-character hexadecimal SHA.
+* **Assertion:**
+
+```bash
+# Must return 0 matches
+! grep -E "uses: (azure/login|actions/checkout)@v[0-9]" .github/workflows/*.yml && \
+! grep -E "uses: (azure/login|actions/checkout)@[a-f0-9]{1,39}$" .github/workflows/*.yml
+
+```
+
+---
+
+## Phase 2 — `mlops-project-template` Nested Source Verification
+
+### Task 5: Infrastructure Deployment Workflow (`infrastructure/terraform/github-actions/tf-gha-deploy-infra.yml`)
+
+* **Invariant 1:** Contains `permissions: id-token: write` for OIDC authentication.
+* **Invariant 2:** Evaluates `enable_aml_computecluster` as a string boolean comparison (`== 'true'`).
+* **Assertion:**
+
+```bash
+grep -q "id-token: write" infrastructure/terraform/github-actions/tf-gha-deploy-infra.yml && \
+grep -q "enable_aml_computecluster == 'true'" infrastructure/terraform/github-actions/tf-gha-deploy-infra.yml
+
+```
+
+### Task 6: Training Pipeline Workflow (`classical/aml-cli-v2/mlops/github-actions/deploy-model-training-pipeline-classical.yml`)
+
+* **Invariant:** Every job using OIDC reusable workflows explicitly declares `permissions: id-token: write, contents: read`.
+* **Assertion:**
+
+```bash
+python3 -c "
+import yaml
+with open('classical/aml-cli-v2/mlops/github-actions/deploy-model-training-pipeline-classical.yml') as f:
+    data = yaml.safe_load(f)
+for job_name, job in data.get('jobs', {}).items():
+    if 'uses' in job and 'rubyrayjuntos' in job['uses']:
+        perms = job.get('permissions', {})
+        assert perms.get('id-token') == 'write', f'Invariant Failed: {job_name} missing id-token: write'
+"
+
+```
+
+### Tasks 7 & 8: Batch and Online Endpoint Pipelines
+
+* **Invariant:** Zero occurrences of `AZURE_CREDENTIALS` or `creds:`. All secrets are passed using the 3-secret OIDC mapping (`AZURE_CLIENT_ID`, `AZURE_TENANT_ID`, `AZURE_SUBSCRIPTION_ID`).
+* **Assertion:**
+
+```bash
+! grep -rn "AZURE_CREDENTIALS" classical/aml-cli-v2/mlops/github-actions/ && \
+! grep -rn "creds:" classical/aml-cli-v2/mlops/github-actions/
+
+```
+
+### Task 9: Infrastructure Variables Default
+
+* **Invariant:** `enable_private_endpoints` defaults strictly to `false`.
+* **Assertion:**
+
+```bash
+grep -A 3 'variable "enable_private_endpoints"' infrastructure/terraform/variables.tf | grep -q 'default\s*=\s*false'
+
+```
+
+---
+
+## Phase 3 — `azure-mlops` Repository Synchronization
+
+### Task 10: File Parity with Project Template
+
+* **Invariant:** The 4 workflow files in `azure-mlops` are byte-for-byte identical to their nested template sources (excluding standard path structural differences).
+* **Assertion:**
+
+```bash
+actionlint /home/rswan/azure-mlops/.github/workflows/*.yml
+
+```
+
+---
+
+## Phase 4 — Local Factory & Tooling Setup
+
+### Task 12: Directory Structure
+
+* **Invariant:** `~/mlops-root` contains three distinct, valid Git repositories with intact remotes.
+* **Assertion:**
+
+```bash
+python3 -c "
+import os, subprocess
+repos = ['mlops-v2', 'mlops-templates', 'mlops-project-template']
+base = os.path.expanduser('~/mlops-root')
+for r in repos:
+    path = os.path.join(base, r)
+    assert os.path.isdir(os.path.join(path, '.git')), f'Invariant Failed: {r} is not a valid git repository'
+"
+
+```
+
+### Task 13: Onboarding Automation Script
+
+* **Invariant:** `~/mlops-root/scripts/onboard-project.sh` is executable and passes Bash syntax validation.
+* **Assertion:**
+
+```bash
+test -x ~/mlops-root/scripts/onboard-project.sh && bash -n ~/mlops-root/scripts/onboard-project.sh
+
+```
+
+---
+
+## Phase 5 & Phase 6 — Dev and Prod Execution Invariants
+
+### Tasks 14 & 18: Infrastructure Deployment State
+
+* **Invariant:** Resource groups exist and Terraform state is non-empty.
+* **Assertion:**
+
+```bash
+az group exists --name rg-azmlops-0001dev | grep -q "true" && \
+az group exists --name rg-azmlops-0001prod | grep -q "true"
+
+```
+
+### Tasks 15 & 19: Training Outputs
+
+* **Invariant:** At least one model asset is registered in each environment's workspace.
+* **Assertion:**
+
+```bash
+az ml model list --resource-group rg-azmlops-0001dev --workspace-name mlw-azmlops-0001dev -o json | python3 -c "import json,sys; assert len(json.load(sys.stdin)) > 0, 'No model registered in Dev'"
+az ml model list --resource-group rg-azmlops-0001prod --workspace-name mlw-azmlops-0001prod -o json | python3 -c "import json,sys; assert len(json.load(sys.stdin)) > 0, 'No model registered in Prod'"
+
+```
+
+### Tasks 16 & 20: Batch Endpoint State
+
+* **Invariant:** Batch endpoint exists and provisioning state is `Succeeded`.
+* **Assertion:**
+
+```bash
+az ml batch-endpoint show --name taxi-gha-bep-azmlops-0001dev --resource-group rg-azmlops-0001dev --workspace-name mlw-azmlops-0001dev --query "provisioning_state" -o tsv | grep -i "succeeded"
+az ml batch-endpoint show --name taxi-gha-bep-azmlops-0001prod --resource-group rg-azmlops-0001prod --workspace-name mlw-azmlops-0001prod --query "provisioning_state" -o tsv | grep -i "succeeded"
+
+```
+
+### Tasks 17 & 21 (Optional): Online Endpoint Invocations
+
+* **Invariant:** Live HTTP POST to scoring endpoint returns `200 OK` and a valid numerical array output.
+* **Assertion:**
+
+```bash
+RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X POST "$SCORING_URI" -H "Authorization: Bearer $KEY" -H "Content-Type: application/json" --data @data/test-request.json)
+test "$RESPONSE" -eq 200
+
+```

@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MLOps visibility</title>
+  <style>
+    :root { color-scheme: dark; font: 15px system-ui, sans-serif; background: #10151c; color: #e7edf5; }
+    body { max-width: 1180px; margin: 0 auto; padding: 28px; }
+    h1 { margin-bottom: 4px; } .muted { color: #91a0b3; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 22px 0; }
+    .card { background: #18212c; border: 1px solid #2b3949; border-radius: 10px; padding: 16px; }
+    .wide { grid-column: 1 / -1; } .metric { font-size: 28px; font-weight: 700; margin-top: 8px; }
+    .stage { display: flex; gap: 12px; align-items: center; padding: 11px 0; border-bottom: 1px solid #2b3949; }
+    .stage:last-child { border-bottom: 0; } .dot { width: 10px; height: 10px; border-radius: 50%; background: #718096; }
+    .completed { background: #44c28a; } .running { background: #f4b942; } .failed { background: #f06b6b; }
+    .pill { border-radius: 99px; padding: 3px 9px; background: #2b3949; font-size: 12px; }
+    .state-pill { font-weight: 700; text-transform: lowercase; } .state-live { color: #081b12; background: #44c28a; }
+    .state-running { color: #241b05; background: #f4b942; } .state-failed { color: #2a0808; background: #f06b6b; }
+    .state-idle { color: #d6deea; background: #536274; } .state-unknown { color: #d6deea; background: #394656; }
+    .state-booting { color: #071a2b; background: #77bdfb; } .state-blocked { color: #2a1600; background: #f29d49; }
+    .legend { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 16px; }
+    .warning { color: #ffd166; } a { color: #77bdfb; } table { width: 100%; border-collapse: collapse; } td, th { text-align: left; padding: 9px; border-bottom: 1px solid #2b3949; }
+    .job { margin: 12px 0; padding: 12px; background: #111923; border-radius: 8px; }
+    .job-title { display: flex; justify-content: space-between; gap: 12px; } .steps { margin: 8px 0 0 18px; color: #91a0b3; }
+    .architecture { display: flex; flex-wrap: wrap; align-items: stretch; gap: 10px; }
+    .node { flex: 1 1 145px; min-width: 125px; padding: 13px; border: 1px solid #405064; border-radius: 9px; background: #111923; position: relative; }
+    .node:not(:last-child)::after { content: '→'; position: absolute; right: -10px; top: 35%; color: #718096; z-index: 1; }
+    .node-label { font-weight: 700; display: block; margin-bottom: 9px; } .node-detail { display: block; color: #91a0b3; font-size: 12px; margin-top: 8px; }
+    .node-running { border-color: #f4b942; box-shadow: 0 0 0 1px #f4b94233; } .node-live { border-color: #44c28a; } .node-failed { border-color: #f06b6b; }
+    .timeline { border-left: 2px solid #405064; margin: 10px 0 0 8px; padding-left: 20px; } .event { position: relative; margin: 0 0 16px; }
+    .event::before { content: ''; position: absolute; width: 9px; height: 9px; border-radius: 50%; background: #718096; left: -26px; top: 5px; }
+    .event-running::before { background: #f4b942; } .event-live::before { background: #44c28a; } .event-failed::before { background: #f06b6b; }
+    .governance-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .governance-card h3 { margin-top: 0; } .big-number { font-size: 30px; font-weight: 750; margin: 10px 0; }
+    .stat-row { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-bottom: 1px solid #2b3949; }
+    .stat-row:last-child { border-bottom: 0; } .alert { border-left: 4px solid #f06b6b; padding: 9px 11px; margin: 8px 0; background: #27171b; }
+    .alert a { display: block; margin-top: 3px; } .empty { color: #91a0b3; padding: 10px 0; }
+    @media (max-width: 900px) { .governance-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div id="app"><p>Loading visibility snapshot…</p></div>
+  <script>
+    const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const statusClass = status => String(status || '').toLowerCase().replace(/[^a-z]/g, '');
+    const projectStateClass = state => String(state || '').includes('failed') ? 'failed' : (String(state || '').includes('in_progress') ? 'running' : 'unknown');
+    function render(data) {
+      const runs = data.training_runs || [], workflows = data.workflow_runs || [];
+      const current = runs[0];
+      const stages = current?.stages || [];
+      const state = data.project_state || {};
+      const nodes = state.nodes || {};
+      const gov = state.governance || {};
+      const runtimeSummary = state.control_plane?.summary || 'Runtime status is not yet available.';
+      const runtimeEvidence = data.evidence || {};
+      const performance = gov.performance || {};
+      const dataQuality = gov.data_quality || {};
+      const deployments = gov.deployments || {};
+      const azure = gov.azure || {};
+      const nodeOrder = ['data', 'training', 'evaluation', 'champion_model', 'batch_deployment', 'online_deployment', 'monitoring', 'retraining'];
+      const runtimeCards = [
+        {
+          title: 'Retrieval',
+          items: runtimeEvidence.retrieval || {},
+          fields: [
+            ['status', 'Status'],
+            ['service', 'Service'],
+            ['index', 'Index'],
+            ['document_count', 'Docs'],
+            ['documents', 'Documents'],
+            ['coverage', 'Coverage'],
+            ['health', 'Health'],
+          ],
+        },
+        {
+          title: 'Grounding',
+          items: runtimeEvidence.grounding || {},
+          fields: [
+            ['status', 'Status'],
+            ['service', 'Service'],
+            ['documents', 'Documents'],
+            ['quality', 'Quality'],
+            ['coverage', 'Coverage'],
+            ['health', 'Health'],
+          ],
+        },
+        {
+          title: 'AI runtime',
+          items: runtimeEvidence.ai_runtime || {},
+          fields: [
+            ['status', 'Status'],
+            ['agent', 'Agent'],
+            ['model', 'Model'],
+            ['latency_ms', 'Latency (ms)'],
+            ['source', 'Source'],
+          ],
+        },
+      ];
+      const runtimeGuidance = ['retrieval', 'grounding', 'ai_runtime'].map(key => {
+        const n = nodes[key] || { label: key, state: 'unknown', detail: 'No evidence' };
+        const stateName = String(n.state || 'unknown').toLowerCase();
+        const guidance = {
+          live: 'Healthy and serving evidence.',
+          running: 'Currently updating; keep monitoring for convergence.',
+          failed: 'Check the underlying service and refresh the runtime evidence.',
+          unknown: 'No live signal recorded; verify configuration and connectivity.',
+        }[stateName] || 'No action required.';
+        return { title: n.label, state: n.state, guidance };
+      });
+      document.querySelector('#app').innerHTML = `
+        <h1>${esc(data.project)} <span class="pill">${esc(data.environment)}</span></h1>
+        <div class="muted">Read-only snapshot generated ${esc(data.generated_at || 'unknown')}</div>
+        ${(data.warnings || []).map(w => `<p class="warning">⚠ ${esc(w)}</p>`).join('')}
+        <div class="grid">
+          <section class="card wide"><h2>MLOps project control center</h2>
+            <p><strong>${esc(state.active_activity?.title || 'Project state unavailable')}</strong> · <span class="pill state-pill state-${projectStateClass(state.project_state)}">${esc(state.project_state || 'unknown')}</span></p>
+            <div class="legend"><span class="pill state-pill state-live">live</span><span class="pill state-pill state-running">running</span><span class="pill state-pill state-failed">failed</span><span class="pill state-pill state-unknown">unknown</span><span class="pill state-pill state-idle">idle</span></div>
+            <div class="architecture">${nodeOrder.map(key => { const n = nodes[key] || {label: key, state: 'unknown', detail: 'No evidence'}; return `<div class="node node-${esc(n.state)}"><span class="node-label">${esc(n.label)}</span><span class="pill state-pill state-${esc(n.state)}">${esc(n.state)}</span><span class="node-detail">${esc(n.detail)}</span></div>`; }).join('')}</div>
+            <div style="margin-top: 18px;">
+              <h3>Runtime control plane</h3>
+              <p class="muted">${esc(runtimeSummary)}</p>
+              <div class="architecture">${['retrieval', 'grounding', 'ai_runtime'].map(key => { const n = nodes[key] || {label: key, state: 'unknown', detail: 'No evidence'}; return `<div class="node node-${esc(n.state)}"><span class="node-label">${esc(n.label)}</span><span class="pill state-pill state-${esc(n.state)}">${esc(n.state)}</span><span class="node-detail">${esc(n.detail)}</span></div>`; }).join('')}</div>
+              <div class="governance-grid" style="margin-top: 16px;">
+                ${runtimeCards.map(card => {
+                  const fields = card.fields.map(([key, label]) => {
+                    const value = card.items[key];
+                    if (value === undefined || value === null || value === '') return null;
+                    if (key === 'quality' && typeof value === 'object') {
+                      return `<div class="stat-row"><span>${esc(label)}</span><strong>${esc(JSON.stringify(value))}</strong></div>`;
+                    }
+                    return `<div class="stat-row"><span>${esc(label)}</span><strong>${esc(String(value))}</strong></div>`;
+                  }).filter(Boolean).join('') || '<div class="empty">No runtime metadata is currently available.</div>';
+                  return `<div class="card governance-card"><h3>${esc(card.title)}</h3>${fields}</div>`;
+                }).join('')}
+                <div class="card governance-card"><h3>Operator guidance</h3>${runtimeGuidance.map(item => `<div class="stat-row"><span>${esc(item.title)}</span><strong class="pill state-pill state-${esc(item.state)}">${esc(item.state)}</strong></div><div class="muted" style="padding: 8px 0 0;">${esc(item.guidance)}</div>`).join('')}</div>
+              </div>
+            </div>
+          </section>
+          <section class="card wide"><h2>What has happened</h2>
+            <div class="timeline">${(state.timeline || []).slice(0, 12).map(e => `<div class="event event-${esc(e.state)}"><strong>${esc(e.title)}</strong><div class="muted">${esc(e.source)} · ${esc(e.detail)} · ${esc(e.at || 'time unavailable')}</div></div>`).join('') || '<p class="muted">No lifecycle events found.</p>'}</div>
+          </section>
+        </div>
+        <div class="grid">
+          <section class="card wide"><h2>Governance overview</h2>
+            <div class="governance-grid">
+              <div class="card governance-card"><h3>Model performance</h3><span class="pill state-pill state-${statusClass(performance.state)}">${esc(performance.state || 'unknown')}</span><div class="big-number">${esc(performance.model || '—')}</div><div class="muted">Champion model version</div><div class="stat-row"><span>Latest registered</span><strong>${esc(performance.latest_registered || 'not collected')}</strong></div>${Object.entries(performance.metrics || {}).map(([k,v]) => `<div class="stat-row"><span>${esc(k)}</span><strong>${typeof v === 'number' ? v.toFixed(4) : esc(v)}</strong></div>`).join('') || '<div class="empty">Evaluation metrics not collected.</div>'}</div>
+              <div class="card governance-card"><h3>Data quality</h3><span class="pill state-pill state-${statusClass(dataQuality.state)}">${esc(dataQuality.state || 'unknown')}</span><div class="big-number">${esc(dataQuality.detail || '—')}</div><div class="muted">${esc(dataQuality.source || '')}</div><div class="stat-row"><span>Drift status</span><strong>${esc((data.monitoring || {}).status || 'not collected')}</strong></div></div>
+              <div class="card governance-card"><h3>Model deployments</h3><div class="stat-row"><span>Active</span><strong>${esc(deployments.active || 0)}</strong></div><div class="stat-row"><span>Successful</span><strong class="state-live">${esc(deployments.successful || 0)}</strong></div><div class="stat-row"><span>Failed</span><strong class="state-failed">${esc(deployments.failed || 0)}</strong></div><p class="muted">Latest: ${esc(deployments.latest || '—')}</p></div>
+              <div class="card governance-card"><h3>Azure posture</h3><div class="stat-row"><span>Training jobs</span><strong>${esc(azure.training_jobs || 0)}</strong></div><div class="stat-row"><span>Latest training</span><strong>${esc(azure.latest_training || '—')}</strong></div><div class="stat-row"><span>Endpoints</span><strong>${esc(azure.endpoints || 0)}</strong></div><div class="stat-row"><span>Monitoring</span><strong>${esc(azure.monitoring || 'not collected')}</strong></div></div>
+              <div class="card governance-card"><h3>Alerts and issues</h3>${(gov.alerts || []).map(a => `<div class="alert"><strong>${esc(a.title)}</strong><div>${esc(a.detail)}</div>${a.url ? `<a href="${esc(a.url)}" target="_blank">Investigate workflow</a>` : ''}</div>`).join('') || '<div class="empty">No failed workflows in the collected window.</div>'}</div>
+            </div>
+          </section>
+        </div>
+        <div class="grid">
+          <section class="card"><div class="muted">Workflow runs</div><div class="metric">${workflows.length}</div></section>
+          <section class="card"><div class="muted">Training jobs</div><div class="metric">${runs.length}</div></section>
+          <section class="card"><div class="muted">Latest training state</div><div class="metric">${esc(current?.status || '—')}</div></section>
+          <section class="card wide"><h2>Training progress</h2>
+            ${current ? `<p><strong>${esc(current.display_name)}</strong> · ${esc(current.run_id)} ${current.url ? `· <a href="${esc(current.url)}" target="_blank">Open in Studio</a>` : ''}</p>` : '<p class="muted">No Azure ML jobs were returned.</p>'}
+            ${stages.map(s => `<div class="stage"><span class="dot ${statusClass(s.status)}"></span><span>${esc(s.name)}</span><span class="muted">${esc(s.detail || s.status)}</span></div>`).join('')}
+          </section>
+          <section class="card wide"><h2>Recent workflow runs</h2>
+            <table><thead><tr><th>Workflow</th><th>Status</th><th>Conclusion</th><th>Updated</th></tr></thead><tbody>
+            ${workflows.map(w => `<tr><td>${w.url ? `<a href="${esc(w.url)}" target="_blank">${esc(w.workflowName || w.displayTitle)}</a>` : esc(w.workflowName || w.displayTitle)}</td><td>${esc(w.status)}</td><td>${esc(w.conclusion || '—')}</td><td>${esc(w.updatedAt || w.createdAt || '—')}</td></tr>`).join('')}
+            </tbody></table>
+          </section>
+          <section class="card wide"><h2>Workflow jobs and steps</h2>
+            ${workflows.flatMap(w => (w.jobs || []).map(j => ({...j, workflow: w.workflowName || w.displayTitle, workflowUrl: w.url}))).slice(0, 24).map(j => `
+              <div class="job"><div class="job-title"><strong>${esc(j.name)}</strong><span class="pill state-pill state-${statusClass(j.status)}">${esc(j.status)}${j.conclusion ? ` · ${esc(j.conclusion)}` : ''}</span></div>
+              <div class="muted">${esc(j.workflow)} ${j.url ? `· <a href="${esc(j.url)}" target="_blank">Open job</a>` : ''}</div>
+              <div class="steps">${(j.steps || []).map(s => `<div><span class="dot ${statusClass(s.status)}"></span> ${esc(s.name)} <span class="muted">${esc(s.status)}${s.conclusion ? ` · ${esc(s.conclusion)}` : ''}</span></div>`).join('')}</div></div>`).join('') || '<p class="muted">No workflow job details were returned.</p>'}
+          </section>
+        </div>`;
+    }
+    fetch('/api/status').then(r => r.json()).then(render).catch(error => {
+      document.querySelector('#app').innerHTML = `<p class="warning">Could not load status: ${esc(error)}</p>`;
+    });
+  </script>
+</body>
+</html>

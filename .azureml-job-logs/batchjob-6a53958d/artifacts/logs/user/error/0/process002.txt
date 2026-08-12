@@ -1,0 +1,27 @@
+2026-08-11 01:49:26,560|ERROR|138|Failed to load the entry script. No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^ Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+

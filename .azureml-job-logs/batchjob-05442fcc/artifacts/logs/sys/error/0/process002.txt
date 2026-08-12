@@ -1,0 +1,47 @@
+2026-08-11 03:13:51,040|ERROR|221|Failed to process {"id": 0, "dequeue_count": 2, "minibatch": ["/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv"], "task_type": 4, "input_start_time": 1786418031.002855, "input_duration": 9.5367431640625e-07} with error The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Unnamed: 0
+- cost
+ Detail: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 313, in process_task
+    self.process_mini_batch(task)
+  File "/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 140, in process_mini_batch
+    score_output = processor.process_mini_batch(*args)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/driver/azureml_user/parallel_run/task_processor.py", line 251, in process_mini_batch
+    score_output = score_module.call_run(inputs, mini_batch_context)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/driver/azureml_common/parallel_run/stderr_converter.py", line 28, in wrapper
+    res = method(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 334, in call_run
+    return self.run(*args)
+           ^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/batch_driver.py", line 92, in run
+    predictions = model.predict(data)
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 492, in predict
+    return _predict()
+           ^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/pyfunc/__init__.py", line 478, in _predict
+    return self._predict_fn(data, params=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/mlflow/sklearn/__init__.py", line 517, in predict
+    return self.sklearn_model.predict(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/sklearn/ensemble/_forest.py", line 1063, in predict
+    X = self._validate_X_predict(X)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/sklearn/ensemble/_forest.py", line 641, in _validate_X_predict
+    X = self._validate_data(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/sklearn/base.py", line 608, in _validate_data
+    self._check_feature_names(X, reset=reset)
+  File "/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/lib/python3.11/site-packages/sklearn/base.py", line 535, in _check_feature_names
+    raise ValueError(message)
+ValueError: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Unnamed: 0
+- cost
+
+

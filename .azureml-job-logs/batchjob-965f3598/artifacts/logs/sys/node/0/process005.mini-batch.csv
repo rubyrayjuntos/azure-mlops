@@ -1,0 +1,6 @@
+Mini-batch Id,Dequeue Count,Start Time,Total,Succeeded,Failed,Elapsed Seconds,Process Seconds,Input Start Time,Input Seconds,Run Method Start Time,Run Method Seconds,Output Start Time,Output Seconds,Status,Error
+,,2026-08-11T02:58:00.615617,,,,,,,,,,,,LOAD_START,
+,,2026-08-11T02:58:00.615617,,,,1.56803297996521,,,,,,,,LOAD_DONE,
+,,2026-08-11T02:58:02.187429,,,,1.56803297996521,,,,,,,,INIT_START,
+,,2026-08-11T02:58:02.187429,,,,1.2529330253601074,,,,,,,,INIT_DONE,
+,,2026-08-11T02:58:00.611883,0,0,0,18.011927127838135,0,,,,0,,,AGENT_DONE,

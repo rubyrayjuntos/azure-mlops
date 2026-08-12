@@ -1,0 +1,180 @@
+2026-08-11 03:14:10,741|INFO|2202|21876291143488|This is  AmlComputeRunContext with working dir /mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/e574e568-e6e4-4777-b6a1-06f548ebd1a7.
+2026-08-11 03:14:10,741|INFO|2202|21876291143488|Run id: e574e568-e6e4-4777-b6a1-06f548ebd1a7
+2026-08-11 03:14:11,422|WARNING|2202|21876291143488|Failed to get job start time from run details with error 'startTimeUtc'.
+2026-08-11 03:14:11,423|INFO|2202|21876291143488|Initialized MetricsLogger: start_time = 2026-08-11 03:14:11.422978
+2026-08-11 03:14:11,457|INFO|2202|21876291143488|self.ignore_failures_within_retry: True
+2026-08-11 03:14:11,465|INFO|2202|21876291143488|Deleted flag file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/polled_progress_once.
+2026-08-11 03:14:11,465|INFO|2202|21876291143488|Deleted message file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/polled_progress_once_message.
+2026-08-11 03:14:11,473|INFO|2202|21876291143488|job_early_success_wait_time_coefficient = None
+2026-08-11 03:14:11,488|INFO|2202|21876291143488|Initialized MetricsLogger: start_time = 2026-08-11 03:14:11.422978
+2026-08-11 03:14:11,577|INFO|2803|22848674006848|The job error logger starts.
+2026-08-11 03:14:11,625|INFO|2202|21876291143488|Master - Starting
+2026-08-11 03:14:11,625|INFO|2202|21876291143488|The master role process starts.
+2026-08-11 03:14:11,802|INFO|2202|21876291143488|Resources created.
+2026-08-11 03:14:11,850|INFO|2202|21876291143488|Before await monitors
+2026-08-11 03:14:11,893|INFO|2202|21876291143488|All monitor tasks finished.
+2026-08-11 03:14:11,893|INFO|2202|21876291143488|After await monitors
+2026-08-11 03:14:12,024|INFO|2202|21876291143488|Write to message file /mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/.prs_flags/start_user_finalizing_message: False.
+2026-08-11 03:14:12,025|INFO|2202|21876291143488|Write to flag file /mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/.prs_flags/start_user_finalizing.
+2026-08-11 03:14:12,025|INFO|2202|21876291143488|0: setting job stage to TO_STOP_WORKER, reason: The master role is finishing, notify workers to stop.
+2026-08-11 03:14:12,025|INFO|2202|21876291143488|Setting job stage to TO_STOP_WORKER.
+2026-08-11 03:14:12,047|INFO|2202|21876291143488|Check the process result of all mini batches.
+2026-08-11 03:14:12,072|WARNING|2803|22848674006848|Failed to get job start time from run details with error 'startTimeUtc'.
+2026-08-11 03:14:12,072|INFO|2803|22848674006848|Initialized MetricsLogger: start_time = 2026-08-11 03:14:12.072795
+2026-08-11 03:14:12,073|INFO|2803|22848674006848|Start to register child run log from table.
+2026-08-11 03:14:12,087|INFO|2803|22848674006848|Disable new logging structure, so skip register default artifacts to parent run.
+2026-08-11 03:14:12,113|INFO|2803|22848674006848|Initialized MetricsLogger: start_time = 2026-08-11 03:14:12.072795
+2026-08-11 03:14:12,114|INFO|2803|22848674006848|The overview starts restoring.
+2026-08-11 03:14:12,238|INFO|2803|22848263935552|register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/register
+2026-08-11 03:14:12,238|INFO|2803|22848263935552|batch_register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/batch/metadata/ExperimentRun/dcid.batchjob-05442fcc-ca3a-4d4e-8aaf-d5d12b8001c4?datastoreName=workspaceartifactstore
+2026-08-11 03:14:12,249|INFO|2803|22848674006848|The overview process starts polling.
+2026-08-11 03:14:12,275|INFO|2803|22848674006848|register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/register
+2026-08-11 03:14:12,275|INFO|2803|22848674006848|batch_register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/batch/metadata/ExperimentRun/dcid.batchjob-05442fcc-ca3a-4d4e-8aaf-d5d12b8001c4?datastoreName=workspaceartifactstore
+2026-08-11 03:14:12,313|INFO|2202|21876291143488|There are 1 mini batches with 1 items. Processed 1 mini batches containing 1 items, 0 succeeded, 1 failed. The error threshold is -1. 
+2026-08-11 03:14:12,313|INFO|2202|21876291143488|The ParallelRunStep processed all mini batches. There are 1 mini batches with 1 items. Processed 1 mini batches containing 1 items, 0 succeeded, 1 failed. The error threshold is -1. 
+2026-08-11 03:14:12,395|WARNING|2202|21876291143488|finish_job failed for The master role failed with error: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation., will retry with another master role. remain_retry = 1.
+2026-08-11 03:14:12,396|ERROR|2202|21876291143488|The master role failed. There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs.. Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run
+    loop.run_until_complete(self.master_role.start())
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start
+    await starting
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 323, in _do_start
+    self.finish_job()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job
+    self.summarize()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize
+    raise NoResultToAppendError(msg, compliant_message=msg)
+azureml_common.parallel_run.exception.NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs.
+
+2026-08-11 03:14:20,923|INFO|3128|21877516867392|This is  AmlComputeRunContext with working dir /mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/e574e568-e6e4-4777-b6a1-06f548ebd1a7.
+2026-08-11 03:14:20,924|INFO|3128|21877516867392|Run id: e574e568-e6e4-4777-b6a1-06f548ebd1a7
+2026-08-11 03:14:21,571|WARNING|3128|21877516867392|Failed to get job start time from run details with error 'startTimeUtc'.
+2026-08-11 03:14:21,571|INFO|3128|21877516867392|Initialized MetricsLogger: start_time = 2026-08-11 03:14:21.571429
+2026-08-11 03:14:21,612|INFO|3128|21877516867392|self.ignore_failures_within_retry: True
+2026-08-11 03:14:21,628|INFO|3128|21877516867392|job_early_success_wait_time_coefficient = None
+2026-08-11 03:14:21,644|INFO|3128|21877516867392|Initialized MetricsLogger: start_time = 2026-08-11 03:14:21.571429
+2026-08-11 03:14:21,736|INFO|3128|21877516867392|Master - Starting
+2026-08-11 03:14:21,736|INFO|3128|21877516867392|The master role process starts.
+2026-08-11 03:14:21,959|INFO|3128|21877516867392|Resources created.
+2026-08-11 03:14:22,003|INFO|3128|21877516867392|Before await monitors
+2026-08-11 03:14:22,035|INFO|3128|21877516867392|All monitor tasks finished.
+2026-08-11 03:14:22,035|INFO|3128|21877516867392|After await monitors
+2026-08-11 03:14:22,139|INFO|3131|15219817699136|The job error logger starts.
+2026-08-11 03:14:22,157|INFO|3128|21877516867392|Write to message file /mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/.prs_flags/start_user_finalizing_message: False.
+2026-08-11 03:14:22,157|INFO|3128|21877516867392|Write to flag file /mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/.prs_flags/start_user_finalizing.
+2026-08-11 03:14:22,157|INFO|3128|21877516867392|0: setting job stage to TO_STOP_WORKER, reason: The master role is finishing, notify workers to stop.
+2026-08-11 03:14:22,157|INFO|3128|21877516867392|Setting job stage to TO_STOP_WORKER.
+2026-08-11 03:14:22,181|INFO|3128|21877516867392|Check the process result of all mini batches.
+2026-08-11 03:14:22,472|INFO|3128|21877516867392|There are 1 mini batches with 1 items. Processed 1 mini batches containing 1 items, 0 succeeded, 1 failed. The error threshold is -1. 
+2026-08-11 03:14:22,472|INFO|3128|21877516867392|The ParallelRunStep processed all mini batches. There are 1 mini batches with 1 items. Processed 1 mini batches containing 1 items, 0 succeeded, 1 failed. The error threshold is -1. 
+2026-08-11 03:14:22,529|WARNING|3128|21877516867392|finish_job failed for The master role failed with error: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation., will retry with another master role. remain_retry = 0.
+2026-08-11 03:14:22,531|ERROR|3128|21877516867392|The master role failed. There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs.. Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run
+    loop.run_until_complete(self.master_role.start())
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start
+    await starting
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 323, in _do_start
+    self.finish_job()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job
+    self.summarize()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize
+    raise NoResultToAppendError(msg, compliant_message=msg)
+azureml_common.parallel_run.exception.NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs.
+
+2026-08-11 03:14:22,715|WARNING|3131|15219817699136|Failed to get job start time from run details with error 'startTimeUtc'.
+2026-08-11 03:14:22,715|INFO|3131|15219817699136|Initialized MetricsLogger: start_time = 2026-08-11 03:14:22.715572
+2026-08-11 03:14:22,716|INFO|3131|15219817699136|Start to register child run log from table.
+2026-08-11 03:14:22,730|INFO|3131|15219817699136|Disable new logging structure, so skip register default artifacts to parent run.
+2026-08-11 03:14:22,753|INFO|3131|15219817699136|Initialized MetricsLogger: start_time = 2026-08-11 03:14:22.715572
+2026-08-11 03:14:22,753|INFO|3131|15219817699136|The overview starts restoring.
+2026-08-11 03:14:22,885|INFO|3131|15219817699136|The overview process starts polling.
+2026-08-11 03:14:22,937|INFO|3131|15219407443520|register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/register
+2026-08-11 03:14:22,937|INFO|3131|15219407443520|batch_register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/batch/metadata/ExperimentRun/dcid.batchjob-05442fcc-ca3a-4d4e-8aaf-d5d12b8001c4?datastoreName=workspaceartifactstore
+2026-08-11 03:14:22,980|INFO|3131|15219817699136|register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/register
+2026-08-11 03:14:22,981|INFO|3131|15219817699136|batch_register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/batch/metadata/ExperimentRun/dcid.batchjob-05442fcc-ca3a-4d4e-8aaf-d5d12b8001c4?datastoreName=workspaceartifactstore
+2026-08-11 03:14:32,313|INFO|3167|12152816359232|This is  AmlComputeRunContext with working dir /mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/e574e568-e6e4-4777-b6a1-06f548ebd1a7.
+2026-08-11 03:14:32,314|INFO|3167|12152816359232|Run id: e574e568-e6e4-4777-b6a1-06f548ebd1a7
+2026-08-11 03:14:32,962|WARNING|3167|12152816359232|Failed to get job start time from run details with error 'startTimeUtc'.
+2026-08-11 03:14:32,963|INFO|3167|12152816359232|Initialized MetricsLogger: start_time = 2026-08-11 03:14:32.963006
+2026-08-11 03:14:33,000|INFO|3167|12152816359232|self.ignore_failures_within_retry: True
+2026-08-11 03:14:33,016|INFO|3167|12152816359232|job_early_success_wait_time_coefficient = None
+2026-08-11 03:14:33,031|INFO|3167|12152816359232|Initialized MetricsLogger: start_time = 2026-08-11 03:14:32.963006
+2026-08-11 03:14:33,135|INFO|3167|12152816359232|Master - Starting
+2026-08-11 03:14:33,136|INFO|3167|12152816359232|The master role process starts.
+2026-08-11 03:14:33,394|INFO|3167|12152816359232|Resources created.
+2026-08-11 03:14:33,441|INFO|3167|12152816359232|Before await monitors
+2026-08-11 03:14:33,476|INFO|3167|12152816359232|All monitor tasks finished.
+2026-08-11 03:14:33,476|INFO|3167|12152816359232|After await monitors
+2026-08-11 03:14:33,528|INFO|3170|20904413947712|The job error logger starts.
+2026-08-11 03:14:33,585|INFO|3167|12152816359232|Write to message file /mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/.prs_flags/start_user_finalizing_message: False.
+2026-08-11 03:14:33,585|INFO|3167|12152816359232|Write to flag file /mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/.prs_flags/start_user_finalizing.
+2026-08-11 03:14:33,585|INFO|3167|12152816359232|0: setting job stage to TO_STOP_WORKER, reason: The master role is finishing, notify workers to stop.
+2026-08-11 03:14:33,585|INFO|3167|12152816359232|Setting job stage to TO_STOP_WORKER.
+2026-08-11 03:14:33,624|INFO|3167|12152816359232|Check the process result of all mini batches.
+2026-08-11 03:14:33,963|INFO|3167|12152816359232|There are 1 mini batches with 1 items. Processed 1 mini batches containing 1 items, 0 succeeded, 1 failed. The error threshold is -1. 
+2026-08-11 03:14:33,964|INFO|3167|12152816359232|The ParallelRunStep processed all mini batches. There are 1 mini batches with 1 items. Processed 1 mini batches containing 1 items, 0 succeeded, 1 failed. The error threshold is -1. 
+2026-08-11 03:14:34,129|WARNING|3170|20904413947712|Failed to get job start time from run details with error 'startTimeUtc'.
+2026-08-11 03:14:34,129|INFO|3170|20904413947712|Initialized MetricsLogger: start_time = 2026-08-11 03:14:34.129918
+2026-08-11 03:14:34,130|INFO|3170|20904413947712|Start to register child run log from table.
+2026-08-11 03:14:34,143|INFO|3167|12152816359232|Saved result to table: NoResultToAppendError. There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs. with detail: The master role failed with error: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs. Detail: Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job
+    self.summarize()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize
+    raise NoResultToAppendError(msg, compliant_message=msg)
+azureml_common.parallel_run.exception.NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs.
+..
+2026-08-11 03:14:34,143|INFO|3167|12152816359232|0: setting job stage to STOP_ON_ERROR, reason: NoResultToAppendError. There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs.. The master role failed with error: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs. Detail: Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job
+    self.summarize()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize
+    raise NoResultToAppendError(msg, compliant_message=msg)
+azureml_common.parallel_run.exception.NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs.
+..
+2026-08-11 03:14:34,143|INFO|3167|12152816359232|Setting job stage to STOP_ON_ERROR.
+2026-08-11 03:14:34,145|INFO|3170|20904413947712|Disable new logging structure, so skip register default artifacts to parent run.
+2026-08-11 03:14:34,174|INFO|3170|20904413947712|Initialized MetricsLogger: start_time = 2026-08-11 03:14:34.129918
+2026-08-11 03:14:34,174|INFO|3170|20904413947712|The overview starts restoring.
+2026-08-11 03:14:34,184|INFO|3167|12152816359232|NoResultToAppendError. There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs.. The master role failed with error: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs. Detail: Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job
+    self.summarize()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize
+    raise NoResultToAppendError(msg, compliant_message=msg)
+azureml_common.parallel_run.exception.NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs.
+..
+2026-08-11 03:14:34,186|ERROR|3167|12152816359232|The master role failed. There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs.. Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run
+    loop.run_until_complete(self.master_role.start())
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start
+    await starting
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 323, in _do_start
+    self.finish_job()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job
+    self.summarize()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize
+    raise NoResultToAppendError(msg, compliant_message=msg)
+azureml_common.parallel_run.exception.NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs.
+
+2026-08-11 03:14:34,297|INFO|3170|20904004015680|register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/register
+2026-08-11 03:14:34,297|INFO|3170|20904004015680|batch_register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/batch/metadata/ExperimentRun/dcid.batchjob-05442fcc-ca3a-4d4e-8aaf-d5d12b8001c4?datastoreName=workspaceartifactstore
+2026-08-11 03:14:34,344|INFO|3170|20904413947712|The overview process starts polling.

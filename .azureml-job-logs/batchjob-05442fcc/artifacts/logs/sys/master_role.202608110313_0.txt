@@ -1,0 +1,227 @@
+2026-08-11 03:13:26,524|INFO|61|17179875510080|This is  AmlComputeRunContext with working dir /mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/e574e568-e6e4-4777-b6a1-06f548ebd1a7.
+2026-08-11 03:13:26,524|INFO|61|17179875510080|Run id: e574e568-e6e4-4777-b6a1-06f548ebd1a7
+2026-08-11 03:13:27,190|WARNING|61|17179875510080|Failed to get job start time from run details with error 'startTimeUtc'.
+2026-08-11 03:13:27,641|INFO|61|17179875510080|Initialized MetricsLogger: start_time = 2026-08-11 03:13:27.641126
+2026-08-11 03:13:27,728|INFO|61|17179875510080|self.ignore_failures_within_retry: True
+2026-08-11 03:13:27,746|INFO|61|17179875510080|job_early_success_wait_time_coefficient = None
+2026-08-11 03:13:27,769|INFO|61|17179875510080|Initialized MetricsLogger: start_time = 2026-08-11 03:13:27.641126
+2026-08-11 03:13:27,848|INFO|64|10839996479296|The job error logger starts.
+2026-08-11 03:13:27,869|INFO|61|17179875510080|Master - Starting
+2026-08-11 03:13:27,869|INFO|61|17179875510080|The master role process starts.
+2026-08-11 03:13:28,024|INFO|61|17179875510080|Update run's properties to mark it is a ParallelRun.
+2026-08-11 03:13:28,123|INFO|61|17179875510080|Start to save prior run id if exists.
+2026-08-11 03:13:28,123|INFO|61|17179875510080|Saving input datasets info.
+2026-08-11 03:13:28,135|INFO|61|17179875510080|Getting input datasets info
+2026-08-11 03:13:28,361|WARNING|64|10839996479296|Failed to get job start time from run details with error 'startTimeUtc'.
+2026-08-11 03:13:28,361|INFO|64|10839996479296|Initialized MetricsLogger: start_time = 2026-08-11 03:13:28.361605
+2026-08-11 03:13:28,362|INFO|64|10839996479296|Start to register child run log from table.
+2026-08-11 03:13:28,375|INFO|64|10839996479296|Disable new logging structure, so skip register default artifacts to parent run.
+2026-08-11 03:13:28,393|INFO|64|10839996479296|Initialized MetricsLogger: start_time = 2026-08-11 03:13:28.361605
+2026-08-11 03:13:28,394|INFO|64|10839996479296|The overview starts restoring.
+2026-08-11 03:13:28,394|INFO|61|17179875510080|Resolving input datasets info
+2026-08-11 03:13:28,394|INFO|61|17179875510080|Resolved input datasets info: []
+2026-08-11 03:13:28,395|INFO|61|17179875510080|Filtered data input datasets info: []
+2026-08-11 03:13:28,427|INFO|61|17179875510080|create_resources() start.
+2026-08-11 03:13:28,538|INFO|64|10839586756160|register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/register
+2026-08-11 03:13:28,538|INFO|64|10839586756160|batch_register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/batch/metadata/ExperimentRun/dcid.batchjob-05442fcc-ca3a-4d4e-8aaf-d5d12b8001c4?datastoreName=workspaceartifactstore
+2026-08-11 03:13:28,546|INFO|61|17179577669184|Creating table 'prse574e568xe6e4x4777xb6a1x06f548ebd1a7job'.
+2026-08-11 03:13:28,548|INFO|61|17179579770432|Creating table 'prse574e568xe6e4x4777xb6a1x06f548ebd1a7proc'.
+2026-08-11 03:13:28,554|INFO|61|17179581871680|Creating table 'prse574e568xe6e4x4777xb6a1x06f548ebd1a7init'.
+2026-08-11 03:13:28,558|INFO|61|17179397318208|Creating table 'prse574e568xe6e4x4777xb6a1x06f548ebd1a7inst'.
+2026-08-11 03:13:28,559|INFO|61|17179395216960|Creating table 'prse574e568xe6e4x4777xb6a1x06f548ebd1a7run'.
+2026-08-11 03:13:28,561|INFO|61|17179393115712|Creating table 'prse574e568xe6e4x4777xb6a1x06f548ebd1a7sum'.
+2026-08-11 03:13:28,564|INFO|61|17179390752320|Creating table 'prse574e568xe6e4x4777xb6a1x06f548ebd1a7um'.
+2026-08-11 03:13:28,565|INFO|61|17179388651072|Creating table 'prse574e568xe6e4x4777xb6a1x06f548ebd1a7lgpt'.
+2026-08-11 03:13:28,569|INFO|64|10839996479296|The overview process starts polling.
+2026-08-11 03:13:28,603|INFO|61|17179577669184|Creating table 'prse574e568xe6e4x4777xb6a1x06f548ebd1a7out'.
+2026-08-11 03:13:28,604|INFO|61|17179579770432|Creating queue 'prse574e568xe6e4x4777xb6a1x06f548ebd1a7'.
+2026-08-11 03:13:28,654|INFO|61|17179875510080|create_resources() end.
+2026-08-11 03:13:28,699|INFO|61|17179875510080|Job telemetry initialized.
+2026-08-11 03:13:28,699|INFO|61|17179875510080|0: setting job stage to SCHEDULING, reason: Resources created. Start scheduling.
+2026-08-11 03:13:28,699|INFO|61|17179875510080|Setting job stage to SCHEDULING.
+2026-08-11 03:13:28,753|INFO|61|17179875510080|Resources created.
+2026-08-11 03:13:28,804|INFO|61|17179875510080|BlobExporter created.
+2026-08-11 03:13:28,805|INFO|61|17179875510080|future_create_tasks created.
+2026-08-11 03:13:28,805|INFO|61|17179875510080|Start exporting items to target: ExportTarget[blob: azureml/e574e568-e6e4-4777-b6a1-06f548ebd1a7/job/generating_tasks/44ec3ecf-19f4-4cd3-aae7-81236b3f624e.txt]..
+2026-08-11 03:13:28,825|INFO|61|17179875510080|Start scheduling.
+2026-08-11 03:13:28,853|INFO|61|17179875510080|Initialized MetricsLogger: start_time = 2026-08-11 03:13:27.641126
+2026-08-11 03:13:28,875|INFO|61|17179875510080|The task provider type is FolderOrFileListProvider.
+2026-08-11 03:13:29,007|INFO|61|17179875510080|Input folders [], from index 0.
+2026-08-11 03:13:29,062|ERROR|61|17179875510080|Failed to schedule mini batch with This request is not authorized to perform this operation using this permission.
+RequestId:6f198ebd-d003-004b-563f-29621c000000
+Time:2026-08-11T03:13:29.0534245Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:6f198ebd-d003-004b-563f-29621c000000
+Time:2026-08-11T03:13:29.0534245Z</Message></Error>.
+2026-08-11 03:13:29,065|ERROR|61|17179875510080|Scheduling task failed with error This request is not authorized to perform this operation using this permission.
+RequestId:6f198ebd-d003-004b-563f-29621c000000
+Time:2026-08-11T03:13:29.0534245Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:6f198ebd-d003-004b-563f-29621c000000
+Time:2026-08-11T03:13:29.0534245Z</Message></Error>. Detail Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 246, in create_tasks
+    await queue_sender.create_tasks(task_group)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 98, in create_tasks
+    await asyncio.gather(*asyncio_tasks)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 75, in done_callback
+    task_id = future.result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 63, in create_task
+    await self.queue_client.send_message(content=message, time_to_live=-1)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator_async.py", line 77, in wrapper_use_tracer
+    return await func(*args, **kwargs)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/aio/_queue_client_async.py", line 402, in send_message
+    process_storage_error(error)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:6f198ebd-d003-004b-563f-29621c000000
+Time:2026-08-11T03:13:29.0534245Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:6f198ebd-d003-004b-563f-29621c000000
+Time:2026-08-11T03:13:29.0534245Z</Message></Error>
+.
+2026-08-11 03:13:29,812|ERROR|61|17179875510080|The master role failed. This request is not authorized to perform this operation using this permission.
+RequestId:6f198ebd-d003-004b-563f-29621c000000
+Time:2026-08-11T03:13:29.0534245Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:6f198ebd-d003-004b-563f-29621c000000
+Time:2026-08-11T03:13:29.0534245Z</Message></Error>. Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run
+    loop.run_until_complete(self.master_role.start())
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start
+    await starting
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 315, in _do_start
+    await self.wait_for_first_task()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 292, in wait_for_first_task
+    await self.wait_for_input_init()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 130, in wait_for_input_init
+    self.future_create_tasks.result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 255, in create_tasks
+    raise exc
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 246, in create_tasks
+    await queue_sender.create_tasks(task_group)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 98, in create_tasks
+    await asyncio.gather(*asyncio_tasks)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 75, in done_callback
+    task_id = future.result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 63, in create_task
+    await self.queue_client.send_message(content=message, time_to_live=-1)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator_async.py", line 77, in wrapper_use_tracer
+    return await func(*args, **kwargs)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/aio/_queue_client_async.py", line 402, in send_message
+    process_storage_error(error)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:6f198ebd-d003-004b-563f-29621c000000
+Time:2026-08-11T03:13:29.0534245Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:6f198ebd-d003-004b-563f-29621c000000
+Time:2026-08-11T03:13:29.0534245Z</Message></Error>
+
+2026-08-11 03:13:37,542|INFO|169|22038929991488|This is  AmlComputeRunContext with working dir /mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/e574e568-e6e4-4777-b6a1-06f548ebd1a7.
+2026-08-11 03:13:37,542|INFO|169|22038929991488|Run id: e574e568-e6e4-4777-b6a1-06f548ebd1a7
+2026-08-11 03:13:38,120|WARNING|169|22038929991488|Failed to get job start time from run details with error 'startTimeUtc'.
+2026-08-11 03:13:38,120|INFO|169|22038929991488|Initialized MetricsLogger: start_time = 2026-08-11 03:13:38.120243
+2026-08-11 03:13:38,165|INFO|169|22038929991488|self.ignore_failures_within_retry: True
+2026-08-11 03:13:38,182|INFO|169|22038929991488|job_early_success_wait_time_coefficient = None
+2026-08-11 03:13:38,202|INFO|169|22038929991488|Initialized MetricsLogger: start_time = 2026-08-11 03:13:38.120243
+2026-08-11 03:13:38,436|INFO|169|22038929991488|Master - Starting
+2026-08-11 03:13:38,436|INFO|169|22038929991488|The master role process starts.
+2026-08-11 03:13:38,610|INFO|169|22038929991488|Resources created.
+2026-08-11 03:13:38,660|INFO|169|22038929991488|BlobExporter created.
+2026-08-11 03:13:38,661|INFO|169|22038929991488|future_create_tasks created.
+2026-08-11 03:13:38,661|INFO|169|22038929991488|Start exporting items to target: ExportTarget[blob: azureml/e574e568-e6e4-4777-b6a1-06f548ebd1a7/job/generating_tasks/2d32ee83-f70c-48b7-878e-60aa87fa92d1.txt]..
+2026-08-11 03:13:38,682|INFO|169|22038929991488|Start scheduling.
+2026-08-11 03:13:38,703|INFO|169|22038929991488|Initialized MetricsLogger: start_time = 2026-08-11 03:13:38.120243
+2026-08-11 03:13:38,722|INFO|169|22038929991488|The task provider type is FolderOrFileListProvider.
+2026-08-11 03:13:38,723|INFO|172|22808984598336|The job error logger starts.
+2026-08-11 03:13:38,848|INFO|169|22038929991488|Input folders [], from index 0.
+2026-08-11 03:13:38,966|INFO|169|22038929991488|0: setting job stage to FIRST_TASK_SCHEDULED, reason: The first task created at 2026-08-11 03:13:38.966272.
+2026-08-11 03:13:38,966|INFO|169|22038929991488|Setting job stage to FIRST_TASK_SCHEDULED.
+2026-08-11 03:13:39,010|INFO|169|22038929991488|Scheduled mini batch {"id": 0, "minibatch": ["/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv"], "task_type": 4}.
+2026-08-11 03:13:39,010|INFO|169|22038929991488|Scheduled 1 mini batches.
+2026-08-11 03:13:39,010|INFO|169|22038929991488|Save checkpoint for task_id 0, finished=True.
+2026-08-11 03:13:39,050|INFO|169|22038929991488|Finished scheduling with 1 mini batches in total.
+2026-08-11 03:13:39,157|INFO|169|22038929991488|Initialized MetricsLogger: start_time = 2026-08-11 03:13:38.120243
+2026-08-11 03:13:39,262|WARNING|172|22808984598336|Failed to get job start time from run details with error 'startTimeUtc'.
+2026-08-11 03:13:39,263|INFO|172|22808984598336|Initialized MetricsLogger: start_time = 2026-08-11 03:13:39.263158
+2026-08-11 03:13:39,263|INFO|172|22808984598336|Start to register child run log from table.
+2026-08-11 03:13:39,277|INFO|172|22808984598336|Disable new logging structure, so skip register default artifacts to parent run.
+2026-08-11 03:13:39,297|INFO|172|22808984598336|Initialized MetricsLogger: start_time = 2026-08-11 03:13:39.263158
+2026-08-11 03:13:39,297|INFO|172|22808984598336|The overview starts restoring.
+2026-08-11 03:13:39,419|INFO|172|22808984598336|The overview process starts polling.
+2026-08-11 03:13:39,455|INFO|172|22808574809664|register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/register
+2026-08-11 03:13:39,456|INFO|172|22808574809664|batch_register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/batch/metadata/ExperimentRun/dcid.batchjob-05442fcc-ca3a-4d4e-8aaf-d5d12b8001c4?datastoreName=workspaceartifactstore
+2026-08-11 03:13:39,542|INFO|172|22808984598336|register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/register
+2026-08-11 03:13:39,542|INFO|172|22808984598336|batch_register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/batch/metadata/ExperimentRun/dcid.batchjob-05442fcc-ca3a-4d4e-8aaf-d5d12b8001c4?datastoreName=workspaceartifactstore
+2026-08-11 03:13:39,662|INFO|169|22038929991488|wait_for_input_init returned.
+2026-08-11 03:13:39,706|INFO|169|22038929991488|Before await monitors
+2026-08-11 03:13:39,805|INFO|169|22038929991488|storage_cleaner start.
+2026-08-11 03:13:39,806|INFO|169|22038929991488|storage_cleaner started.
+2026-08-11 03:13:39,833|INFO|169|22038636918336|[storage_clean] sweep state: starting_at=2026-08-11T03:13:39.833002+00:00 start_index=0 (shard '0').
+2026-08-11 03:13:39,838|INFO|169|22038929991488|await future_create_tasks.
+2026-08-11 03:13:39,838|INFO|169|22038929991488|await future_create_tasks returned.
+2026-08-11 03:13:39,838|INFO|169|22038929991488|await future_export_tasks.
+2026-08-11 03:13:39,879|INFO|169|22038929991488|All items exported, summary: Exported 1 items to ExportTarget[blob: azureml/e574e568-e6e4-4777-b6a1-06f548ebd1a7/job/generating_tasks/2d32ee83-f70c-48b7-878e-60aa87fa92d1.txt]., appenders: CompositeAppender: [BlobAppender: azureml/e574e568-e6e4-4777-b6a1-06f548ebd1a7/job/generating_tasks/2d32ee83-f70c-48b7-878e-60aa87fa92d1.txt]..
+2026-08-11 03:13:39,880|INFO|169|22038929991488|await future_export_tasks returned.
+2026-08-11 03:13:39,937|INFO|169|22038929991488|Master - Task queue job completed: Scheduled 1 mini batches with 1 items. First task creation time: 0, total queue time: 10.445094108581543.
+2026-08-11 03:13:39,962|INFO|169|22038929991488|BlobExporter created.
+2026-08-11 03:13:39,979|INFO|169|22038929991488|Filter predicate is not given, use distinct predicate by default.
+2026-08-11 03:13:39,980|INFO|169|22038929991488|Start exporting items to target ExportTarget[blob: azureml/e574e568-e6e4-4777-b6a1-06f548ebd1a7/job/all_mini-batches.txt]..
+2026-08-11 03:13:40,172|INFO|169|22038929991488|Generated 1 items.
+2026-08-11 03:13:40,221|INFO|169|22038929991488|All items exported, summary: Exported 1 items to ExportTarget[blob: azureml/e574e568-e6e4-4777-b6a1-06f548ebd1a7/job/all_mini-batches.txt]., appenders: CompositeAppender: [BlobAppender: azureml/e574e568-e6e4-4777-b6a1-06f548ebd1a7/job/all_mini-batches.txt]..
+2026-08-11 03:13:40,222|INFO|169|22038929991488|0: setting job stage to ALL_TASK_SCHEDULED, reason: after_all_tasks_created called.
+2026-08-11 03:13:40,222|INFO|169|22038929991488|Setting job stage to ALL_TASK_SCHEDULED.
+2026-08-11 03:13:40,281|INFO|169|22038929991488|start instance_status_monitor.
+2026-08-11 03:13:40,282|INFO|169|22038929991488|await progress_monitor.poll.
+2026-08-11 03:13:40,523|INFO|169|22038929991488|Error count to stop: 4.
+2026-08-11 03:13:40,523|INFO|169|22038929991488|Write to message file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/polled_progress_once_message: Polled progress once..
+2026-08-11 03:13:40,523|INFO|169|22038929991488|Write to flag file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/polled_progress_once.
+2026-08-11 03:13:40,963|INFO|169|22038636918336|Initialized MetricsLogger: start_time = 2026-08-11 03:13:38.120243
+2026-08-11 03:13:50,534|INFO|169|22038929991488|Polled 1 times.
+2026-08-11 03:14:00,186|INFO|172|22808984598336|0: setting job stage to TO_STOP_WORKER, reason: By overview.
+2026-08-11 03:14:00,186|INFO|172|22808984598336|Setting job stage to TO_STOP_WORKER.
+2026-08-11 03:14:00,245|INFO|172|22808984598336|Stop to register child run log from table.
+2026-08-11 03:14:00,246|INFO|172|22808984598336|The overview process ends.
+2026-08-11 03:14:00,729|INFO|169|22038929991488|Deleted flag file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/is_master_role_candidate_node.
+2026-08-11 03:14:00,729|INFO|169|22038929991488|Deleted message file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/is_master_role_candidate_node_message.
+2026-08-11 03:14:00,729|INFO|169|22038929991488|Progress update stopped for reasons: All 1 mini batches have been processed.
+2026-08-11 03:14:00,729|INFO|169|22038929991488|await progress_monitor.poll returned.
+2026-08-11 03:14:00,729|INFO|169|22038929991488|Active instance count update stopped for reason Node status monitor got cancelled.
+2026-08-11 03:14:00,730|INFO|169|22038929991488|All monitor tasks finished.
+2026-08-11 03:14:00,730|INFO|169|22038929991488|After await monitors
+2026-08-11 03:14:00,798|INFO|169|22038929991488|Write to message file /mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/.prs_flags/start_user_finalizing_message: False.
+2026-08-11 03:14:00,798|INFO|169|22038929991488|Write to flag file /mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/.prs_flags/start_user_finalizing.
+2026-08-11 03:14:00,799|INFO|169|22038929991488|0: setting job stage to TO_STOP_WORKER, reason: The master role is finishing, notify workers to stop.
+2026-08-11 03:14:00,799|INFO|169|22038929991488|Setting job stage to TO_STOP_WORKER.
+2026-08-11 03:14:00,822|INFO|169|22038929991488|Check the process result of all mini batches.
+2026-08-11 03:14:00,892|INFO|169|22038929991488|There are 1 mini batches with 1 items. Processed 1 mini batches containing 1 items, 0 succeeded, 1 failed. The error threshold is -1. 
+2026-08-11 03:14:00,892|INFO|169|22038929991488|The ParallelRunStep processed all mini batches. There are 1 mini batches with 1 items. Processed 1 mini batches containing 1 items, 0 succeeded, 1 failed. The error threshold is -1. 
+2026-08-11 03:14:00,942|WARNING|169|22038929991488|finish_job failed for The master role failed with error: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation., will retry with another master role. remain_retry = 2.
+2026-08-11 03:14:00,943|ERROR|169|22038929991488|The master role failed. There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs.. Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run
+    loop.run_until_complete(self.master_role.start())
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start
+    await starting
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 323, in _do_start
+    self.finish_job()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job
+    self.summarize()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize
+    raise NoResultToAppendError(msg, compliant_message=msg)
+azureml_common.parallel_run.exception.NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs.
+

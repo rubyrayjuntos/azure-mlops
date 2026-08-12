@@ -1,0 +1,63 @@
+2026-08-11 01:36:54,721|INFO|ParallelTask=True, node id=tvmps_1adae1472c2f5598a76ddc5631c569b7f17c5366648603bb84cc8db754490ba5_d, node seq=0.
+2026-08-11 01:36:54,721|INFO|The booter type is BootNode.
+2026-08-11 01:36:54,721|INFO|The snapshot dir is /mnt/azureml/cr/j/902aba63c3a1406aa47938b0b208fadd/exe/wd.
+2026-08-11 01:36:54,721|INFO|sys.version:3.11.15 | packaged by conda-forge | (main, Jun 11 2026, 03:34:02) [GCC 14.3.0], sys.platform:linux.
+2026-08-11 01:36:54,721|INFO|run command:/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/bin/python -m pip freeze
+2026-08-11 01:36:55,052|INFO|required_fields:{'EventId': '899f62e0-333c-43b6-95c8-35071d514440', 'SubscriptionId': '00000000-0000-0000-0000-000000000000', 'WorkspaceId': 'e4147405-1ec1-4710-91f6-ec581804bbe2', 'CorrelationId': 'cd57804f-0403-44d2-b6ef-baad82a1086d', 'ComponentName': 'ParallelRunStep', 'EventName': 'ParallelRunStep.Job.Configuration', 'EventTime': '2026-08-11T01:36:55.052505+00:00'}
+standard_fields:None
+extension_fields:{'UserJobArgs': {'input_format': None, 'mini_batch_size': '10', 'rank_mini_batch_count': None, 'process_count_per_node': '2', 'output_action': 'append_row', 'error_threshold': '-1', 'allowed_failed_count': None, 'allowed_failed_percent': None, 'run_invocation_timeout': '30', 'run_max_try': '3', 'amlbi_skip_preemption_retry': None, 'task_overhead_timeout': None, 'progress_update_timeout': None, 'first_task_creation_timeout': None, 'logging_level': 'INFO', 'copy_logs_to_parent': 'True', 'resource_monitor_interval': None, 'push_metrics_to_parent': None, 'boot_timeout_seconds': None, 'batch_endpoint_enabled': 'True', 'amlbi_distributed_run': None, 'amlbi_pf_enabled': None, 'amlbi_mini_batch_rows': None, 'amlbi_pf_run_mode': None, 'amlbi_pf_model': None, 'amlbi_async_mode': None, 'append_row_dataframe_header': True, 'append_row_file_name': True, 'partition_keys': None, 'metrics_name_prefix': None, 'intermediate_store': None, 'resume_from': None, 'compute_sku': None}, 'Settings': {}}
+2026-08-11 01:36:55,093|INFO|Extract to dir: /tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod
+2026-08-11 01:36:55,093|INFO|Extract command: tar xhf /mnt/azureml/cr/j/902aba63c3a1406aa47938b0b208fadd/exe/wd/driver/prs_prod.tar.gz -C /tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod
+2026-08-11 01:36:55,093|INFO|run command:tar xhf /mnt/azureml/cr/j/902aba63c3a1406aa47938b0b208fadd/exe/wd/driver/prs_prod.tar.gz -C /tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod
+2026-08-11 01:37:01,664|INFO|Extracted /mnt/azureml/cr/j/902aba63c3a1406aa47938b0b208fadd/exe/wd/driver/prs_prod.tar.gz to /tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod in 6.571321 seconds.
+2026-08-11 01:37:01,670|WARNING|Unable to get dataprep version
+2026-08-11 01:37:01,670|INFO|Start to generate internal args for input data.
+2026-08-11 01:37:01,673|INFO|The output folder is /tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/e6d24f73-ead2-48bd-b005-9b4161ca4508.
+2026-08-11 01:37:01,673|INFO|run command:['/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/bin/python', '/mnt/azureml/cr/j/902aba63c3a1406aa47938b0b208fadd/exe/wd/driver/sys_main.py', '--model', '/mnt/azureml/cr/j/902aba63c3a1406aa47938b0b208fadd/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/taxi-model/../', '--batch_endpoint_enabled', 'True', '--create_snapshot_at_runtime', 'True', '--copy_logs_to_parent', 'True', '--scoring_module_name', 'batch_driver.py', '--output_action', 'append_row', '--append_row_dataframe_header', 'False', '--output', '/mnt/azureml/cr/j/902aba63c3a1406aa47938b0b208fadd/cap/data-capability/wd/INPUT_score_workspaceblobstore/azureml/e517ef50-6244-4798-b8c4-abdfcdde5542/score', '--input_asset_job_data_path', '/mnt/azureml/cr/j/902aba63c3a1406aa47938b0b208fadd/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv', '--job_output_path', 'DatasetOutputConfig:score', '--mini_batch_size', '10', '--run_max_try', '3', '--run_invocation_timeout', '30', '--error_threshold', '-1', '--logging_level', 'INFO', '--process_count_per_node', '2', '--append_row_file_name', 'predictions.csv', '--aml_core_version', '', '--dataprep_version', 'NA', '--bf89b5b0_523f_4782_aedc_61bd625ee81a', '{"input_format": "UriFile", "inputs": ["/mnt/azureml/cr/j/902aba63c3a1406aa47938b0b208fadd/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv"]}']
+2026-08-11 01:37:01,674|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 01:37:01,683|WARNING|There's no refresh record , set the current time to be the last refresh time as sentinel.
+2026-08-11 01:37:03,683|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 01:37:05,686|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 01:37:07,690|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 01:37:09,698|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 01:37:11,702|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 01:37:13,705|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 01:37:15,709|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 01:37:17,713|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 01:37:19,717|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 01:37:23,724|INFO|Finished with returncode 0.
+2026-08-11 01:37:23,731|INFO|Deleted flag file /tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/flags/fatal_exception.
+2026-08-11 01:37:23,731|INFO|Deleted message file /tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/flags/fatal_exception_message.
+2026-08-11 01:37:23,731|ERROR|Raise MasterFatalException(This request is not authorized to perform this operation using this permission.
+RequestId:4bfa11da-2002-005f-4031-292a73000000
+Time:2026-08-11T01:37:21.4082373Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: {"odata.error":{"code":"AuthorizationPermissionMismatch","message":{"lang":"en-US","value":"This request is not authorized to perform this operation using this permission.\nRequestId:4bfa11da-2002-005f-4031-292a73000000\nTime:2026-08-11T01:37:21.4082373Z"}}})
+2026-08-11 01:37:23,731|INFO|Worker - Telemetry: nodeId:0, computeType:AmlCompute, startTime:2026-08-11T01:36:54.699262, endTime:2026-08-11T01:37:23.731769, duration:29.032507181167603
+2026-08-11 01:37:23,732|INFO|required_fields:{'EventId': '8e00c89b-8107-4b04-9794-7588d4328c4d', 'SubscriptionId': '00000000-0000-0000-0000-000000000000', 'WorkspaceId': 'e4147405-1ec1-4710-91f6-ec581804bbe2', 'CorrelationId': 'f6d3e871-8678-4316-940e-79505f9814f0', 'ComponentName': 'ParallelRunStep', 'EventName': 'ParallelRunStep.Node.Duration', 'EventTime': '2026-08-11T01:37:23.731907+00:00'}
+standard_fields:{'Duration': '00:00:29', 'TaskResult': None, 'FailureReason': None, 'WorkspaceRegion': 'eastus', 'ComputeType': <AzureMLTelemetryComputeType.AmlcTrain: 1>, 'Attribution': 'ParallelRunStep', 'ClientOS': 2, 'ClientOSVersion': 'Linux-6.8.0-1062-azure-x86_64-with-glibc2.35', 'RunId': 'e517ef50-6244-4798-b8c4-abdfcdde5542', 'ParentRunId': 'batchjob-e2d7370e-c396-40f4-b477-cf117f99bb80', 'ExperimentId': 'd1cbc60e-4bce-427e-877f-01405e3f5839', 'NumberOfNodes': 1, 'NumberOfCores': 4, 'DatasetType': None, 'CoreSeconds': 116.13002872467041}
+extension_fields:{'StartTime': '2026-08-11T01:36:54.699262', 'EndTime': '2026-08-11T01:37:23.731769', 'NodeId': '0', 'JobId': 'e517ef50-6244-4798-b8c4-abdfcdde5542'}
+2026-08-11 01:37:23,774|INFO|Master - Telemetry: nodeId:0, computeType:AmlCompute, startTime:2026-08-11T01:36:54.197372, endTime:2026-08-11T01:37:23.774382, duration:29.57701015472412, jobResult:2, failureReason:, exceptionType:ParallelTaskException, exceptionMessage:ParallelTaskException error. Exit code: 42. Message: This request is not authorized to perform this operation using this permission.
+RequestId:4bfa11da-2002-005f-4031-292a73000000
+Time:2026-08-11T01:37:21.4082373Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: {"odata.error":{"code":"AuthorizationPermissionMismatch","message":{"lang":"en-US","value":"This request is not authorized to perform this operation using this permission.\nRequestId:4bfa11da-2002-005f-4031-292a73000000\nTime:2026-08-11T01:37:21.4082373Z"}}} Traceback (most recent call last):
+  File "driver/amlbi_main.py", line 145, in main
+    boot(driver_dir)
+  File "driver/amlbi_main.py", line 63, in boot
+    booter.start()
+  File "/mnt/azureml/cr/j/902aba63c3a1406aa47938b0b208fadd/exe/wd/driver/azureml_user/parallel_run/boot.py", line 408, in start
+    self.start_sys_main()
+  File "/mnt/azureml/cr/j/902aba63c3a1406aa47938b0b208fadd/exe/wd/driver/azureml_user/parallel_run/boot.py", line 293, in start_sys_main
+    self.run_sys_main(cmd)
+  File "/mnt/azureml/cr/j/902aba63c3a1406aa47938b0b208fadd/exe/wd/driver/azureml_user/parallel_run/boot_node.py", line 130, in run_sys_main
+    raise ParallelTaskException(error_message, master_fatal_flag.get_exit_code())
+azureml_common.parallel_run.exception.ParallelTaskException: ParallelTaskException error. Exit code: 42. Message: This request is not authorized to perform this operation using this permission.
+RequestId:4bfa11da-2002-005f-4031-292a73000000
+Time:2026-08-11T01:37:21.4082373Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: {"odata.error":{"code":"AuthorizationPermissionMismatch","message":{"lang":"en-US","value":"This request is not authorized to perform this operation using this permission.\nRequestId:4bfa11da-2002-005f-4031-292a73000000\nTime:2026-08-11T01:37:21.4082373Z"}}}
+, originExceptionType:
+2026-08-11 01:37:23,774|INFO|required_fields:{'EventId': '6daf6be2-396f-4292-8487-5755cc88c155', 'SubscriptionId': '00000000-0000-0000-0000-000000000000', 'WorkspaceId': 'e4147405-1ec1-4710-91f6-ec581804bbe2', 'CorrelationId': '958c4402-fff4-4f6b-91dd-e63a19c61e19', 'ComponentName': 'ParallelRunStep', 'EventName': 'ParallelRunStep.AmlbiMain.Node.End', 'EventTime': '2026-08-11T01:37:23.774599+00:00'}
+standard_fields:{'Duration': '00:00:29', 'TaskResult': 2, 'FailureReason': '', 'WorkspaceRegion': 'eastus', 'ComputeType': <AzureMLTelemetryComputeType.AmlcTrain: 1>, 'Attribution': 'ParallelRunStep', 'ClientOS': 2, 'ClientOSVersion': 'Linux-6.8.0-1062-azure-x86_64-with-glibc2.35', 'RunId': 'e517ef50-6244-4798-b8c4-abdfcdde5542', 'ParentRunId': 'batchjob-e2d7370e-c396-40f4-b477-cf117f99bb80', 'ExperimentId': 'd1cbc60e-4bce-427e-877f-01405e3f5839', 'NumberOfNodes': None, 'NumberOfCores': None, 'DatasetType': None, 'CoreSeconds': None}
+extension_fields:{'StartTime': '2026-08-11T01:36:54.197372', 'EndTime': '2026-08-11T01:37:23.774382', 'JobId': 'e517ef50-6244-4798-b8c4-abdfcdde5542', 'PRSVersion': 'V1', 'PRSReleaseId': 'placeholder_release_id', 'NodeId': '0', 'ExceptionType': 'ParallelTaskException', 'ExceptionMessage': 'ParallelTaskException error. Exit code: 42. Message: This request is not authorized to perform this operation using this permission.\nRequestId:4bfa11da-2002-005f-4031-292a73000000\nTime:2026-08-11T01:37:21.4082373Z\nErrorCode:AuthorizationPermissionMismatch\nContent: {"odata.error":{"code":"AuthorizationPermissionMismatch","message":{"lang":"en-US","value":"This request is not authorized to perform this operation using this permission.\\nRequestId:4bfa11da-2002-005f-4031-292a73000000\\nTime:2026-08-11T01:37:21.4082373Z"}}} Traceback (most recent call last):\n  File "driver/amlbi_main.py", line 145, in main\n    boot(driver_dir)\n  File "driver/amlbi_main.py", line 63, in boot\n    booter.start()\n  File "/mnt/azureml/cr/j/902aba63c3a1406aa47938b0b208fadd/exe/wd/driver/azureml_user/parallel_run/boot.py", line 408, in start\n    self.start_sys_main()\n  File "/mnt/azureml/cr/j/902aba63c3a1406aa47938b0b208fadd/exe/wd/driver/azureml_user/parallel_run/boot.py", line 293, in start_sys_main\n    self.run_sys_main(cmd)\n  File "/mnt/azureml/cr/j/902aba63c3a1406aa47938b0b208fadd/exe/wd/driver/azureml_user/parallel_run/boot_node.py", line 130, in run_sys_main\n    raise ParallelTaskException(error_message, master_fatal_flag.get_exit_code())\nazureml_common.parallel_run.exception.ParallelTaskException: ParallelTaskException error. Exit code: 42. Message: This request is not authorized to perform this operation using this permission.\nRequestId:4bfa11da-2002-005f-4031-292a73000000\nTime:2026-08-11T01:37:21.4082373Z\nErrorCode:AuthorizationPermissionMismatch\nContent: {"odata.error":{"code":"AuthorizationPermissionMismatch","message":{"lang":"en-US","value":"This request is not authorized to perform this operation using this permission.\\nRequestId:4bfa11da-2002-005f-4031-292a73000000\\nTime:2026-08-11T01:37:21.4082373Z"}}}\n', 'OriginExceptionType': '', 'FailureMessage': ''}

@@ -1,0 +1,99 @@
+2026-08-11 03:13:11,890|INFO|ParallelTask=True, node id=tvmps_3c54f9fd696513175b6742f676a314c2e4889e15a445568ecc71d85efcf0d6ec_d, node seq=0.
+2026-08-11 03:13:11,890|INFO|The booter type is BootNode.
+2026-08-11 03:13:11,890|INFO|The snapshot dir is /mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd.
+2026-08-11 03:13:11,891|INFO|sys.version:3.11.15 | packaged by conda-forge | (main, Jun 11 2026, 03:34:02) [GCC 14.3.0], sys.platform:linux.
+2026-08-11 03:13:11,891|INFO|run command:/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/bin/python -m pip freeze
+2026-08-11 03:13:12,228|INFO|required_fields:{'EventId': 'fa16f020-ed28-465b-bbf8-5aef9e0d19bb', 'SubscriptionId': '00000000-0000-0000-0000-000000000000', 'WorkspaceId': 'e4147405-1ec1-4710-91f6-ec581804bbe2', 'CorrelationId': '6991d403-89e7-44cd-a9af-1e41e35ee020', 'ComponentName': 'ParallelRunStep', 'EventName': 'ParallelRunStep.Job.Configuration', 'EventTime': '2026-08-11T03:13:12.228012+00:00'}
+standard_fields:None
+extension_fields:{'UserJobArgs': {'input_format': None, 'mini_batch_size': '10', 'rank_mini_batch_count': None, 'process_count_per_node': '2', 'output_action': 'append_row', 'error_threshold': '-1', 'allowed_failed_count': None, 'allowed_failed_percent': None, 'run_invocation_timeout': '30', 'run_max_try': '3', 'amlbi_skip_preemption_retry': None, 'task_overhead_timeout': None, 'progress_update_timeout': None, 'first_task_creation_timeout': None, 'logging_level': 'INFO', 'copy_logs_to_parent': 'True', 'resource_monitor_interval': None, 'push_metrics_to_parent': None, 'boot_timeout_seconds': None, 'batch_endpoint_enabled': 'True', 'amlbi_distributed_run': None, 'amlbi_pf_enabled': None, 'amlbi_mini_batch_rows': None, 'amlbi_pf_run_mode': None, 'amlbi_pf_model': None, 'amlbi_async_mode': None, 'append_row_dataframe_header': True, 'append_row_file_name': True, 'partition_keys': None, 'metrics_name_prefix': None, 'intermediate_store': None, 'resume_from': None, 'compute_sku': None}, 'Settings': {}}
+2026-08-11 03:13:12,263|INFO|Extract to dir: /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod
+2026-08-11 03:13:12,263|INFO|Extract command: tar xhf /mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/driver/prs_prod.tar.gz -C /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod
+2026-08-11 03:13:12,263|INFO|run command:tar xhf /mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/driver/prs_prod.tar.gz -C /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod
+2026-08-11 03:13:18,854|INFO|Extracted /mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/driver/prs_prod.tar.gz to /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod in 6.591249 seconds.
+2026-08-11 03:13:18,859|WARNING|Unable to get dataprep version
+2026-08-11 03:13:18,860|INFO|Start to generate internal args for input data.
+2026-08-11 03:13:18,863|INFO|The output folder is /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/761d05de-c344-4acf-b598-46391d94e93e.
+2026-08-11 03:13:18,863|INFO|run command:['/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/bin/python', '/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/driver/sys_main.py', '--model', '/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/taxi-model/../', '--batch_endpoint_enabled', 'True', '--create_snapshot_at_runtime', 'True', '--copy_logs_to_parent', 'True', '--scoring_module_name', 'batch_driver.py', '--output_action', 'append_row', '--append_row_dataframe_header', 'False', '--output', '/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/cap/data-capability/wd/INPUT_score_workspaceblobstore/azureml/e574e568-e6e4-4777-b6a1-06f548ebd1a7/score', '--input_asset_job_data_path', '/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv', '--job_output_path', 'DatasetOutputConfig:score', '--mini_batch_size', '10', '--run_max_try', '3', '--run_invocation_timeout', '30', '--error_threshold', '-1', '--logging_level', 'INFO', '--process_count_per_node', '2', '--append_row_file_name', 'predictions.csv', '--aml_core_version', '', '--dataprep_version', 'NA', '--bf89b5b0_523f_4782_aedc_61bd625ee81a', '{"input_format": "UriFile", "inputs": ["/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv"]}']
+2026-08-11 03:13:18,864|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 03:13:18,872|WARNING|There's no refresh record , set the current time to be the last refresh time as sentinel.
+2026-08-11 03:13:20,873|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 03:13:22,876|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 03:13:24,879|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 03:13:26,886|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 03:13:28,889|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 03:13:30,894|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 03:13:32,900|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 03:13:34,903|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 03:13:36,907|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 03:13:56,951|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 03:14:16,993|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 03:14:37,039|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 03:14:53,071|INFO|Finished with returncode 0.
+2026-08-11 03:14:53,078|INFO|Deleted flag file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/fatal_exception.
+2026-08-11 03:14:53,078|INFO|Deleted message file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/fatal_exception_message.
+2026-08-11 03:14:53,078|ERROR|Raise MasterFatalException(Run failed. Below is the error detail:
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/finalizer_process.py", line 76, in run
+    JobResult().check_job_result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/job_result.py", line 168, in check_job_result
+    raise exc
+NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs. The master role failed with error: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs. Detail: Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job
+    self.summarize()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize
+    raise NoResultToAppendError(msg, compliant_message=msg)
+azureml_common.parallel_run.exception.NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs.
+.)
+2026-08-11 03:14:53,078|INFO|Worker - Telemetry: nodeId:0, computeType:AmlCompute, startTime:2026-08-11T03:13:11.866810, endTime:2026-08-11T03:14:53.078294, duration:101.2114839553833
+2026-08-11 03:14:53,078|INFO|required_fields:{'EventId': '771f2ec7-b872-47ec-a2b0-87b9513ff34f', 'SubscriptionId': '00000000-0000-0000-0000-000000000000', 'WorkspaceId': 'e4147405-1ec1-4710-91f6-ec581804bbe2', 'CorrelationId': 'c179e357-be59-4905-bc8c-1e47d549c7e2', 'ComponentName': 'ParallelRunStep', 'EventName': 'ParallelRunStep.Node.Duration', 'EventTime': '2026-08-11T03:14:53.078443+00:00'}
+standard_fields:{'Duration': '00:01:41', 'TaskResult': None, 'FailureReason': None, 'WorkspaceRegion': 'eastus', 'ComputeType': <AzureMLTelemetryComputeType.AmlcTrain: 1>, 'Attribution': 'ParallelRunStep', 'ClientOS': 2, 'ClientOSVersion': 'Linux-6.8.0-1062-azure-x86_64-with-glibc2.35', 'RunId': 'e574e568-e6e4-4777-b6a1-06f548ebd1a7', 'ParentRunId': 'batchjob-05442fcc-ca3a-4d4e-8aaf-d5d12b8001c4', 'ExperimentId': 'd1cbc60e-4bce-427e-877f-01405e3f5839', 'NumberOfNodes': 1, 'NumberOfCores': 4, 'DatasetType': None, 'CoreSeconds': 404.8459358215332}
+extension_fields:{'StartTime': '2026-08-11T03:13:11.866810', 'EndTime': '2026-08-11T03:14:53.078294', 'NodeId': '0', 'JobId': 'e574e568-e6e4-4777-b6a1-06f548ebd1a7'}
+2026-08-11 03:14:53,110|INFO|Master - Telemetry: nodeId:0, computeType:AmlCompute, startTime:2026-08-11T03:13:11.449166, endTime:2026-08-11T03:14:53.110407, duration:101.66124105453491, jobResult:2, failureReason:, exceptionType:ParallelTaskException, exceptionMessage:ParallelTaskException error. Exit code: 42. Message: Run failed. Below is the error detail:
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/finalizer_process.py", line 76, in run
+    JobResult().check_job_result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/job_result.py", line 168, in check_job_result
+    raise exc
+NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs. The master role failed with error: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs. Detail: Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job
+    self.summarize()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize
+    raise NoResultToAppendError(msg, compliant_message=msg)
+azureml_common.parallel_run.exception.NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs.
+. Traceback (most recent call last):
+  File "driver/amlbi_main.py", line 145, in main
+    boot(driver_dir)
+  File "driver/amlbi_main.py", line 63, in boot
+    booter.start()
+  File "/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/driver/azureml_user/parallel_run/boot.py", line 408, in start
+    self.start_sys_main()
+  File "/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/driver/azureml_user/parallel_run/boot.py", line 293, in start_sys_main
+    self.run_sys_main(cmd)
+  File "/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/driver/azureml_user/parallel_run/boot_node.py", line 130, in run_sys_main
+    raise ParallelTaskException(error_message, master_fatal_flag.get_exit_code())
+azureml_common.parallel_run.exception.ParallelTaskException: ParallelTaskException error. Exit code: 42. Message: Run failed. Below is the error detail:
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/finalizer_process.py", line 76, in run
+    JobResult().check_job_result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/job_result.py", line 168, in check_job_result
+    raise exc
+NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs. The master role failed with error: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs. Detail: Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job
+    self.summarize()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize
+    raise NoResultToAppendError(msg, compliant_message=msg)
+azureml_common.parallel_run.exception.NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs.
+.
+, originExceptionType:
+2026-08-11 03:14:53,110|INFO|required_fields:{'EventId': '9f9c7161-c337-4852-bca5-ce8bf6689482', 'SubscriptionId': '00000000-0000-0000-0000-000000000000', 'WorkspaceId': 'e4147405-1ec1-4710-91f6-ec581804bbe2', 'CorrelationId': '1eb3763b-50b0-49cd-b5da-48c66920ccba', 'ComponentName': 'ParallelRunStep', 'EventName': 'ParallelRunStep.AmlbiMain.Node.End', 'EventTime': '2026-08-11T03:14:53.110611+00:00'}
+standard_fields:{'Duration': '00:01:41', 'TaskResult': 2, 'FailureReason': '', 'WorkspaceRegion': 'eastus', 'ComputeType': <AzureMLTelemetryComputeType.AmlcTrain: 1>, 'Attribution': 'ParallelRunStep', 'ClientOS': 2, 'ClientOSVersion': 'Linux-6.8.0-1062-azure-x86_64-with-glibc2.35', 'RunId': 'e574e568-e6e4-4777-b6a1-06f548ebd1a7', 'ParentRunId': 'batchjob-05442fcc-ca3a-4d4e-8aaf-d5d12b8001c4', 'ExperimentId': 'd1cbc60e-4bce-427e-877f-01405e3f5839', 'NumberOfNodes': None, 'NumberOfCores': None, 'DatasetType': None, 'CoreSeconds': None}
+extension_fields:{'StartTime': '2026-08-11T03:13:11.449166', 'EndTime': '2026-08-11T03:14:53.110407', 'JobId': 'e574e568-e6e4-4777-b6a1-06f548ebd1a7', 'PRSVersion': 'V1', 'PRSReleaseId': 'placeholder_release_id', 'NodeId': '0', 'ExceptionType': 'ParallelTaskException', 'ExceptionMessage': 'ParallelTaskException error. Exit code: 42. Message: Run failed. Below is the error detail:\nTraceback (most recent call last):\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/finalizer_process.py", line 76, in run\n    JobResult().check_job_result()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/job_result.py", line 168, in check_job_result\n    raise exc\nNoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check \'response: run()\' in https://aka.ms/batch-inference-documentation\nPlease check logs for error. You can check logs/readme.txt for the layout of logs. The master role failed with error: There is no succeeded mini batch item returned from run(). Please check \'response: run()\' in https://aka.ms/batch-inference-documentation\nPlease check logs for error. You can check logs/readme.txt for the layout of logs. Detail: Traceback (most recent call last):\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job\n    self.summarize()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize\n    raise NoResultToAppendError(msg, compliant_message=msg)\nazureml_common.parallel_run.exception.NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check \'response: run()\' in https://aka.ms/batch-inference-documentation\nPlease check logs for error. You can check logs/readme.txt for the layout of logs.\n. Traceback (most recent call last):\n  File "driver/amlbi_main.py", line 145, in main\n    boot(driver_dir)\n  File "driver/amlbi_main.py", line 63, in boot\n    booter.start()\n  File "/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/driver/azureml_user/parallel_run/boot.py", line 408, in start\n    self.start_sys_main()\n  File "/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/driver/azureml_user/parallel_run/boot.py", line 293, in start_sys_main\n    self.run_sys_main(cmd)\n  File "/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/driver/azureml_user/parallel_run/boot_node.py", line 130, in run_sys_main\n    raise ParallelTaskException(error_message, master_fatal_flag.get_exit_code())\nazureml_common.parallel_run.exception.ParallelTaskException: ParallelTaskException error. Exit code: 42. Message: Run failed. Below is the error detail:\nTraceback (most recent call last):\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/finalizer_process.py", line 76, in run\n    JobResult().check_job_result()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/job_result.py", line 168, in check_job_result\n    raise exc\nNoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check \'response: run()\' in https://aka.ms/batch-inference-documentation\nPlease check logs for error. You can check logs/readme.txt for the layout of logs. The master role failed with error: There is no succeeded mini batch item returned from run(). Please check \'response: run()\' in https://aka.ms/batch-inference-documentation\nPlease check logs for error. You can check logs/readme.txt for the layout of logs. Detail: Traceback (most recent call last):\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job\n    self.summarize()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize\n    raise NoResultToAppendError(msg, compliant_message=msg)\nazureml_common.parallel_run.exception.NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check \'response: run()\' in https://aka.ms/batch-inference-documentation\nPlease check logs for error. You can check logs/readme.txt for the layout of logs.\n.\n', 'OriginExceptionType': '', 'FailureMessage': ''}

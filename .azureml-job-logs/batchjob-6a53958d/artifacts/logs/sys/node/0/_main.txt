@@ -1,0 +1,993 @@
+2026-08-11 01:49:16,448|INFO|25|19837308155712|Multiple processing start method: spawn, is_detonation_chamber_enabled: False, in_sidecar_container: False, in_detonation_chamber: False.
+2026-08-11 01:49:17,216|INFO|25|19837308155712|Initialized MetricsLogger: start_time = 2026-08-11 01:48:15.834979
+2026-08-11 01:49:17,266|WARNING|25|19837011093056|Failed to log heartbeat because of 0:The table specified does not exist.
+RequestId:e62d227a-6002-005e-0933-2975af000000
+Time:2026-08-11T01:49:17.2664327Z
+ErrorCode:TableNotFound
+Content: {"odata.error":{"code":"TableNotFound","message":{"lang":"en-US","value":"0:The table specified does not exist.\nRequestId:e62d227a-6002-005e-0933-2975af000000\nTime:2026-08-11T01:49:17.2664327Z"}}}
+Traceback (most recent call last):
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/instance_heart_beater.py", line 56, in log_heartbeat
+    self.table.log_heartbeat(start_time=self.start_time)
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/table_instance_status.py", line 78, in log_heartbeat
+    self.flush()
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/table_common.py", line 213, in flush
+    self.save_next_batch(restore_cache_on_fail=restore_cache_on_fail)
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/table_common.py", line 170, in save_next_batch
+    self.table_client.submit_transaction(operations)
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azure/data/tables/_table_client.py", line 734, in submit_transaction
+    return self._batch_send(self.table_name, *batched_requests.requests, **kwargs)  # type: ignore
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azure/data/tables/_base_client.py", line 334, in _batch_send
+    raise decoded
+azure.data.tables._error.TableTransactionError: 0:The table specified does not exist.
+RequestId:e62d227a-6002-005e-0933-2975af000000
+Time:2026-08-11T01:49:17.2664327Z
+ErrorCode:TableNotFound
+Content: {"odata.error":{"code":"TableNotFound","message":{"lang":"en-US","value":"0:The table specified does not exist.\nRequestId:e62d227a-6002-005e-0933-2975af000000\nTime:2026-08-11T01:49:17.2664327Z"}}}
+2026-08-11 01:49:17,270|INFO|25|19837308155712|Initialized MetricsLogger: start_time = 2026-08-11 01:48:15.834979
+2026-08-11 01:49:17,275|INFO|25|19837308155712|Initialized MetricsLogger: start_time = 2026-08-11 01:48:15.834979
+2026-08-11 01:49:17,278|INFO|25|19837308155712|Start NodeProgressSummarizer.
+2026-08-11 01:49:17,286|INFO|25|19837308155712|Initialized MetricsLogger: start_time = 2026-08-11 01:48:15.834979
+2026-08-11 01:49:17,288|INFO|25|19837308155712|continuous_run_failure_count_to_restart = None
+2026-08-11 01:49:17,288|INFO|25|19837308155712|continuous_init_failure_count_to_restart = None
+2026-08-11 01:49:17,288|INFO|25|19837308155712|entry_script_init_timeout = None
+2026-08-11 01:49:17,288|INFO|25|19837308155712|Start agent manager.
+2026-08-11 01:49:17,288|INFO|25|19837308155712|start the agent monitor thread.
+2026-08-11 01:49:17,289|INFO|25|19837308155712|start the resource monitor thread.
+2026-08-11 01:49:17,291|INFO|25|19837308155712|Wait the master poller to finish.
+2026-08-11 01:49:17,293|INFO|25|19836893115968|The poll stopping thread Started.
+2026-08-11 01:49:17,644|INFO|25|19837308155712|required_fields:{'EventId': 'e2c9cfd9-3c4a-4ec4-9853-049878e7a0fb', 'SubscriptionId': '00000000-0000-0000-0000-000000000000', 'WorkspaceId': 'e4147405-1ec1-4710-91f6-ec581804bbe2', 'CorrelationId': '6a16937f-ae14-43f3-adff-dc041424bf0e', 'ComponentName': 'ParallelRunStep', 'EventName': 'ParallelRunStep.Job.Start', 'EventTime': '2026-08-11T01:49:17.596043+00:00'}
+standard_fields:{'Duration': None, 'TaskResult': None, 'FailureReason': None, 'WorkspaceRegion': 'eastus', 'ComputeType': <AzureMLTelemetryComputeType.AmlcTrain: 1>, 'Attribution': 'ParallelRunStep', 'ClientOS': 2, 'ClientOSVersion': 'Linux-6.8.0-1062-azure-x86_64-with-glibc2.10', 'RunId': 'd4946e2f-35ae-43a7-ba14-8a7d00f8ee90', 'ParentRunId': 'batchjob-6a53958d-4607-4ef3-be38-975106d36a2e', 'ExperimentId': 'd1cbc60e-4bce-427e-877f-01405e3f5839', 'NumberOfNodes': 1, 'NumberOfCores': None, 'DatasetType': 'File', 'CoreSeconds': None}
+extension_fields:{'OutputAction': 'append_row', 'MiniBatchSize': 10, 'ProcessCountPerNode': 2, 'ErrorThreshold': -1, 'AllowFailedCount': None, 'AllowFailedPercent': None, 'ClientSdkVersion': '', 'AmlCoreVersion': '', 'DataprepVersion': 'NA', 'JobId': 'd4946e2f-35ae-43a7-ba14-8a7d00f8ee90', 'PRSVersion': 'V1', 'PRSReleaseId': 'placeholder_release_id', 'NodeId': '0', 'InstanceId': '2a032530-30af-4b8b-860b-5c7bf778a932', 'PythonVersion': '3.8.10 | packaged by conda-forge | (default, Sep 13 2021, 21:46:58) \n[GCC 9.4.0]', 'MaxNodeCount': 0, 'ScoreModuleType': 'PYTHON', 'InputFormatContent': 'URI_FILE'}
+2026-08-11 01:49:17,687|INFO|25|19837308155712|required_fields:{'EventId': '1d3489a7-e852-47f9-a9a8-03f39c8fa020', 'SubscriptionId': '00000000-0000-0000-0000-000000000000', 'WorkspaceId': 'e4147405-1ec1-4710-91f6-ec581804bbe2', 'CorrelationId': '7a51e10b-c6a8-4771-b88a-f20e25a32708', 'ComponentName': 'ParallelRunStep', 'EventName': 'ParallelRunStep.Job.Configuration', 'EventTime': '2026-08-11T01:49:17.687073+00:00'}
+standard_fields:None
+extension_fields:{'UserJobSettings': {'CandidateCount': None, 'IgnoreFailureWithinRetry': None, 'DataFrameToCsv': None, 'PrefetchCount': None, 'CollectComputeHoursMetric': None, 'RegenerateResumeTaskList': None, 'ContinuousRunFailureCountToRestart': None, 'ContinuousInitFailureCountToRestart': None, 'NodeReleaseWaitSeconds': None, 'EntryScriptInitTimeout': None, 'StorageRetentionDays': None, 'JobEarlySuccessWaitTimeCoefficient': None, 'TaskProvider': None}}
+2026-08-11 01:49:17,716|INFO|25|19837308155712|0: setting job stage to PREPARING, reason: The master lock blob created.
+2026-08-11 01:49:17,716|INFO|25|19837308155712|Setting job stage to PREPARING.
+2026-08-11 01:49:19,234|INFO|25|19836885263936|register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/register
+2026-08-11 01:49:19,234|INFO|25|19836885263936|batch_register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/batch/metadata/ExperimentRun/dcid.batchjob-6a53958d-4607-4ef3-be38-975106d36a2e?datastoreName=workspaceartifactstore
+2026-08-11 01:49:23,588|INFO|25|19836895217216|start to run command: ['/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/bin/python', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/agent/py36/main.py', '--model', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/taxi-model/../', '--batch_endpoint_enabled', 'True', '--create_snapshot_at_runtime', 'True', '--copy_logs_to_parent', 'True', '--scoring_module_name', 'batch_driver.py', '--output_action', 'append_row', '--append_row_dataframe_header', 'False', '--output', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_score_workspaceblobstore/azureml/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/score', '--input_asset_job_data_path', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv', '--job_output_path', 'DatasetOutputConfig:score', '--mini_batch_size', '10', '--run_max_try', '3', '--run_invocation_timeout', '30', '--error_threshold', '-1', '--logging_level', 'INFO', '--process_count_per_node', '2', '--append_row_file_name', 'predictions.csv', '--aml_core_version', '', '--dataprep_version', 'NA', '--bf89b5b0_523f_4782_aedc_61bd625ee81a', '{"working_dir": "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90", "snapshot_dir": "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd", "port": 44425, "input_format": "UriFile", "agent_name": "process000", "inputs": ["/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv"], "input_names": [], "gpu_index": -1, "mini_batch_size": 10}'].
+2026-08-11 01:49:23,598|INFO|25|19836895217216|start to run command: ['/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/bin/python', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/agent/py36/main.py', '--model', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/taxi-model/../', '--batch_endpoint_enabled', 'True', '--create_snapshot_at_runtime', 'True', '--copy_logs_to_parent', 'True', '--scoring_module_name', 'batch_driver.py', '--output_action', 'append_row', '--append_row_dataframe_header', 'False', '--output', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_score_workspaceblobstore/azureml/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/score', '--input_asset_job_data_path', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv', '--job_output_path', 'DatasetOutputConfig:score', '--mini_batch_size', '10', '--run_max_try', '3', '--run_invocation_timeout', '30', '--error_threshold', '-1', '--logging_level', 'INFO', '--process_count_per_node', '2', '--append_row_file_name', 'predictions.csv', '--aml_core_version', '', '--dataprep_version', 'NA', '--bf89b5b0_523f_4782_aedc_61bd625ee81a', '{"working_dir": "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90", "snapshot_dir": "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd", "port": 44425, "input_format": "UriFile", "agent_name": "process001", "inputs": ["/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv"], "input_names": [], "gpu_index": -1, "mini_batch_size": 10}'].
+2026-08-11 01:49:23,607|INFO|25|19836895217216|All 2 agents started.
+2026-08-11 01:49:23,607|INFO|25|19836895217216|Start the agent monitor loop. It will check agent timeout after the first task created.
+2026-08-11 01:49:23,676|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:23,695|INFO|25|19837308155712|Write to message file /tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/flags/is_master_role_candidate_node_message: Is master role candidate node..
+2026-08-11 01:49:23,695|INFO|25|19837308155712|Write to flag file /tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/flags/is_master_role_candidate_node.
+2026-08-11 01:49:24,726|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:24,761|INFO|25|19837308155712|Before kill 64.
+2026-08-11 01:49:24,761|INFO|25|19837308155712|After kill 64.
+2026-08-11 01:49:24,846|INFO|25|19836900206144|Worker - Telemetry: nodeId:0, instanceId: 2a032530-30af-4b8b-860b-5c7bf778a932, processId:process000, computeType:AmlCompute, startTime:2026-08-11T01:49:23.759494, endTime:2026-08-11T01:49:24.761823, duration:1.002328872680664, processTime:0, scoringTime:0, totalTasks:0, succeededTask:0, totalItems:0, succeededItems:0, runReturnedBytes:-1.
+2026-08-11 01:49:24,847|INFO|25|19836900206144|required_fields:{'EventId': 'ea711f62-1822-4a3b-b24c-c364e1aa1631', 'SubscriptionId': '00000000-0000-0000-0000-000000000000', 'WorkspaceId': 'e4147405-1ec1-4710-91f6-ec581804bbe2', 'CorrelationId': '450ce720-9a85-41f2-8222-3eed9267feeb', 'ComponentName': 'ParallelRunStep', 'EventName': 'ParallelRunStep.Process.End', 'EventTime': '2026-08-11T01:49:24.846867+00:00'}
+standard_fields:{'Duration': '00:00:01', 'TaskResult': None, 'FailureReason': None, 'WorkspaceRegion': 'eastus', 'ComputeType': <AzureMLTelemetryComputeType.AmlcTrain: 1>, 'Attribution': 'ParallelRunStep', 'ClientOS': 2, 'ClientOSVersion': 'Linux-6.8.0-1062-azure-x86_64-with-glibc2.10', 'RunId': 'd4946e2f-35ae-43a7-ba14-8a7d00f8ee90', 'ParentRunId': 'batchjob-6a53958d-4607-4ef3-be38-975106d36a2e', 'ExperimentId': 'd1cbc60e-4bce-427e-877f-01405e3f5839', 'NumberOfNodes': None, 'NumberOfCores': None, 'DatasetType': None, 'CoreSeconds': None}
+extension_fields:{'StartTime': '2026-08-11T01:49:23.759494', 'EndTime': '2026-08-11T01:49:24.761823', 'NodeId': '0', 'InstanceId': '2a032530-30af-4b8b-860b-5c7bf778a932', 'ProcessId': 'process000', 'ProcessTime': '0', 'RunMethodTime': '0', 'TotalTasks': '0', 'SucceededTasks': '0', 'TotalItems': '0', 'SucceededItems': '0', 'JobId': 'd4946e2f-35ae-43a7-ba14-8a7d00f8ee90', 'RunReturnedBytes': '-1'}
+2026-08-11 01:49:24,889|INFO|25|19836900206144|Worker - Telemetry: nodeId:0, instanceId: 2a032530-30af-4b8b-860b-5c7bf778a932, processId:process001, computeType:AmlCompute, startTime:2026-08-11T01:49:23.766118, endTime:2026-08-11T01:49:24.770993, duration:1.0048749446868896, processTime:0, scoringTime:0, totalTasks:0, succeededTask:0, totalItems:0, succeededItems:0, runReturnedBytes:-1.
+2026-08-11 01:49:24,890|INFO|25|19836900206144|required_fields:{'EventId': '65f1592f-bddf-4efb-8373-2a261c012da4', 'SubscriptionId': '00000000-0000-0000-0000-000000000000', 'WorkspaceId': 'e4147405-1ec1-4710-91f6-ec581804bbe2', 'CorrelationId': 'dd8430cb-5f2b-43e0-b933-f479581f9985', 'ComponentName': 'ParallelRunStep', 'EventName': 'ParallelRunStep.Process.End', 'EventTime': '2026-08-11T01:49:24.889806+00:00'}
+standard_fields:{'Duration': '00:00:01', 'TaskResult': None, 'FailureReason': None, 'WorkspaceRegion': 'eastus', 'ComputeType': <AzureMLTelemetryComputeType.AmlcTrain: 1>, 'Attribution': 'ParallelRunStep', 'ClientOS': 2, 'ClientOSVersion': 'Linux-6.8.0-1062-azure-x86_64-with-glibc2.10', 'RunId': 'd4946e2f-35ae-43a7-ba14-8a7d00f8ee90', 'ParentRunId': 'batchjob-6a53958d-4607-4ef3-be38-975106d36a2e', 'ExperimentId': 'd1cbc60e-4bce-427e-877f-01405e3f5839', 'NumberOfNodes': None, 'NumberOfCores': None, 'DatasetType': None, 'CoreSeconds': None}
+extension_fields:{'StartTime': '2026-08-11T01:49:23.766118', 'EndTime': '2026-08-11T01:49:24.770993', 'NodeId': '0', 'InstanceId': '2a032530-30af-4b8b-860b-5c7bf778a932', 'ProcessId': 'process001', 'ProcessTime': '0', 'RunMethodTime': '0', 'TotalTasks': '0', 'SucceededTasks': '0', 'TotalItems': '0', 'SucceededItems': '0', 'JobId': 'd4946e2f-35ae-43a7-ba14-8a7d00f8ee90', 'RunReturnedBytes': '-1'}
+2026-08-11 01:49:25,727|INFO|25|19836895217216|process000 exits with returncode LOAD_FAILED.
+2026-08-11 01:49:25,727|INFO|25|19836895217216|Start process002 to replace process000.
+2026-08-11 01:49:25,728|INFO|25|19836895217216|start to run command: ['/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/bin/python', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/agent/py36/main.py', '--model', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/taxi-model/../', '--batch_endpoint_enabled', 'True', '--create_snapshot_at_runtime', 'True', '--copy_logs_to_parent', 'True', '--scoring_module_name', 'batch_driver.py', '--output_action', 'append_row', '--append_row_dataframe_header', 'False', '--output', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_score_workspaceblobstore/azureml/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/score', '--input_asset_job_data_path', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv', '--job_output_path', 'DatasetOutputConfig:score', '--mini_batch_size', '10', '--run_max_try', '3', '--run_invocation_timeout', '30', '--error_threshold', '-1', '--logging_level', 'INFO', '--process_count_per_node', '2', '--append_row_file_name', 'predictions.csv', '--aml_core_version', '', '--dataprep_version', 'NA', '--bf89b5b0_523f_4782_aedc_61bd625ee81a', '{"working_dir": "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90", "snapshot_dir": "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd", "port": 44425, "input_format": "UriFile", "agent_name": "process002", "inputs": ["/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv"], "input_names": [], "gpu_index": -1, "mini_batch_size": 10}'].
+2026-08-11 01:49:25,738|INFO|25|19836895217216|process001 exits with returncode LOAD_FAILED.
+2026-08-11 01:49:25,738|INFO|25|19836895217216|Start process003 to replace process001.
+2026-08-11 01:49:25,739|INFO|25|19836895217216|start to run command: ['/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/bin/python', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/agent/py36/main.py', '--model', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/taxi-model/../', '--batch_endpoint_enabled', 'True', '--create_snapshot_at_runtime', 'True', '--copy_logs_to_parent', 'True', '--scoring_module_name', 'batch_driver.py', '--output_action', 'append_row', '--append_row_dataframe_header', 'False', '--output', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_score_workspaceblobstore/azureml/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/score', '--input_asset_job_data_path', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv', '--job_output_path', 'DatasetOutputConfig:score', '--mini_batch_size', '10', '--run_max_try', '3', '--run_invocation_timeout', '30', '--error_threshold', '-1', '--logging_level', 'INFO', '--process_count_per_node', '2', '--append_row_file_name', 'predictions.csv', '--aml_core_version', '', '--dataprep_version', 'NA', '--bf89b5b0_523f_4782_aedc_61bd625ee81a', '{"working_dir": "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90", "snapshot_dir": "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd", "port": 44425, "input_format": "UriFile", "agent_name": "process003", "inputs": ["/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv"], "input_names": [], "gpu_index": -1, "mini_batch_size": 10}'].
+2026-08-11 01:49:25,750|INFO|25|19836895217216|Process 97 returned with returncode 60. Args: ['/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/bin/python', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/agent/py36/main.py', '--model', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/taxi-model/../', '--batch_endpoint_enabled', 'True', '--create_snapshot_at_runtime', 'True', '--copy_logs_to_parent', 'True', '--scoring_module_name', 'batch_driver.py', '--output_action', 'append_row', '--append_row_dataframe_header', 'False', '--output', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_score_workspaceblobstore/azureml/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/score', '--input_asset_job_data_path', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv', '--job_output_path', 'DatasetOutputConfig:score', '--mini_batch_size', '10', '--run_max_try', '3', '--run_invocation_timeout', '30', '--error_threshold', '-1', '--logging_level', 'INFO', '--process_count_per_node', '2', '--append_row_file_name', 'predictions.csv', '--aml_core_version', '', '--dataprep_version', 'NA', '--bf89b5b0_523f_4782_aedc_61bd625ee81a', '{"working_dir": "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90", "snapshot_dir": "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd", "port": 44425, "input_format": "UriFile", "agent_name": "process000", "inputs": ["/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv"], "input_names": [], "gpu_index": -1, "mini_batch_size": 10}'].
+2026-08-11 01:49:25,751|INFO|25|19836895217216|stdout: ok,process000 started.
+
+2026-08-11 01:49:25,751|INFO|25|19836895217216|Process 98 returned with returncode 60. Args: ['/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/bin/python', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/agent/py36/main.py', '--model', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/taxi-model/../', '--batch_endpoint_enabled', 'True', '--create_snapshot_at_runtime', 'True', '--copy_logs_to_parent', 'True', '--scoring_module_name', 'batch_driver.py', '--output_action', 'append_row', '--append_row_dataframe_header', 'False', '--output', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_score_workspaceblobstore/azureml/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/score', '--input_asset_job_data_path', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv', '--job_output_path', 'DatasetOutputConfig:score', '--mini_batch_size', '10', '--run_max_try', '3', '--run_invocation_timeout', '30', '--error_threshold', '-1', '--logging_level', 'INFO', '--process_count_per_node', '2', '--append_row_file_name', 'predictions.csv', '--aml_core_version', '', '--dataprep_version', 'NA', '--bf89b5b0_523f_4782_aedc_61bd625ee81a', '{"working_dir": "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90", "snapshot_dir": "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd", "port": 44425, "input_format": "UriFile", "agent_name": "process001", "inputs": ["/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv"], "input_names": [], "gpu_index": -1, "mini_batch_size": 10}'].
+2026-08-11 01:49:25,751|INFO|25|19836895217216|stdout: ok,process001 started.
+
+2026-08-11 01:49:25,753|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:26,804|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:27,031|INFO|25|19836900206144|Worker - Telemetry: nodeId:0, instanceId: 2a032530-30af-4b8b-860b-5c7bf778a932, processId:process002, computeType:AmlCompute, startTime:2026-08-11T01:49:25.889609, endTime:2026-08-11T01:49:26.891922, duration:1.0023128986358643, processTime:0, scoringTime:0, totalTasks:0, succeededTask:0, totalItems:0, succeededItems:0, runReturnedBytes:-1.
+2026-08-11 01:49:27,031|INFO|25|19836900206144|required_fields:{'EventId': '5ee9085c-602d-4c9f-8e8e-90e06686cfc0', 'SubscriptionId': '00000000-0000-0000-0000-000000000000', 'WorkspaceId': 'e4147405-1ec1-4710-91f6-ec581804bbe2', 'CorrelationId': '04e75098-9c00-4c80-8059-126513f6a7b1', 'ComponentName': 'ParallelRunStep', 'EventName': 'ParallelRunStep.Process.End', 'EventTime': '2026-08-11T01:49:27.031685+00:00'}
+standard_fields:{'Duration': '00:00:01', 'TaskResult': None, 'FailureReason': None, 'WorkspaceRegion': 'eastus', 'ComputeType': <AzureMLTelemetryComputeType.AmlcTrain: 1>, 'Attribution': 'ParallelRunStep', 'ClientOS': 2, 'ClientOSVersion': 'Linux-6.8.0-1062-azure-x86_64-with-glibc2.10', 'RunId': 'd4946e2f-35ae-43a7-ba14-8a7d00f8ee90', 'ParentRunId': 'batchjob-6a53958d-4607-4ef3-be38-975106d36a2e', 'ExperimentId': 'd1cbc60e-4bce-427e-877f-01405e3f5839', 'NumberOfNodes': None, 'NumberOfCores': None, 'DatasetType': None, 'CoreSeconds': None}
+extension_fields:{'StartTime': '2026-08-11T01:49:25.889609', 'EndTime': '2026-08-11T01:49:26.891922', 'NodeId': '0', 'InstanceId': '2a032530-30af-4b8b-860b-5c7bf778a932', 'ProcessId': 'process002', 'ProcessTime': '0', 'RunMethodTime': '0', 'TotalTasks': '0', 'SucceededTasks': '0', 'TotalItems': '0', 'SucceededItems': '0', 'JobId': 'd4946e2f-35ae-43a7-ba14-8a7d00f8ee90', 'RunReturnedBytes': '-1'}
+2026-08-11 01:49:27,068|INFO|25|19836900206144|Worker - Telemetry: nodeId:0, instanceId: 2a032530-30af-4b8b-860b-5c7bf778a932, processId:process003, computeType:AmlCompute, startTime:2026-08-11T01:49:25.914485, endTime:2026-08-11T01:49:26.916980, duration:1.0024950504302979, processTime:0, scoringTime:0, totalTasks:0, succeededTask:0, totalItems:0, succeededItems:0, runReturnedBytes:-1.
+2026-08-11 01:49:27,069|INFO|25|19836900206144|required_fields:{'EventId': '3841969b-0c18-4460-8f4e-53f85c2ef0d9', 'SubscriptionId': '00000000-0000-0000-0000-000000000000', 'WorkspaceId': 'e4147405-1ec1-4710-91f6-ec581804bbe2', 'CorrelationId': '65d6144c-00f0-4839-a967-1c6cd3c8e468', 'ComponentName': 'ParallelRunStep', 'EventName': 'ParallelRunStep.Process.End', 'EventTime': '2026-08-11T01:49:27.068955+00:00'}
+standard_fields:{'Duration': '00:00:01', 'TaskResult': None, 'FailureReason': None, 'WorkspaceRegion': 'eastus', 'ComputeType': <AzureMLTelemetryComputeType.AmlcTrain: 1>, 'Attribution': 'ParallelRunStep', 'ClientOS': 2, 'ClientOSVersion': 'Linux-6.8.0-1062-azure-x86_64-with-glibc2.10', 'RunId': 'd4946e2f-35ae-43a7-ba14-8a7d00f8ee90', 'ParentRunId': 'batchjob-6a53958d-4607-4ef3-be38-975106d36a2e', 'ExperimentId': 'd1cbc60e-4bce-427e-877f-01405e3f5839', 'NumberOfNodes': None, 'NumberOfCores': None, 'DatasetType': None, 'CoreSeconds': None}
+extension_fields:{'StartTime': '2026-08-11T01:49:25.914485', 'EndTime': '2026-08-11T01:49:26.916980', 'NodeId': '0', 'InstanceId': '2a032530-30af-4b8b-860b-5c7bf778a932', 'ProcessId': 'process003', 'ProcessTime': '0', 'RunMethodTime': '0', 'TotalTasks': '0', 'SucceededTasks': '0', 'TotalItems': '0', 'SucceededItems': '0', 'JobId': 'd4946e2f-35ae-43a7-ba14-8a7d00f8ee90', 'RunReturnedBytes': '-1'}
+2026-08-11 01:49:27,806|INFO|25|19836895217216|process002 exits with returncode LOAD_FAILED.
+2026-08-11 01:49:27,806|INFO|25|19836895217216|Start process004 to replace process002.
+2026-08-11 01:49:27,806|INFO|25|19836895217216|start to run command: ['/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/bin/python', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/agent/py36/main.py', '--model', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/taxi-model/../', '--batch_endpoint_enabled', 'True', '--create_snapshot_at_runtime', 'True', '--copy_logs_to_parent', 'True', '--scoring_module_name', 'batch_driver.py', '--output_action', 'append_row', '--append_row_dataframe_header', 'False', '--output', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_score_workspaceblobstore/azureml/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/score', '--input_asset_job_data_path', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv', '--job_output_path', 'DatasetOutputConfig:score', '--mini_batch_size', '10', '--run_max_try', '3', '--run_invocation_timeout', '30', '--error_threshold', '-1', '--logging_level', 'INFO', '--process_count_per_node', '2', '--append_row_file_name', 'predictions.csv', '--aml_core_version', '', '--dataprep_version', 'NA', '--bf89b5b0_523f_4782_aedc_61bd625ee81a', '{"working_dir": "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90", "snapshot_dir": "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd", "port": 44425, "input_format": "UriFile", "agent_name": "process004", "inputs": ["/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv"], "input_names": [], "gpu_index": -1, "mini_batch_size": 10}'].
+2026-08-11 01:49:27,815|INFO|25|19836895217216|process003 exits with returncode LOAD_FAILED.
+2026-08-11 01:49:27,815|INFO|25|19836895217216|Start process005 to replace process003.
+2026-08-11 01:49:27,815|INFO|25|19836895217216|start to run command: ['/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/bin/python', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/agent/py36/main.py', '--model', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/taxi-model/../', '--batch_endpoint_enabled', 'True', '--create_snapshot_at_runtime', 'True', '--copy_logs_to_parent', 'True', '--scoring_module_name', 'batch_driver.py', '--output_action', 'append_row', '--append_row_dataframe_header', 'False', '--output', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_score_workspaceblobstore/azureml/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/score', '--input_asset_job_data_path', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv', '--job_output_path', 'DatasetOutputConfig:score', '--mini_batch_size', '10', '--run_max_try', '3', '--run_invocation_timeout', '30', '--error_threshold', '-1', '--logging_level', 'INFO', '--process_count_per_node', '2', '--append_row_file_name', 'predictions.csv', '--aml_core_version', '', '--dataprep_version', 'NA', '--bf89b5b0_523f_4782_aedc_61bd625ee81a', '{"working_dir": "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90", "snapshot_dir": "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd", "port": 44425, "input_format": "UriFile", "agent_name": "process005", "inputs": ["/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv"], "input_names": [], "gpu_index": -1, "mini_batch_size": 10}'].
+2026-08-11 01:49:27,823|INFO|25|19836895217216|Process 138 returned with returncode 60. Args: ['/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/bin/python', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/agent/py36/main.py', '--model', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/taxi-model/../', '--batch_endpoint_enabled', 'True', '--create_snapshot_at_runtime', 'True', '--copy_logs_to_parent', 'True', '--scoring_module_name', 'batch_driver.py', '--output_action', 'append_row', '--append_row_dataframe_header', 'False', '--output', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_score_workspaceblobstore/azureml/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/score', '--input_asset_job_data_path', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv', '--job_output_path', 'DatasetOutputConfig:score', '--mini_batch_size', '10', '--run_max_try', '3', '--run_invocation_timeout', '30', '--error_threshold', '-1', '--logging_level', 'INFO', '--process_count_per_node', '2', '--append_row_file_name', 'predictions.csv', '--aml_core_version', '', '--dataprep_version', 'NA', '--bf89b5b0_523f_4782_aedc_61bd625ee81a', '{"working_dir": "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90", "snapshot_dir": "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd", "port": 44425, "input_format": "UriFile", "agent_name": "process002", "inputs": ["/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv"], "input_names": [], "gpu_index": -1, "mini_batch_size": 10}'].
+2026-08-11 01:49:27,823|INFO|25|19836895217216|stdout: ok,process002 started.
+
+2026-08-11 01:49:27,824|INFO|25|19836895217216|Process 139 returned with returncode 60. Args: ['/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/bin/python', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/agent/py36/main.py', '--model', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/taxi-model/../', '--batch_endpoint_enabled', 'True', '--create_snapshot_at_runtime', 'True', '--copy_logs_to_parent', 'True', '--scoring_module_name', 'batch_driver.py', '--output_action', 'append_row', '--append_row_dataframe_header', 'False', '--output', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_score_workspaceblobstore/azureml/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/score', '--input_asset_job_data_path', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv', '--job_output_path', 'DatasetOutputConfig:score', '--mini_batch_size', '10', '--run_max_try', '3', '--run_invocation_timeout', '30', '--error_threshold', '-1', '--logging_level', 'INFO', '--process_count_per_node', '2', '--append_row_file_name', 'predictions.csv', '--aml_core_version', '', '--dataprep_version', 'NA', '--bf89b5b0_523f_4782_aedc_61bd625ee81a', '{"working_dir": "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90", "snapshot_dir": "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd", "port": 44425, "input_format": "UriFile", "agent_name": "process003", "inputs": ["/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv"], "input_names": [], "gpu_index": -1, "mini_batch_size": 10}'].
+2026-08-11 01:49:27,824|INFO|25|19836895217216|stdout: ok,process003 started.
+
+2026-08-11 01:49:27,825|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:28,887|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:29,313|INFO|25|19836900206144|Worker - Telemetry: nodeId:0, instanceId: 2a032530-30af-4b8b-860b-5c7bf778a932, processId:process005, computeType:AmlCompute, startTime:2026-08-11T01:49:27.974362, endTime:2026-08-11T01:49:28.977129, duration:1.0027670860290527, processTime:0, scoringTime:0, totalTasks:0, succeededTask:0, totalItems:0, succeededItems:0, runReturnedBytes:-1.
+2026-08-11 01:49:29,313|INFO|25|19836900206144|required_fields:{'EventId': '10dd33a3-26d4-4b2d-846a-3eaa82ee60f2', 'SubscriptionId': '00000000-0000-0000-0000-000000000000', 'WorkspaceId': 'e4147405-1ec1-4710-91f6-ec581804bbe2', 'CorrelationId': '5a99f69f-5606-413b-bdc7-e69e921d848c', 'ComponentName': 'ParallelRunStep', 'EventName': 'ParallelRunStep.Process.End', 'EventTime': '2026-08-11T01:49:29.313348+00:00'}
+standard_fields:{'Duration': '00:00:01', 'TaskResult': None, 'FailureReason': None, 'WorkspaceRegion': 'eastus', 'ComputeType': <AzureMLTelemetryComputeType.AmlcTrain: 1>, 'Attribution': 'ParallelRunStep', 'ClientOS': 2, 'ClientOSVersion': 'Linux-6.8.0-1062-azure-x86_64-with-glibc2.10', 'RunId': 'd4946e2f-35ae-43a7-ba14-8a7d00f8ee90', 'ParentRunId': 'batchjob-6a53958d-4607-4ef3-be38-975106d36a2e', 'ExperimentId': 'd1cbc60e-4bce-427e-877f-01405e3f5839', 'NumberOfNodes': None, 'NumberOfCores': None, 'DatasetType': None, 'CoreSeconds': None}
+extension_fields:{'StartTime': '2026-08-11T01:49:27.974362', 'EndTime': '2026-08-11T01:49:28.977129', 'NodeId': '0', 'InstanceId': '2a032530-30af-4b8b-860b-5c7bf778a932', 'ProcessId': 'process005', 'ProcessTime': '0', 'RunMethodTime': '0', 'TotalTasks': '0', 'SucceededTasks': '0', 'TotalItems': '0', 'SucceededItems': '0', 'JobId': 'd4946e2f-35ae-43a7-ba14-8a7d00f8ee90', 'RunReturnedBytes': '-1'}
+2026-08-11 01:49:29,358|INFO|25|19836900206144|Worker - Telemetry: nodeId:0, instanceId: 2a032530-30af-4b8b-860b-5c7bf778a932, processId:process004, computeType:AmlCompute, startTime:2026-08-11T01:49:27.980099, endTime:2026-08-11T01:49:28.983185, duration:1.0030860900878906, processTime:0, scoringTime:0, totalTasks:0, succeededTask:0, totalItems:0, succeededItems:0, runReturnedBytes:-1.
+2026-08-11 01:49:29,359|INFO|25|19836900206144|required_fields:{'EventId': '554df8aa-aa05-4a0e-96ab-9ae8a4e50d60', 'SubscriptionId': '00000000-0000-0000-0000-000000000000', 'WorkspaceId': 'e4147405-1ec1-4710-91f6-ec581804bbe2', 'CorrelationId': 'fc232e50-e124-4888-ad9d-0e46651b4f8f', 'ComponentName': 'ParallelRunStep', 'EventName': 'ParallelRunStep.Process.End', 'EventTime': '2026-08-11T01:49:29.358912+00:00'}
+standard_fields:{'Duration': '00:00:01', 'TaskResult': None, 'FailureReason': None, 'WorkspaceRegion': 'eastus', 'ComputeType': <AzureMLTelemetryComputeType.AmlcTrain: 1>, 'Attribution': 'ParallelRunStep', 'ClientOS': 2, 'ClientOSVersion': 'Linux-6.8.0-1062-azure-x86_64-with-glibc2.10', 'RunId': 'd4946e2f-35ae-43a7-ba14-8a7d00f8ee90', 'ParentRunId': 'batchjob-6a53958d-4607-4ef3-be38-975106d36a2e', 'ExperimentId': 'd1cbc60e-4bce-427e-877f-01405e3f5839', 'NumberOfNodes': None, 'NumberOfCores': None, 'DatasetType': None, 'CoreSeconds': None}
+extension_fields:{'StartTime': '2026-08-11T01:49:27.980099', 'EndTime': '2026-08-11T01:49:28.983185', 'NodeId': '0', 'InstanceId': '2a032530-30af-4b8b-860b-5c7bf778a932', 'ProcessId': 'process004', 'ProcessTime': '0', 'RunMethodTime': '0', 'TotalTasks': '0', 'SucceededTasks': '0', 'TotalItems': '0', 'SucceededItems': '0', 'JobId': 'd4946e2f-35ae-43a7-ba14-8a7d00f8ee90', 'RunReturnedBytes': '-1'}
+2026-08-11 01:49:29,889|INFO|25|19836895217216|process004 exits with returncode LOAD_FAILED.
+2026-08-11 01:49:29,889|INFO|25|19836895217216|Stop starting new agent due to init failed times has exceeded limit.
+2026-08-11 01:49:29,889|INFO|25|19836895217216|process005 exits with returncode LOAD_FAILED.
+2026-08-11 01:49:29,889|INFO|25|19836895217216|Stop starting new agent due to init failed times has exceeded limit.
+2026-08-11 01:49:29,890|INFO|25|19836895217216|Process 168 returned with returncode 60. Args: ['/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/bin/python', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/agent/py36/main.py', '--model', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/taxi-model/../', '--batch_endpoint_enabled', 'True', '--create_snapshot_at_runtime', 'True', '--copy_logs_to_parent', 'True', '--scoring_module_name', 'batch_driver.py', '--output_action', 'append_row', '--append_row_dataframe_header', 'False', '--output', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_score_workspaceblobstore/azureml/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/score', '--input_asset_job_data_path', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv', '--job_output_path', 'DatasetOutputConfig:score', '--mini_batch_size', '10', '--run_max_try', '3', '--run_invocation_timeout', '30', '--error_threshold', '-1', '--logging_level', 'INFO', '--process_count_per_node', '2', '--append_row_file_name', 'predictions.csv', '--aml_core_version', '', '--dataprep_version', 'NA', '--bf89b5b0_523f_4782_aedc_61bd625ee81a', '{"working_dir": "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90", "snapshot_dir": "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd", "port": 44425, "input_format": "UriFile", "agent_name": "process004", "inputs": ["/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv"], "input_names": [], "gpu_index": -1, "mini_batch_size": 10}'].
+2026-08-11 01:49:29,890|INFO|25|19836895217216|stdout: ok,process004 started.
+
+2026-08-11 01:49:29,891|INFO|25|19836895217216|Process 169 returned with returncode 60. Args: ['/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/bin/python', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/agent/py36/main.py', '--model', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/taxi-model/../', '--batch_endpoint_enabled', 'True', '--create_snapshot_at_runtime', 'True', '--copy_logs_to_parent', 'True', '--scoring_module_name', 'batch_driver.py', '--output_action', 'append_row', '--append_row_dataframe_header', 'False', '--output', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_score_workspaceblobstore/azureml/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/score', '--input_asset_job_data_path', '/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv', '--job_output_path', 'DatasetOutputConfig:score', '--mini_batch_size', '10', '--run_max_try', '3', '--run_invocation_timeout', '30', '--error_threshold', '-1', '--logging_level', 'INFO', '--process_count_per_node', '2', '--append_row_file_name', 'predictions.csv', '--aml_core_version', '', '--dataprep_version', 'NA', '--bf89b5b0_523f_4782_aedc_61bd625ee81a', '{"working_dir": "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90", "snapshot_dir": "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd", "port": 44425, "input_format": "UriFile", "agent_name": "process005", "inputs": ["/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv"], "input_names": [], "gpu_index": -1, "mini_batch_size": 10}'].
+2026-08-11 01:49:29,891|INFO|25|19836895217216|stdout: ok,process005 started.
+
+2026-08-11 01:49:29,892|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:30,893|INFO|25|19836895217216|There is no worker process.
+2026-08-11 01:49:30,894|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:31,480|INFO|25|19836893115968|Processes to check: [].
+2026-08-11 01:49:31,480|INFO|25|19836893115968|Processes to kill: [].
+2026-08-11 01:49:31,480|INFO|25|19836893115968|Processes after calling kill: [].
+2026-08-11 01:49:31,480|INFO|25|19836893115968|The poll stopping thread stops because job is in stopping.
+2026-08-11 01:49:31,480|INFO|25|19836893115968|Closed node usage files.
+2026-08-11 01:49:31,480|INFO|25|19836893115968|The poll stopping thread stopped.
+2026-08-11 01:49:31,895|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:32,897|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:33,899|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:34,655|INFO|25|19837308155712|Before kill 197.
+2026-08-11 01:49:34,655|INFO|25|19837308155712|After kill 197.
+2026-08-11 01:49:34,901|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:35,903|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:36,906|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:37,909|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:38,914|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:39,917|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:40,920|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:41,922|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:42,923|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:43,925|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:44,926|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:45,453|INFO|25|19837308155712|Before kill 233.
+2026-08-11 01:49:45,453|INFO|25|19837308155712|After kill 233.
+2026-08-11 01:49:45,928|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:46,930|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:47,932|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:48,934|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:49,937|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:50,939|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:51,942|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:52,943|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:53,944|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:54,946|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:55,242|INFO|25|19837308155712|Before kill 269.
+2026-08-11 01:49:55,242|INFO|25|19837308155712|After kill 269.
+2026-08-11 01:49:55,948|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:56,950|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:57,952|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:58,955|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:49:59,957|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:00,959|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:01,962|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:02,965|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:03,967|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:04,969|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:05,970|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:06,971|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:07,085|INFO|25|19837308155712|Before kill 299.
+2026-08-11 01:50:07,085|INFO|25|19837308155712|After kill 299.
+2026-08-11 01:50:07,973|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:08,975|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:09,978|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:10,980|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:11,983|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:12,986|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:13,988|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:14,990|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:15,992|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:16,994|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:17,903|INFO|25|19837308155712|Before kill 331.
+2026-08-11 01:50:17,903|INFO|25|19837308155712|After kill 331.
+2026-08-11 01:50:17,995|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:18,998|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:20,000|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:21,002|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:22,003|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:23,006|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:24,009|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:25,011|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:26,014|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:27,015|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:28,017|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:28,728|INFO|25|19837308155712|Before kill 367.
+2026-08-11 01:50:28,728|INFO|25|19837308155712|After kill 367.
+2026-08-11 01:50:29,019|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:30,021|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:31,024|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:32,026|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:33,028|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:34,033|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:35,036|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:36,038|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:37,040|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:38,042|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:39,044|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:39,577|INFO|25|19837308155712|Before kill 399.
+2026-08-11 01:50:39,577|INFO|25|19837308155712|After kill 399.
+2026-08-11 01:50:40,045|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:41,047|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:42,050|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:43,052|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:44,055|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:45,057|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:46,059|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:47,061|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:48,064|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:49,065|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:49,460|INFO|25|19837308155712|Before kill 431.
+2026-08-11 01:50:49,460|INFO|25|19837308155712|After kill 431.
+2026-08-11 01:50:50,067|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:51,069|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:52,071|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:53,074|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:54,076|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:55,078|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:56,080|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:57,082|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:58,083|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:50:59,085|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:00,087|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:00,216|INFO|25|19837308155712|Before kill 465.
+2026-08-11 01:51:00,216|INFO|25|19837308155712|After kill 465.
+2026-08-11 01:51:00,330|INFO|25|19837308155712|Saved result to table: HttpResponseError. This master role process failed with exitcode 1. with detail: error This master role process failed with exitcode 1. after 10 tries. azureml_common.parallel_run.exception_info.Exception: Run failed. Below is the error detail:
+Traceback (most recent call last):
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run
+    loop.run_until_complete(self.master_role.start())
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start
+    await starting
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 315, in _do_start
+    await self.wait_for_first_task()
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 292, in wait_for_first_task
+    await self.wait_for_input_init()
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 130, in wait_for_input_init
+    self.future_create_tasks.result()
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 255, in create_tasks
+    raise exc
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 246, in create_tasks
+    await queue_sender.create_tasks(task_group)
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 98, in create_tasks
+    await asyncio.gather(*asyncio_tasks)
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 75, in done_callback
+    task_id = future.result()
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 63, in create_task
+    await self.queue_client.send_message(content=message, time_to_live=-1)
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator_async.py", line 77, in wrapper_use_tracer
+    return await func(*args, **kwargs)
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azure/storage/queue/aio/_queue_client_async.py", line 402, in send_message
+    process_storage_error(error)
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:3263948b-0003-0077-1533-294bdb000000
+Time:2026-08-11T01:50:58.8481449Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:3263948b-0003-0077-1533-294bdb000000
+Time:2026-08-11T01:50:58.8481449Z</Message></Error>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 635, in poll
+    self.check_master_process()
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 378, in check_master_process
+    self.handle_stopped_master_process()
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 330, in handle_stopped_master_process
+    raise MasterRoleProcessException(msg, self.return_dict) from cause
+azureml_common.parallel_run.exception.MasterRoleProcessException: This master role process failed with exitcode 1.
+..
+2026-08-11 01:51:00,331|INFO|25|19837308155712|0: setting job stage to STOP_ON_ERROR, reason: HttpResponseError. This master role process failed with exitcode 1.. error This master role process failed with exitcode 1. after 10 tries. azureml_common.parallel_run.exception_info.Exception: Run failed. Below is the error detail:
+Traceback (most recent call last):
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run
+    loop.run_until_complete(self.master_role.start())
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start
+    await starting
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 315, in _do_start
+    await self.wait_for_first_task()
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 292, in wait_for_first_task
+    await self.wait_for_input_init()
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 130, in wait_for_input_init
+    self.future_create_tasks.result()
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 255, in create_tasks
+    raise exc
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 246, in create_tasks
+    await queue_sender.create_tasks(task_group)
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 98, in create_tasks
+    await asyncio.gather(*asyncio_tasks)
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 75, in done_callback
+    task_id = future.result()
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 63, in create_task
+    await self.queue_client.send_message(content=message, time_to_live=-1)
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator_async.py", line 77, in wrapper_use_tracer
+    return await func(*args, **kwargs)
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azure/storage/queue/aio/_queue_client_async.py", line 402, in send_message
+    process_storage_error(error)
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:3263948b-0003-0077-1533-294bdb000000
+Time:2026-08-11T01:50:58.8481449Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:3263948b-0003-0077-1533-294bdb000000
+Time:2026-08-11T01:50:58.8481449Z</Message></Error>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 635, in poll
+    self.check_master_process()
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 378, in check_master_process
+    self.handle_stopped_master_process()
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 330, in handle_stopped_master_process
+    raise MasterRoleProcessException(msg, self.return_dict) from cause
+azureml_common.parallel_run.exception.MasterRoleProcessException: This master role process failed with exitcode 1.
+..
+2026-08-11 01:51:00,331|INFO|25|19837308155712|Setting job stage to STOP_ON_ERROR.
+2026-08-11 01:51:00,384|INFO|25|19837308155712|HttpResponseError. This master role process failed with exitcode 1.. error This master role process failed with exitcode 1. after 10 tries. azureml_common.parallel_run.exception_info.Exception: Run failed. Below is the error detail:
+Traceback (most recent call last):
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run
+    loop.run_until_complete(self.master_role.start())
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start
+    await starting
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 315, in _do_start
+    await self.wait_for_first_task()
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 292, in wait_for_first_task
+    await self.wait_for_input_init()
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 130, in wait_for_input_init
+    self.future_create_tasks.result()
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 255, in create_tasks
+    raise exc
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 246, in create_tasks
+    await queue_sender.create_tasks(task_group)
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 98, in create_tasks
+    await asyncio.gather(*asyncio_tasks)
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 75, in done_callback
+    task_id = future.result()
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 63, in create_task
+    await self.queue_client.send_message(content=message, time_to_live=-1)
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator_async.py", line 77, in wrapper_use_tracer
+    return await func(*args, **kwargs)
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azure/storage/queue/aio/_queue_client_async.py", line 402, in send_message
+    process_storage_error(error)
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:3263948b-0003-0077-1533-294bdb000000
+Time:2026-08-11T01:50:58.8481449Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:3263948b-0003-0077-1533-294bdb000000
+Time:2026-08-11T01:50:58.8481449Z</Message></Error>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 635, in poll
+    self.check_master_process()
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 378, in check_master_process
+    self.handle_stopped_master_process()
+  File "/tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 330, in handle_stopped_master_process
+    raise MasterRoleProcessException(msg, self.return_dict) from cause
+azureml_common.parallel_run.exception.MasterRoleProcessException: This master role process failed with exitcode 1.
+..
+2026-08-11 01:51:00,385|INFO|25|19837308155712|Write to message file /tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/flags/fatal_exception_message: This master role process failed with exitcode 1..
+2026-08-11 01:51:00,385|INFO|25|19837308155712|Write to flag file /tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/flags/fatal_exception.
+2026-08-11 01:51:00,386|INFO|25|19837308155712|Deleted flag file /tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/flags/is_master_role_candidate_node.
+2026-08-11 01:51:00,386|INFO|25|19837308155712|Deleted message file /tmp/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90/flags/is_master_role_candidate_node_message.
+2026-08-11 01:51:00,386|INFO|25|19837308155712|The master poller stopped.
+2026-08-11 01:51:00,386|INFO|25|19837308155712|Wait the agent monitor thread to terminate.
+2026-08-11 01:51:01,089|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:02,091|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:03,094|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:04,096|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:05,098|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:06,100|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:07,102|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:08,104|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:09,106|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:10,108|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:11,110|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:12,112|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:13,114|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:14,116|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:15,118|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:16,120|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:17,122|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:18,124|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:19,126|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:20,128|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:21,130|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:22,132|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:23,134|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:24,136|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:25,138|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:26,140|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:27,142|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:28,144|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:29,146|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:30,148|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:31,150|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:32,152|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:33,154|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:34,156|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:35,158|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:36,159|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:37,161|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:38,163|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:39,166|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:40,168|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:41,170|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:42,172|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:43,174|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:44,176|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:45,178|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:46,180|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:47,182|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:48,184|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:49,185|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:50,188|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:51,190|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:52,192|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:53,194|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:54,196|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:55,198|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:56,200|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:57,202|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:58,204|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:51:59,206|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:00,208|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:01,209|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:02,211|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:03,213|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:04,215|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:05,217|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:06,219|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:07,220|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:08,222|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:09,224|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:10,226|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:11,228|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:12,230|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:13,232|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:14,234|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:15,236|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:16,238|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:17,240|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:18,242|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:19,244|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:20,246|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:21,249|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:22,250|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:23,252|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:24,254|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:25,256|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:26,258|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:27,260|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:28,262|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:29,264|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:30,266|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:31,268|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:32,270|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:33,272|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:34,274|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:35,276|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:36,278|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:37,281|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:38,282|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:39,285|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:40,287|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:41,289|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:42,291|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:43,293|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:44,295|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:45,297|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:46,299|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:47,301|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:48,303|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:49,305|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:50,307|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:51,309|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:52,311|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:53,313|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:54,315|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:55,317|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:56,319|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:57,322|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:58,323|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:52:59,326|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:00,327|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:01,328|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:02,330|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:03,332|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:04,334|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:05,335|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:06,337|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:07,339|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:08,341|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:09,343|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:10,345|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:11,348|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:12,350|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:13,352|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:14,354|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:15,355|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:16,357|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:17,359|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:18,362|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:19,363|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:20,365|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:21,367|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:22,369|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:23,371|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:24,373|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:25,375|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:26,377|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:27,379|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:28,381|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:29,383|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:30,385|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:31,387|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:32,389|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:33,391|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:34,393|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:35,395|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:36,398|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:37,400|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:38,401|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:39,403|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:40,405|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:41,407|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:42,409|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:43,412|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:44,414|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:45,416|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:46,418|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:47,420|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:48,422|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:49,423|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:50,425|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:51,427|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:52,429|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:53,431|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:54,433|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:55,435|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:56,437|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:57,440|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:58,442|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:53:59,444|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:00,446|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:01,448|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:02,450|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:03,452|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:04,454|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:05,456|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:06,458|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:07,460|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:08,461|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:09,464|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:10,466|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:11,468|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:12,470|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:13,472|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:14,474|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:15,476|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:16,478|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:17,480|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:18,482|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:19,485|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:20,487|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:21,489|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:22,490|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:23,492|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:24,494|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:25,496|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:26,497|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:27,499|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:28,501|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:29,504|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:30,506|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:31,507|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:32,509|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:33,511|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:34,512|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:35,515|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:36,517|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:37,519|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:38,520|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:39,522|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:40,524|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:41,526|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:42,528|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:43,530|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:44,532|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:45,533|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:46,535|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:47,537|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:48,539|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:49,541|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:50,543|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:51,545|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:52,547|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:53,549|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:54,551|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:55,553|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:56,555|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:57,557|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:58,559|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:54:59,561|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:00,563|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:01,565|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:02,567|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:03,569|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:04,571|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:05,573|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:06,575|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:07,576|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:08,578|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:09,581|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:10,582|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:11,584|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:12,586|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:13,588|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:14,590|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:15,592|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:16,594|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:17,596|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:18,598|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:19,600|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:20,603|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:21,604|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:22,606|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:23,609|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:24,611|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:25,613|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:26,615|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:27,617|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:28,619|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:29,621|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:30,623|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:31,625|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:32,627|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:33,629|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:34,631|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:35,633|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:36,635|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:37,637|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:38,639|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:39,641|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:40,643|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:41,645|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:42,647|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:43,649|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:44,651|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:45,654|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:46,655|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:47,658|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:48,660|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:49,661|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:50,664|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:51,666|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:52,668|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:53,670|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:54,672|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:55,674|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:56,676|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:57,679|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:58,681|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:55:59,683|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:00,685|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:01,687|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:02,689|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:03,690|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:04,692|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:05,694|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:06,696|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:07,698|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:08,700|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:09,703|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:10,705|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:11,707|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:12,709|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:13,710|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:14,712|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:15,714|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:16,716|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:17,718|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:18,720|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:19,722|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:20,724|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:21,726|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:22,728|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:23,730|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:24,732|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:25,734|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:26,736|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:27,738|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:28,740|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:29,742|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:30,744|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:31,746|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:32,748|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:33,750|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:34,752|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:35,754|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:36,756|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:37,759|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:38,761|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:39,763|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:40,765|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:41,767|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:42,769|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:43,771|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:44,772|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:45,774|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:46,776|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:47,778|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:48,779|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:49,781|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:50,783|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:51,785|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:52,787|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:53,790|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:54,792|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:55,794|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:56,796|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:57,798|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:58,800|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:56:59,803|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:00,805|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:01,807|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:02,809|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:03,812|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:04,814|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:05,816|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:06,818|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:07,820|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:08,822|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:09,824|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:10,827|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:11,829|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:12,831|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:13,833|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:14,834|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:15,835|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:16,837|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:17,838|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:18,840|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:19,843|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:20,845|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:21,847|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:22,849|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:23,851|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:24,853|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:25,855|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:26,857|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:27,859|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:28,862|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:29,863|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:30,865|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:31,867|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:32,869|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:33,872|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:34,874|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:35,876|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:36,878|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:37,880|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:38,883|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:39,885|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:40,887|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:41,889|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:42,890|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:43,893|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:44,895|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:45,898|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:46,899|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:47,901|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:48,903|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:49,905|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:50,907|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:51,909|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:52,911|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:53,913|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:54,915|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:55,917|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:56,919|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:57,921|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:58,924|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:57:59,926|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:00,928|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:01,930|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:02,931|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:03,933|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:04,935|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:05,937|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:06,939|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:07,941|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:08,943|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:09,945|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:10,948|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:11,950|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:12,952|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:13,954|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:14,956|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:15,958|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:16,960|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:17,962|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:18,964|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:19,966|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:20,968|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:21,970|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:22,972|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:23,974|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:24,976|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:25,978|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:26,981|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:27,983|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:28,985|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:29,987|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:30,989|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:31,991|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:32,992|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:33,994|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:34,996|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:35,999|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:37,001|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:38,003|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:39,005|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:40,007|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:41,009|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:42,012|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:43,014|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:44,016|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:45,018|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:46,020|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:47,022|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:48,024|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:49,026|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:50,028|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:51,030|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:52,032|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:53,034|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:54,036|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:55,038|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:56,040|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:57,042|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:58,043|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:58:59,046|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:00,048|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:01,050|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:02,052|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:03,055|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:04,056|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:05,059|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:06,061|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:07,063|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:08,065|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:09,067|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:10,069|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:11,071|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:12,073|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:13,074|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:14,076|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:15,078|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:16,080|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:17,082|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:18,084|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:19,086|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:20,088|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:21,090|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:22,092|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:23,094|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:24,097|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:25,099|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:26,102|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:27,104|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:28,106|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:29,108|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:30,110|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:31,111|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:32,113|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:33,115|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:34,117|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:35,119|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:36,121|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:37,123|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:38,125|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:39,127|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:40,129|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:41,131|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:42,133|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:43,135|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:44,137|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:45,139|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:46,142|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:47,144|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:48,146|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:49,148|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:50,150|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:51,151|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:52,153|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:53,155|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:54,157|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:55,160|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:56,162|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:57,164|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:58,166|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 01:59:59,168|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:00,170|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:01,172|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:02,174|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:03,176|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:04,178|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:05,180|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:06,182|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:07,184|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:08,186|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:09,188|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:10,190|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:11,192|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:12,194|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:13,196|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:14,198|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:15,200|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:16,203|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:17,205|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:18,207|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:19,209|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:20,211|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:21,213|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:22,215|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:23,217|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:24,219|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:25,221|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:26,222|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:27,224|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:28,226|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:29,228|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:30,231|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:31,232|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:32,233|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:33,235|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:34,237|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:35,239|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:36,241|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:37,243|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:38,246|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:39,248|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:40,250|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:41,252|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:42,254|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:43,256|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:44,258|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:45,260|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:46,262|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:47,264|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:48,266|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:49,268|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:50,270|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:51,272|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:52,274|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:53,277|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:54,279|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:55,281|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:56,283|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:57,285|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:58,287|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:00:59,290|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:01:00,292|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:01:01,294|INFO|25|19836895217216|Waiting for finalization signal.
+2026-08-11 02:01:02,296|INFO|25|19836895217216|Waiting for finalization signal.

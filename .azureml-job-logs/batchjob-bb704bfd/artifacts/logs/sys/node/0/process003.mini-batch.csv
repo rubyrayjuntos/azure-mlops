@@ -1,0 +1,6 @@
+Mini-batch Id,Dequeue Count,Start Time,Total,Succeeded,Failed,Elapsed Seconds,Process Seconds,Input Start Time,Input Seconds,Run Method Start Time,Run Method Seconds,Output Start Time,Output Seconds,Status,Error
+,,2026-08-11T02:33:51.664484,,,,,,,,,,,,LOAD_START,
+,,2026-08-11T02:33:51.664484,,,,1.062654972076416,,,,,,,,LOAD_DONE,
+,,2026-08-11T02:33:52.730504,,,,1.062654972076416,,,,,,,,INIT_START,
+,,2026-08-11T02:33:52.730504,,,,1.062654972076416,,,,,,,,INIT_EXCEPTION,No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'
+,,2026-08-11T02:33:51.661994,0,0,0,2.003140926361084,0,,,,0,,,AGENT_DONE,

@@ -1,0 +1,1 @@
+ERROR:score_module:Failed to load model from /mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model: No such file or directory: '/mnt/azureml/cr/j/7ddd00d0c03d4271a499472a1bb0e837/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/MLmodel'

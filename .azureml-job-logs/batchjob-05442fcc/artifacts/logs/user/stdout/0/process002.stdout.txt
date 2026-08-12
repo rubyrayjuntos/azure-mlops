@@ -1,0 +1,5 @@
+ERROR:score_module:Error processing /mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Unnamed: 0
+- cost
+

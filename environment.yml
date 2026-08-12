@@ -17,3 +17,5 @@ dependencies:
       - azureml-core==1.57.0
       - azureml-dataset-runtime[fuse]==1.57.0
       - opencensus-ext-azure==1.1.13
+      - azure-identity==1.19.0
+      - azure-search-documents==11.6.0b12

@@ -1,0 +1,1650 @@
+2026-08-11 02:57:24,404|ERROR|25|18667154691648|Failed to handle {"agent": "process001", "method": "get"}. request={'agent': 'process001', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:db39dd11-b003-0062-683d-295c68000000
+Time:2026-08-11T02:57:24.4033780Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:db39dd11-b003-0062-683d-295c68000000
+Time:2026-08-11T02:57:24.4033780Z</Message></Error>
+2026-08-11 02:57:24,435|ERROR|25|18667156792896|Failed to handle {"agent": "process000", "method": "get"}. request={'agent': 'process000', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643e245-9003-004a-453d-293dc0000000
+Time:2026-08-11T02:57:24.4338234Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643e245-9003-004a-453d-293dc0000000
+Time:2026-08-11T02:57:24.4338234Z</Message></Error>
+2026-08-11 02:57:25,416|ERROR|25|18667156792896|Failed to handle {"agent": "process001", "method": "get"}. request={'agent': 'process001', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643e291-9003-004a-043d-293dc0000000
+Time:2026-08-11T02:57:25.4156574Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643e291-9003-004a-043d-293dc0000000
+Time:2026-08-11T02:57:25.4156574Z</Message></Error>
+2026-08-11 02:57:25,444|ERROR|25|18667156792896|Failed to handle {"agent": "process000", "method": "get"}. request={'agent': 'process000', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643e294-9003-004a-073d-293dc0000000
+Time:2026-08-11T02:57:25.4434337Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643e294-9003-004a-073d-293dc0000000
+Time:2026-08-11T02:57:25.4434337Z</Message></Error>
+2026-08-11 02:57:27,428|ERROR|25|18667156792896|Failed to handle {"agent": "process001", "method": "get"}. request={'agent': 'process001', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643e401-9003-004a-6d3d-293dc0000000
+Time:2026-08-11T02:57:27.4269600Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643e401-9003-004a-6d3d-293dc0000000
+Time:2026-08-11T02:57:27.4269600Z</Message></Error>
+2026-08-11 02:57:27,455|ERROR|25|18667156792896|Failed to handle {"agent": "process000", "method": "get"}. request={'agent': 'process000', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643e42a-9003-004a-6f3d-293dc0000000
+Time:2026-08-11T02:57:27.4539820Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643e42a-9003-004a-6f3d-293dc0000000
+Time:2026-08-11T02:57:27.4539820Z</Message></Error>
+2026-08-11 02:57:31,439|ERROR|25|18667156792896|Failed to handle {"agent": "process001", "method": "get"}. request={'agent': 'process001', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643e861-9003-004a-703d-293dc0000000
+Time:2026-08-11T02:57:31.4377563Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643e861-9003-004a-703d-293dc0000000
+Time:2026-08-11T02:57:31.4377563Z</Message></Error>
+2026-08-11 02:57:31,464|ERROR|25|18667156792896|Failed to handle {"agent": "process000", "method": "get"}. request={'agent': 'process000', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643e86d-9003-004a-793d-293dc0000000
+Time:2026-08-11T02:57:31.4635273Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643e86d-9003-004a-793d-293dc0000000
+Time:2026-08-11T02:57:31.4635273Z</Message></Error>
+2026-08-11 02:57:39,451|ERROR|25|18667156792896|Failed to handle {"agent": "process001", "method": "get"}. request={'agent': 'process001', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643ec8b-9003-004a-713d-293dc0000000
+Time:2026-08-11T02:57:39.4494830Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643ec8b-9003-004a-713d-293dc0000000
+Time:2026-08-11T02:57:39.4494830Z</Message></Error>
+2026-08-11 02:57:39,476|ERROR|25|18667156792896|Failed to handle {"agent": "process000", "method": "get"}. request={'agent': 'process000', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643ec8c-9003-004a-723d-293dc0000000
+Time:2026-08-11T02:57:39.4746875Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643ec8c-9003-004a-723d-293dc0000000
+Time:2026-08-11T02:57:39.4746875Z</Message></Error>
+2026-08-11 02:57:44,027|ERROR|25|18667156792896|Failed to handle {"agent": "process002", "method": "get"}. request={'agent': 'process002', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643ef1e-9003-004a-2e3d-293dc0000000
+Time:2026-08-11T02:57:44.0262772Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643ef1e-9003-004a-2e3d-293dc0000000
+Time:2026-08-11T02:57:44.0262772Z</Message></Error>
+2026-08-11 02:57:44,161|ERROR|25|18667156792896|Failed to handle {"agent": "process003", "method": "get"}. request={'agent': 'process003', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643ef29-9003-004a-383d-293dc0000000
+Time:2026-08-11T02:57:44.1598241Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643ef29-9003-004a-383d-293dc0000000
+Time:2026-08-11T02:57:44.1598241Z</Message></Error>
+2026-08-11 02:57:45,039|ERROR|25|18667176719936|Failed to handle {"agent": "process002", "method": "get"}. request={'agent': 'process002', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643ef7d-9003-004a-073d-293dc0000000
+Time:2026-08-11T02:57:45.0381454Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643ef7d-9003-004a-073d-293dc0000000
+Time:2026-08-11T02:57:45.0381454Z</Message></Error>
+2026-08-11 02:57:45,171|ERROR|25|18667176719936|Failed to handle {"agent": "process003", "method": "get"}. request={'agent': 'process003', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643ef89-9003-004a-113d-293dc0000000
+Time:2026-08-11T02:57:45.1699710Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643ef89-9003-004a-113d-293dc0000000
+Time:2026-08-11T02:57:45.1699710Z</Message></Error>
+2026-08-11 02:57:47,055|ERROR|25|18667176719936|Failed to handle {"agent": "process002", "method": "get"}. request={'agent': 'process002', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643f012-9003-004a-103d-293dc0000000
+Time:2026-08-11T02:57:47.0543885Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643f012-9003-004a-103d-293dc0000000
+Time:2026-08-11T02:57:47.0543885Z</Message></Error>
+2026-08-11 02:57:47,183|ERROR|25|18667176719936|Failed to handle {"agent": "process003", "method": "get"}. request={'agent': 'process003', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643f01e-9003-004a-1c3d-293dc0000000
+Time:2026-08-11T02:57:47.1815615Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643f01e-9003-004a-1c3d-293dc0000000
+Time:2026-08-11T02:57:47.1815615Z</Message></Error>
+2026-08-11 02:57:51,067|ERROR|25|18667176719936|Failed to handle {"agent": "process002", "method": "get"}. request={'agent': 'process002', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643f166-9003-004a-2f3d-293dc0000000
+Time:2026-08-11T02:57:51.0653741Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643f166-9003-004a-2f3d-293dc0000000
+Time:2026-08-11T02:57:51.0653741Z</Message></Error>
+2026-08-11 02:57:51,195|ERROR|25|18667176719936|Failed to handle {"agent": "process003", "method": "get"}. request={'agent': 'process003', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643f173-9003-004a-393d-293dc0000000
+Time:2026-08-11T02:57:51.1943741Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643f173-9003-004a-393d-293dc0000000
+Time:2026-08-11T02:57:51.1943741Z</Message></Error>
+2026-08-11 02:57:59,076|ERROR|25|18667176719936|Failed to handle {"agent": "process002", "method": "get"}. request={'agent': 'process002', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643f3fe-9003-004a-603d-293dc0000000
+Time:2026-08-11T02:57:59.0753779Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643f3fe-9003-004a-603d-293dc0000000
+Time:2026-08-11T02:57:59.0753779Z</Message></Error>
+2026-08-11 02:57:59,209|ERROR|25|18667176719936|Failed to handle {"agent": "process003", "method": "get"}. request={'agent': 'process003', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643f40d-9003-004a-6c3d-293dc0000000
+Time:2026-08-11T02:57:59.2078775Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643f40d-9003-004a-6c3d-293dc0000000
+Time:2026-08-11T02:57:59.2078775Z</Message></Error>
+2026-08-11 02:58:03,462|ERROR|25|18667148408384|Failed to handle {"agent": "process005", "method": "get"}. request={'agent': 'process005', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643f59e-9003-004a-423d-293dc0000000
+Time:2026-08-11T02:58:03.4609087Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643f59e-9003-004a-423d-293dc0000000
+Time:2026-08-11T02:58:03.4609087Z</Message></Error>
+2026-08-11 02:58:03,491|ERROR|25|18667148408384|Failed to handle {"agent": "process004", "method": "get"}. request={'agent': 'process004', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643f5a5-9003-004a-453d-293dc0000000
+Time:2026-08-11T02:58:03.4904117Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643f5a5-9003-004a-453d-293dc0000000
+Time:2026-08-11T02:58:03.4904117Z</Message></Error>
+2026-08-11 02:58:04,479|ERROR|25|18667148408384|Failed to handle {"agent": "process005", "method": "get"}. request={'agent': 'process005', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643f5ef-9003-004a-023d-293dc0000000
+Time:2026-08-11T02:58:04.4760106Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643f5ef-9003-004a-023d-293dc0000000
+Time:2026-08-11T02:58:04.4760106Z</Message></Error>
+2026-08-11 02:58:04,506|ERROR|25|18667148408384|Failed to handle {"agent": "process004", "method": "get"}. request={'agent': 'process004', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643f5f1-9003-004a-043d-293dc0000000
+Time:2026-08-11T02:58:04.5058114Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643f5f1-9003-004a-043d-293dc0000000
+Time:2026-08-11T02:58:04.5058114Z</Message></Error>
+2026-08-11 02:58:06,489|ERROR|25|18667176719936|Failed to handle {"agent": "process005", "method": "get"}. request={'agent': 'process005', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643f688-9003-004a-803d-293dc0000000
+Time:2026-08-11T02:58:06.4877430Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643f688-9003-004a-803d-293dc0000000
+Time:2026-08-11T02:58:06.4877430Z</Message></Error>
+2026-08-11 02:58:06,519|ERROR|25|18667176719936|Failed to handle {"agent": "process004", "method": "get"}. request={'agent': 'process004', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643f68c-9003-004a-023d-293dc0000000
+Time:2026-08-11T02:58:06.5182537Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643f68c-9003-004a-023d-293dc0000000
+Time:2026-08-11T02:58:06.5182537Z</Message></Error>
+2026-08-11 02:58:10,500|ERROR|25|18667176719936|Failed to handle {"agent": "process005", "method": "get"}. request={'agent': 'process005', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643f7e5-9003-004a-273d-293dc0000000
+Time:2026-08-11T02:58:10.4989663Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643f7e5-9003-004a-273d-293dc0000000
+Time:2026-08-11T02:58:10.4989663Z</Message></Error>
+2026-08-11 02:58:10,527|ERROR|25|18667176719936|Failed to handle {"agent": "process004", "method": "get"}. request={'agent': 'process004', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643f7e9-9003-004a-2a3d-293dc0000000
+Time:2026-08-11T02:58:10.5267009Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643f7e9-9003-004a-2a3d-293dc0000000
+Time:2026-08-11T02:58:10.5267009Z</Message></Error>
+2026-08-11 02:58:18,510|ERROR|25|18667156792896|Failed to handle {"agent": "process005", "method": "get"}. request={'agent': 'process005', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643f9c7-9003-004a-1a3d-293dc0000000
+Time:2026-08-11T02:58:18.5083172Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643f9c7-9003-004a-1a3d-293dc0000000
+Time:2026-08-11T02:58:18.5083172Z</Message></Error>
+2026-08-11 02:58:18,536|ERROR|25|18667156792896|Failed to handle {"agent": "process004", "method": "get"}. request={'agent': 'process004', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643f9c8-9003-004a-1b3d-293dc0000000
+Time:2026-08-11T02:58:18.5354511Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643f9c8-9003-004a-1b3d-293dc0000000
+Time:2026-08-11T02:58:18.5354511Z</Message></Error>
+2026-08-11 02:58:21,470|ERROR|25|18667148408384|Failed to handle {"agent": "process007", "method": "get"}. request={'agent': 'process007', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643fa9b-9003-004a-493d-293dc0000000
+Time:2026-08-11T02:58:21.4695552Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643fa9b-9003-004a-493d-293dc0000000
+Time:2026-08-11T02:58:21.4695552Z</Message></Error>
+2026-08-11 02:58:21,606|ERROR|25|18667148408384|Failed to handle {"agent": "process006", "method": "get"}. request={'agent': 'process006', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643faa4-9003-004a-4e3d-293dc0000000
+Time:2026-08-11T02:58:21.6050660Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643faa4-9003-004a-4e3d-293dc0000000
+Time:2026-08-11T02:58:21.6050660Z</Message></Error>
+2026-08-11 02:58:22,485|ERROR|25|18667148408384|Failed to handle {"agent": "process007", "method": "get"}. request={'agent': 'process007', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643fad2-9003-004a-743d-293dc0000000
+Time:2026-08-11T02:58:22.4841884Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643fad2-9003-004a-743d-293dc0000000
+Time:2026-08-11T02:58:22.4841884Z</Message></Error>
+2026-08-11 02:58:22,620|ERROR|25|18667148408384|Failed to handle {"agent": "process006", "method": "get"}. request={'agent': 'process006', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643fad8-9003-004a-793d-293dc0000000
+Time:2026-08-11T02:58:22.6190860Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643fad8-9003-004a-793d-293dc0000000
+Time:2026-08-11T02:58:22.6190860Z</Message></Error>
+2026-08-11 02:58:24,498|ERROR|25|18667148408384|Failed to handle {"agent": "process007", "method": "get"}. request={'agent': 'process007', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643fb4a-9003-004a-4b3d-293dc0000000
+Time:2026-08-11T02:58:24.4977474Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643fb4a-9003-004a-4b3d-293dc0000000
+Time:2026-08-11T02:58:24.4977474Z</Message></Error>
+2026-08-11 02:58:24,632|ERROR|25|18667148408384|Failed to handle {"agent": "process006", "method": "get"}. request={'agent': 'process006', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643fb50-9003-004a-503d-293dc0000000
+Time:2026-08-11T02:58:24.6310138Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643fb50-9003-004a-503d-293dc0000000
+Time:2026-08-11T02:58:24.6310138Z</Message></Error>
+2026-08-11 02:58:28,508|ERROR|25|18667148408384|Failed to handle {"agent": "process007", "method": "get"}. request={'agent': 'process007', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643fd7b-9003-004a-2f3d-293dc0000000
+Time:2026-08-11T02:58:28.5072304Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643fd7b-9003-004a-2f3d-293dc0000000
+Time:2026-08-11T02:58:28.5072304Z</Message></Error>
+2026-08-11 02:58:28,641|ERROR|25|18667148408384|Failed to handle {"agent": "process006", "method": "get"}. request={'agent': 'process006', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643fd86-9003-004a-373d-293dc0000000
+Time:2026-08-11T02:58:28.6402710Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643fd86-9003-004a-373d-293dc0000000
+Time:2026-08-11T02:58:28.6402710Z</Message></Error>
+2026-08-11 02:58:36,517|ERROR|25|18667148408384|Failed to handle {"agent": "process007", "method": "get"}. request={'agent': 'process007', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643ffa6-9003-004a-7e3d-293dc0000000
+Time:2026-08-11T02:58:36.5159010Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643ffa6-9003-004a-7e3d-293dc0000000
+Time:2026-08-11T02:58:36.5159010Z</Message></Error>
+2026-08-11 02:58:36,651|ERROR|25|18667148408384|Failed to handle {"agent": "process006", "method": "get"}. request={'agent': 'process006', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b643ffbe-9003-004a-123d-293dc0000000
+Time:2026-08-11T02:58:36.6497119Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b643ffbe-9003-004a-123d-293dc0000000
+Time:2026-08-11T02:58:36.6497119Z</Message></Error>
+2026-08-11 02:58:39,145|ERROR|25|18667148408384|Failed to handle {"agent": "process008", "method": "get"}. request={'agent': 'process008', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b6440110-9003-004a-303d-293dc0000000
+Time:2026-08-11T02:58:39.1435382Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b6440110-9003-004a-303d-293dc0000000
+Time:2026-08-11T02:58:39.1435382Z</Message></Error>
+2026-08-11 02:58:40,085|ERROR|25|18667148408384|Failed to handle {"agent": "process009", "method": "get"}. request={'agent': 'process009', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b644019b-9003-004a-2a3d-293dc0000000
+Time:2026-08-11T02:58:40.0845253Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b644019b-9003-004a-2a3d-293dc0000000
+Time:2026-08-11T02:58:40.0845253Z</Message></Error>
+2026-08-11 02:58:40,156|ERROR|25|18667148408384|Failed to handle {"agent": "process008", "method": "get"}. request={'agent': 'process008', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b64401a7-9003-004a-323d-293dc0000000
+Time:2026-08-11T02:58:40.1550589Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b64401a7-9003-004a-323d-293dc0000000
+Time:2026-08-11T02:58:40.1550589Z</Message></Error>
+2026-08-11 02:58:41,094|ERROR|25|18667148408384|Failed to handle {"agent": "process009", "method": "get"}. request={'agent': 'process009', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b64401fa-9003-004a-783d-293dc0000000
+Time:2026-08-11T02:58:41.0936951Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b64401fa-9003-004a-783d-293dc0000000
+Time:2026-08-11T02:58:41.0936951Z</Message></Error>
+2026-08-11 02:58:42,188|ERROR|25|18667148408384|Failed to handle {"agent": "process008", "method": "get"}. request={'agent': 'process008', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b644026a-9003-004a-543d-293dc0000000
+Time:2026-08-11T02:58:42.1870035Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b644026a-9003-004a-543d-293dc0000000
+Time:2026-08-11T02:58:42.1870035Z</Message></Error>
+2026-08-11 02:58:43,107|ERROR|25|18667148408384|Failed to handle {"agent": "process009", "method": "get"}. request={'agent': 'process009', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b64402d0-9003-004a-343d-293dc0000000
+Time:2026-08-11T02:58:43.1057715Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b64402d0-9003-004a-343d-293dc0000000
+Time:2026-08-11T02:58:43.1057715Z</Message></Error>
+2026-08-11 02:58:46,200|ERROR|25|18667176719936|Failed to handle {"agent": "process008", "method": "get"}. request={'agent': 'process008', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b6440502-9003-004a-253d-293dc0000000
+Time:2026-08-11T02:58:46.1992820Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b6440502-9003-004a-253d-293dc0000000
+Time:2026-08-11T02:58:46.1992820Z</Message></Error>
+2026-08-11 02:58:47,117|ERROR|25|18667176719936|Failed to handle {"agent": "process009", "method": "get"}. request={'agent': 'process009', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b6440552-9003-004a-673d-293dc0000000
+Time:2026-08-11T02:58:47.1165430Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b6440552-9003-004a-673d-293dc0000000
+Time:2026-08-11T02:58:47.1165430Z</Message></Error>
+2026-08-11 02:58:54,212|ERROR|25|18667176719936|Failed to handle {"agent": "process008", "method": "get"}. request={'agent': 'process008', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b644078d-9003-004a-503d-293dc0000000
+Time:2026-08-11T02:58:54.2105759Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b644078d-9003-004a-503d-293dc0000000
+Time:2026-08-11T02:58:54.2105759Z</Message></Error>
+2026-08-11 02:58:55,130|ERROR|25|18667176719936|Failed to handle {"agent": "process009", "method": "get"}. request={'agent': 'process009', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b64407cc-9003-004a-073d-293dc0000000
+Time:2026-08-11T02:58:55.1293045Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b64407cc-9003-004a-073d-293dc0000000
+Time:2026-08-11T02:58:55.1293045Z</Message></Error>
+2026-08-11 02:58:57,903|ERROR|25|18667176719936|Failed to handle {"agent": "process010", "method": "get"}. request={'agent': 'process010', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b6440868-9003-004a-133d-293dc0000000
+Time:2026-08-11T02:58:57.9028312Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b6440868-9003-004a-133d-293dc0000000
+Time:2026-08-11T02:58:57.9028312Z</Message></Error>
+2026-08-11 02:58:58,914|ERROR|25|18667176719936|Failed to handle {"agent": "process010", "method": "get"}. request={'agent': 'process010', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b64408ac-9003-004a-4c3d-293dc0000000
+Time:2026-08-11T02:58:58.9131035Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b64408ac-9003-004a-4c3d-293dc0000000
+Time:2026-08-11T02:58:58.9131035Z</Message></Error>
+2026-08-11 02:58:59,000|ERROR|25|18667176719936|Failed to handle {"agent": "process011", "method": "get"}. request={'agent': 'process011', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b64408b2-9003-004a-513d-293dc0000000
+Time:2026-08-11T02:58:58.9989615Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b64408b2-9003-004a-513d-293dc0000000
+Time:2026-08-11T02:58:58.9989615Z</Message></Error>
+2026-08-11 02:59:00,009|ERROR|25|18667176719936|Failed to handle {"agent": "process011", "method": "get"}. request={'agent': 'process011', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b6440906-9003-004a-0f3d-293dc0000000
+Time:2026-08-11T02:59:00.0085244Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b6440906-9003-004a-0f3d-293dc0000000
+Time:2026-08-11T02:59:00.0085244Z</Message></Error>
+2026-08-11 02:59:00,923|ERROR|25|18667176719936|Failed to handle {"agent": "process010", "method": "get"}. request={'agent': 'process010', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:b6440949-9003-004a-453d-293dc0000000
+Time:2026-08-11T02:59:00.9219173Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:b6440949-9003-004a-453d-293dc0000000
+Time:2026-08-11T02:59:00.9219173Z</Message></Error>

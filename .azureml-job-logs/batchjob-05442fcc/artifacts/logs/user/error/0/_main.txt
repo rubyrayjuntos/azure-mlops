@@ -1,0 +1,10 @@
+2026-08-11 03:14:43,170|ERROR|3207|21060596676416|There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs. The master role failed with error: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs. Detail: Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job
+    self.summarize()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize
+    raise NoResultToAppendError(msg, compliant_message=msg)
+azureml_common.parallel_run.exception.NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs.
+.

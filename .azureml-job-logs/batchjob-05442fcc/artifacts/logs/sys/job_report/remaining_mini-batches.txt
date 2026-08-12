@@ -1,0 +1,1 @@
+{"id": 0, "minibatch": ["/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv"], "task_type": 4}

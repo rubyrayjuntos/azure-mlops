@@ -13,6 +13,10 @@ variables:
   enable_aml_computecluster: true
   enable_monitoring: false
   enable_container_registry: true
+  enable_ai_search: true
+  ai_search_sku: basic
+  ai_search_replica_count: 1
+  ai_search_partition_count: 1
   
   # Tags
   tag_cost_center: ''

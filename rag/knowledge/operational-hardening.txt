@@ -1,0 +1,5 @@
+Production readiness depends on managed identity, private networking, least-privilege access, and explicit monitoring. Azure ML workloads should use managed identities wherever possible and limit storage access to the minimum scope required for the task.
+
+For the RAG slice, Azure AI Search is the retrieval plane, while Foundry or an application runtime performs grounding and orchestration. Source documents should be versioned, chunked predictably, and refreshed through a repeatable ingestion workflow.
+
+Monitoring should verify index health, document freshness, retrieval quality, and downstream model latency to ensure the system remains operational and trustworthy.

@@ -1,0 +1,12 @@
+Mini-batch Id,Dequeue Count,Start Time,Total,Succeeded,Failed,Elapsed Seconds,Process Seconds,Input Start Time,Input Seconds,Run Method Start Time,Run Method Seconds,Output Start Time,Output Seconds,Status,Error
+,,2026-08-11T03:13:48.148279,,,,,,,,,,,,LOAD_START,
+,,2026-08-11T03:13:48.148279,,,,1.028123140335083,,,,,,,,LOAD_DONE,
+,,2026-08-11T03:13:49.178662,,,,1.028123140335083,,,,,,,,INIT_START,
+,,2026-08-11T03:13:49.178662,,,,0.784153938293457,,,,,,,,INIT_DONE,
+0,2,2026-08-11T03:13:51.003626,0,0,,,,2026-08-11T03:13:51.002855,9.5367431640625e-07,,,,,RUN_START,
+0,2,2026-08-11T03:13:51.003626,1,0,,,,2026-08-11T03:13:51.002855,9.5367431640625e-07,,,,,RUN_START,
+0,2,2026-08-11T03:13:51.003626,1,0,1,0.03823458300007587,0.03777700000000017,2026-08-11T03:13:51.002855,9.5367431640625e-07,2026-08-11T03:13:51.009788,,,,RUN_EXCEPTION,"The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Unnamed: 0
+- cost
+"

@@ -1,0 +1,3 @@
+Node Id,Process,Total Mini-batch,Succeeded Mini-batch,Failed Mini-batch,Total Items,Succeeded Items,Failed Items
+0,process002,1,0,1,1,0,1
+0,process003,2,0,2,2,0,2

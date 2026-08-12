@@ -1,0 +1,562 @@
+2026-08-11 03:13:21,968|INFO|25|14085138114368|Multiple processing start method: spawn, is_detonation_chamber_enabled: False, in_sidecar_container: False, in_detonation_chamber: False.
+2026-08-11 03:13:22,561|WARNING|25|14085138114368|Failed to get job start time from run details with error 'startTimeUtc'.
+2026-08-11 03:13:22,562|INFO|25|14085138114368|Initialized MetricsLogger: start_time = 2026-08-11 03:13:22.562527
+2026-08-11 03:13:22,609|WARNING|25|14084841924160|Failed to log heartbeat because of 0:The table specified does not exist.
+RequestId:49dcacd8-2002-004f-3f3f-29ef1b000000
+Time:2026-08-11T03:13:22.6052940Z
+ErrorCode:TableNotFound
+Content: {"odata.error":{"code":"TableNotFound","message":{"lang":"en-US","value":"0:The table specified does not exist.\nRequestId:49dcacd8-2002-004f-3f3f-29ef1b000000\nTime:2026-08-11T03:13:22.6052940Z"}}}
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/instance_heart_beater.py", line 56, in log_heartbeat
+    self.table.log_heartbeat(start_time=self.start_time)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/table_instance_status.py", line 78, in log_heartbeat
+    self.flush()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/table_common.py", line 213, in flush
+    self.save_next_batch(restore_cache_on_fail=restore_cache_on_fail)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/table_common.py", line 170, in save_next_batch
+    self.table_client.submit_transaction(operations)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/data/tables/_table_client.py", line 734, in submit_transaction
+    return self._batch_send(self.table_name, *batched_requests.requests, **kwargs)  # type: ignore
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/data/tables/_base_client.py", line 334, in _batch_send
+    raise decoded
+azure.data.tables._error.TableTransactionError: 0:The table specified does not exist.
+RequestId:49dcacd8-2002-004f-3f3f-29ef1b000000
+Time:2026-08-11T03:13:22.6052940Z
+ErrorCode:TableNotFound
+Content: {"odata.error":{"code":"TableNotFound","message":{"lang":"en-US","value":"0:The table specified does not exist.\nRequestId:49dcacd8-2002-004f-3f3f-29ef1b000000\nTime:2026-08-11T03:13:22.6052940Z"}}}
+2026-08-11 03:13:22,613|INFO|25|14085138114368|Initialized MetricsLogger: start_time = 2026-08-11 03:13:22.562527
+2026-08-11 03:13:22,619|INFO|25|14085138114368|Initialized MetricsLogger: start_time = 2026-08-11 03:13:22.562527
+2026-08-11 03:13:22,620|INFO|25|14085138114368|Start NodeProgressSummarizer.
+2026-08-11 03:13:22,629|INFO|25|14085138114368|Initialized MetricsLogger: start_time = 2026-08-11 03:13:22.562527
+2026-08-11 03:13:22,631|INFO|25|14085138114368|continuous_run_failure_count_to_restart = None
+2026-08-11 03:13:22,631|INFO|25|14085138114368|continuous_init_failure_count_to_restart = None
+2026-08-11 03:13:22,631|INFO|25|14085138114368|entry_script_init_timeout = None
+2026-08-11 03:13:22,631|INFO|25|14085138114368|Start agent manager.
+2026-08-11 03:13:22,631|INFO|25|14085138114368|start the agent monitor thread.
+2026-08-11 03:13:22,631|INFO|25|14085138114368|start the resource monitor thread.
+2026-08-11 03:13:22,632|INFO|25|14085138114368|Wait the master poller to finish.
+2026-08-11 03:13:22,632|INFO|25|14084723422784|The poll stopping thread Started.
+2026-08-11 03:13:22,990|INFO|25|14085138114368|required_fields:{'EventId': '80df0b53-6a44-42f0-a101-fc0b8baf8696', 'SubscriptionId': '00000000-0000-0000-0000-000000000000', 'WorkspaceId': 'e4147405-1ec1-4710-91f6-ec581804bbe2', 'CorrelationId': '60e4f762-a06a-4bca-bd4a-cb7ad1dd0c4b', 'ComponentName': 'ParallelRunStep', 'EventName': 'ParallelRunStep.Job.Start', 'EventTime': '2026-08-11T03:13:22.933563+00:00'}
+standard_fields:{'Duration': None, 'TaskResult': None, 'FailureReason': None, 'WorkspaceRegion': 'eastus', 'ComputeType': <AzureMLTelemetryComputeType.AmlcTrain: 1>, 'Attribution': 'ParallelRunStep', 'ClientOS': 2, 'ClientOSVersion': 'Linux-6.8.0-1062-azure-x86_64-with-glibc2.10', 'RunId': 'e574e568-e6e4-4777-b6a1-06f548ebd1a7', 'ParentRunId': 'batchjob-05442fcc-ca3a-4d4e-8aaf-d5d12b8001c4', 'ExperimentId': 'd1cbc60e-4bce-427e-877f-01405e3f5839', 'NumberOfNodes': 1, 'NumberOfCores': None, 'DatasetType': 'File', 'CoreSeconds': None}
+extension_fields:{'OutputAction': 'append_row', 'MiniBatchSize': 10, 'ProcessCountPerNode': 2, 'ErrorThreshold': -1, 'AllowFailedCount': None, 'AllowFailedPercent': None, 'ClientSdkVersion': '', 'AmlCoreVersion': '', 'DataprepVersion': 'NA', 'JobId': 'e574e568-e6e4-4777-b6a1-06f548ebd1a7', 'PRSVersion': 'V1', 'PRSReleaseId': 'placeholder_release_id', 'NodeId': '0', 'InstanceId': '852832f0-e695-44c1-b718-d091b8759d93', 'PythonVersion': '3.8.10 | packaged by conda-forge | (default, Sep 13 2021, 21:46:58) \n[GCC 9.4.0]', 'MaxNodeCount': 0, 'ScoreModuleType': 'PYTHON', 'InputFormatContent': 'URI_FILE'}
+2026-08-11 03:13:23,031|INFO|25|14085138114368|required_fields:{'EventId': '871298da-48c6-47c9-9c73-c17b8ac1899c', 'SubscriptionId': '00000000-0000-0000-0000-000000000000', 'WorkspaceId': 'e4147405-1ec1-4710-91f6-ec581804bbe2', 'CorrelationId': '7d5587b8-eea3-434b-9ff1-0ce695192b59', 'ComponentName': 'ParallelRunStep', 'EventName': 'ParallelRunStep.Job.Configuration', 'EventTime': '2026-08-11T03:13:23.031239+00:00'}
+standard_fields:None
+extension_fields:{'UserJobSettings': {'CandidateCount': None, 'IgnoreFailureWithinRetry': None, 'DataFrameToCsv': None, 'PrefetchCount': None, 'CollectComputeHoursMetric': None, 'RegenerateResumeTaskList': None, 'ContinuousRunFailureCountToRestart': None, 'ContinuousInitFailureCountToRestart': None, 'NodeReleaseWaitSeconds': None, 'EntryScriptInitTimeout': None, 'StorageRetentionDays': None, 'JobEarlySuccessWaitTimeCoefficient': None, 'TaskProvider': None}}
+2026-08-11 03:13:23,066|INFO|25|14085138114368|0: setting job stage to PREPARING, reason: The master lock blob created.
+2026-08-11 03:13:23,066|INFO|25|14085138114368|Setting job stage to PREPARING.
+2026-08-11 03:13:24,490|INFO|25|14084715832896|register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/register
+2026-08-11 03:13:24,490|INFO|25|14084715832896|batch_register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/batch/metadata/ExperimentRun/dcid.batchjob-05442fcc-ca3a-4d4e-8aaf-d5d12b8001c4?datastoreName=workspaceartifactstore
+2026-08-11 03:13:28,913|INFO|25|14084725524032|start to run command: ['/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/bin/python', '/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/driver/agent/py36/main.py', '--model', '/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/taxi-model/../', '--batch_endpoint_enabled', 'True', '--create_snapshot_at_runtime', 'True', '--copy_logs_to_parent', 'True', '--scoring_module_name', 'batch_driver.py', '--output_action', 'append_row', '--append_row_dataframe_header', 'False', '--output', '/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/cap/data-capability/wd/INPUT_score_workspaceblobstore/azureml/e574e568-e6e4-4777-b6a1-06f548ebd1a7/score', '--input_asset_job_data_path', '/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv', '--job_output_path', 'DatasetOutputConfig:score', '--mini_batch_size', '10', '--run_max_try', '3', '--run_invocation_timeout', '30', '--error_threshold', '-1', '--logging_level', 'INFO', '--process_count_per_node', '2', '--append_row_file_name', 'predictions.csv', '--aml_core_version', '', '--dataprep_version', 'NA', '--bf89b5b0_523f_4782_aedc_61bd625ee81a', '{"working_dir": "/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/e574e568-e6e4-4777-b6a1-06f548ebd1a7", "snapshot_dir": "/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd", "port": 59249, "input_format": "UriFile", "agent_name": "process000", "inputs": ["/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv"], "input_names": [], "gpu_index": -1, "mini_batch_size": 10}'].
+2026-08-11 03:13:28,923|INFO|25|14084725524032|start to run command: ['/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/bin/python', '/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/driver/agent/py36/main.py', '--model', '/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/taxi-model/../', '--batch_endpoint_enabled', 'True', '--create_snapshot_at_runtime', 'True', '--copy_logs_to_parent', 'True', '--scoring_module_name', 'batch_driver.py', '--output_action', 'append_row', '--append_row_dataframe_header', 'False', '--output', '/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/cap/data-capability/wd/INPUT_score_workspaceblobstore/azureml/e574e568-e6e4-4777-b6a1-06f548ebd1a7/score', '--input_asset_job_data_path', '/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv', '--job_output_path', 'DatasetOutputConfig:score', '--mini_batch_size', '10', '--run_max_try', '3', '--run_invocation_timeout', '30', '--error_threshold', '-1', '--logging_level', 'INFO', '--process_count_per_node', '2', '--append_row_file_name', 'predictions.csv', '--aml_core_version', '', '--dataprep_version', 'NA', '--bf89b5b0_523f_4782_aedc_61bd625ee81a', '{"working_dir": "/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/e574e568-e6e4-4777-b6a1-06f548ebd1a7", "snapshot_dir": "/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd", "port": 59249, "input_format": "UriFile", "agent_name": "process001", "inputs": ["/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv"], "input_names": [], "gpu_index": -1, "mini_batch_size": 10}'].
+2026-08-11 03:13:28,925|INFO|25|14085138114368|Write to message file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/is_master_role_candidate_node_message: Is master role candidate node..
+2026-08-11 03:13:28,926|INFO|25|14085138114368|Write to flag file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/is_master_role_candidate_node.
+2026-08-11 03:13:28,935|INFO|25|14084725524032|All 2 agents started.
+2026-08-11 03:13:28,935|INFO|25|14084725524032|Start the agent monitor loop. It will check agent timeout after the first task created.
+2026-08-11 03:13:28,999|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:30,076|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:31,049|INFO|25|14085138114368|Before kill 64.
+2026-08-11 03:13:31,049|INFO|25|14085138114368|After kill 64.
+2026-08-11 03:13:31,147|ERROR|25|14084707710528|Failed to handle {"agent": "process001", "method": "get"}. request={'agent': 'process001', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:47537fed-c003-0025-723f-293733000000
+Time:2026-08-11T03:13:31.1443390Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:47537fed-c003-0025-723f-293733000000
+Time:2026-08-11T03:13:31.1443390Z</Message></Error>
+2026-08-11 03:13:31,148|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:31,204|ERROR|25|14084707710528|Failed to handle {"agent": "process000", "method": "get"}. request={'agent': 'process000', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:47537ff2-c003-0025-753f-293733000000
+Time:2026-08-11T03:13:31.2030935Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:47537ff2-c003-0025-753f-293733000000
+Time:2026-08-11T03:13:31.2030935Z</Message></Error>
+2026-08-11 03:13:32,162|ERROR|25|14084707710528|Failed to handle {"agent": "process001", "method": "get"}. request={'agent': 'process001', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:4753803d-c003-0025-353f-293733000000
+Time:2026-08-11T03:13:32.1611838Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:4753803d-c003-0025-353f-293733000000
+Time:2026-08-11T03:13:32.1611838Z</Message></Error>
+2026-08-11 03:13:32,208|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:32,215|ERROR|25|14084707710528|Failed to handle {"agent": "process000", "method": "get"}. request={'agent': 'process000', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:4753803e-c003-0025-363f-293733000000
+Time:2026-08-11T03:13:32.2137729Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:4753803e-c003-0025-363f-293733000000
+Time:2026-08-11T03:13:32.2137729Z</Message></Error>
+2026-08-11 03:13:33,262|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:34,187|ERROR|25|14084707710528|Failed to handle {"agent": "process001", "method": "get"}. request={'agent': 'process001', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:475380d0-c003-0025-2b3f-293733000000
+Time:2026-08-11T03:13:34.1856976Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:475380d0-c003-0025-2b3f-293733000000
+Time:2026-08-11T03:13:34.1856976Z</Message></Error>
+2026-08-11 03:13:34,224|ERROR|25|14084707710528|Failed to handle {"agent": "process000", "method": "get"}. request={'agent': 'process000', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:475380d6-c003-0025-313f-293733000000
+Time:2026-08-11T03:13:34.2229281Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:475380d6-c003-0025-313f-293733000000
+Time:2026-08-11T03:13:34.2229281Z</Message></Error>
+2026-08-11 03:13:34,322|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:35,377|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:36,806|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:37,871|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:38,213|ERROR|25|14084707710528|Failed to handle {"agent": "process001", "method": "get"}. request={'agent': 'process001', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:47538221-c003-0025-403f-293733000000
+Time:2026-08-11T03:13:38.2118688Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:47538221-c003-0025-403f-293733000000
+Time:2026-08-11T03:13:38.2118688Z</Message></Error>
+2026-08-11 03:13:38,234|ERROR|25|14084707710528|Failed to handle {"agent": "process000", "method": "get"}. request={'agent': 'process000', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:47538222-c003-0025-413f-293733000000
+Time:2026-08-11T03:13:38.2330299Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:47538222-c003-0025-413f-293733000000
+Time:2026-08-11T03:13:38.2330299Z</Message></Error>
+2026-08-11 03:13:38,926|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:39,951|INFO|25|14084725524032|First task created. Set start_checking_time to 2026-08-11T03:13:39.951831.
+2026-08-11 03:13:39,952|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:40,954|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:41,957|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:42,959|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:43,960|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:44,962|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:45,965|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:46,224|ERROR|25|14084707710528|Failed to handle {"agent": "process001", "method": "get"}. request={'agent': 'process001', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:47538722-c003-0025-273f-293733000000
+Time:2026-08-11T03:13:46.2224490Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:47538722-c003-0025-273f-293733000000
+Time:2026-08-11T03:13:46.2224490Z</Message></Error>
+2026-08-11 03:13:46,243|ERROR|25|14084707710528|Failed to handle {"agent": "process000", "method": "get"}. request={'agent': 'process000', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:47538729-c003-0025-2e3f-293733000000
+Time:2026-08-11T03:13:46.2421934Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:47538729-c003-0025-2e3f-293733000000
+Time:2026-08-11T03:13:46.2421934Z</Message></Error>
+2026-08-11 03:13:46,967|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:47,319|INFO|25|14084730512960|Worker - Telemetry: nodeId:0, instanceId: 852832f0-e695-44c1-b718-d091b8759d93, processId:process000, computeType:AmlCompute, startTime:2026-08-11T03:13:29.094690, endTime:2026-08-11T03:13:47.104792, duration:18.010102033615112, processTime:0, scoringTime:0, totalTasks:0, succeededTask:0, totalItems:0, succeededItems:0, runReturnedBytes:-1.
+2026-08-11 03:13:47,319|INFO|25|14084730512960|required_fields:{'EventId': '9a2c599e-23da-4bf5-8fcb-e352a526c90f', 'SubscriptionId': '00000000-0000-0000-0000-000000000000', 'WorkspaceId': 'e4147405-1ec1-4710-91f6-ec581804bbe2', 'CorrelationId': '2ef3eb2a-a87f-4f56-937a-ed1faec685fe', 'ComponentName': 'ParallelRunStep', 'EventName': 'ParallelRunStep.Process.End', 'EventTime': '2026-08-11T03:13:47.319650+00:00'}
+standard_fields:{'Duration': '00:00:18', 'TaskResult': None, 'FailureReason': None, 'WorkspaceRegion': 'eastus', 'ComputeType': <AzureMLTelemetryComputeType.AmlcTrain: 1>, 'Attribution': 'ParallelRunStep', 'ClientOS': 2, 'ClientOSVersion': 'Linux-6.8.0-1062-azure-x86_64-with-glibc2.10', 'RunId': 'e574e568-e6e4-4777-b6a1-06f548ebd1a7', 'ParentRunId': 'batchjob-05442fcc-ca3a-4d4e-8aaf-d5d12b8001c4', 'ExperimentId': 'd1cbc60e-4bce-427e-877f-01405e3f5839', 'NumberOfNodes': None, 'NumberOfCores': None, 'DatasetType': None, 'CoreSeconds': None}
+extension_fields:{'StartTime': '2026-08-11T03:13:29.094690', 'EndTime': '2026-08-11T03:13:47.104792', 'NodeId': '0', 'InstanceId': '852832f0-e695-44c1-b718-d091b8759d93', 'ProcessId': 'process000', 'ProcessTime': '0', 'RunMethodTime': '0', 'TotalTasks': '0', 'SucceededTasks': '0', 'TotalItems': '0', 'SucceededItems': '0', 'JobId': 'e574e568-e6e4-4777-b6a1-06f548ebd1a7', 'RunReturnedBytes': '-1'}
+2026-08-11 03:13:47,358|INFO|25|14084730512960|Worker - Telemetry: nodeId:0, instanceId: 852832f0-e695-44c1-b718-d091b8759d93, processId:process001, computeType:AmlCompute, startTime:2026-08-11T03:13:29.111280, endTime:2026-08-11T03:13:47.120270, duration:18.008990049362183, processTime:0, scoringTime:0, totalTasks:0, succeededTask:0, totalItems:0, succeededItems:0, runReturnedBytes:-1.
+2026-08-11 03:13:47,358|INFO|25|14084730512960|required_fields:{'EventId': 'db3b944b-e538-45da-97fe-a4771ac717ad', 'SubscriptionId': '00000000-0000-0000-0000-000000000000', 'WorkspaceId': 'e4147405-1ec1-4710-91f6-ec581804bbe2', 'CorrelationId': 'b42a199e-ae10-49d1-826d-7c04649a7abe', 'ComponentName': 'ParallelRunStep', 'EventName': 'ParallelRunStep.Process.End', 'EventTime': '2026-08-11T03:13:47.358555+00:00'}
+standard_fields:{'Duration': '00:00:18', 'TaskResult': None, 'FailureReason': None, 'WorkspaceRegion': 'eastus', 'ComputeType': <AzureMLTelemetryComputeType.AmlcTrain: 1>, 'Attribution': 'ParallelRunStep', 'ClientOS': 2, 'ClientOSVersion': 'Linux-6.8.0-1062-azure-x86_64-with-glibc2.10', 'RunId': 'e574e568-e6e4-4777-b6a1-06f548ebd1a7', 'ParentRunId': 'batchjob-05442fcc-ca3a-4d4e-8aaf-d5d12b8001c4', 'ExperimentId': 'd1cbc60e-4bce-427e-877f-01405e3f5839', 'NumberOfNodes': None, 'NumberOfCores': None, 'DatasetType': None, 'CoreSeconds': None}
+extension_fields:{'StartTime': '2026-08-11T03:13:29.111280', 'EndTime': '2026-08-11T03:13:47.120270', 'NodeId': '0', 'InstanceId': '852832f0-e695-44c1-b718-d091b8759d93', 'ProcessId': 'process001', 'ProcessTime': '0', 'RunMethodTime': '0', 'TotalTasks': '0', 'SucceededTasks': '0', 'TotalItems': '0', 'SucceededItems': '0', 'JobId': 'e574e568-e6e4-4777-b6a1-06f548ebd1a7', 'RunReturnedBytes': '-1'}
+2026-08-11 03:13:47,969|INFO|25|14084725524032|process000 exits with returncode UNHANDLED.
+2026-08-11 03:13:47,969|INFO|25|14084725524032|Start process002 to replace process000.
+2026-08-11 03:13:47,969|INFO|25|14084725524032|start to run command: ['/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/bin/python', '/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/driver/agent/py36/main.py', '--model', '/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/taxi-model/../', '--batch_endpoint_enabled', 'True', '--create_snapshot_at_runtime', 'True', '--copy_logs_to_parent', 'True', '--scoring_module_name', 'batch_driver.py', '--output_action', 'append_row', '--append_row_dataframe_header', 'False', '--output', '/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/cap/data-capability/wd/INPUT_score_workspaceblobstore/azureml/e574e568-e6e4-4777-b6a1-06f548ebd1a7/score', '--input_asset_job_data_path', '/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv', '--job_output_path', 'DatasetOutputConfig:score', '--mini_batch_size', '10', '--run_max_try', '3', '--run_invocation_timeout', '30', '--error_threshold', '-1', '--logging_level', 'INFO', '--process_count_per_node', '2', '--append_row_file_name', 'predictions.csv', '--aml_core_version', '', '--dataprep_version', 'NA', '--bf89b5b0_523f_4782_aedc_61bd625ee81a', '{"working_dir": "/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/e574e568-e6e4-4777-b6a1-06f548ebd1a7", "snapshot_dir": "/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd", "port": 59249, "input_format": "UriFile", "agent_name": "process002", "inputs": ["/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv"], "input_names": [], "gpu_index": -1, "mini_batch_size": 10}'].
+2026-08-11 03:13:47,978|INFO|25|14084725524032|process001 exits with returncode UNHANDLED.
+2026-08-11 03:13:47,979|INFO|25|14084725524032|Start process003 to replace process001.
+2026-08-11 03:13:47,979|INFO|25|14084725524032|start to run command: ['/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/bin/python', '/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/driver/agent/py36/main.py', '--model', '/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/taxi-model/../', '--batch_endpoint_enabled', 'True', '--create_snapshot_at_runtime', 'True', '--copy_logs_to_parent', 'True', '--scoring_module_name', 'batch_driver.py', '--output_action', 'append_row', '--append_row_dataframe_header', 'False', '--output', '/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/cap/data-capability/wd/INPUT_score_workspaceblobstore/azureml/e574e568-e6e4-4777-b6a1-06f548ebd1a7/score', '--input_asset_job_data_path', '/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv', '--job_output_path', 'DatasetOutputConfig:score', '--mini_batch_size', '10', '--run_max_try', '3', '--run_invocation_timeout', '30', '--error_threshold', '-1', '--logging_level', 'INFO', '--process_count_per_node', '2', '--append_row_file_name', 'predictions.csv', '--aml_core_version', '', '--dataprep_version', 'NA', '--bf89b5b0_523f_4782_aedc_61bd625ee81a', '{"working_dir": "/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/e574e568-e6e4-4777-b6a1-06f548ebd1a7", "snapshot_dir": "/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd", "port": 59249, "input_format": "UriFile", "agent_name": "process003", "inputs": ["/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv"], "input_names": [], "gpu_index": -1, "mini_batch_size": 10}'].
+2026-08-11 03:13:47,988|INFO|25|14084725524032|Process 96 returned with returncode 79. Args: ['/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/bin/python', '/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/driver/agent/py36/main.py', '--model', '/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/taxi-model/../', '--batch_endpoint_enabled', 'True', '--create_snapshot_at_runtime', 'True', '--copy_logs_to_parent', 'True', '--scoring_module_name', 'batch_driver.py', '--output_action', 'append_row', '--append_row_dataframe_header', 'False', '--output', '/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/cap/data-capability/wd/INPUT_score_workspaceblobstore/azureml/e574e568-e6e4-4777-b6a1-06f548ebd1a7/score', '--input_asset_job_data_path', '/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv', '--job_output_path', 'DatasetOutputConfig:score', '--mini_batch_size', '10', '--run_max_try', '3', '--run_invocation_timeout', '30', '--error_threshold', '-1', '--logging_level', 'INFO', '--process_count_per_node', '2', '--append_row_file_name', 'predictions.csv', '--aml_core_version', '', '--dataprep_version', 'NA', '--bf89b5b0_523f_4782_aedc_61bd625ee81a', '{"working_dir": "/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/e574e568-e6e4-4777-b6a1-06f548ebd1a7", "snapshot_dir": "/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd", "port": 59249, "input_format": "UriFile", "agent_name": "process000", "inputs": ["/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv"], "input_names": [], "gpu_index": -1, "mini_batch_size": 10}'].
+2026-08-11 03:13:47,989|INFO|25|14084725524032|stdout: ok,process000 started.
+
+2026-08-11 03:13:47,989|INFO|25|14084725524032|Process 97 returned with returncode 79. Args: ['/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/bin/python', '/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/driver/agent/py36/main.py', '--model', '/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/taxi-model/../', '--batch_endpoint_enabled', 'True', '--create_snapshot_at_runtime', 'True', '--copy_logs_to_parent', 'True', '--scoring_module_name', 'batch_driver.py', '--output_action', 'append_row', '--append_row_dataframe_header', 'False', '--output', '/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/cap/data-capability/wd/INPUT_score_workspaceblobstore/azureml/e574e568-e6e4-4777-b6a1-06f548ebd1a7/score', '--input_asset_job_data_path', '/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv', '--job_output_path', 'DatasetOutputConfig:score', '--mini_batch_size', '10', '--run_max_try', '3', '--run_invocation_timeout', '30', '--error_threshold', '-1', '--logging_level', 'INFO', '--process_count_per_node', '2', '--append_row_file_name', 'predictions.csv', '--aml_core_version', '', '--dataprep_version', 'NA', '--bf89b5b0_523f_4782_aedc_61bd625ee81a', '{"working_dir": "/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/e574e568-e6e4-4777-b6a1-06f548ebd1a7", "snapshot_dir": "/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd", "port": 59249, "input_format": "UriFile", "agent_name": "process001", "inputs": ["/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv"], "input_names": [], "gpu_index": -1, "mini_batch_size": 10}'].
+2026-08-11 03:13:47,989|INFO|25|14084725524032|stdout: ok,process001 started.
+
+2026-08-11 03:13:47,991|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:48,993|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:49,988|ERROR|25|14084707710528|Failed to handle {"agent": "process002", "method": "get"}. request={'agent': 'process002', 'method': 'get'}
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 153, in handle
+    self.get_tasks(request)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_server.py", line 44, in get_tasks
+    tasks = self.server.task_manager.get_tasks(agent)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 280, in get_tasks
+    valid_tasks = self.get_valid_tasks(agent)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_manager.py", line 194, in get_valid_tasks
+    all_tasks = self.queue_receiver.get_tasks(visibility_timeout=visibility_timeout)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 54, in get_tasks
+    messages = self.receive_messages(visibility_timeout=visibility_timeout)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_receiver.py", line 45, in receive_messages
+    for message in messages:
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_models.py", line 292, in _get_next_cb
+    process_storage_error(error)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:47538946-c003-0025-153f-293733000000
+Time:2026-08-11T03:13:49.9869360Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:47538946-c003-0025-153f-293733000000
+Time:2026-08-11T03:13:49.9869360Z</Message></Error>
+2026-08-11 03:13:49,995|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:50,108|INFO|25|14084715832896|Write to message file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/got_empty_list_from_queue_once_message: Got empty list..
+2026-08-11 03:13:50,108|INFO|25|14084715832896|Write to flag file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/got_empty_list_from_queue_once.
+2026-08-11 03:13:50,997|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:51,071|INFO|25|14084707710528|Write to message file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/got_empty_list_from_queue_once_message: Got empty list..
+2026-08-11 03:13:51,072|INFO|25|14084707710528|Write to flag file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/got_empty_list_from_queue_once.
+2026-08-11 03:13:51,999|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:52,223|INFO|25|14084715832896|Write to message file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/got_empty_list_from_queue_once_message: Got empty list..
+2026-08-11 03:13:52,224|INFO|25|14084715832896|Write to flag file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/got_empty_list_from_queue_once.
+2026-08-11 03:13:53,001|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:53,142|INFO|25|14084707710528|Write to message file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/got_empty_list_from_queue_once_message: Got empty list..
+2026-08-11 03:13:53,142|INFO|25|14084707710528|Write to flag file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/got_empty_list_from_queue_once.
+2026-08-11 03:13:54,003|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:54,274|INFO|25|14084715832896|Write to message file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/got_empty_list_from_queue_once_message: Got empty list..
+2026-08-11 03:13:54,275|INFO|25|14084715832896|Write to flag file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/got_empty_list_from_queue_once.
+2026-08-11 03:13:55,006|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:55,198|INFO|25|14084707710528|Write to message file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/got_empty_list_from_queue_once_message: Got empty list..
+2026-08-11 03:13:55,199|INFO|25|14084707710528|Write to flag file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/got_empty_list_from_queue_once.
+2026-08-11 03:13:56,008|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:56,348|INFO|25|14084715832896|Write to message file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/got_empty_list_from_queue_once_message: Got empty list..
+2026-08-11 03:13:56,348|INFO|25|14084715832896|Write to flag file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/got_empty_list_from_queue_once.
+2026-08-11 03:13:57,010|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:57,258|INFO|25|14084707710528|Write to message file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/got_empty_list_from_queue_once_message: Got empty list..
+2026-08-11 03:13:57,258|INFO|25|14084707710528|Write to flag file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/got_empty_list_from_queue_once.
+2026-08-11 03:13:58,036|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:58,431|INFO|25|14084715832896|Write to message file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/got_empty_list_from_queue_once_message: Got empty list..
+2026-08-11 03:13:58,431|INFO|25|14084715832896|Write to flag file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/got_empty_list_from_queue_once.
+2026-08-11 03:13:59,038|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:13:59,323|INFO|25|14084707710528|Write to message file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/got_empty_list_from_queue_once_message: Got empty list..
+2026-08-11 03:13:59,324|INFO|25|14084707710528|Write to flag file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/got_empty_list_from_queue_once.
+2026-08-11 03:14:00,040|INFO|25|14084725524032|Waiting for finalization signal.
+2026-08-11 03:14:00,492|INFO|25|14084715832896|Write to message file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/got_empty_list_from_queue_once_message: Got empty list..
+2026-08-11 03:14:00,492|INFO|25|14084715832896|Write to flag file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/got_empty_list_from_queue_once.
+2026-08-11 03:14:01,043|INFO|25|14084725524032|Finalization signal received, enabled=False.
+2026-08-11 03:14:01,417|INFO|25|14084707710528|Write to message file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/got_empty_list_from_queue_once_message: Got empty list..
+2026-08-11 03:14:01,417|INFO|25|14084707710528|Write to flag file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/got_empty_list_from_queue_once.
+2026-08-11 03:14:01,447|INFO|25|14085138114368|Write to message file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/is_master_role_candidate_node_message: Is master role candidate node..
+2026-08-11 03:14:01,448|INFO|25|14085138114368|Write to flag file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/is_master_role_candidate_node.
+2026-08-11 03:14:02,045|INFO|25|14084725524032|Finalization signal received, enabled=False.
+2026-08-11 03:14:02,481|INFO|25|14085138114368|Before kill 172.
+2026-08-11 03:14:02,481|INFO|25|14085138114368|After kill 172.
+2026-08-11 03:14:02,561|INFO|25|14084715832896|Write to message file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/got_empty_list_from_queue_once_message: Got empty list..
+2026-08-11 03:14:02,562|INFO|25|14084715832896|Write to flag file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/got_empty_list_from_queue_once.
+2026-08-11 03:14:03,070|INFO|25|14084725524032|Finalization signal received, enabled=False.
+2026-08-11 03:14:03,070|INFO|25|14084725524032|The agent monitor loop exits after 34 rounds.
+2026-08-11 03:14:03,070|INFO|25|14084725524032|The agent monitor thread stopped.
+2026-08-11 03:14:04,021|INFO|25|14084723422784|Processes to check: [psutil.Popen(pid=221, name='python', status='sleeping', started='03:13:47'), psutil.Popen(pid=222, name='python', status='sleeping', started='03:13:47')].
+2026-08-11 03:14:09,031|INFO|25|14084723422784|Processes to kill: [psutil.Popen(pid=221, name='python', status='sleeping', started='03:13:47'), psutil.Popen(pid=222, name='python', status='sleeping', started='03:13:47')].
+2026-08-11 03:14:09,031|WARNING|25|14084723422784|Kill process 221 on node 0 instance 852832f0-e695-44c1-b718-d091b8759d93, which could not finish within the allowed time.
+2026-08-11 03:14:09,033|WARNING|25|14084723422784|Kill process 222 on node 0 instance 852832f0-e695-44c1-b718-d091b8759d93, which could not finish within the allowed time.
+2026-08-11 03:14:09,036|INFO|25|14084723422784|Processes after calling kill: [psutil.Popen(pid=221, name='python', status='zombie', started='03:13:47'), psutil.Popen(pid=222, name='python', status='zombie', started='03:13:47')].
+2026-08-11 03:14:09,036|INFO|25|14084723422784|The poll stopping thread stops because job is in stopping.
+2026-08-11 03:14:09,036|INFO|25|14084723422784|Closed node usage files.
+2026-08-11 03:14:09,036|INFO|25|14084723422784|The poll stopping thread stopped.
+2026-08-11 03:14:13,423|INFO|25|14085138114368|Before kill 2803.
+2026-08-11 03:14:13,423|INFO|25|14085138114368|After kill 2803.
+2026-08-11 03:14:24,235|INFO|25|14085138114368|Before kill 3131.
+2026-08-11 03:14:24,235|INFO|25|14085138114368|After kill 3131.
+2026-08-11 03:14:34,685|INFO|25|14085138114368|Deleted flag file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/is_master_role_candidate_node.
+2026-08-11 03:14:34,685|INFO|25|14085138114368|Deleted message file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/is_master_role_candidate_node_message.
+2026-08-11 03:14:35,734|INFO|25|14085138114368|Before kill 3170.
+2026-08-11 03:14:35,734|INFO|25|14085138114368|After kill 3170.
+2026-08-11 03:14:42,833|WARNING|3207|21060596676416|Failed to get job start time from run details with error 'startTimeUtc'.
+2026-08-11 03:14:42,833|INFO|3207|21060596676416|Initialized MetricsLogger: start_time = 2026-08-11 03:14:42.833713
+2026-08-11 03:14:42,891|INFO|3207|21060596676416|BlobExporter created.
+2026-08-11 03:14:42,891|INFO|3207|21060596676416|Start exporting items to target ExportTarget[blob: azureml/e574e568-e6e4-4777-b6a1-06f548ebd1a7/job/remaining_mini-batches.txt]..
+2026-08-11 03:14:43,047|INFO|3207|21060596676416|All items exported, summary: Exported 1 items to ExportTarget[blob: azureml/e574e568-e6e4-4777-b6a1-06f548ebd1a7/job/remaining_mini-batches.txt]., appenders: CompositeAppender: [BlobAppender: azureml/e574e568-e6e4-4777-b6a1-06f548ebd1a7/job/remaining_mini-batches.txt], [FileAppender: /mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/exe/wd/logs/sys/job_report/remaining_mini-batches.txt]..
+2026-08-11 03:14:43,170|INFO|3207|21060596676416|Job result: {'PartitionKey': 'jobresult', 'RowKey': 'jobresult', 'compliant_message': "The master role failed with error: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation.", 'detail': 'The master role failed with error: There is no succeeded mini batch item returned from run(). Please check \'response: run()\' in https://aka.ms/batch-inference-documentation\nPlease check logs for error. You can check logs/readme.txt for the layout of logs. Detail: Traceback (most recent call last):\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job\n    self.summarize()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize\n    raise NoResultToAppendError(msg, compliant_message=msg)\nazureml_common.parallel_run.exception.NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check \'response: run()\' in https://aka.ms/batch-inference-documentation\nPlease check logs for error. You can check logs/readme.txt for the layout of logs.\n.', 'error_code': 1, 'exception_type': 'NoResultToAppendError', 'message': "There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation\nPlease check logs for error. You can check logs/readme.txt for the layout of logs."}.
+2026-08-11 03:14:43,170|ERROR|3207|21060596676416|There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs. The master role failed with error: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs. Detail: Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job
+    self.summarize()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize
+    raise NoResultToAppendError(msg, compliant_message=msg)
+azureml_common.parallel_run.exception.NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs.
+.
+2026-08-11 03:14:43,170|ERROR|3207|21060596676416|NoResultToAppendError. The master role failed with error: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation.
+2026-08-11 03:14:43,276|INFO|3207|21060596676416|Final scan and register default artifacts.
+2026-08-11 03:14:43,332|INFO|3207|21060596676416|The run's status is Queued.
+2026-08-11 03:14:43,437|INFO|3207|21060596676416|Run status: Queued
+2026-08-11 03:14:43,796|INFO|3207|21060596676416|Master - Telemetry: nodeId:0, instanceId:626077c9-333f-4e14-85a1-e5e8394e486a, computeType:AmlCompute, startTime:2026-08-11T03:13:28.654630, endTime:2026-08-11T03:14:43.643836, duration:74.98921012878418, inputFormat:File, inputDsCount:1, processedTasks:1, processedItems:1, failedItems:1, totalTasks:1, totalItems:1, outputAction:append_row, taskProvider:FolderOrFileListProvider, outputType:PipelineData, miniBatchSize:10, processCountPerNode:2, errorThreshold:-1, numberOfNodes:1, jobResult:2, failureReason:UserError, exceptionType:NoResultToAppendError, exceptionMessage:There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs.
+The master role failed with error: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs. Detail: Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job
+    self.summarize()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize
+    raise NoResultToAppendError(msg, compliant_message=msg)
+azureml_common.parallel_run.exception.NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs.
+., finishJobRemainRetry:-1
+2026-08-11 03:14:43,797|INFO|3207|21060596676416|required_fields:{'EventId': '6a3df404-a05f-4897-b321-07b409d36a02', 'SubscriptionId': '00000000-0000-0000-0000-000000000000', 'WorkspaceId': 'e4147405-1ec1-4710-91f6-ec581804bbe2', 'CorrelationId': '135c7f6f-c60b-4c28-bea9-b9a005085d1e', 'ComponentName': 'ParallelRunStep', 'EventName': 'ParallelRunStep.Job.End', 'EventTime': '2026-08-11T03:14:43.796835+00:00'}
+standard_fields:{'Duration': '00:01:14', 'TaskResult': 2, 'FailureReason': 'UserError', 'WorkspaceRegion': 'eastus', 'ComputeType': <AzureMLTelemetryComputeType.AmlcTrain: 1>, 'Attribution': 'ParallelRunStep', 'ClientOS': 2, 'ClientOSVersion': 'Linux-6.8.0-1062-azure-x86_64-with-glibc2.10', 'RunId': 'e574e568-e6e4-4777-b6a1-06f548ebd1a7', 'ParentRunId': 'batchjob-05442fcc-ca3a-4d4e-8aaf-d5d12b8001c4', 'ExperimentId': 'd1cbc60e-4bce-427e-877f-01405e3f5839', 'NumberOfNodes': 1, 'NumberOfCores': 4, 'DatasetType': 'File', 'CoreSeconds': None}
+extension_fields:{'StartTime': '2026-08-11T03:13:28.654630', 'EndTime': '2026-08-11T03:14:43.643836', 'InputDatasetCount': 1, 'OutputAction': 'append_row', 'TaskProvider': 'FolderOrFileListProvider', 'OutputType': 'PipelineData', 'MiniBatchSize': 10, 'ProcessCountPerNode': 2, 'ErrorThreshold': -1, 'AllowFailedCount': None, 'AllowFailedPercent': None, 'FirstTaskCreationTime': 0, 'TotalSchedulingTime': 10.445094108581543, 'TotalTasks': 1, 'TotalItems': 1, 'ProcessedTasks': 1, 'ProcessedItems': 1, 'FailedItems': 1, 'ConcatFileTime': '0', 'ConcatFileCount': '0', 'ConcatFileBytes': '0', 'JobId': 'e574e568-e6e4-4777-b6a1-06f548ebd1a7', 'PRSVersion': 'V1', 'PRSReleaseId': 'placeholder_release_id', 'NodeId': '0', 'InstanceId': '626077c9-333f-4e14-85a1-e5e8394e486a', 'ClientSdkVersion': '', 'AmlCoreVersion': '', 'DataprepVersion': 'NA', 'ExceptionType': 'NoResultToAppendError', 'ExceptionMessage': 'There is no succeeded mini batch item returned from run(). Please check \'response: run()\' in https://aka.ms/batch-inference-documentation\nPlease check logs for error. You can check logs/readme.txt for the layout of logs.\nThe master role failed with error: There is no succeeded mini batch item returned from run(). Please check \'response: run()\' in https://aka.ms/batch-inference-documentation\nPlease check logs for error. You can check logs/readme.txt for the layout of logs. Detail: Traceback (most recent call last):\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job\n    self.summarize()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize\n    raise NoResultToAppendError(msg, compliant_message=msg)\nazureml_common.parallel_run.exception.NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check \'response: run()\' in https://aka.ms/batch-inference-documentation\nPlease check logs for error. You can check logs/readme.txt for the layout of logs.\n.', 'FinishJobRemainRetry': -1, 'FailureMessage': "The master role failed with error: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation.", 'MinibatchTelemetryPercentile': '{"minibatch_run_method_duration_percentile": [], "minibatch_run_method_overhead_duration_percentile": [], "minibatch_init_duration_percentile": [0.800774, 0.862014, 0.879225], "minibatch_input_getting_duration_percentile": [], "minibatch_duration_percentile": [], "minibatch_output_duration_percentile": [], "telemetry_calculation_error": null}'}
+2026-08-11 03:14:43,866|INFO|3207|21060596676416|Initialized MetricsLogger: start_time = 2026-08-11 03:14:42.833713
+2026-08-11 03:14:49,257|INFO|3207|21060596676416|Collecting progress aggregations for resuming tips.
+2026-08-11 03:14:49,465|INFO|3207|21060183901760|Delete table 'prse574e568xe6e4x4777xb6a1x06f548ebd1a7inst' result: None
+2026-08-11 03:14:49,466|INFO|3207|21060183901760|Delete queue 'prse574e568xe6e4x4777xb6a1x06f548ebd1a7'.
+2026-08-11 03:14:49,471|INFO|3207|21060179437120|Delete table 'prse574e568xe6e4x4777xb6a1x06f548ebd1a7sum' result: None
+2026-08-11 03:14:49,471|INFO|3207|21060188104256|Delete table 'prse574e568xe6e4x4777xb6a1x06f548ebd1a7job' result: None
+2026-08-11 03:14:49,473|INFO|3207|21060186003008|Delete table 'prse574e568xe6e4x4777xb6a1x06f548ebd1a7init' result: None
+2026-08-11 03:14:49,474|INFO|3207|21060181538368|Delete table 'prse574e568xe6e4x4777xb6a1x06f548ebd1a7run' result: None
+2026-08-11 03:14:49,475|INFO|3207|21059432609344|Delete table 'prse574e568xe6e4x4777xb6a1x06f548ebd1a7out' result: None
+2026-08-11 03:14:49,485|INFO|3207|21060174972480|Delete table 'prse574e568xe6e4x4777xb6a1x06f548ebd1a7lgpt' result: None
+2026-08-11 03:14:49,489|INFO|3207|21060177335872|Delete table 'prse574e568xe6e4x4777xb6a1x06f548ebd1a7um' result: None
+2026-08-11 03:14:49,515|INFO|3207|21060596676416|All resources have been deleted.
+2026-08-11 03:14:50,965|INFO|25|14085138114368|0: setting job stage to MASTER_STOPPED, reason: master stopped.
+2026-08-11 03:14:50,965|INFO|25|14085138114368|Setting job stage to MASTER_STOPPED.
+2026-08-11 03:14:51,054|INFO|25|14085138114368|Write to message file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/fatal_exception_message: Run failed. Below is the error detail:
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/finalizer_process.py", line 76, in run
+    JobResult().check_job_result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/job_result.py", line 168, in check_job_result
+    raise exc
+NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs. The master role failed with error: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs. Detail: Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job
+    self.summarize()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize
+    raise NoResultToAppendError(msg, compliant_message=msg)
+azureml_common.parallel_run.exception.NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs.
+..
+2026-08-11 03:14:51,054|INFO|25|14085138114368|Write to flag file /tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/flags/fatal_exception.
+2026-08-11 03:14:51,055|INFO|25|14085138114368|The master poller stopped.
+2026-08-11 03:14:51,055|INFO|25|14085138114368|Wait the agent monitor thread to terminate.
+2026-08-11 03:14:51,055|INFO|25|14085138114368|The agent monitor thread terminated.
+2026-08-11 03:14:51,055|INFO|25|14085138114368|The poll stopping thread terminated.
+2026-08-11 03:14:51,055|INFO|25|14085138114368|Sending child run logs path to table terminated.
+2026-08-11 03:14:51,055|INFO|25|14085138114368|The agent manager stopped.
+2026-08-11 03:14:51,055|INFO|25|14084841924160|Stopped logging heartbeat because stop event is set.
+2026-08-11 03:14:51,056|INFO|25|14084727887424|Stopped node progress summarizing because stop event is set.

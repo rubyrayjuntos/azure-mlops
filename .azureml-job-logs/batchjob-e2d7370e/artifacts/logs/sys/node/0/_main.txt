@@ -1,0 +1,186 @@
+2026-08-11 01:37:04,601|INFO|25|13930490849088|Multiple processing start method: spawn, is_detonation_chamber_enabled: False, in_sidecar_container: False, in_detonation_chamber: False.
+2026-08-11 01:37:05,283|INFO|25|13930490849088|Initialized MetricsLogger: start_time = 2026-08-11 01:35:31.032800
+2026-08-11 01:37:05,330|WARNING|25|13930193741376|Failed to log heartbeat because of 0:The table specified does not exist.
+RequestId:e5ac2dbe-9002-005a-3731-29f8a8000000
+Time:2026-08-11T01:37:05.3169109Z
+ErrorCode:TableNotFound
+Content: {"odata.error":{"code":"TableNotFound","message":{"lang":"en-US","value":"0:The table specified does not exist.\nRequestId:e5ac2dbe-9002-005a-3731-29f8a8000000\nTime:2026-08-11T01:37:05.3169109Z"}}}
+Traceback (most recent call last):
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/instance_heart_beater.py", line 56, in log_heartbeat
+    self.table.log_heartbeat(start_time=self.start_time)
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/table_instance_status.py", line 78, in log_heartbeat
+    self.flush()
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/table_common.py", line 213, in flush
+    self.save_next_batch(restore_cache_on_fail=restore_cache_on_fail)
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/table_common.py", line 170, in save_next_batch
+    self.table_client.submit_transaction(operations)
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/data/tables/_table_client.py", line 734, in submit_transaction
+    return self._batch_send(self.table_name, *batched_requests.requests, **kwargs)  # type: ignore
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/data/tables/_base_client.py", line 334, in _batch_send
+    raise decoded
+azure.data.tables._error.TableTransactionError: 0:The table specified does not exist.
+RequestId:e5ac2dbe-9002-005a-3731-29f8a8000000
+Time:2026-08-11T01:37:05.3169109Z
+ErrorCode:TableNotFound
+Content: {"odata.error":{"code":"TableNotFound","message":{"lang":"en-US","value":"0:The table specified does not exist.\nRequestId:e5ac2dbe-9002-005a-3731-29f8a8000000\nTime:2026-08-11T01:37:05.3169109Z"}}}
+2026-08-11 01:37:05,334|INFO|25|13930490849088|Initialized MetricsLogger: start_time = 2026-08-11 01:35:31.032800
+2026-08-11 01:37:05,338|INFO|25|13930490849088|Initialized MetricsLogger: start_time = 2026-08-11 01:35:31.032800
+2026-08-11 01:37:05,341|INFO|25|13930490849088|Start NodeProgressSummarizer.
+2026-08-11 01:37:05,349|INFO|25|13930490849088|Initialized MetricsLogger: start_time = 2026-08-11 01:35:31.032800
+2026-08-11 01:37:05,350|INFO|25|13930490849088|continuous_run_failure_count_to_restart = None
+2026-08-11 01:37:05,350|INFO|25|13930490849088|continuous_init_failure_count_to_restart = None
+2026-08-11 01:37:05,350|INFO|25|13930490849088|entry_script_init_timeout = None
+2026-08-11 01:37:05,350|INFO|25|13930490849088|Start agent manager.
+2026-08-11 01:37:05,350|INFO|25|13930490849088|start the agent monitor thread.
+2026-08-11 01:37:05,351|INFO|25|13930490849088|start the resource monitor thread.
+2026-08-11 01:37:05,351|INFO|25|13930490849088|Wait the master poller to finish.
+2026-08-11 01:37:05,353|INFO|25|13930075764288|The poll stopping thread Started.
+2026-08-11 01:37:05,722|INFO|25|13930490849088|required_fields:{'EventId': '20f2a238-f575-4145-a80e-41516725cbbd', 'SubscriptionId': '00000000-0000-0000-0000-000000000000', 'WorkspaceId': 'e4147405-1ec1-4710-91f6-ec581804bbe2', 'CorrelationId': '7f265546-6bfb-436f-8c7c-2c6630e35dcf', 'ComponentName': 'ParallelRunStep', 'EventName': 'ParallelRunStep.Job.Start', 'EventTime': '2026-08-11T01:37:05.656015+00:00'}
+standard_fields:{'Duration': None, 'TaskResult': None, 'FailureReason': None, 'WorkspaceRegion': 'eastus', 'ComputeType': <AzureMLTelemetryComputeType.AmlcTrain: 1>, 'Attribution': 'ParallelRunStep', 'ClientOS': 2, 'ClientOSVersion': 'Linux-6.8.0-1062-azure-x86_64-with-glibc2.10', 'RunId': 'e517ef50-6244-4798-b8c4-abdfcdde5542', 'ParentRunId': 'batchjob-e2d7370e-c396-40f4-b477-cf117f99bb80', 'ExperimentId': 'd1cbc60e-4bce-427e-877f-01405e3f5839', 'NumberOfNodes': 1, 'NumberOfCores': None, 'DatasetType': 'File', 'CoreSeconds': None}
+extension_fields:{'OutputAction': 'append_row', 'MiniBatchSize': 10, 'ProcessCountPerNode': 2, 'ErrorThreshold': -1, 'AllowFailedCount': None, 'AllowFailedPercent': None, 'ClientSdkVersion': '', 'AmlCoreVersion': '', 'DataprepVersion': 'NA', 'JobId': 'e517ef50-6244-4798-b8c4-abdfcdde5542', 'PRSVersion': 'V1', 'PRSReleaseId': 'placeholder_release_id', 'NodeId': '0', 'InstanceId': '92664dbd-1383-4eb2-a1c9-52d878b3e464', 'PythonVersion': '3.8.10 | packaged by conda-forge | (default, Sep 13 2021, 21:46:58) \n[GCC 9.4.0]', 'MaxNodeCount': 0, 'ScoreModuleType': 'PYTHON', 'InputFormatContent': 'URI_FILE'}
+2026-08-11 01:37:05,760|INFO|25|13930490849088|required_fields:{'EventId': 'fe184008-f62a-40e8-8dcd-8c157e34040b', 'SubscriptionId': '00000000-0000-0000-0000-000000000000', 'WorkspaceId': 'e4147405-1ec1-4710-91f6-ec581804bbe2', 'CorrelationId': 'd8e0c254-1503-42f2-a63c-3f3234cf241b', 'ComponentName': 'ParallelRunStep', 'EventName': 'ParallelRunStep.Job.Configuration', 'EventTime': '2026-08-11T01:37:05.760756+00:00'}
+standard_fields:None
+extension_fields:{'UserJobSettings': {'CandidateCount': None, 'IgnoreFailureWithinRetry': None, 'DataFrameToCsv': None, 'PrefetchCount': None, 'CollectComputeHoursMetric': None, 'RegenerateResumeTaskList': None, 'ContinuousRunFailureCountToRestart': None, 'ContinuousInitFailureCountToRestart': None, 'NodeReleaseWaitSeconds': None, 'EntryScriptInitTimeout': None, 'StorageRetentionDays': None, 'JobEarlySuccessWaitTimeCoefficient': None, 'TaskProvider': None}}
+2026-08-11 01:37:05,793|INFO|25|13930490849088|0: setting job stage to PREPARING, reason: The master lock blob created.
+2026-08-11 01:37:05,793|INFO|25|13930490849088|Setting job stage to PREPARING.
+2026-08-11 01:37:07,203|INFO|25|13930067912256|register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/register
+2026-08-11 01:37:07,203|INFO|25|13930067912256|batch_register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/batch/metadata/ExperimentRun/dcid.batchjob-e2d7370e-c396-40f4-b477-cf117f99bb80?datastoreName=workspaceartifactstore
+2026-08-11 01:37:21,371|WARNING|25|13930490849088|Error occurred while calling JobResult.save_error. Exception detail: This request is not authorized to perform this operation using this permission.
+RequestId:5153e736-b002-002f-1531-299384000000
+Time:2026-08-11T01:37:21.3691159Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: {"odata.error":{"code":"AuthorizationPermissionMismatch","message":{"lang":"en-US","value":"This request is not authorized to perform this operation using this permission.\nRequestId:5153e736-b002-002f-1531-299384000000\nTime:2026-08-11T01:37:21.3691159Z"}}}
+2026-08-11 01:37:21,373|INFO|25|13930490849088|Final scan and register default artifacts.
+2026-08-11 01:37:21,410|INFO|25|13930490849088|0: setting job stage to STOP_ON_ERROR, reason: HttpResponseError. This request is not authorized to perform this operation using this permission.
+RequestId:2f897605-d002-004b-7031-29621c000000
+Time:2026-08-11T01:37:21.3033982Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: {"odata.error":{"code":"AuthorizationPermissionMismatch","message":{"lang":"en-US","value":"This request is not authorized to perform this operation using this permission.\nRequestId:2f897605-d002-004b-7031-29621c000000\nTime:2026-08-11T01:37:21.3033982Z"}}}. error This request is not authorized to perform this operation using this permission.
+RequestId:2f897605-d002-004b-7031-29621c000000
+Time:2026-08-11T01:37:21.3033982Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: {"odata.error":{"code":"AuthorizationPermissionMismatch","message":{"lang":"en-US","value":"This request is not authorized to perform this operation using this permission.\nRequestId:2f897605-d002-004b-7031-29621c000000\nTime:2026-08-11T01:37:21.3033982Z"}}} after 10 tries. Traceback (most recent call last):
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/data/tables/_models.py", line 360, in _get_next_cb
+    return self._command(
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator.py", line 78, in wrapper_use_tracer
+    return func(*args, **kwargs)
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/data/tables/_generated/operations/_operations.py", line 985, in query_entities
+    raise HttpResponseError(response=response, model=error)
+azure.core.exceptions.HttpResponseError: Operation returned an invalid status 'Forbidden'
+Content: {"odata.error":{"code":"AuthorizationPermissionMismatch","message":{"lang":"en-US","value":"This request is not authorized to perform this operation using this permission.\nRequestId:2f897605-d002-004b-7031-29621c000000\nTime:2026-08-11T01:37:21.3033982Z"}}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 629, in poll
+    if self.node_should_stop():
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 565, in node_should_stop
+    is_master_role_candidate = Node().is_master_role_candidate()
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/node.py", line 34, in is_master_role_candidate
+    candidates = self.cluster.master_role_candidates  # Get all candidates for the master role.
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/cluster.py", line 32, in master_role_candidates
+    instances = TableInstanceStatus().get_active_instance_ids()
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/table_instance_status.py", line 89, in get_active_instance_ids
+    for entity in self.query_entities(f"PartitionKey eq '{InstanceHeartbeatEntity.PARTITION_KEY}'"):
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/table_common.py", line 229, in query_entities
+    for entity in self.table_client.query_entities(query_filter, **kwargs):
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/data/tables/_models.py", line 371, in _get_next_cb
+    _process_table_error(error)
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/data/tables/_error.py", line 203, in _process_table_error
+    _reraise_error(decoded_error)
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/data/tables/_error.py", line 190, in _reraise_error
+    raise decoded_error.with_traceback(exc_traceback)
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/data/tables/_models.py", line 360, in _get_next_cb
+    return self._command(
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator.py", line 78, in wrapper_use_tracer
+    return func(*args, **kwargs)
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/data/tables/_generated/operations/_operations.py", line 985, in query_entities
+    raise HttpResponseError(response=response, model=error)
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:2f897605-d002-004b-7031-29621c000000
+Time:2026-08-11T01:37:21.3033982Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: {"odata.error":{"code":"AuthorizationPermissionMismatch","message":{"lang":"en-US","value":"This request is not authorized to perform this operation using this permission.\nRequestId:2f897605-d002-004b-7031-29621c000000\nTime:2026-08-11T01:37:21.3033982Z"}}}
+..
+2026-08-11 01:37:21,411|INFO|25|13930490849088|Setting job stage to STOP_ON_ERROR.
+2026-08-11 01:37:21,457|INFO|25|13930490849088|0: setting job stage to MASTER_STOPPED, reason: HttpResponseError. This request is not authorized to perform this operation using this permission.
+RequestId:2f897605-d002-004b-7031-29621c000000
+Time:2026-08-11T01:37:21.3033982Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: {"odata.error":{"code":"AuthorizationPermissionMismatch","message":{"lang":"en-US","value":"This request is not authorized to perform this operation using this permission.\nRequestId:2f897605-d002-004b-7031-29621c000000\nTime:2026-08-11T01:37:21.3033982Z"}}}. error This request is not authorized to perform this operation using this permission.
+RequestId:2f897605-d002-004b-7031-29621c000000
+Time:2026-08-11T01:37:21.3033982Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: {"odata.error":{"code":"AuthorizationPermissionMismatch","message":{"lang":"en-US","value":"This request is not authorized to perform this operation using this permission.\nRequestId:2f897605-d002-004b-7031-29621c000000\nTime:2026-08-11T01:37:21.3033982Z"}}} after 10 tries. Traceback (most recent call last):
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/data/tables/_models.py", line 360, in _get_next_cb
+    return self._command(
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator.py", line 78, in wrapper_use_tracer
+    return func(*args, **kwargs)
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/data/tables/_generated/operations/_operations.py", line 985, in query_entities
+    raise HttpResponseError(response=response, model=error)
+azure.core.exceptions.HttpResponseError: Operation returned an invalid status 'Forbidden'
+Content: {"odata.error":{"code":"AuthorizationPermissionMismatch","message":{"lang":"en-US","value":"This request is not authorized to perform this operation using this permission.\nRequestId:2f897605-d002-004b-7031-29621c000000\nTime:2026-08-11T01:37:21.3033982Z"}}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 629, in poll
+    if self.node_should_stop():
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 565, in node_should_stop
+    is_master_role_candidate = Node().is_master_role_candidate()
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/node.py", line 34, in is_master_role_candidate
+    candidates = self.cluster.master_role_candidates  # Get all candidates for the master role.
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/cluster.py", line 32, in master_role_candidates
+    instances = TableInstanceStatus().get_active_instance_ids()
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/table_instance_status.py", line 89, in get_active_instance_ids
+    for entity in self.query_entities(f"PartitionKey eq '{InstanceHeartbeatEntity.PARTITION_KEY}'"):
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/table_common.py", line 229, in query_entities
+    for entity in self.table_client.query_entities(query_filter, **kwargs):
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/data/tables/_models.py", line 371, in _get_next_cb
+    _process_table_error(error)
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/data/tables/_error.py", line 203, in _process_table_error
+    _reraise_error(decoded_error)
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/data/tables/_error.py", line 190, in _reraise_error
+    raise decoded_error.with_traceback(exc_traceback)
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/data/tables/_models.py", line 360, in _get_next_cb
+    return self._command(
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator.py", line 78, in wrapper_use_tracer
+    return func(*args, **kwargs)
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/data/tables/_generated/operations/_operations.py", line 985, in query_entities
+    raise HttpResponseError(response=response, model=error)
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:2f897605-d002-004b-7031-29621c000000
+Time:2026-08-11T01:37:21.3033982Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: {"odata.error":{"code":"AuthorizationPermissionMismatch","message":{"lang":"en-US","value":"This request is not authorized to perform this operation using this permission.\nRequestId:2f897605-d002-004b-7031-29621c000000\nTime:2026-08-11T01:37:21.3033982Z"}}}
+..
+2026-08-11 01:37:21,458|INFO|25|13930490849088|Setting job stage to MASTER_STOPPED.
+2026-08-11 01:37:21,502|INFO|25|13930490849088|Write to message file /tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/flags/fatal_exception_message: This request is not authorized to perform this operation using this permission.
+RequestId:4bfa11da-2002-005f-4031-292a73000000
+Time:2026-08-11T01:37:21.4082373Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: {"odata.error":{"code":"AuthorizationPermissionMismatch","message":{"lang":"en-US","value":"This request is not authorized to perform this operation using this permission.\nRequestId:4bfa11da-2002-005f-4031-292a73000000\nTime:2026-08-11T01:37:21.4082373Z"}}}.
+2026-08-11 01:37:21,502|INFO|25|13930490849088|Write to flag file /tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/flags/fatal_exception.
+2026-08-11 01:37:21,503|INFO|25|13930490849088|The master poller stopped.
+2026-08-11 01:37:21,503|INFO|25|13930490849088|Wait the agent monitor thread to terminate.
+2026-08-11 01:37:21,578|INFO|25|13930075764288|Processes to check: [].
+2026-08-11 01:37:21,578|INFO|25|13930075764288|Processes to kill: [].
+2026-08-11 01:37:21,578|INFO|25|13930075764288|Processes after calling kill: [].
+2026-08-11 01:37:21,578|INFO|25|13930075764288|The poll stopping thread stops because job is in stopping.
+2026-08-11 01:37:21,578|INFO|25|13930075764288|Closed node usage files.
+2026-08-11 01:37:21,578|INFO|25|13930075764288|The poll stopping thread stopped.
+2026-08-11 01:37:21,875|INFO|25|13930077865536|The job failed before creating any task. Refer to logs/sys/master_role.*.txt for details.
+2026-08-11 01:37:21,875|INFO|25|13930490849088|The agent monitor thread terminated.
+2026-08-11 01:37:21,875|INFO|25|13930490849088|The poll stopping thread terminated.
+2026-08-11 01:37:21,875|INFO|25|13930490849088|Sending child run logs path to table terminated.
+2026-08-11 01:37:21,875|INFO|25|13930490849088|The agent manager stopped.
+2026-08-11 01:37:21,875|INFO|25|13930193741376|Stopped logging heartbeat because stop event is set.
+2026-08-11 01:37:21,876|INFO|25|13930080228928|Stopped node progress summarizing because stop event is set.

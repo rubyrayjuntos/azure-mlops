@@ -1,0 +1,35 @@
+2026-08-11 02:58:38,300|INFO|601|Increase the process's niceness to 5.
+2026-08-11 02:58:38,300|INFO|601|No GPU available.
+2026-08-11 02:58:38,301|INFO|601|Current system process id: 601.
+2026-08-11 02:58:38,304|INFO|601|prefetch_count = 0
+2026-08-11 02:58:38,308|INFO|601|Start to import /mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/batch_driver.py by file path.
+2026-08-11 02:58:39,334|INFO|601|Imported /mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/batch_driver.py by file path.
+2026-08-11 02:58:40,076|INFO|601|Run with distributed mode: False
+2026-08-11 02:58:40,076|INFO|601|will run entryscript run function.
+2026-08-11 02:58:40,086|WARNING|601|Failed to get task. The task server return an error.
+2026-08-11 02:58:41,096|WARNING|601|Failed to get task. The task server return an error.
+2026-08-11 02:58:43,108|WARNING|601|Failed to get task. The task server return an error.
+2026-08-11 02:58:47,118|WARNING|601|Failed to get task. The task server return an error.
+2026-08-11 02:58:55,132|WARNING|601|Failed to get task. The task server return an error.
+2026-08-11 02:58:55,132|ERROR|601|Task -1 failed for unhandled error.
+Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 535, in _run_payload
+    self.process_tasks()
+  File "/mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 351, in process_tasks
+    tasks = self.task_fetcher.get_tasks()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/driver/azureml_user/parallel_run/task_fetcher.py", line 46, in get_tasks
+    return self.task_server_proxy.get_tasks()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/driver/azureml_user/parallel_run/task_server_proxy.py", line 92, in get_tasks
+    tasks_json = self.send_with_retry(request, error)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/driver/azureml_user/parallel_run/task_server_proxy.py", line 72, in send_with_retry
+    return self.client.send(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/driver/azureml_user/parallel_run/tcp_client.py", line 30, in send
+    raise TCPServerException()
+azureml_common.parallel_run.exception.TCPServerException: TCPServerException
+Please check logs for error. You can check logs/readme.txt for the layout of logs.
+2026-08-11 02:58:55,311|INFO|601|The agent exit with code UNHANDLED.
+2026-08-11 02:58:55,315|INFO|601|Exit with UNHANDLED

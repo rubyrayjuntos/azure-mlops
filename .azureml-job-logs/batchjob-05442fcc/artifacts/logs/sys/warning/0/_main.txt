@@ -1,0 +1,27 @@
+2026-08-11 03:13:22,561|WARNING|25|14085138114368|Failed to get job start time from run details with error 'startTimeUtc'.
+2026-08-11 03:13:22,609|WARNING|25|14084841924160|Failed to log heartbeat because of 0:The table specified does not exist.
+RequestId:49dcacd8-2002-004f-3f3f-29ef1b000000
+Time:2026-08-11T03:13:22.6052940Z
+ErrorCode:TableNotFound
+Content: {"odata.error":{"code":"TableNotFound","message":{"lang":"en-US","value":"0:The table specified does not exist.\nRequestId:49dcacd8-2002-004f-3f3f-29ef1b000000\nTime:2026-08-11T03:13:22.6052940Z"}}}
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/instance_heart_beater.py", line 56, in log_heartbeat
+    self.table.log_heartbeat(start_time=self.start_time)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/table_instance_status.py", line 78, in log_heartbeat
+    self.flush()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/table_common.py", line 213, in flush
+    self.save_next_batch(restore_cache_on_fail=restore_cache_on_fail)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/table_common.py", line 170, in save_next_batch
+    self.table_client.submit_transaction(operations)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/data/tables/_table_client.py", line 734, in submit_transaction
+    return self._batch_send(self.table_name, *batched_requests.requests, **kwargs)  # type: ignore
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/data/tables/_base_client.py", line 334, in _batch_send
+    raise decoded
+azure.data.tables._error.TableTransactionError: 0:The table specified does not exist.
+RequestId:49dcacd8-2002-004f-3f3f-29ef1b000000
+Time:2026-08-11T03:13:22.6052940Z
+ErrorCode:TableNotFound
+Content: {"odata.error":{"code":"TableNotFound","message":{"lang":"en-US","value":"0:The table specified does not exist.\nRequestId:49dcacd8-2002-004f-3f3f-29ef1b000000\nTime:2026-08-11T03:13:22.6052940Z"}}}
+2026-08-11 03:14:09,031|WARNING|25|14084723422784|Kill process 221 on node 0 instance 852832f0-e695-44c1-b718-d091b8759d93, which could not finish within the allowed time.
+2026-08-11 03:14:09,033|WARNING|25|14084723422784|Kill process 222 on node 0 instance 852832f0-e695-44c1-b718-d091b8759d93, which could not finish within the allowed time.
+2026-08-11 03:14:42,833|WARNING|3207|21060596676416|Failed to get job start time from run details with error 'startTimeUtc'.

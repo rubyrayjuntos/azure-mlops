@@ -1,0 +1,2 @@
+Utc Time,Cpu Percent,Memory Total (MB),Memory Available (MB),Memory Used (MB),Memory Used Percent,Disk Io Read Count,Disk Io Write Count,Disk Io Read (MB),Disk Io Write (MB),Network Sent (MB),Network Recv (MB),# of TCP Connections,# of UDP Connections
+2026-08-11T02:33:41.980037,0.0,15995.84,13875.25,1748.34,13.3,11244,53102,561.40,11004.77,10.31,2961.94,108,9

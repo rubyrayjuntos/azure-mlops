@@ -1,0 +1,66 @@
+2026-08-11 02:57:05,094|INFO|ParallelTask=True, node id=tvmps_3c54f9fd696513175b6742f676a314c2e4889e15a445568ecc71d85efcf0d6ec_d, node seq=0.
+2026-08-11 02:57:05,094|INFO|The booter type is BootNode.
+2026-08-11 02:57:05,094|INFO|The snapshot dir is /mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd.
+2026-08-11 02:57:05,094|INFO|sys.version:3.11.15 | packaged by conda-forge | (main, Jun 11 2026, 03:34:02) [GCC 14.3.0], sys.platform:linux.
+2026-08-11 02:57:05,094|INFO|run command:/azureml-envs/azureml_284a5f433c4663bf233e7606ef4ee312/bin/python -m pip freeze
+2026-08-11 02:57:05,428|INFO|required_fields:{'EventId': 'fb49d3e8-86aa-4f82-8a69-405c16ac6ece', 'SubscriptionId': '00000000-0000-0000-0000-000000000000', 'WorkspaceId': 'e4147405-1ec1-4710-91f6-ec581804bbe2', 'CorrelationId': 'eb7fad81-ffb9-4b53-a32d-7d8bf2e1f282', 'ComponentName': 'ParallelRunStep', 'EventName': 'ParallelRunStep.Job.Configuration', 'EventTime': '2026-08-11T02:57:05.428425+00:00'}
+standard_fields:None
+extension_fields:{'UserJobArgs': {'input_format': None, 'mini_batch_size': '10', 'rank_mini_batch_count': None, 'process_count_per_node': '2', 'output_action': 'append_row', 'error_threshold': '-1', 'allowed_failed_count': None, 'allowed_failed_percent': None, 'run_invocation_timeout': '30', 'run_max_try': '3', 'amlbi_skip_preemption_retry': None, 'task_overhead_timeout': None, 'progress_update_timeout': None, 'first_task_creation_timeout': None, 'logging_level': 'INFO', 'copy_logs_to_parent': 'True', 'resource_monitor_interval': None, 'push_metrics_to_parent': None, 'boot_timeout_seconds': None, 'batch_endpoint_enabled': 'True', 'amlbi_distributed_run': None, 'amlbi_pf_enabled': None, 'amlbi_mini_batch_rows': None, 'amlbi_pf_run_mode': None, 'amlbi_pf_model': None, 'amlbi_async_mode': None, 'append_row_dataframe_header': True, 'append_row_file_name': True, 'partition_keys': None, 'metrics_name_prefix': None, 'intermediate_store': None, 'resume_from': None, 'compute_sku': None}, 'Settings': {}}
+2026-08-11 02:57:05,458|INFO|Extract to dir: /tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod
+2026-08-11 02:57:05,458|INFO|Extract command: tar xhf /mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/driver/prs_prod.tar.gz -C /tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod
+2026-08-11 02:57:05,458|INFO|run command:tar xhf /mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/driver/prs_prod.tar.gz -C /tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod
+2026-08-11 02:57:11,963|INFO|Extracted /mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/driver/prs_prod.tar.gz to /tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod in 6.5046 seconds.
+2026-08-11 02:57:11,968|WARNING|Unable to get dataprep version
+2026-08-11 02:57:11,968|INFO|Start to generate internal args for input data.
+2026-08-11 02:57:11,972|INFO|The output folder is /tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/6389b34a-bc6c-41d8-9872-9afa32e7447c.
+2026-08-11 02:57:11,972|INFO|run command:['/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/bin/python', '/mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/driver/sys_main.py', '--model', '/mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/e4147405-1ec1-4710-91f6-ec581804bbe2_score_model/taxi-model/../', '--batch_endpoint_enabled', 'True', '--create_snapshot_at_runtime', 'True', '--copy_logs_to_parent', 'True', '--scoring_module_name', 'batch_driver.py', '--output_action', 'append_row', '--append_row_dataframe_header', 'False', '--output', '/mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/cap/data-capability/wd/INPUT_score_workspaceblobstore/azureml/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/score', '--input_asset_job_data_path', '/mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv', '--job_output_path', 'DatasetOutputConfig:score', '--mini_batch_size', '10', '--run_max_try', '3', '--run_invocation_timeout', '30', '--error_threshold', '-1', '--logging_level', 'INFO', '--process_count_per_node', '2', '--append_row_file_name', 'predictions.csv', '--aml_core_version', '', '--dataprep_version', 'NA', '--bf89b5b0_523f_4782_aedc_61bd625ee81a', '{"input_format": "UriFile", "inputs": ["/mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv"]}']
+2026-08-11 02:57:11,972|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 02:57:11,981|WARNING|There's no refresh record , set the current time to be the last refresh time as sentinel.
+2026-08-11 02:57:13,981|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 02:57:15,985|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 02:57:17,988|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 02:57:19,997|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 02:57:22,002|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 02:57:24,006|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 02:57:26,012|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 02:57:28,016|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 02:57:30,022|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 02:57:50,082|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 02:58:10,128|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 02:58:30,172|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 02:58:50,220|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 02:59:10,267|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 02:59:30,303|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 02:59:50,340|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 03:00:10,375|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 03:00:30,411|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 03:03:50,777|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 03:07:11,145|INFO|proc.returncode = None, round_after_finished = 0.
+2026-08-11 03:09:01,349|INFO|Worker - Telemetry: nodeId:0, jobId:d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2, eventName:ParallelRunStep.SysMain.LocalJobFinishedStateExpired, exceptionType:, exceptionMessage:End sys main because job finished state hasn't been synced for 600s.
+2026-08-11 03:09:01,349|INFO|required_fields:{'EventId': '36d7408f-0632-49df-988b-b88433431e0a', 'SubscriptionId': '00000000-0000-0000-0000-000000000000', 'WorkspaceId': 'e4147405-1ec1-4710-91f6-ec581804bbe2', 'CorrelationId': 'edc772e9-1f0f-4d29-94be-8d289eb241c0', 'ComponentName': 'ParallelRunStep', 'EventName': 'ParallelRunStep.SysMain.LocalJobFinishedStateExpired', 'EventTime': '2026-08-11T03:09:01.349712+00:00'}
+standard_fields:{'Duration': None, 'TaskResult': None, 'FailureReason': None, 'WorkspaceRegion': 'eastus', 'ComputeType': <AzureMLTelemetryComputeType.AmlcTrain: 1>, 'Attribution': 'ParallelRunStep', 'ClientOS': 2, 'ClientOSVersion': 'Linux-6.8.0-1062-azure-x86_64-with-glibc2.35', 'RunId': 'd0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2', 'ParentRunId': 'batchjob-965f3598-26e6-409a-abbe-900664b0a6b3', 'ExperimentId': 'd1cbc60e-4bce-427e-877f-01405e3f5839', 'NumberOfNodes': None, 'NumberOfCores': None, 'DatasetType': None, 'CoreSeconds': None}
+extension_fields:{'NodeId': '0', 'JobId': 'd0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2', 'ExceptionType': '', 'ExceptionMessage': "End sys main because job finished state hasn't been synced for 600s."}
+2026-08-11 03:09:01,432|WARNING|End sys main because job finished state hasn't been synced for 600s.
+2026-08-11 03:09:01,442|INFO|Deleted flag file /tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/flags/fatal_exception.
+2026-08-11 03:09:01,443|INFO|Deleted message file /tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/flags/fatal_exception_message.
+2026-08-11 03:09:01,443|ERROR|Raise MasterFatalException(This master role process failed with exitcode 1.)
+2026-08-11 03:09:01,443|INFO|Worker - Telemetry: nodeId:0, computeType:AmlCompute, startTime:2026-08-11T02:57:05.077713, endTime:2026-08-11T03:09:01.443230, duration:716.3655169010162
+2026-08-11 03:09:01,443|INFO|required_fields:{'EventId': '4eac5cf6-c3e6-4d98-87a9-dabf08e63792', 'SubscriptionId': '00000000-0000-0000-0000-000000000000', 'WorkspaceId': 'e4147405-1ec1-4710-91f6-ec581804bbe2', 'CorrelationId': 'bcf377ef-b5e7-460f-9729-7c08db72d582', 'ComponentName': 'ParallelRunStep', 'EventName': 'ParallelRunStep.Node.Duration', 'EventTime': '2026-08-11T03:09:01.443424+00:00'}
+standard_fields:{'Duration': '00:11:56', 'TaskResult': None, 'FailureReason': None, 'WorkspaceRegion': 'eastus', 'ComputeType': <AzureMLTelemetryComputeType.AmlcTrain: 1>, 'Attribution': 'ParallelRunStep', 'ClientOS': 2, 'ClientOSVersion': 'Linux-6.8.0-1062-azure-x86_64-with-glibc2.35', 'RunId': 'd0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2', 'ParentRunId': 'batchjob-965f3598-26e6-409a-abbe-900664b0a6b3', 'ExperimentId': 'd1cbc60e-4bce-427e-877f-01405e3f5839', 'NumberOfNodes': 1, 'NumberOfCores': 4, 'DatasetType': None, 'CoreSeconds': 2865.462067604065}
+extension_fields:{'StartTime': '2026-08-11T02:57:05.077713', 'EndTime': '2026-08-11T03:09:01.443230', 'NodeId': '0', 'JobId': 'd0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2'}
+2026-08-11 03:09:01,479|INFO|Master - Telemetry: nodeId:0, computeType:AmlCompute, startTime:2026-08-11T02:57:04.584588, endTime:2026-08-11T03:09:01.479320, duration:716.8947319984436, jobResult:2, failureReason:, exceptionType:ParallelTaskException, exceptionMessage:ParallelTaskException error. Exit code: 42. Message: This master role process failed with exitcode 1. Traceback (most recent call last):
+  File "driver/amlbi_main.py", line 145, in main
+    boot(driver_dir)
+  File "driver/amlbi_main.py", line 63, in boot
+    booter.start()
+  File "/mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/driver/azureml_user/parallel_run/boot.py", line 408, in start
+    self.start_sys_main()
+  File "/mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/driver/azureml_user/parallel_run/boot.py", line 293, in start_sys_main
+    self.run_sys_main(cmd)
+  File "/mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/driver/azureml_user/parallel_run/boot_node.py", line 130, in run_sys_main
+    raise ParallelTaskException(error_message, master_fatal_flag.get_exit_code())
+azureml_common.parallel_run.exception.ParallelTaskException: ParallelTaskException error. Exit code: 42. Message: This master role process failed with exitcode 1.
+, originExceptionType:
+2026-08-11 03:09:01,479|INFO|required_fields:{'EventId': '89009612-82b3-4817-987f-cbfc3b9a1bc9', 'SubscriptionId': '00000000-0000-0000-0000-000000000000', 'WorkspaceId': 'e4147405-1ec1-4710-91f6-ec581804bbe2', 'CorrelationId': '72e3fae2-aebb-4a68-ba9d-fea3877f401f', 'ComponentName': 'ParallelRunStep', 'EventName': 'ParallelRunStep.AmlbiMain.Node.End', 'EventTime': '2026-08-11T03:09:01.479504+00:00'}
+standard_fields:{'Duration': '00:11:56', 'TaskResult': 2, 'FailureReason': '', 'WorkspaceRegion': 'eastus', 'ComputeType': <AzureMLTelemetryComputeType.AmlcTrain: 1>, 'Attribution': 'ParallelRunStep', 'ClientOS': 2, 'ClientOSVersion': 'Linux-6.8.0-1062-azure-x86_64-with-glibc2.35', 'RunId': 'd0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2', 'ParentRunId': 'batchjob-965f3598-26e6-409a-abbe-900664b0a6b3', 'ExperimentId': 'd1cbc60e-4bce-427e-877f-01405e3f5839', 'NumberOfNodes': None, 'NumberOfCores': None, 'DatasetType': None, 'CoreSeconds': None}
+extension_fields:{'StartTime': '2026-08-11T02:57:04.584588', 'EndTime': '2026-08-11T03:09:01.479320', 'JobId': 'd0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2', 'PRSVersion': 'V1', 'PRSReleaseId': 'placeholder_release_id', 'NodeId': '0', 'ExceptionType': 'ParallelTaskException', 'ExceptionMessage': 'ParallelTaskException error. Exit code: 42. Message: This master role process failed with exitcode 1. Traceback (most recent call last):\n  File "driver/amlbi_main.py", line 145, in main\n    boot(driver_dir)\n  File "driver/amlbi_main.py", line 63, in boot\n    booter.start()\n  File "/mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/driver/azureml_user/parallel_run/boot.py", line 408, in start\n    self.start_sys_main()\n  File "/mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/driver/azureml_user/parallel_run/boot.py", line 293, in start_sys_main\n    self.run_sys_main(cmd)\n  File "/mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/driver/azureml_user/parallel_run/boot_node.py", line 130, in run_sys_main\n    raise ParallelTaskException(error_message, master_fatal_flag.get_exit_code())\nazureml_common.parallel_run.exception.ParallelTaskException: ParallelTaskException error. Exit code: 42. Message: This master role process failed with exitcode 1.\n', 'OriginExceptionType': '', 'FailureMessage': ''}

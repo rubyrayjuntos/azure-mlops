@@ -1,0 +1,648 @@
+2026-08-11 02:58:03,436|INFO|332|21037771568960|This is  AmlComputeRunContext with working dir /mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2.
+2026-08-11 02:58:03,436|INFO|332|21037771568960|Run id: d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2
+2026-08-11 02:58:03,938|INFO|332|21037771568960|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:03,982|INFO|332|21037771568960|self.ignore_failures_within_retry: True
+2026-08-11 02:58:04,002|INFO|332|21037771568960|job_early_success_wait_time_coefficient = None
+2026-08-11 02:58:04,019|INFO|332|21037771568960|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:04,122|INFO|332|21037771568960|Master - Starting
+2026-08-11 02:58:04,122|INFO|332|21037771568960|The master role process starts.
+2026-08-11 02:58:04,313|INFO|332|21037771568960|Resources created.
+2026-08-11 02:58:04,362|INFO|332|21037771568960|BlobExporter created.
+2026-08-11 02:58:04,362|INFO|332|21037771568960|future_create_tasks created.
+2026-08-11 02:58:04,362|INFO|332|21037771568960|Start exporting items to target: ExportTarget[blob: azureml/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/job/generating_tasks/a5675353-923d-42b9-8d63-2fe3d926dabf.txt]..
+2026-08-11 02:58:04,387|INFO|332|21037771568960|Start scheduling.
+2026-08-11 02:58:04,408|INFO|332|21037771568960|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:04,424|INFO|332|21037771568960|The task provider type is FolderOrFileListProvider.
+2026-08-11 02:58:04,578|INFO|332|21037771568960|Input folders [], from index 0.
+2026-08-11 02:58:04,593|INFO|338|16441455982400|The job error logger starts.
+2026-08-11 02:58:04,629|ERROR|332|21037771568960|Failed to schedule mini batch with This request is not authorized to perform this operation using this permission.
+RequestId:e218842e-5003-0018-723d-294128000000
+Time:2026-08-11T02:58:04.6205791Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:e218842e-5003-0018-723d-294128000000
+Time:2026-08-11T02:58:04.6205791Z</Message></Error>.
+2026-08-11 02:58:04,632|ERROR|332|21037771568960|Scheduling task failed with error This request is not authorized to perform this operation using this permission.
+RequestId:e218842e-5003-0018-723d-294128000000
+Time:2026-08-11T02:58:04.6205791Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:e218842e-5003-0018-723d-294128000000
+Time:2026-08-11T02:58:04.6205791Z</Message></Error>. Detail Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 246, in create_tasks
+    await queue_sender.create_tasks(task_group)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 98, in create_tasks
+    await asyncio.gather(*asyncio_tasks)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 75, in done_callback
+    task_id = future.result()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 63, in create_task
+    await self.queue_client.send_message(content=message, time_to_live=-1)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator_async.py", line 77, in wrapper_use_tracer
+    return await func(*args, **kwargs)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/aio/_queue_client_async.py", line 402, in send_message
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:e218842e-5003-0018-723d-294128000000
+Time:2026-08-11T02:58:04.6205791Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:e218842e-5003-0018-723d-294128000000
+Time:2026-08-11T02:58:04.6205791Z</Message></Error>
+.
+2026-08-11 02:58:05,031|INFO|338|16441455982400|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:05,032|INFO|338|16441455982400|Start to register child run log from table.
+2026-08-11 02:58:05,046|INFO|338|16441455982400|Disable new logging structure, so skip register default artifacts to parent run.
+2026-08-11 02:58:05,073|INFO|338|16441455982400|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:05,073|INFO|338|16441455982400|The overview starts restoring.
+2026-08-11 02:58:05,184|INFO|338|16441455982400|The overview process starts polling.
+2026-08-11 02:58:05,200|INFO|338|16441045931584|register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/register
+2026-08-11 02:58:05,201|INFO|338|16441045931584|batch_register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/batch/metadata/ExperimentRun/dcid.batchjob-965f3598-26e6-409a-abbe-900664b0a6b3?datastoreName=workspaceartifactstore
+2026-08-11 02:58:05,210|INFO|338|16441455982400|register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/register
+2026-08-11 02:58:05,210|INFO|338|16441455982400|batch_register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/batch/metadata/ExperimentRun/dcid.batchjob-965f3598-26e6-409a-abbe-900664b0a6b3?datastoreName=workspaceartifactstore
+2026-08-11 02:58:05,368|ERROR|332|21037771568960|The master role failed. This request is not authorized to perform this operation using this permission.
+RequestId:e218842e-5003-0018-723d-294128000000
+Time:2026-08-11T02:58:04.6205791Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:e218842e-5003-0018-723d-294128000000
+Time:2026-08-11T02:58:04.6205791Z</Message></Error>. Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run
+    loop.run_until_complete(self.master_role.start())
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start
+    await starting
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 315, in _do_start
+    await self.wait_for_first_task()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 292, in wait_for_first_task
+    await self.wait_for_input_init()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 130, in wait_for_input_init
+    self.future_create_tasks.result()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 255, in create_tasks
+    raise exc
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 246, in create_tasks
+    await queue_sender.create_tasks(task_group)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 98, in create_tasks
+    await asyncio.gather(*asyncio_tasks)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 75, in done_callback
+    task_id = future.result()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 63, in create_task
+    await self.queue_client.send_message(content=message, time_to_live=-1)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator_async.py", line 77, in wrapper_use_tracer
+    return await func(*args, **kwargs)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/aio/_queue_client_async.py", line 402, in send_message
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:e218842e-5003-0018-723d-294128000000
+Time:2026-08-11T02:58:04.6205791Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:e218842e-5003-0018-723d-294128000000
+Time:2026-08-11T02:58:04.6205791Z</Message></Error>
+
+2026-08-11 02:58:13,114|INFO|421|16429232817984|This is  AmlComputeRunContext with working dir /mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2.
+2026-08-11 02:58:13,114|INFO|421|16429232817984|Run id: d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2
+2026-08-11 02:58:13,689|INFO|421|16429232817984|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:13,734|INFO|421|16429232817984|self.ignore_failures_within_retry: True
+2026-08-11 02:58:13,753|INFO|421|16429232817984|job_early_success_wait_time_coefficient = None
+2026-08-11 02:58:13,771|INFO|421|16429232817984|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:13,900|INFO|421|16429232817984|Master - Starting
+2026-08-11 02:58:13,900|INFO|421|16429232817984|The master role process starts.
+2026-08-11 02:58:14,101|INFO|421|16429232817984|Resources created.
+2026-08-11 02:58:14,156|INFO|421|16429232817984|BlobExporter created.
+2026-08-11 02:58:14,156|INFO|421|16429232817984|future_create_tasks created.
+2026-08-11 02:58:14,157|INFO|421|16429232817984|Start exporting items to target: ExportTarget[blob: azureml/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/job/generating_tasks/9fdd895f-8e1f-469c-a62c-7c053e211d08.txt]..
+2026-08-11 02:58:14,177|INFO|421|16429232817984|Start scheduling.
+2026-08-11 02:58:14,204|INFO|421|16429232817984|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:14,232|INFO|421|16429232817984|The task provider type is FolderOrFileListProvider.
+2026-08-11 02:58:14,256|INFO|426|23050311526208|The job error logger starts.
+2026-08-11 02:58:14,364|INFO|421|16429232817984|Input folders [], from index 0.
+2026-08-11 02:58:14,408|ERROR|421|16429232817984|Failed to schedule mini batch with This request is not authorized to perform this operation using this permission.
+RequestId:8df20e7b-6003-002c-4a3d-2972e0000000
+Time:2026-08-11T02:58:14.4025130Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:8df20e7b-6003-002c-4a3d-2972e0000000
+Time:2026-08-11T02:58:14.4025130Z</Message></Error>.
+2026-08-11 02:58:14,410|ERROR|421|16429232817984|Scheduling task failed with error This request is not authorized to perform this operation using this permission.
+RequestId:8df20e7b-6003-002c-4a3d-2972e0000000
+Time:2026-08-11T02:58:14.4025130Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:8df20e7b-6003-002c-4a3d-2972e0000000
+Time:2026-08-11T02:58:14.4025130Z</Message></Error>. Detail Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 246, in create_tasks
+    await queue_sender.create_tasks(task_group)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 98, in create_tasks
+    await asyncio.gather(*asyncio_tasks)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 75, in done_callback
+    task_id = future.result()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 63, in create_task
+    await self.queue_client.send_message(content=message, time_to_live=-1)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator_async.py", line 77, in wrapper_use_tracer
+    return await func(*args, **kwargs)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/aio/_queue_client_async.py", line 402, in send_message
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:8df20e7b-6003-002c-4a3d-2972e0000000
+Time:2026-08-11T02:58:14.4025130Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:8df20e7b-6003-002c-4a3d-2972e0000000
+Time:2026-08-11T02:58:14.4025130Z</Message></Error>
+.
+2026-08-11 02:58:14,728|INFO|426|23050311526208|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:14,729|INFO|426|23050311526208|Start to register child run log from table.
+2026-08-11 02:58:14,745|INFO|426|23050311526208|Disable new logging structure, so skip register default artifacts to parent run.
+2026-08-11 02:58:14,774|INFO|426|23050311526208|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:14,774|INFO|426|23050311526208|The overview starts restoring.
+2026-08-11 02:58:14,897|INFO|426|23049901430336|register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/register
+2026-08-11 02:58:14,897|INFO|426|23049901430336|batch_register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/batch/metadata/ExperimentRun/dcid.batchjob-965f3598-26e6-409a-abbe-900664b0a6b3?datastoreName=workspaceartifactstore
+2026-08-11 02:58:14,906|INFO|426|23050311526208|The overview process starts polling.
+2026-08-11 02:58:14,930|INFO|426|23050311526208|register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/register
+2026-08-11 02:58:14,930|INFO|426|23050311526208|batch_register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/batch/metadata/ExperimentRun/dcid.batchjob-965f3598-26e6-409a-abbe-900664b0a6b3?datastoreName=workspaceartifactstore
+2026-08-11 02:58:15,162|ERROR|421|16429232817984|The master role failed. This request is not authorized to perform this operation using this permission.
+RequestId:8df20e7b-6003-002c-4a3d-2972e0000000
+Time:2026-08-11T02:58:14.4025130Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:8df20e7b-6003-002c-4a3d-2972e0000000
+Time:2026-08-11T02:58:14.4025130Z</Message></Error>. Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run
+    loop.run_until_complete(self.master_role.start())
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start
+    await starting
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 315, in _do_start
+    await self.wait_for_first_task()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 292, in wait_for_first_task
+    await self.wait_for_input_init()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 130, in wait_for_input_init
+    self.future_create_tasks.result()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 255, in create_tasks
+    raise exc
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 246, in create_tasks
+    await queue_sender.create_tasks(task_group)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 98, in create_tasks
+    await asyncio.gather(*asyncio_tasks)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 75, in done_callback
+    task_id = future.result()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 63, in create_task
+    await self.queue_client.send_message(content=message, time_to_live=-1)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator_async.py", line 77, in wrapper_use_tracer
+    return await func(*args, **kwargs)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/aio/_queue_client_async.py", line 402, in send_message
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:8df20e7b-6003-002c-4a3d-2972e0000000
+Time:2026-08-11T02:58:14.4025130Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:8df20e7b-6003-002c-4a3d-2972e0000000
+Time:2026-08-11T02:58:14.4025130Z</Message></Error>
+
+2026-08-11 02:58:24,221|INFO|509|7422194517824|This is  AmlComputeRunContext with working dir /mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2.
+2026-08-11 02:58:24,221|INFO|509|7422194517824|Run id: d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2
+2026-08-11 02:58:24,859|INFO|509|7422194517824|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:24,912|INFO|509|7422194517824|self.ignore_failures_within_retry: True
+2026-08-11 02:58:24,931|INFO|509|7422194517824|job_early_success_wait_time_coefficient = None
+2026-08-11 02:58:24,949|INFO|509|7422194517824|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:25,058|INFO|509|7422194517824|Master - Starting
+2026-08-11 02:58:25,058|INFO|509|7422194517824|The master role process starts.
+2026-08-11 02:58:25,162|INFO|522|8161751000896|The job error logger starts.
+2026-08-11 02:58:25,211|INFO|509|7422194517824|Resources created.
+2026-08-11 02:58:25,266|INFO|509|7422194517824|BlobExporter created.
+2026-08-11 02:58:25,266|INFO|509|7422194517824|future_create_tasks created.
+2026-08-11 02:58:25,266|INFO|509|7422194517824|Start exporting items to target: ExportTarget[blob: azureml/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/job/generating_tasks/13e86fa8-d8c8-4fd8-ab47-95eb9d59b155.txt]..
+2026-08-11 02:58:25,287|INFO|509|7422194517824|Start scheduling.
+2026-08-11 02:58:25,310|INFO|509|7422194517824|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:25,328|INFO|509|7422194517824|The task provider type is FolderOrFileListProvider.
+2026-08-11 02:58:25,463|INFO|509|7422194517824|Input folders [], from index 0.
+2026-08-11 02:58:25,504|ERROR|509|7422194517824|Failed to schedule mini batch with This request is not authorized to perform this operation using this permission.
+RequestId:24a0338d-1003-0044-233d-291470000000
+Time:2026-08-11T02:58:25.4992711Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:24a0338d-1003-0044-233d-291470000000
+Time:2026-08-11T02:58:25.4992711Z</Message></Error>.
+2026-08-11 02:58:25,506|ERROR|509|7422194517824|Scheduling task failed with error This request is not authorized to perform this operation using this permission.
+RequestId:24a0338d-1003-0044-233d-291470000000
+Time:2026-08-11T02:58:25.4992711Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:24a0338d-1003-0044-233d-291470000000
+Time:2026-08-11T02:58:25.4992711Z</Message></Error>. Detail Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 246, in create_tasks
+    await queue_sender.create_tasks(task_group)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 98, in create_tasks
+    await asyncio.gather(*asyncio_tasks)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 75, in done_callback
+    task_id = future.result()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 63, in create_task
+    await self.queue_client.send_message(content=message, time_to_live=-1)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator_async.py", line 77, in wrapper_use_tracer
+    return await func(*args, **kwargs)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/aio/_queue_client_async.py", line 402, in send_message
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:24a0338d-1003-0044-233d-291470000000
+Time:2026-08-11T02:58:25.4992711Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:24a0338d-1003-0044-233d-291470000000
+Time:2026-08-11T02:58:25.4992711Z</Message></Error>
+.
+2026-08-11 02:58:25,774|INFO|522|8161751000896|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:25,775|INFO|522|8161751000896|Start to register child run log from table.
+2026-08-11 02:58:25,788|INFO|522|8161751000896|Disable new logging structure, so skip register default artifacts to parent run.
+2026-08-11 02:58:25,813|INFO|522|8161751000896|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:25,813|INFO|522|8161751000896|The overview starts restoring.
+2026-08-11 02:58:25,946|INFO|522|8161751000896|The overview process starts polling.
+2026-08-11 02:58:26,103|INFO|522|8161341199936|register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/register
+2026-08-11 02:58:26,103|INFO|522|8161341199936|batch_register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/batch/metadata/ExperimentRun/dcid.batchjob-965f3598-26e6-409a-abbe-900664b0a6b3?datastoreName=workspaceartifactstore
+2026-08-11 02:58:26,115|INFO|522|8161751000896|register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/register
+2026-08-11 02:58:26,115|INFO|522|8161751000896|batch_register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/batch/metadata/ExperimentRun/dcid.batchjob-965f3598-26e6-409a-abbe-900664b0a6b3?datastoreName=workspaceartifactstore
+2026-08-11 02:58:26,271|ERROR|509|7422194517824|The master role failed. This request is not authorized to perform this operation using this permission.
+RequestId:24a0338d-1003-0044-233d-291470000000
+Time:2026-08-11T02:58:25.4992711Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:24a0338d-1003-0044-233d-291470000000
+Time:2026-08-11T02:58:25.4992711Z</Message></Error>. Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run
+    loop.run_until_complete(self.master_role.start())
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start
+    await starting
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 315, in _do_start
+    await self.wait_for_first_task()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 292, in wait_for_first_task
+    await self.wait_for_input_init()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 130, in wait_for_input_init
+    self.future_create_tasks.result()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 255, in create_tasks
+    raise exc
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 246, in create_tasks
+    await queue_sender.create_tasks(task_group)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 98, in create_tasks
+    await asyncio.gather(*asyncio_tasks)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 75, in done_callback
+    task_id = future.result()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 63, in create_task
+    await self.queue_client.send_message(content=message, time_to_live=-1)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator_async.py", line 77, in wrapper_use_tracer
+    return await func(*args, **kwargs)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/aio/_queue_client_async.py", line 402, in send_message
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:24a0338d-1003-0044-233d-291470000000
+Time:2026-08-11T02:58:25.4992711Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:24a0338d-1003-0044-233d-291470000000
+Time:2026-08-11T02:58:25.4992711Z</Message></Error>
+
+2026-08-11 02:58:34,727|INFO|555|19586626189120|This is  AmlComputeRunContext with working dir /mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2.
+2026-08-11 02:58:34,727|INFO|555|19586626189120|Run id: d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2
+2026-08-11 02:58:35,361|INFO|555|19586626189120|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:35,399|INFO|555|19586626189120|self.ignore_failures_within_retry: True
+2026-08-11 02:58:35,415|INFO|555|19586626189120|job_early_success_wait_time_coefficient = None
+2026-08-11 02:58:35,430|INFO|555|19586626189120|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:35,547|INFO|555|19586626189120|Master - Starting
+2026-08-11 02:58:35,547|INFO|555|19586626189120|The master role process starts.
+2026-08-11 02:58:35,733|INFO|555|19586626189120|Resources created.
+2026-08-11 02:58:35,774|INFO|555|19586626189120|BlobExporter created.
+2026-08-11 02:58:35,774|INFO|555|19586626189120|future_create_tasks created.
+2026-08-11 02:58:35,774|INFO|555|19586626189120|Start exporting items to target: ExportTarget[blob: azureml/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/job/generating_tasks/00046c3d-bbd2-45bd-bdae-030c54dae00f.txt]..
+2026-08-11 02:58:35,797|INFO|555|19586626189120|Start scheduling.
+2026-08-11 02:58:35,817|INFO|555|19586626189120|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:35,833|INFO|555|19586626189120|The task provider type is FolderOrFileListProvider.
+2026-08-11 02:58:35,911|INFO|558|14506282829632|The job error logger starts.
+2026-08-11 02:58:35,961|INFO|555|19586626189120|Input folders [], from index 0.
+2026-08-11 02:58:36,006|ERROR|555|19586626189120|Failed to schedule mini batch with This request is not authorized to perform this operation using this permission.
+RequestId:da504fa2-d003-0064-803d-296fd7000000
+Time:2026-08-11T02:58:35.9834737Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:da504fa2-d003-0064-803d-296fd7000000
+Time:2026-08-11T02:58:35.9834737Z</Message></Error>.
+2026-08-11 02:58:36,008|ERROR|555|19586626189120|Scheduling task failed with error This request is not authorized to perform this operation using this permission.
+RequestId:da504fa2-d003-0064-803d-296fd7000000
+Time:2026-08-11T02:58:35.9834737Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:da504fa2-d003-0064-803d-296fd7000000
+Time:2026-08-11T02:58:35.9834737Z</Message></Error>. Detail Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 246, in create_tasks
+    await queue_sender.create_tasks(task_group)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 98, in create_tasks
+    await asyncio.gather(*asyncio_tasks)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 75, in done_callback
+    task_id = future.result()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 63, in create_task
+    await self.queue_client.send_message(content=message, time_to_live=-1)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator_async.py", line 77, in wrapper_use_tracer
+    return await func(*args, **kwargs)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/aio/_queue_client_async.py", line 402, in send_message
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:da504fa2-d003-0064-803d-296fd7000000
+Time:2026-08-11T02:58:35.9834737Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:da504fa2-d003-0064-803d-296fd7000000
+Time:2026-08-11T02:58:35.9834737Z</Message></Error>
+.
+2026-08-11 02:58:36,427|INFO|558|14506282829632|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:36,428|INFO|558|14506282829632|Start to register child run log from table.
+2026-08-11 02:58:36,443|INFO|558|14506282829632|Disable new logging structure, so skip register default artifacts to parent run.
+2026-08-11 02:58:36,467|INFO|558|14506282829632|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:36,467|INFO|558|14506282829632|The overview starts restoring.
+2026-08-11 02:58:36,585|INFO|558|14506282829632|The overview process starts polling.
+2026-08-11 02:58:36,648|INFO|558|14505872447040|register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/register
+2026-08-11 02:58:36,648|INFO|558|14505872447040|batch_register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/batch/metadata/ExperimentRun/dcid.batchjob-965f3598-26e6-409a-abbe-900664b0a6b3?datastoreName=workspaceartifactstore
+2026-08-11 02:58:36,675|INFO|558|14506282829632|register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/register
+2026-08-11 02:58:36,675|INFO|558|14506282829632|batch_register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/batch/metadata/ExperimentRun/dcid.batchjob-965f3598-26e6-409a-abbe-900664b0a6b3?datastoreName=workspaceartifactstore
+2026-08-11 02:58:36,779|ERROR|555|19586626189120|The master role failed. This request is not authorized to perform this operation using this permission.
+RequestId:da504fa2-d003-0064-803d-296fd7000000
+Time:2026-08-11T02:58:35.9834737Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:da504fa2-d003-0064-803d-296fd7000000
+Time:2026-08-11T02:58:35.9834737Z</Message></Error>. Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run
+    loop.run_until_complete(self.master_role.start())
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start
+    await starting
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 315, in _do_start
+    await self.wait_for_first_task()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 292, in wait_for_first_task
+    await self.wait_for_input_init()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 130, in wait_for_input_init
+    self.future_create_tasks.result()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 255, in create_tasks
+    raise exc
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 246, in create_tasks
+    await queue_sender.create_tasks(task_group)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 98, in create_tasks
+    await asyncio.gather(*asyncio_tasks)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 75, in done_callback
+    task_id = future.result()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 63, in create_task
+    await self.queue_client.send_message(content=message, time_to_live=-1)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator_async.py", line 77, in wrapper_use_tracer
+    return await func(*args, **kwargs)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/aio/_queue_client_async.py", line 402, in send_message
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:da504fa2-d003-0064-803d-296fd7000000
+Time:2026-08-11T02:58:35.9834737Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:da504fa2-d003-0064-803d-296fd7000000
+Time:2026-08-11T02:58:35.9834737Z</Message></Error>
+
+2026-08-11 02:58:45,615|INFO|644|9437270693696|This is  AmlComputeRunContext with working dir /mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2.
+2026-08-11 02:58:45,615|INFO|644|9437270693696|Run id: d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2
+2026-08-11 02:58:46,192|INFO|644|9437270693696|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:46,237|INFO|644|9437270693696|self.ignore_failures_within_retry: True
+2026-08-11 02:58:46,253|INFO|644|9437270693696|job_early_success_wait_time_coefficient = None
+2026-08-11 02:58:46,268|INFO|644|9437270693696|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:46,363|INFO|644|9437270693696|Master - Starting
+2026-08-11 02:58:46,364|INFO|644|9437270693696|The master role process starts.
+2026-08-11 02:58:46,569|INFO|644|9437270693696|Resources created.
+2026-08-11 02:58:46,631|INFO|644|9437270693696|BlobExporter created.
+2026-08-11 02:58:46,631|INFO|644|9437270693696|future_create_tasks created.
+2026-08-11 02:58:46,631|INFO|644|9437270693696|Start exporting items to target: ExportTarget[blob: azureml/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/job/generating_tasks/5b3c84d4-2ac1-4c04-9343-364e34aaa787.txt]..
+2026-08-11 02:58:46,659|INFO|644|9437270693696|Start scheduling.
+2026-08-11 02:58:46,683|INFO|644|9437270693696|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:46,700|INFO|644|9437270693696|The task provider type is FolderOrFileListProvider.
+2026-08-11 02:58:46,821|INFO|644|9437270693696|Input folders [], from index 0.
+2026-08-11 02:58:46,849|INFO|648|14842140059456|The job error logger starts.
+2026-08-11 02:58:46,858|ERROR|644|9437270693696|Failed to schedule mini batch with This request is not authorized to perform this operation using this permission.
+RequestId:22e322c1-3003-001e-233d-297297000000
+Time:2026-08-11T02:58:46.8413716Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:22e322c1-3003-001e-233d-297297000000
+Time:2026-08-11T02:58:46.8413716Z</Message></Error>.
+2026-08-11 02:58:46,860|ERROR|644|9437270693696|Scheduling task failed with error This request is not authorized to perform this operation using this permission.
+RequestId:22e322c1-3003-001e-233d-297297000000
+Time:2026-08-11T02:58:46.8413716Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:22e322c1-3003-001e-233d-297297000000
+Time:2026-08-11T02:58:46.8413716Z</Message></Error>. Detail Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 246, in create_tasks
+    await queue_sender.create_tasks(task_group)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 98, in create_tasks
+    await asyncio.gather(*asyncio_tasks)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 75, in done_callback
+    task_id = future.result()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 63, in create_task
+    await self.queue_client.send_message(content=message, time_to_live=-1)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator_async.py", line 77, in wrapper_use_tracer
+    return await func(*args, **kwargs)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/aio/_queue_client_async.py", line 402, in send_message
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:22e322c1-3003-001e-233d-297297000000
+Time:2026-08-11T02:58:46.8413716Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:22e322c1-3003-001e-233d-297297000000
+Time:2026-08-11T02:58:46.8413716Z</Message></Error>
+.
+2026-08-11 02:58:47,394|INFO|648|14842140059456|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:47,395|INFO|648|14842140059456|Start to register child run log from table.
+2026-08-11 02:58:47,409|INFO|648|14842140059456|Disable new logging structure, so skip register default artifacts to parent run.
+2026-08-11 02:58:47,432|INFO|648|14842140059456|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:47,432|INFO|648|14842140059456|The overview starts restoring.
+2026-08-11 02:58:47,552|INFO|648|14842140059456|The overview process starts polling.
+2026-08-11 02:58:47,568|INFO|648|14841662142016|register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/register
+2026-08-11 02:58:47,568|INFO|648|14841662142016|batch_register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/batch/metadata/ExperimentRun/dcid.batchjob-965f3598-26e6-409a-abbe-900664b0a6b3?datastoreName=workspaceartifactstore
+2026-08-11 02:58:47,578|INFO|648|14842140059456|register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/register
+2026-08-11 02:58:47,578|INFO|648|14842140059456|batch_register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/batch/metadata/ExperimentRun/dcid.batchjob-965f3598-26e6-409a-abbe-900664b0a6b3?datastoreName=workspaceartifactstore
+2026-08-11 02:58:47,637|ERROR|644|9437270693696|The master role failed. This request is not authorized to perform this operation using this permission.
+RequestId:22e322c1-3003-001e-233d-297297000000
+Time:2026-08-11T02:58:46.8413716Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:22e322c1-3003-001e-233d-297297000000
+Time:2026-08-11T02:58:46.8413716Z</Message></Error>. Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run
+    loop.run_until_complete(self.master_role.start())
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start
+    await starting
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 315, in _do_start
+    await self.wait_for_first_task()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 292, in wait_for_first_task
+    await self.wait_for_input_init()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 130, in wait_for_input_init
+    self.future_create_tasks.result()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 255, in create_tasks
+    raise exc
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 246, in create_tasks
+    await queue_sender.create_tasks(task_group)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 98, in create_tasks
+    await asyncio.gather(*asyncio_tasks)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 75, in done_callback
+    task_id = future.result()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 63, in create_task
+    await self.queue_client.send_message(content=message, time_to_live=-1)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator_async.py", line 77, in wrapper_use_tracer
+    return await func(*args, **kwargs)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/aio/_queue_client_async.py", line 402, in send_message
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:22e322c1-3003-001e-233d-297297000000
+Time:2026-08-11T02:58:46.8413716Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:22e322c1-3003-001e-233d-297297000000
+Time:2026-08-11T02:58:46.8413716Z</Message></Error>
+
+2026-08-11 02:58:57,037|INFO|681|18694014199616|This is  AmlComputeRunContext with working dir /mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2.
+2026-08-11 02:58:57,038|INFO|681|18694014199616|Run id: d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2
+2026-08-11 02:58:57,966|INFO|681|18694014199616|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:58,048|INFO|681|18694014199616|self.ignore_failures_within_retry: True
+2026-08-11 02:58:58,086|INFO|681|18694014199616|job_early_success_wait_time_coefficient = None
+2026-08-11 02:58:58,121|INFO|681|18694014199616|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:58,250|INFO|681|18694014199616|Master - Starting
+2026-08-11 02:58:58,250|INFO|681|18694014199616|The master role process starts.
+2026-08-11 02:58:58,470|INFO|681|18694014199616|Resources created.
+2026-08-11 02:58:58,539|INFO|681|18694014199616|BlobExporter created.
+2026-08-11 02:58:58,539|INFO|681|18694014199616|future_create_tasks created.
+2026-08-11 02:58:58,539|INFO|681|18694014199616|Start exporting items to target: ExportTarget[blob: azureml/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/job/generating_tasks/f785a4e0-a17d-4025-96f0-c8e36d7bf86a.txt]..
+2026-08-11 02:58:58,570|INFO|681|18694014199616|Start scheduling.
+2026-08-11 02:58:58,608|INFO|681|18694014199616|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:58,641|INFO|681|18694014199616|The task provider type is FolderOrFileListProvider.
+2026-08-11 02:58:58,650|INFO|686|17296399529792|The job error logger starts.
+2026-08-11 02:58:58,782|INFO|681|18694014199616|Input folders [], from index 0.
+2026-08-11 02:58:58,832|ERROR|681|18694014199616|Failed to schedule mini batch with This request is not authorized to perform this operation using this permission.
+RequestId:9f5f2a52-d003-0016-153d-296898000000
+Time:2026-08-11T02:58:58.8260351Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:9f5f2a52-d003-0016-153d-296898000000
+Time:2026-08-11T02:58:58.8260351Z</Message></Error>.
+2026-08-11 02:58:58,834|ERROR|681|18694014199616|Scheduling task failed with error This request is not authorized to perform this operation using this permission.
+RequestId:9f5f2a52-d003-0016-153d-296898000000
+Time:2026-08-11T02:58:58.8260351Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:9f5f2a52-d003-0016-153d-296898000000
+Time:2026-08-11T02:58:58.8260351Z</Message></Error>. Detail Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 246, in create_tasks
+    await queue_sender.create_tasks(task_group)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 98, in create_tasks
+    await asyncio.gather(*asyncio_tasks)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 75, in done_callback
+    task_id = future.result()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 63, in create_task
+    await self.queue_client.send_message(content=message, time_to_live=-1)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator_async.py", line 77, in wrapper_use_tracer
+    return await func(*args, **kwargs)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/aio/_queue_client_async.py", line 402, in send_message
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:9f5f2a52-d003-0016-153d-296898000000
+Time:2026-08-11T02:58:58.8260351Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:9f5f2a52-d003-0016-153d-296898000000
+Time:2026-08-11T02:58:58.8260351Z</Message></Error>
+.
+2026-08-11 02:58:59,283|INFO|686|17296399529792|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:59,284|INFO|686|17296399529792|Start to register child run log from table.
+2026-08-11 02:58:59,297|INFO|686|17296399529792|Disable new logging structure, so skip register default artifacts to parent run.
+2026-08-11 02:58:59,315|INFO|686|17296399529792|Initialized MetricsLogger: start_time = 2026-08-11 02:55:48.439129
+2026-08-11 02:58:59,315|INFO|686|17296399529792|The overview starts restoring.
+2026-08-11 02:58:59,431|INFO|686|17295989528128|register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/register
+2026-08-11 02:58:59,431|INFO|686|17295989528128|batch_register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/batch/metadata/ExperimentRun/dcid.batchjob-965f3598-26e6-409a-abbe-900664b0a6b3?datastoreName=workspaceartifactstore
+2026-08-11 02:58:59,441|INFO|686|17296399529792|The overview process starts polling.
+2026-08-11 02:58:59,464|INFO|686|17296399529792|register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/register
+2026-08-11 02:58:59,464|INFO|686|17296399529792|batch_register_url = https://eastus.api.azureml.ms/artifact/v2.0/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourceGroups/rg-azmlops-0001dev/providers/Microsoft.MachineLearningServices/workspaces/mlw-azmlops-0001dev/artifacts/batch/metadata/ExperimentRun/dcid.batchjob-965f3598-26e6-409a-abbe-900664b0a6b3?datastoreName=workspaceartifactstore
+2026-08-11 02:58:59,545|ERROR|681|18694014199616|The master role failed. This request is not authorized to perform this operation using this permission.
+RequestId:9f5f2a52-d003-0016-153d-296898000000
+Time:2026-08-11T02:58:58.8260351Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:9f5f2a52-d003-0016-153d-296898000000
+Time:2026-08-11T02:58:58.8260351Z</Message></Error>. Traceback (most recent call last):
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run
+    loop.run_until_complete(self.master_role.start())
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start
+    await starting
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 315, in _do_start
+    await self.wait_for_first_task()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 292, in wait_for_first_task
+    await self.wait_for_input_init()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 130, in wait_for_input_init
+    self.future_create_tasks.result()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 255, in create_tasks
+    raise exc
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 246, in create_tasks
+    await queue_sender.create_tasks(task_group)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 98, in create_tasks
+    await asyncio.gather(*asyncio_tasks)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 75, in done_callback
+    task_id = future.result()
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 63, in create_task
+    await self.queue_client.send_message(content=message, time_to_live=-1)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator_async.py", line 77, in wrapper_use_tracer
+    return await func(*args, **kwargs)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/aio/_queue_client_async.py", line 402, in send_message
+    process_storage_error(error)
+  File "/tmp/d0336f1d-b9dc-4d6b-a8d1-c98d5a1a2ed2/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:9f5f2a52-d003-0016-153d-296898000000
+Time:2026-08-11T02:58:58.8260351Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:9f5f2a52-d003-0016-153d-296898000000
+Time:2026-08-11T02:58:58.8260351Z</Message></Error>
+

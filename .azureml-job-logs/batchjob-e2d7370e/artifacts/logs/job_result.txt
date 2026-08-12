@@ -1,0 +1,57 @@
+Failed.
+HttpResponseError. This request is not authorized to perform this operation using this permission.
+RequestId:2f897605-d002-004b-7031-29621c000000
+Time:2026-08-11T01:37:21.3033982Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: {"odata.error":{"code":"AuthorizationPermissionMismatch","message":{"lang":"en-US","value":"This request is not authorized to perform this operation using this permission.\nRequestId:2f897605-d002-004b-7031-29621c000000\nTime:2026-08-11T01:37:21.3033982Z"}}}. error This request is not authorized to perform this operation using this permission.
+RequestId:2f897605-d002-004b-7031-29621c000000
+Time:2026-08-11T01:37:21.3033982Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: {"odata.error":{"code":"AuthorizationPermissionMismatch","message":{"lang":"en-US","value":"This request is not authorized to perform this operation using this permission.\nRequestId:2f897605-d002-004b-7031-29621c000000\nTime:2026-08-11T01:37:21.3033982Z"}}} after 10 tries. Traceback (most recent call last):
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/data/tables/_models.py", line 360, in _get_next_cb
+    return self._command(
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator.py", line 78, in wrapper_use_tracer
+    return func(*args, **kwargs)
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/data/tables/_generated/operations/_operations.py", line 985, in query_entities
+    raise HttpResponseError(response=response, model=error)
+azure.core.exceptions.HttpResponseError: Operation returned an invalid status 'Forbidden'
+Content: {"odata.error":{"code":"AuthorizationPermissionMismatch","message":{"lang":"en-US","value":"This request is not authorized to perform this operation using this permission.\nRequestId:2f897605-d002-004b-7031-29621c000000\nTime:2026-08-11T01:37:21.3033982Z"}}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 629, in poll
+    if self.node_should_stop():
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 565, in node_should_stop
+    is_master_role_candidate = Node().is_master_role_candidate()
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/node.py", line 34, in is_master_role_candidate
+    candidates = self.cluster.master_role_candidates  # Get all candidates for the master role.
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/cluster.py", line 32, in master_role_candidates
+    instances = TableInstanceStatus().get_active_instance_ids()
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/table_instance_status.py", line 89, in get_active_instance_ids
+    for entity in self.query_entities(f"PartitionKey eq '{InstanceHeartbeatEntity.PARTITION_KEY}'"):
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/table_common.py", line 229, in query_entities
+    for entity in self.table_client.query_entities(query_filter, **kwargs):
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 123, in __next__
+    return next(self._page_iterator)
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/core/paging.py", line 75, in __next__
+    self._response = self._get_next(self.continuation_token)
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/data/tables/_models.py", line 371, in _get_next_cb
+    _process_table_error(error)
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/data/tables/_error.py", line 203, in _process_table_error
+    _reraise_error(decoded_error)
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/data/tables/_error.py", line 190, in _reraise_error
+    raise decoded_error.with_traceback(exc_traceback)
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/data/tables/_models.py", line 360, in _get_next_cb
+    return self._command(
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator.py", line 78, in wrapper_use_tracer
+    return func(*args, **kwargs)
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/data/tables/_generated/operations/_operations.py", line 985, in query_entities
+    raise HttpResponseError(response=response, model=error)
+azure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:2f897605-d002-004b-7031-29621c000000
+Time:2026-08-11T01:37:21.3033982Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: {"odata.error":{"code":"AuthorizationPermissionMismatch","message":{"lang":"en-US","value":"This request is not authorized to perform this operation using this permission.\nRequestId:2f897605-d002-004b-7031-29621c000000\nTime:2026-08-11T01:37:21.3033982Z"}}}
+..
+2026-08-11T01:37:21.372507: from node 0.

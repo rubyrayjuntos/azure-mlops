@@ -1,0 +1,16 @@
+Mini-batch Id,Picked Count,Node Id,Process,Start Time,Total,Succeeded,Failed,Elapsed Seconds,Process Seconds,Run Method Seconds,Status,Error Category,Error Message,Mini-batch Detail,Orphaned Retry Count
+0,1,0,process003,2026-08-11T03:13:50.023837,1,0,1,0.07145751600000949,0.03830160000000005,,RUN_EXCEPTION,1,"The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Unnamed: 0
+- cost
+","{""id"": 0, ""minibatch"": [""/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv""], ""task_type"": 4, ""dequeue_count"": 1, ""input_start_time"": 1786418030.023113, ""input_duration"": 1.9073486328125e-06}",0
+0,2,0,process002,2026-08-11T03:13:51.003626,1,0,1,0.03823458300007587,0.03777700000000017,,RUN_EXCEPTION,1,"The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Unnamed: 0
+- cost
+","{""id"": 0, ""minibatch"": [""/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv""], ""task_type"": 4, ""dequeue_count"": 2, ""input_start_time"": 1786418031.002855, ""input_duration"": 9.5367431640625e-07}",0
+0,3,0,process003,2026-08-11T03:13:52.180671,1,0,1,0.032451925000032134,0.0321053,,RUN_EXCEPTION,1,"The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Unnamed: 0
+- cost
+","{""id"": 0, ""minibatch"": [""/mnt/azureml/cr/j/e5459436487641e9a75e060fecdb360f/cap/data-capability/wd/INPUT_job_data_path/taxi-data.csv""], ""task_type"": 4, ""dequeue_count"": 3, ""input_start_time"": 1786418032.179741, ""input_duration"": 2.1457672119140625e-06}",0

@@ -1,0 +1,20 @@
+2026-08-11 02:58:55,132|ERROR|601|Task -1 failed for unhandled error.
+Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 535, in _run_payload
+    self.process_tasks()
+  File "/mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 351, in process_tasks
+    tasks = self.task_fetcher.get_tasks()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/driver/azureml_user/parallel_run/task_fetcher.py", line 46, in get_tasks
+    return self.task_server_proxy.get_tasks()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/driver/azureml_user/parallel_run/task_server_proxy.py", line 92, in get_tasks
+    tasks_json = self.send_with_retry(request, error)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/driver/azureml_user/parallel_run/task_server_proxy.py", line 72, in send_with_retry
+    return self.client.send(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/driver/azureml_user/parallel_run/tcp_client.py", line 30, in send
+    raise TCPServerException()
+azureml_common.parallel_run.exception.TCPServerException: TCPServerException
+Please check logs for error. You can check logs/readme.txt for the layout of logs.

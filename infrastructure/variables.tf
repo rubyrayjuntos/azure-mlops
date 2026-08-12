@@ -40,6 +40,30 @@ variable "enable_private_endpoints" {
   default     = false
 }
 
+variable "enable_ai_search" {
+  type        = bool
+  description = "Provision an Azure AI Search service for the retrieval layer"
+  default     = false
+}
+
+variable "ai_search_sku" {
+  type        = string
+  description = "Azure AI Search SKU for the retrieval layer"
+  default     = "basic"
+}
+
+variable "ai_search_replica_count" {
+  type        = number
+  description = "Replica count for the Azure AI Search service"
+  default     = 1
+}
+
+variable "ai_search_partition_count" {
+  type        = number
+  description = "Partition count for the Azure AI Search service"
+  default     = 1
+}
+
 variable "vnet_address_space" {
   type        = string
   description = "Address space for the virtual network (only used if enable_private_endpoints is true)"

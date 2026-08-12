@@ -1,0 +1,13 @@
+2026-08-11 02:58:56,332|INFO|703|Increase the process's niceness to 5.
+2026-08-11 02:58:56,333|INFO|703|No GPU available.
+2026-08-11 02:58:56,333|INFO|703|Current system process id: 703.
+2026-08-11 02:58:56,339|INFO|703|prefetch_count = 0
+2026-08-11 02:58:56,345|INFO|703|Start to import /mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/batch_driver.py by file path.
+2026-08-11 02:58:57,966|INFO|703|Imported /mnt/azureml/cr/j/3170e99835ae49cfafa2c5e61b55d355/exe/wd/batch_driver.py by file path.
+2026-08-11 02:58:58,992|INFO|703|Run with distributed mode: False
+2026-08-11 02:58:58,992|INFO|703|will run entryscript run function.
+2026-08-11 02:58:59,000|WARNING|703|Failed to get task. The task server return an error.
+2026-08-11 02:59:00,011|WARNING|703|Failed to get task. The task server return an error.
+2026-08-11 02:59:02,039|INFO|703|Stop for got empty task list.
+2026-08-11 02:59:02,353|INFO|703|The agent exit with code 0.
+2026-08-11 02:59:02,355|INFO|703|Exit with 0

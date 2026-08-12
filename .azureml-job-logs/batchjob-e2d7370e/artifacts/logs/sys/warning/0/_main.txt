@@ -1,0 +1,28 @@
+2026-08-11 01:37:05,330|WARNING|25|13930193741376|Failed to log heartbeat because of 0:The table specified does not exist.
+RequestId:e5ac2dbe-9002-005a-3731-29f8a8000000
+Time:2026-08-11T01:37:05.3169109Z
+ErrorCode:TableNotFound
+Content: {"odata.error":{"code":"TableNotFound","message":{"lang":"en-US","value":"0:The table specified does not exist.\nRequestId:e5ac2dbe-9002-005a-3731-29f8a8000000\nTime:2026-08-11T01:37:05.3169109Z"}}}
+Traceback (most recent call last):
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/instance_heart_beater.py", line 56, in log_heartbeat
+    self.table.log_heartbeat(start_time=self.start_time)
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/table_instance_status.py", line 78, in log_heartbeat
+    self.flush()
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/table_common.py", line 213, in flush
+    self.save_next_batch(restore_cache_on_fail=restore_cache_on_fail)
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/table_common.py", line 170, in save_next_batch
+    self.table_client.submit_transaction(operations)
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/data/tables/_table_client.py", line 734, in submit_transaction
+    return self._batch_send(self.table_name, *batched_requests.requests, **kwargs)  # type: ignore
+  File "/tmp/e517ef50-6244-4798-b8c4-abdfcdde5542/prs_prod/lib/python3.8/site-packages/azure/data/tables/_base_client.py", line 334, in _batch_send
+    raise decoded
+azure.data.tables._error.TableTransactionError: 0:The table specified does not exist.
+RequestId:e5ac2dbe-9002-005a-3731-29f8a8000000
+Time:2026-08-11T01:37:05.3169109Z
+ErrorCode:TableNotFound
+Content: {"odata.error":{"code":"TableNotFound","message":{"lang":"en-US","value":"0:The table specified does not exist.\nRequestId:e5ac2dbe-9002-005a-3731-29f8a8000000\nTime:2026-08-11T01:37:05.3169109Z"}}}
+2026-08-11 01:37:21,371|WARNING|25|13930490849088|Error occurred while calling JobResult.save_error. Exception detail: This request is not authorized to perform this operation using this permission.
+RequestId:5153e736-b002-002f-1531-299384000000
+Time:2026-08-11T01:37:21.3691159Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: {"odata.error":{"code":"AuthorizationPermissionMismatch","message":{"lang":"en-US","value":"This request is not authorized to perform this operation using this permission.\nRequestId:5153e736-b002-002f-1531-299384000000\nTime:2026-08-11T01:37:21.3691159Z"}}}

@@ -1,0 +1,928 @@
+2026-08-11T01:49:22.891080 This file shows errors in loading, calling init() and calling run() of the entry script. An error here may not impact the job result. Please check "job_result.txt" for the job result.
+2026-08-11T01:49:32.929617 This file shows errors in loading, calling init() and calling run() of the entry script. An error here may not impact the job result. Please check "job_result.txt" for the job result.
+2026-08-11T01:49:33.306240 The process000 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:49:33.306379 The process001 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:49:33.306429 The process002 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:49:33.306473 The process003 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:49:33.306499 The process004 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:49:33.306527 The process005 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:49:43.772510 This file shows errors in loading, calling init() and calling run() of the entry script. An error here may not impact the job result. Please check "job_result.txt" for the job result.
+2026-08-11T01:49:44.159763 The process000 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:49:44.159875 The process001 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:49:44.159941 The process002 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:49:44.159986 The process003 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:49:44.160032 The process004 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:49:44.160073 The process005 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:49:54.444316 This file shows errors in loading, calling init() and calling run() of the entry script. An error here may not impact the job result. Please check "job_result.txt" for the job result.
+2026-08-11T01:49:54.858868 The process000 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:49:54.859009 The process001 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:49:54.859070 The process002 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:49:54.859132 The process003 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:49:54.859176 The process004 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:49:54.859310 The process005 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:05.353468 This file shows errors in loading, calling init() and calling run() of the entry script. An error here may not impact the job result. Please check "job_result.txt" for the job result.
+2026-08-11T01:50:05.768208 The process000 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:05.768476 The process001 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:05.768566 The process002 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:05.768600 The process003 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:05.768632 The process004 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:05.768657 The process005 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:16.179679 This file shows errors in loading, calling init() and calling run() of the entry script. An error here may not impact the job result. Please check "job_result.txt" for the job result.
+2026-08-11T01:50:16.556943 The process000 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:16.557253 The process001 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:16.557339 The process002 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:16.557486 The process003 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:16.557553 The process004 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:16.557597 The process005 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:26.906759 This file shows errors in loading, calling init() and calling run() of the entry script. An error here may not impact the job result. Please check "job_result.txt" for the job result.
+2026-08-11T01:50:27.326800 The process000 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:27.326892 The process001 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:27.326935 The process002 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:27.326962 The process003 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:27.326985 The process004 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:27.327012 The process005 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:37.752797 This file shows errors in loading, calling init() and calling run() of the entry script. An error here may not impact the job result. Please check "job_result.txt" for the job result.
+2026-08-11T01:50:38.133613 The process000 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:38.135115 The process001 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:38.135186 The process002 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:38.135225 The process003 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:38.135252 The process004 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:38.135276 The process005 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:48.720421 This file shows errors in loading, calling init() and calling run() of the entry script. An error here may not impact the job result. Please check "job_result.txt" for the job result.
+2026-08-11T01:50:49.113350 The process000 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:49.113446 The process001 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:49.113493 The process002 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:49.113528 The process003 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:49.113568 The process004 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:49.113676 The process005 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:59.465755 This file shows errors in loading, calling init() and calling run() of the entry script. An error here may not impact the job result. Please check "job_result.txt" for the job result.
+2026-08-11T01:50:59.839115 The process000 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:59.839219 The process001 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:59.839253 The process002 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:59.839279 The process003 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:59.839311 The process004 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+
+2026-08-11T01:50:59.839334 The process005 on node 0 (https://ml.azure.com/runs/d4946e2f-35ae-43a7-ba14-8a7d00f8ee90?wsid=/subscriptions/5b452321-32fd-4b1c-8bbf-6d69a5a587ad/resourcegroups/rg-azmlops-0001dev/workspaces/mlw-azmlops-0001dev) failed with error: Traceback (most recent call last):
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/payload_thread.py", line 407, in load_entry_script
+    scoring_module.import_module()
+  File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/driver/azureml_user/parallel_run/score_module.py", line 284, in import_module
+    raise EntryScriptException(
+azureml_common.parallel_run.exception.EntryScriptException: No module named 'pkg_resources'   File "/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py", line 5, in <module>
+    import mlflow
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py", line 44, in <module>
+    from mlflow import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File "/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^
+

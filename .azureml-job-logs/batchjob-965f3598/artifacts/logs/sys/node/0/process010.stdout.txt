@@ -1,0 +1,2 @@
+ok,process010 started.
+result:success:

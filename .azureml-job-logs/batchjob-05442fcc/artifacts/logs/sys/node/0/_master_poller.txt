@@ -1,0 +1,473 @@
+2026-08-11 03:13:22,866|INFO|25|14085138114368|Try to create the master lock blob.
+2026-08-11 03:13:22,895|INFO|25|14085138114368|Create the blob for the master lock.
+2026-08-11 03:13:22,933|INFO|25|14085138114368|Master - Start processing batch: outputAction:append_row, miniBatchSize:10, processCountPerNode:2, errorThreshold:-1, numberOfNodes:1
+2026-08-11 03:13:23,117|INFO|25|14085138114368|Start to poll the master role.
+2026-08-11 03:13:23,117|INFO|25|14085138114368|Poll on round 0.
+2026-08-11 03:13:23,180|INFO|25|14085138114368|the active instances table had been deleted The table specified does not exist.
+RequestId:6b72f24b-e002-001d-0b3f-2993f3000000
+Time:2026-08-11T03:13:23.1772398Z
+ErrorCode:TableNotFound
+Content: {"odata.error":{"code":"TableNotFound","message":{"lang":"en-US","value":"The table specified does not exist.\nRequestId:6b72f24b-e002-001d-0b3f-2993f3000000\nTime:2026-08-11T03:13:23.1772398Z"}}}
+2026-08-11 03:13:23,304|INFO|25|14085138114368|This is the lock with stamp 0,25,2026-08-11 03:13:23.240880. The prior is 0,25,2026-08-11 03:13:22.895658.
+2026-08-11 03:13:23,304|INFO|25|14085138114368|Become the master role.
+2026-08-11 03:13:23,386|INFO|25|14085138114368|Start the master role process.
+2026-08-11 03:13:24,392|INFO|25|14085138114368|0: the master role process started. is_alive=True
+2026-08-11 03:13:25,695|INFO|25|14085138114368|Poll on round 1.
+2026-08-11 03:13:25,735|INFO|25|14085138114368|the active instances table had been deleted The table specified does not exist.
+RequestId:a0641656-4002-0059-623f-2919cc000000
+Time:2026-08-11T03:13:25.7322396Z
+ErrorCode:TableNotFound
+Content: {"odata.error":{"code":"TableNotFound","message":{"lang":"en-US","value":"The table specified does not exist.\nRequestId:a0641656-4002-0059-623f-2919cc000000\nTime:2026-08-11T03:13:25.7322396Z"}}}
+2026-08-11 03:13:26,737|INFO|25|14085138114368|Poll on round 2.
+2026-08-11 03:13:26,783|INFO|25|14085138114368|the active instances table had been deleted The table specified does not exist.
+RequestId:4c10caf0-5002-0008-423f-298440000000
+Time:2026-08-11T03:13:26.7800716Z
+ErrorCode:TableNotFound
+Content: {"odata.error":{"code":"TableNotFound","message":{"lang":"en-US","value":"The table specified does not exist.\nRequestId:4c10caf0-5002-0008-423f-298440000000\nTime:2026-08-11T03:13:26.7800716Z"}}}
+2026-08-11 03:13:27,786|INFO|25|14085138114368|Poll on round 3.
+2026-08-11 03:13:27,822|INFO|25|14085138114368|the active instances table had been deleted The table specified does not exist.
+RequestId:4c4c75b4-3002-006c-063f-2975d8000000
+Time:2026-08-11T03:13:27.8200351Z
+ErrorCode:TableNotFound
+Content: {"odata.error":{"code":"TableNotFound","message":{"lang":"en-US","value":"The table specified does not exist.\nRequestId:4c4c75b4-3002-006c-063f-2975d8000000\nTime:2026-08-11T03:13:27.8200351Z"}}}
+2026-08-11 03:13:28,824|INFO|25|14085138114368|Poll on round 4.
+2026-08-11 03:13:29,937|INFO|25|14085138114368|Poll on round 5.
+2026-08-11 03:13:30,998|INFO|25|14085138114368|Poll on round 6.
+2026-08-11 03:13:31,047|ERROR|25|14085138114368|This master role process failed with exitcode 1. Error: {'This request is not authorized to perform this operation using this permission.\nRequestId:6f198ebd-d003-004b-563f-29621c000000\nTime:2026-08-11T03:13:29.0534245Z\nErrorCode:AuthorizationPermissionMismatch\nContent: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.\nRequestId:6f198ebd-d003-004b-563f-29621c000000\nTime:2026-08-11T03:13:29.0534245Z</Message></Error>': 'Traceback (most recent call last):\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run\n    loop.run_until_complete(self.master_role.start())\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete\n    return future.result()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start\n    await starting\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 315, in _do_start\n    await self.wait_for_first_task()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 292, in wait_for_first_task\n    await self.wait_for_input_init()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 130, in wait_for_input_init\n    self.future_create_tasks.result()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 255, in create_tasks\n    raise exc\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 246, in create_tasks\n    await queue_sender.create_tasks(task_group)\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 98, in create_tasks\n    await asyncio.gather(*asyncio_tasks)\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 75, in done_callback\n    task_id = future.result()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 63, in create_task\n    await self.queue_client.send_message(content=message, time_to_live=-1)\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator_async.py", line 77, in wrapper_use_tracer\n    return await func(*args, **kwargs)\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/aio/_queue_client_async.py", line 402, in send_message\n    process_storage_error(error)\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error\n    exec("raise error from None")   # pylint: disable=exec-used # nosec\n  File "<string>", line 1, in <module>\nazure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.\nRequestId:6f198ebd-d003-004b-563f-29621c000000\nTime:2026-08-11T03:13:29.0534245Z\nErrorCode:AuthorizationPermissionMismatch\nContent: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.\nRequestId:6f198ebd-d003-004b-563f-29621c000000\nTime:2026-08-11T03:13:29.0534245Z</Message></Error>\n', 'exception_type': 'HttpResponseError', 'exception_info': '{"module": "azure.core.exceptions", "name": "HttpResponseError", "message": "This request is not authorized to perform this operation using this permission.\\nRequestId:6f198ebd-d003-004b-563f-29621c000000\\nTime:2026-08-11T03:13:29.0534245Z\\nErrorCode:AuthorizationPermissionMismatch\\nContent: <?xml version=\\"1.0\\" encoding=\\"utf-8\\"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.\\nRequestId:6f198ebd-d003-004b-563f-29621c000000\\nTime:2026-08-11T03:13:29.0534245Z</Message></Error>", "compliant_message": "This request is not authorized to perform this operation using this permission.\\nRequestId:6f198ebd-d003-004b-563f-29621c000000\\nTime:2026-08-11T03:13:29.0534245Z\\nErrorCode:AuthorizationPermissionMismatch\\nContent: <?xml version=\\"1.0\\" encoding=\\"utf-8\\"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.\\nRequestId:6f198ebd-d003-004b-563f-29621c000000\\nTime:2026-08-11T03:13:29.0534245Z</Message></Error>", "formatted_traceback": "  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py\\", line 114, in run\\n    loop.run_until_complete(self.master_role.start())\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py\\", line 616, in run_until_complete\\n    return future.result()\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py\\", line 305, in start\\n    await starting\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py\\", line 315, in _do_start\\n    await self.wait_for_first_task()\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py\\", line 292, in wait_for_first_task\\n    await self.wait_for_input_init()\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py\\", line 130, in wait_for_input_init\\n    self.future_create_tasks.result()\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py\\", line 255, in create_tasks\\n    raise exc\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py\\", line 246, in create_tasks\\n    await queue_sender.create_tasks(task_group)\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py\\", line 98, in create_tasks\\n    await asyncio.gather(*asyncio_tasks)\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py\\", line 75, in done_callback\\n    task_id = future.result()\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py\\", line 63, in create_task\\n    await self.queue_client.send_message(content=message, time_to_live=-1)\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator_async.py\\", line 77, in wrapper_use_tracer\\n    return await func(*args, **kwargs)\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/aio/_queue_client_async.py\\", line 402, in send_message\\n    process_storage_error(error)\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py\\", line 184, in process_storage_error\\n    exec(\\"raise error from None\\")   # pylint: disable=exec-used # nosec\\n  File \\"<string>\\", line 1, in <module>", "cause": null}'}
+2026-08-11 03:13:31,049|ERROR|25|14085138114368|poll() failed. This master role process failed with exitcode 1.
+azureml_common.parallel_run.exception_info.Exception: Run failed. Below is the error detail:
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run
+    loop.run_until_complete(self.master_role.start())
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start
+    await starting
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 315, in _do_start
+    await self.wait_for_first_task()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 292, in wait_for_first_task
+    await self.wait_for_input_init()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 130, in wait_for_input_init
+    self.future_create_tasks.result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 255, in create_tasks
+    raise exc
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 246, in create_tasks
+    await queue_sender.create_tasks(task_group)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 98, in create_tasks
+    await asyncio.gather(*asyncio_tasks)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 75, in done_callback
+    task_id = future.result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 63, in create_task
+    await self.queue_client.send_message(content=message, time_to_live=-1)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator_async.py", line 77, in wrapper_use_tracer
+    return await func(*args, **kwargs)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/aio/_queue_client_async.py", line 402, in send_message
+    process_storage_error(error)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:6f198ebd-d003-004b-563f-29621c000000
+Time:2026-08-11T03:13:29.0534245Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:6f198ebd-d003-004b-563f-29621c000000
+Time:2026-08-11T03:13:29.0534245Z</Message></Error>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 635, in poll
+    self.check_master_process()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 378, in check_master_process
+    self.handle_stopped_master_process()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 330, in handle_stopped_master_process
+    raise MasterRoleProcessException(msg, self.return_dict) from cause
+azureml_common.parallel_run.exception.MasterRoleProcessException: This master role process failed with exitcode 1.
+2026-08-11 03:13:31,099|ERROR|25|14085138114368|Poll has continuously failed for 1 times for the master role process failed with HttpResponseError.. This master role process failed with exitcode 1.. Detail: azureml_common.parallel_run.exception_info.Exception: Run failed. Below is the error detail:
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run
+    loop.run_until_complete(self.master_role.start())
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start
+    await starting
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 315, in _do_start
+    await self.wait_for_first_task()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 292, in wait_for_first_task
+    await self.wait_for_input_init()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 130, in wait_for_input_init
+    self.future_create_tasks.result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 255, in create_tasks
+    raise exc
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 246, in create_tasks
+    await queue_sender.create_tasks(task_group)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 98, in create_tasks
+    await asyncio.gather(*asyncio_tasks)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 75, in done_callback
+    task_id = future.result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 63, in create_task
+    await self.queue_client.send_message(content=message, time_to_live=-1)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator_async.py", line 77, in wrapper_use_tracer
+    return await func(*args, **kwargs)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/aio/_queue_client_async.py", line 402, in send_message
+    process_storage_error(error)
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+HttpResponseError: This request is not authorized to perform this operation using this permission.
+RequestId:6f198ebd-d003-004b-563f-29621c000000
+Time:2026-08-11T03:13:29.0534245Z
+ErrorCode:AuthorizationPermissionMismatch
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.
+RequestId:6f198ebd-d003-004b-563f-29621c000000
+Time:2026-08-11T03:13:29.0534245Z</Message></Error>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 635, in poll
+    self.check_master_process()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 378, in check_master_process
+    self.handle_stopped_master_process()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 330, in handle_stopped_master_process
+    raise MasterRoleProcessException(msg, self.return_dict) from cause
+azureml_common.parallel_run.exception.MasterRoleProcessException: This master role process failed with exitcode 1.
+
+2026-08-11 03:13:32,100|INFO|25|14085138114368|Poll on round 7.
+2026-08-11 03:13:33,138|INFO|25|14085138114368|Poll on round 8.
+2026-08-11 03:13:34,170|INFO|25|14085138114368|Poll on round 9.
+2026-08-11 03:13:34,356|INFO|25|14085138114368|This is the lock with stamp 0,25,2026-08-11 03:13:34.304489. The prior is 0,25,2026-08-11 03:13:23.240880.
+2026-08-11 03:13:34,425|INFO|25|14085138114368|Start the master role process.
+2026-08-11 03:13:35,432|INFO|25|14085138114368|0: the master role process started. is_alive=True
+2026-08-11 03:13:36,558|INFO|25|14085138114368|Poll on round 10.
+2026-08-11 03:13:45,370|INFO|25|14085138114368|This is the lock with stamp 0,25,2026-08-11 03:13:45.319577. The prior is 0,25,2026-08-11 03:13:34.304489.
+2026-08-11 03:13:47,500|INFO|25|14085138114368|Poll on round 20.
+2026-08-11 03:13:56,105|INFO|25|14085138114368|This is the lock with stamp 0,25,2026-08-11 03:13:56.043431. The prior is 0,25,2026-08-11 03:13:45.319577.
+2026-08-11 03:13:58,227|INFO|25|14085138114368|Poll on round 30.
+2026-08-11 03:14:02,480|ERROR|25|14085138114368|This master role process failed with exitcode 1. Error: {'This request is not authorized to perform this operation using this permission.\nRequestId:6f198ebd-d003-004b-563f-29621c000000\nTime:2026-08-11T03:13:29.0534245Z\nErrorCode:AuthorizationPermissionMismatch\nContent: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.\nRequestId:6f198ebd-d003-004b-563f-29621c000000\nTime:2026-08-11T03:13:29.0534245Z</Message></Error>': 'Traceback (most recent call last):\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run\n    loop.run_until_complete(self.master_role.start())\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete\n    return future.result()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start\n    await starting\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 315, in _do_start\n    await self.wait_for_first_task()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 292, in wait_for_first_task\n    await self.wait_for_input_init()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 130, in wait_for_input_init\n    self.future_create_tasks.result()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 255, in create_tasks\n    raise exc\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 246, in create_tasks\n    await queue_sender.create_tasks(task_group)\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 98, in create_tasks\n    await asyncio.gather(*asyncio_tasks)\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 75, in done_callback\n    task_id = future.result()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 63, in create_task\n    await self.queue_client.send_message(content=message, time_to_live=-1)\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator_async.py", line 77, in wrapper_use_tracer\n    return await func(*args, **kwargs)\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/aio/_queue_client_async.py", line 402, in send_message\n    process_storage_error(error)\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error\n    exec("raise error from None")   # pylint: disable=exec-used # nosec\n  File "<string>", line 1, in <module>\nazure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.\nRequestId:6f198ebd-d003-004b-563f-29621c000000\nTime:2026-08-11T03:13:29.0534245Z\nErrorCode:AuthorizationPermissionMismatch\nContent: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.\nRequestId:6f198ebd-d003-004b-563f-29621c000000\nTime:2026-08-11T03:13:29.0534245Z</Message></Error>\n', 'exception_type': 'NoResultToAppendError', 'exception_info': '{"module": "azureml_common.parallel_run.exception", "name": "NoResultToAppendError", "message": "There is no succeeded mini batch item returned from run(). Please check \'response: run()\' in https://aka.ms/batch-inference-documentation", "compliant_message": "There is no succeeded mini batch item returned from run(). Please check \'response: run()\' in https://aka.ms/batch-inference-documentation", "formatted_traceback": "  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py\\", line 114, in run\\n    loop.run_until_complete(self.master_role.start())\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py\\", line 616, in run_until_complete\\n    return future.result()\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py\\", line 305, in start\\n    await starting\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py\\", line 323, in _do_start\\n    self.finish_job()\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py\\", line 512, in finish_job\\n    self.summarize()\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py\\", line 374, in summarize\\n    raise NoResultToAppendError(msg, compliant_message=msg)", "cause": null}', "There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation\nPlease check logs for error. You can check logs/readme.txt for the layout of logs.": 'Traceback (most recent call last):\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run\n    loop.run_until_complete(self.master_role.start())\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete\n    return future.result()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start\n    await starting\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 323, in _do_start\n    self.finish_job()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job\n    self.summarize()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize\n    raise NoResultToAppendError(msg, compliant_message=msg)\nazureml_common.parallel_run.exception.NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check \'response: run()\' in https://aka.ms/batch-inference-documentation\nPlease check logs for error. You can check logs/readme.txt for the layout of logs.\n'}
+2026-08-11 03:14:02,481|ERROR|25|14085138114368|poll() failed. This master role process failed with exitcode 1.
+azureml_common.parallel_run.exception_info.Exception: Run failed. Below is the error detail:
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run
+    loop.run_until_complete(self.master_role.start())
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start
+    await starting
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 323, in _do_start
+    self.finish_job()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job
+    self.summarize()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize
+    raise NoResultToAppendError(msg, compliant_message=msg)
+NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 635, in poll
+    self.check_master_process()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 378, in check_master_process
+    self.handle_stopped_master_process()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 330, in handle_stopped_master_process
+    raise MasterRoleProcessException(msg, self.return_dict) from cause
+azureml_common.parallel_run.exception.MasterRoleProcessException: This master role process failed with exitcode 1.
+2026-08-11 03:14:02,504|ERROR|25|14085138114368|Poll has continuously failed for 1 times for the master role process failed with NoResultToAppendError.. This master role process failed with exitcode 1.. Detail: azureml_common.parallel_run.exception_info.Exception: Run failed. Below is the error detail:
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run
+    loop.run_until_complete(self.master_role.start())
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start
+    await starting
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 323, in _do_start
+    self.finish_job()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job
+    self.summarize()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize
+    raise NoResultToAppendError(msg, compliant_message=msg)
+NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 635, in poll
+    self.check_master_process()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 378, in check_master_process
+    self.handle_stopped_master_process()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 330, in handle_stopped_master_process
+    raise MasterRoleProcessException(msg, self.return_dict) from cause
+azureml_common.parallel_run.exception.MasterRoleProcessException: This master role process failed with exitcode 1.
+
+2026-08-11 03:14:06,863|INFO|25|14085138114368|This is the lock with stamp 0,25,2026-08-11 03:14:06.800392. The prior is 0,25,2026-08-11 03:13:56.043431.
+2026-08-11 03:14:06,971|INFO|25|14085138114368|Start the master role process.
+2026-08-11 03:14:07,981|INFO|25|14085138114368|0: the master role process started. is_alive=True
+2026-08-11 03:14:10,173|INFO|25|14085138114368|Poll on round 40.
+2026-08-11 03:14:13,422|ERROR|25|14085138114368|This master role process failed with exitcode 1. Error: {'This request is not authorized to perform this operation using this permission.\nRequestId:6f198ebd-d003-004b-563f-29621c000000\nTime:2026-08-11T03:13:29.0534245Z\nErrorCode:AuthorizationPermissionMismatch\nContent: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.\nRequestId:6f198ebd-d003-004b-563f-29621c000000\nTime:2026-08-11T03:13:29.0534245Z</Message></Error>': 'Traceback (most recent call last):\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run\n    loop.run_until_complete(self.master_role.start())\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete\n    return future.result()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start\n    await starting\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 315, in _do_start\n    await self.wait_for_first_task()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 292, in wait_for_first_task\n    await self.wait_for_input_init()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 130, in wait_for_input_init\n    self.future_create_tasks.result()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 255, in create_tasks\n    raise exc\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 246, in create_tasks\n    await queue_sender.create_tasks(task_group)\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 98, in create_tasks\n    await asyncio.gather(*asyncio_tasks)\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 75, in done_callback\n    task_id = future.result()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 63, in create_task\n    await self.queue_client.send_message(content=message, time_to_live=-1)\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator_async.py", line 77, in wrapper_use_tracer\n    return await func(*args, **kwargs)\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/aio/_queue_client_async.py", line 402, in send_message\n    process_storage_error(error)\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error\n    exec("raise error from None")   # pylint: disable=exec-used # nosec\n  File "<string>", line 1, in <module>\nazure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.\nRequestId:6f198ebd-d003-004b-563f-29621c000000\nTime:2026-08-11T03:13:29.0534245Z\nErrorCode:AuthorizationPermissionMismatch\nContent: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.\nRequestId:6f198ebd-d003-004b-563f-29621c000000\nTime:2026-08-11T03:13:29.0534245Z</Message></Error>\n', 'exception_type': 'NoResultToAppendError', 'exception_info': '{"module": "azureml_common.parallel_run.exception", "name": "NoResultToAppendError", "message": "There is no succeeded mini batch item returned from run(). Please check \'response: run()\' in https://aka.ms/batch-inference-documentation", "compliant_message": "There is no succeeded mini batch item returned from run(). Please check \'response: run()\' in https://aka.ms/batch-inference-documentation", "formatted_traceback": "  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py\\", line 114, in run\\n    loop.run_until_complete(self.master_role.start())\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py\\", line 616, in run_until_complete\\n    return future.result()\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py\\", line 305, in start\\n    await starting\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py\\", line 323, in _do_start\\n    self.finish_job()\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py\\", line 512, in finish_job\\n    self.summarize()\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py\\", line 374, in summarize\\n    raise NoResultToAppendError(msg, compliant_message=msg)", "cause": null}', "There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation\nPlease check logs for error. You can check logs/readme.txt for the layout of logs.": 'Traceback (most recent call last):\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run\n    loop.run_until_complete(self.master_role.start())\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete\n    return future.result()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start\n    await starting\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 323, in _do_start\n    self.finish_job()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job\n    self.summarize()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize\n    raise NoResultToAppendError(msg, compliant_message=msg)\nazureml_common.parallel_run.exception.NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check \'response: run()\' in https://aka.ms/batch-inference-documentation\nPlease check logs for error. You can check logs/readme.txt for the layout of logs.\n'}
+2026-08-11 03:14:13,424|ERROR|25|14085138114368|poll() failed. This master role process failed with exitcode 1.
+azureml_common.parallel_run.exception_info.Exception: Run failed. Below is the error detail:
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run
+    loop.run_until_complete(self.master_role.start())
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start
+    await starting
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 323, in _do_start
+    self.finish_job()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job
+    self.summarize()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize
+    raise NoResultToAppendError(msg, compliant_message=msg)
+NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 635, in poll
+    self.check_master_process()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 378, in check_master_process
+    self.handle_stopped_master_process()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 330, in handle_stopped_master_process
+    raise MasterRoleProcessException(msg, self.return_dict) from cause
+azureml_common.parallel_run.exception.MasterRoleProcessException: This master role process failed with exitcode 1.
+2026-08-11 03:14:13,450|ERROR|25|14085138114368|Poll has continuously failed for 2 times for the master role process failed with NoResultToAppendError.. This master role process failed with exitcode 1.. Detail: azureml_common.parallel_run.exception_info.Exception: Run failed. Below is the error detail:
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run
+    loop.run_until_complete(self.master_role.start())
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start
+    await starting
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 323, in _do_start
+    self.finish_job()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job
+    self.summarize()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize
+    raise NoResultToAppendError(msg, compliant_message=msg)
+NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 635, in poll
+    self.check_master_process()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 378, in check_master_process
+    self.handle_stopped_master_process()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 330, in handle_stopped_master_process
+    raise MasterRoleProcessException(msg, self.return_dict) from cause
+azureml_common.parallel_run.exception.MasterRoleProcessException: This master role process failed with exitcode 1.
+
+2026-08-11 03:14:17,756|INFO|25|14085138114368|This is the lock with stamp 0,25,2026-08-11 03:14:17.705848. The prior is 0,25,2026-08-11 03:14:06.800392.
+2026-08-11 03:14:17,841|INFO|25|14085138114368|Start the master role process.
+2026-08-11 03:14:18,848|INFO|25|14085138114368|0: the master role process started. is_alive=True
+2026-08-11 03:14:22,055|INFO|25|14085138114368|Poll on round 50.
+2026-08-11 03:14:24,234|ERROR|25|14085138114368|This master role process failed with exitcode 1. Error: {'This request is not authorized to perform this operation using this permission.\nRequestId:6f198ebd-d003-004b-563f-29621c000000\nTime:2026-08-11T03:13:29.0534245Z\nErrorCode:AuthorizationPermissionMismatch\nContent: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.\nRequestId:6f198ebd-d003-004b-563f-29621c000000\nTime:2026-08-11T03:13:29.0534245Z</Message></Error>': 'Traceback (most recent call last):\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run\n    loop.run_until_complete(self.master_role.start())\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete\n    return future.result()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start\n    await starting\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 315, in _do_start\n    await self.wait_for_first_task()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 292, in wait_for_first_task\n    await self.wait_for_input_init()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 130, in wait_for_input_init\n    self.future_create_tasks.result()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 255, in create_tasks\n    raise exc\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 246, in create_tasks\n    await queue_sender.create_tasks(task_group)\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 98, in create_tasks\n    await asyncio.gather(*asyncio_tasks)\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 75, in done_callback\n    task_id = future.result()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 63, in create_task\n    await self.queue_client.send_message(content=message, time_to_live=-1)\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator_async.py", line 77, in wrapper_use_tracer\n    return await func(*args, **kwargs)\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/aio/_queue_client_async.py", line 402, in send_message\n    process_storage_error(error)\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error\n    exec("raise error from None")   # pylint: disable=exec-used # nosec\n  File "<string>", line 1, in <module>\nazure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.\nRequestId:6f198ebd-d003-004b-563f-29621c000000\nTime:2026-08-11T03:13:29.0534245Z\nErrorCode:AuthorizationPermissionMismatch\nContent: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.\nRequestId:6f198ebd-d003-004b-563f-29621c000000\nTime:2026-08-11T03:13:29.0534245Z</Message></Error>\n', 'exception_type': 'NoResultToAppendError', 'exception_info': '{"module": "azureml_common.parallel_run.exception", "name": "NoResultToAppendError", "message": "There is no succeeded mini batch item returned from run(). Please check \'response: run()\' in https://aka.ms/batch-inference-documentation", "compliant_message": "There is no succeeded mini batch item returned from run(). Please check \'response: run()\' in https://aka.ms/batch-inference-documentation", "formatted_traceback": "  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py\\", line 114, in run\\n    loop.run_until_complete(self.master_role.start())\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py\\", line 616, in run_until_complete\\n    return future.result()\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py\\", line 305, in start\\n    await starting\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py\\", line 323, in _do_start\\n    self.finish_job()\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py\\", line 512, in finish_job\\n    self.summarize()\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py\\", line 374, in summarize\\n    raise NoResultToAppendError(msg, compliant_message=msg)", "cause": null}', "There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation\nPlease check logs for error. You can check logs/readme.txt for the layout of logs.": 'Traceback (most recent call last):\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run\n    loop.run_until_complete(self.master_role.start())\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete\n    return future.result()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start\n    await starting\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 323, in _do_start\n    self.finish_job()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job\n    self.summarize()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize\n    raise NoResultToAppendError(msg, compliant_message=msg)\nazureml_common.parallel_run.exception.NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check \'response: run()\' in https://aka.ms/batch-inference-documentation\nPlease check logs for error. You can check logs/readme.txt for the layout of logs.\n'}
+2026-08-11 03:14:24,235|ERROR|25|14085138114368|poll() failed. This master role process failed with exitcode 1.
+azureml_common.parallel_run.exception_info.Exception: Run failed. Below is the error detail:
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run
+    loop.run_until_complete(self.master_role.start())
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start
+    await starting
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 323, in _do_start
+    self.finish_job()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job
+    self.summarize()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize
+    raise NoResultToAppendError(msg, compliant_message=msg)
+NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 635, in poll
+    self.check_master_process()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 378, in check_master_process
+    self.handle_stopped_master_process()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 330, in handle_stopped_master_process
+    raise MasterRoleProcessException(msg, self.return_dict) from cause
+azureml_common.parallel_run.exception.MasterRoleProcessException: This master role process failed with exitcode 1.
+2026-08-11 03:14:24,257|ERROR|25|14085138114368|Poll has continuously failed for 3 times for the master role process failed with NoResultToAppendError.. This master role process failed with exitcode 1.. Detail: azureml_common.parallel_run.exception_info.Exception: Run failed. Below is the error detail:
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run
+    loop.run_until_complete(self.master_role.start())
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start
+    await starting
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 323, in _do_start
+    self.finish_job()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job
+    self.summarize()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize
+    raise NoResultToAppendError(msg, compliant_message=msg)
+NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 635, in poll
+    self.check_master_process()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 378, in check_master_process
+    self.handle_stopped_master_process()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 330, in handle_stopped_master_process
+    raise MasterRoleProcessException(msg, self.return_dict) from cause
+azureml_common.parallel_run.exception.MasterRoleProcessException: This master role process failed with exitcode 1.
+
+2026-08-11 03:14:28,892|INFO|25|14085138114368|This is the lock with stamp 0,25,2026-08-11 03:14:28.588342. The prior is 0,25,2026-08-11 03:14:17.705848.
+2026-08-11 03:14:29,267|INFO|25|14085138114368|Start the master role process.
+2026-08-11 03:14:30,273|INFO|25|14085138114368|0: the master role process started. is_alive=True
+2026-08-11 03:14:34,581|INFO|25|14085138114368|Poll on round 60.
+2026-08-11 03:14:35,733|ERROR|25|14085138114368|This master role process failed with exitcode 1. Error: {'This request is not authorized to perform this operation using this permission.\nRequestId:6f198ebd-d003-004b-563f-29621c000000\nTime:2026-08-11T03:13:29.0534245Z\nErrorCode:AuthorizationPermissionMismatch\nContent: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.\nRequestId:6f198ebd-d003-004b-563f-29621c000000\nTime:2026-08-11T03:13:29.0534245Z</Message></Error>': 'Traceback (most recent call last):\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run\n    loop.run_until_complete(self.master_role.start())\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete\n    return future.result()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start\n    await starting\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 315, in _do_start\n    await self.wait_for_first_task()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 292, in wait_for_first_task\n    await self.wait_for_input_init()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 130, in wait_for_input_init\n    self.future_create_tasks.result()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 255, in create_tasks\n    raise exc\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/task_producer.py", line 246, in create_tasks\n    await queue_sender.create_tasks(task_group)\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 98, in create_tasks\n    await asyncio.gather(*asyncio_tasks)\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 75, in done_callback\n    task_id = future.result()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/queue_sender.py", line 63, in create_task\n    await self.queue_client.send_message(content=message, time_to_live=-1)\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/core/tracing/decorator_async.py", line 77, in wrapper_use_tracer\n    return await func(*args, **kwargs)\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/aio/_queue_client_async.py", line 402, in send_message\n    process_storage_error(error)\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azure/storage/queue/_shared/response_handlers.py", line 184, in process_storage_error\n    exec("raise error from None")   # pylint: disable=exec-used # nosec\n  File "<string>", line 1, in <module>\nazure.core.exceptions.HttpResponseError: This request is not authorized to perform this operation using this permission.\nRequestId:6f198ebd-d003-004b-563f-29621c000000\nTime:2026-08-11T03:13:29.0534245Z\nErrorCode:AuthorizationPermissionMismatch\nContent: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationPermissionMismatch</Code><Message>This request is not authorized to perform this operation using this permission.\nRequestId:6f198ebd-d003-004b-563f-29621c000000\nTime:2026-08-11T03:13:29.0534245Z</Message></Error>\n', 'exception_type': 'NoResultToAppendError', 'exception_info': '{"module": "azureml_common.parallel_run.exception", "name": "NoResultToAppendError", "message": "There is no succeeded mini batch item returned from run(). Please check \'response: run()\' in https://aka.ms/batch-inference-documentation", "compliant_message": "There is no succeeded mini batch item returned from run(). Please check \'response: run()\' in https://aka.ms/batch-inference-documentation", "formatted_traceback": "  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py\\", line 114, in run\\n    loop.run_until_complete(self.master_role.start())\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py\\", line 616, in run_until_complete\\n    return future.result()\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py\\", line 305, in start\\n    await starting\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py\\", line 323, in _do_start\\n    self.finish_job()\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py\\", line 512, in finish_job\\n    self.summarize()\\n  File \\"/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py\\", line 374, in summarize\\n    raise NoResultToAppendError(msg, compliant_message=msg)", "cause": null}', "There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation\nPlease check logs for error. You can check logs/readme.txt for the layout of logs.": 'Traceback (most recent call last):\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run\n    loop.run_until_complete(self.master_role.start())\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete\n    return future.result()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start\n    await starting\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 323, in _do_start\n    self.finish_job()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job\n    self.summarize()\n  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize\n    raise NoResultToAppendError(msg, compliant_message=msg)\nazureml_common.parallel_run.exception.NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check \'response: run()\' in https://aka.ms/batch-inference-documentation\nPlease check logs for error. You can check logs/readme.txt for the layout of logs.\n'}
+2026-08-11 03:14:35,734|ERROR|25|14085138114368|poll() failed. This master role process failed with exitcode 1.
+azureml_common.parallel_run.exception_info.Exception: Run failed. Below is the error detail:
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run
+    loop.run_until_complete(self.master_role.start())
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start
+    await starting
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 323, in _do_start
+    self.finish_job()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job
+    self.summarize()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize
+    raise NoResultToAppendError(msg, compliant_message=msg)
+NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 635, in poll
+    self.check_master_process()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 378, in check_master_process
+    self.handle_stopped_master_process()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 330, in handle_stopped_master_process
+    raise MasterRoleProcessException(msg, self.return_dict) from cause
+azureml_common.parallel_run.exception.MasterRoleProcessException: This master role process failed with exitcode 1.
+2026-08-11 03:14:35,773|ERROR|25|14085138114368|Poll has continuously failed for 4 times for the master role process failed with NoResultToAppendError.. This master role process failed with exitcode 1.. Detail: azureml_common.parallel_run.exception_info.Exception: Run failed. Below is the error detail:
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role_process.py", line 114, in run
+    loop.run_until_complete(self.master_role.start())
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 305, in start
+    await starting
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 323, in _do_start
+    self.finish_job()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job
+    self.summarize()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize
+    raise NoResultToAppendError(msg, compliant_message=msg)
+NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 635, in poll
+    self.check_master_process()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 378, in check_master_process
+    self.handle_stopped_master_process()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 330, in handle_stopped_master_process
+    raise MasterRoleProcessException(msg, self.return_dict) from cause
+azureml_common.parallel_run.exception.MasterRoleProcessException: This master role process failed with exitcode 1.
+
+2026-08-11 03:14:39,036|INFO|25|14085138114368|This is the lock with stamp 0,25,2026-08-11 03:14:38.959467. The prior is 0,25,2026-08-11 03:14:28.588342.
+2026-08-11 03:14:39,109|INFO|25|14085138114368|Start finalize task.
+2026-08-11 03:14:42,449|INFO|3207|21060596676416|Start to generate the report.
+2026-08-11 03:14:43,048|INFO|3207|21060596676416|Saved the report to logs/sys/job_report/processed_mini-batches.csv.
+2026-08-11 03:14:43,048|INFO|3207|21060596676416|Start to check job result.
+2026-08-11 03:14:45,380|INFO|25|14085138114368|Poll on round 70.
+2026-08-11 03:14:49,515|ERROR|3207|21060596676416|The finalizer process failed. There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs. The master role failed with error: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs. Detail: Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job
+    self.summarize()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize
+    raise NoResultToAppendError(msg, compliant_message=msg)
+azureml_common.parallel_run.exception.NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs.
+.
+Please check logs for error. You can check logs/readme.txt for the layout of logs.. Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/finalizer_process.py", line 76, in run
+    JobResult().check_job_result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/job_result.py", line 168, in check_job_result
+    raise exc
+azureml_common.parallel_run.exception.NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs. The master role failed with error: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs. Detail: Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job
+    self.summarize()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize
+    raise NoResultToAppendError(msg, compliant_message=msg)
+azureml_common.parallel_run.exception.NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs.
+.
+Please check logs for error. You can check logs/readme.txt for the layout of logs.
+
+2026-08-11 03:14:49,814|INFO|25|14085138114368|This is the lock with stamp 0,25,2026-08-11 03:14:49.704294. The prior is 0,25,2026-08-11 03:14:38.959467.
+2026-08-11 03:14:49,930|INFO|25|14085138114368|Finalizer process is running.
+2026-08-11 03:14:50,964|INFO|25|14085138114368|the active instances table had been deleted The table specified does not exist.
+RequestId:4c579690-a002-0023-4a3f-29048c000000
+Time:2026-08-11T03:14:50.9618811Z
+ErrorCode:TableNotFound
+Content: {"odata.error":{"code":"TableNotFound","message":{"lang":"en-US","value":"The table specified does not exist.\nRequestId:4c579690-a002-0023-4a3f-29048c000000\nTime:2026-08-11T03:14:50.9618811Z"}}}
+2026-08-11 03:14:51,026|INFO|25|14085138114368|Finalizer process exit with code 0
+2026-08-11 03:14:51,026|ERROR|25|14085138114368|poll() failed. Run failed. Below is the error detail:
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/finalizer_process.py", line 76, in run
+    JobResult().check_job_result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/job_result.py", line 168, in check_job_result
+    raise exc
+NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs. The master role failed with error: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs. Detail: Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job
+    self.summarize()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize
+    raise NoResultToAppendError(msg, compliant_message=msg)
+azureml_common.parallel_run.exception.NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs.
+.
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 638, in poll
+    self.check_finalizer_process()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_poller.py", line 402, in check_finalizer_process
+    raise exc
+azureml_common.parallel_run.exception_info.Exception: Run failed. Below is the error detail:
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/finalizer_process.py", line 76, in run
+    JobResult().check_job_result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/job_result.py", line 168, in check_job_result
+    raise exc
+NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs. The master role failed with error: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs. Detail: Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job
+    self.summarize()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize
+    raise NoResultToAppendError(msg, compliant_message=msg)
+azureml_common.parallel_run.exception.NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs.
+.
+2026-08-11 03:14:51,053|ERROR|25|14085138114368|Start master poller failed Run failed. Below is the error detail:
+Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/finalizer_process.py", line 76, in run
+    JobResult().check_job_result()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/job_result.py", line 168, in check_job_result
+    raise exc
+NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs. The master role failed with error: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs. Detail: Traceback (most recent call last):
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 512, in finish_job
+    self.summarize()
+  File "/tmp/e574e568-e6e4-4777-b6a1-06f548ebd1a7/prs_prod/lib/python3.8/site-packages/azureml_sys/parallel_run/master_role.py", line 374, in summarize
+    raise NoResultToAppendError(msg, compliant_message=msg)
+azureml_common.parallel_run.exception.NoResultToAppendError: There is no succeeded mini batch item returned from run(). Please check 'response: run()' in https://aka.ms/batch-inference-documentation
+Please check logs for error. You can check logs/readme.txt for the layout of logs.
+.

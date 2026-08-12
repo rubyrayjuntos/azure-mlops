@@ -1,0 +1,44 @@
+I want to make sure what you implemented matches my expectations. Below is what i expected to be the deployed system, and i would like for you to alert me of the areas that are different and why they are different, and missing and extra areas.
+
+I have attached a system architecture diagram to show you the system that I want to evolve to.
+
+DATA PREP
+this happens outside of the mlops lifecycle - but for the accelerator the data is given
+
+ADMINISTRATION AND SETUP
+service credentials: dev and prod (serivce registry and give credentials)
+fork templates and mlops v2 repo and create blank sparse
+add mlroot directory, clone locally mlops v2 repo and create sparse folder locally
+in mlops v2 local, modify sparse checkout file header to configure choices (terraform/bicep, classical/cv, etc...)
+authentication for terraform (ssh - create local key at beginning (ssh-geyge -t ed25519 -C "change to my email")
+add ssh key to ssh agent ("eval '$(ssh-agent-s)') and ("ssh-add ~/.xxh/id_ed25519")
+add GPG key to github - "cat ~/.ssh/ide_ed25519.pub  --> output example: ssh-ed25519... add that to new SSH keys
+run python shell script (sparse checkout) - this bootstraps the new project folder that contains the mlops folders that provides the complete platform
+then move to azure devops
+project settings, service connection - create two one for dev and one for prod for the service principles (the secrets and tenant id from azure portal - first step - and add them here)
+create a 3rd service connection: create github token for the azure devops to github token (create token in github and set in azure devops) token permissiont (repo, adminrepo_hook, add users)
+create devops pipeline :yaml file - /infrastructure/pipelines/... (runs lint, preflight validation, deploy AML workshopt)
+config-infra-dev.yml for dev and prod - make sure that postfix value is unique (4 digits), then run pipeline noted above
+this creates the workspaces with the compu cluster (codes that define workspace setup are in /infrastructure/modules/)
+
+MODEL DEVELOPMENT (uses the dev resource group)
+add the training pipeline in azure devops or github actions (deploy model training pipeline) (Github: deploy-model-trainin-pipeline-classical.yml in .github/workflows/  - this can use the service principles that we created in azure, it can be a contributor to that subscription and also is uses to give access in Github) (clientID, clientsecret, etc...) add as sectrets - action - AZURE_CREENTIALS - paste the details from the service providers
+3 actions should be in github: deploy-batch-endpoint-pipeline, deploy-model-training-pipeline, deploy-online-endpoint-pipeline. running model training,  (/mlops/azureml/train/pipelin.yml is what is actually run (runs through full training pipeline) - these are custom to each project, but the example is in the forked repo - an important point is that it also includes responsible ai toolkits as the last step - training pipeline creates and environment, such as conda (train-env.yml) (this ends up hbeing create as jobs in azure workspace. score.py tells how to score the results when live inference.
+
+LIFECYCLE MANGEMENT
+??? missing in the example that i was looking at from 2022
+
+
+MODEL DEPLOYMENT
+set up as batch prediction or real time inference - set them up as endpoints - that is the deploy-batch-endpoint-pipeline in github. batch-deployment.yml in github is the configuration for the project deployment. can verify in azure prod endpoints.
+
+MONITORING
+?? missing in the example that i was looking at from 2022
+
+what is missing - model lifecycle management - from training, determining challenger and champion, which gets depoyed. also, monitory is very important but not talked about here
+
+cli and v2 accelerator are evolving, so this might be slightly different , so we can talk about that
+
+
+
+

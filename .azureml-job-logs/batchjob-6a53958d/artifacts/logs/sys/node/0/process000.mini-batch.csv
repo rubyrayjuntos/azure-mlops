@@ -1,0 +1,14 @@
+Mini-batch Id,Dequeue Count,Start Time,Total,Succeeded,Failed,Elapsed Seconds,Process Seconds,Input Start Time,Input Seconds,Run Method Start Time,Run Method Seconds,Output Start Time,Output Seconds,Status,Error
+,,2026-08-11T01:49:23.762102,,,,,,,,,,,,LOAD_START,
+,,2026-08-11T01:49:23.762102,,,,,,,,,,,,LOAD_EXCEPTION,"No module named 'pkg_resources'   File ""/mnt/azureml/cr/j/2334b4afdae04515a4cfe0af6f048c5e/exe/wd/batch_driver.py"", line 5, in <module>
+    import mlflow
+  File ""/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/__init__.py"", line 44, in <module>
+    from mlflow import (
+  File ""/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/models/__init__.py"", line 47, in <module>
+    from mlflow.utils.environment import infer_pip_requirements
+  File ""/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/environment.py"", line 15, in <module>
+    from mlflow.utils.requirements_utils import (
+  File ""/azureml-envs/azureml_3770cedbcc642afd7a56c948b7a3c572/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py"", line 20, in <module>
+    import pkg_resources  # noqa: TID251
+    ^^^^^^^^^^^^^^^^^^^^"
+,,2026-08-11T01:49:23.759494,0,0,0,1.002328872680664,0,,,,0,,,AGENT_DONE,

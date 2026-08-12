@@ -162,6 +162,25 @@ module "container_registry" {
   ]
 }
 
+module "ai_search" {
+  count  = var.enable_ai_search ? 1 : 0
+  source = "./modules/ai-search"
+
+  rg_name  = module.resource_group.name
+  location = module.resource_group.location
+
+  prefix  = var.prefix
+  postfix = var.postfix
+  env     = var.environment
+
+  sku               = var.ai_search_sku
+  replica_count     = var.ai_search_replica_count
+  partition_count   = var.ai_search_partition_count
+  public_network_access_enabled = true
+
+  tags = local.tags
+}
+
 module "data_explorer" {
   source = "./modules/data-explorer"
 
