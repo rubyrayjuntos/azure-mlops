@@ -7,7 +7,7 @@ resource "azurerm_container_registry" "cr" {
   name                          = "cr${local.safe_prefix}${local.safe_postfix}${var.env}"
   resource_group_name           = var.rg_name
   location                      = var.location
-  sku                           = "Premium"
+  sku                           = var.enable_private_endpoints ? "Premium" : "Standard"
   admin_enabled                 = false
   public_network_access_enabled = var.enable_private_endpoints ? false : true
   zone_redundancy_enabled       = false
